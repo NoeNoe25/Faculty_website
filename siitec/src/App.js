@@ -16,10 +16,11 @@ function App() {
       <Header />
       <main>
         <ParallaxSection />
-        <PartnersBanner/>
+        
         <AnimatedFeatures />
         <ScrollRevealSection />
         <FacultyMembers />
+        <PartnersBanner/>
       </main>
       <Footer />
     </div>

@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { theme } from '../styles/theme2.ts';
-import professor1 from '../assets/professor1.jpg';
-import professor2 from '../assets/professor2.jpg';
 
 
 const FacultySection = styled.section`
@@ -13,20 +11,24 @@ const FacultySection = styled.section`
   position: relative;
   overflow: hidden;
   color: ${theme.colors.white};
+  /* Using consistent background pattern */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(${theme.colors.copper} 1px, transparent 1px),
+      linear-gradient(90deg, ${theme.colors.copper} 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+  }
 `;
 
-const CircuitBackground = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.05;
-  background-image: linear-gradient(${theme.colors.copper} 1px, transparent 1px),
-    linear-gradient(90deg, ${theme.colors.copper} 1px, transparent 1px);
-  background-size: 50px 50px;
-  z-index: 1;
-`;
+/* Removed CircuitBackground as it's now handled by FacultySection::before */
 
 const GlowingOrb = styled.div`
   position: absolute;
@@ -255,12 +257,12 @@ const FacultyMembers: React.FC = () => {
   
   const facultyMembers = [
     {
-      id: 1,
-      name: 'Dr. Sarah Chen',
-      title: 'Professor of Advanced Manufacturing',
-      bio: 'Specializes in robotics and automation systems with over 15 years of industry experience.',
-      image: professor1, // Replace with actual image path
-    },
+        id: 1,
+        name: 'Dr. Sarah Chen',
+        title: 'Professor of Advanced Manufacturing',
+        bio: 'Specializes in robotics and automation systems with over 15 years of industry experience.',
+        image: '/path/to/professor1.jpg', // Replace with actual image path
+      },
     {
       id: 2,
       name: 'Dr. James Wilson',
@@ -300,7 +302,6 @@ const FacultyMembers: React.FC = () => {
   
   return (
     <FacultySection id="faculty">
-      <CircuitBackground />
       <GlowingOrb className="orb1" />
       <GlowingOrb className="orb2" />
       

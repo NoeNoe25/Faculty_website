@@ -1,7 +1,7 @@
 /* src/styles/faculty.css */
 .faculty {
   padding: 6rem 8%;
-  background-color: var(--slate-darker);
+  background-color: rgba(61, 74, 79, 0.7);
   position: relative;
   overflow: hidden;
 }

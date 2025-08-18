@@ -6,31 +6,48 @@ import { theme } from '../styles/theme2.ts';
 
 const DepartmentsSection = styled.section`
   padding: ${theme.spacing.xxl} 0;
-  background-color: ${theme.colors.background};
+  background-color: ${theme.colors.grayDark};
   position: relative;
   overflow: hidden;
+  color: ${theme.colors.white};
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(${theme.colors.copper} 1px, transparent 1px),
+      linear-gradient(90deg, ${theme.colors.copper} 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+  }
 `;
 
-const BackgroundAccent = styled.div`
+const GlowingOrb = styled.div`
   position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 300px;
-  height: 300px;
   border-radius: 50%;
-  background-color: rgba(184, 115, 51, 0.1); /* Copper with opacity */
+  filter: blur(60px);
   z-index: 1;
-`;
-
-const BackgroundAccent2 = styled.div`
-  position: absolute;
-  bottom: -100px;
-  left: -100px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: rgba(117, 131, 132, 0.1); /* Gray with opacity */
-  z-index: 1;
+  
+  &.orb1 {
+    top: -100px;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(184, 115, 51, 0.3); /* Copper with opacity */
+  }
+  
+  &.orb2 {
+    bottom: -150px;
+    left: 5%;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(117, 131, 132, 0.15); /* Gray with opacity */
+  }
 `;
 
 const DepartmentsContainer = styled.div`
@@ -214,8 +231,8 @@ const Departments: React.FC = () => {
   
   return (
     <DepartmentsSection id="departments">
-      <BackgroundAccent />
-      <BackgroundAccent2 />
+      <GlowingOrb className="orb1" />
+      <GlowingOrb className="orb2" />
       
       <DepartmentsContainer>
         <SectionHeader ref={headerRef}>

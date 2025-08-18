@@ -27,7 +27,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(10, 10, 26, 0.7);
+  background-color: rgba(61, 74, 79, 0.7); /* Using slate-darker with opacity */
   z-index: 1;
 }
 
@@ -37,9 +37,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+  background-image: linear-gradient(var(--gold-copper) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--gold-copper) 1px, transparent 1px);
   background-size: 50px 50px;
+  opacity: 0.05;
   z-index: 2;
 }
 
@@ -66,7 +67,7 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(90deg, #D4AF37, #B87333, #758384);
+  background: linear-gradient(90deg, var(--gold-copper-light), var(--gold-copper), var(--slate-base));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -81,24 +82,26 @@
 }
 
 .tech-button {
-  background: rgba(212, 175, 55, 0.2);
-  color: #ffffff;
-  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(201, 166, 107, 0.2); /* Using gold-copper with opacity */
+  color: var(--text-light);
+  border: 1px solid var(--gold-copper);
   padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 30px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: var(--transition-medium);
   backdrop-filter: blur(5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
 }
 
 .tech-button:hover {
-  background: rgba(212, 175, 55, 0.3);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 10px rgba(212, 175, 55, 0.5);
+  background: var(--gold-copper);
+  color: var(--slate-darker);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), var(--glow-gold);
 }
 
 .button-glow {
