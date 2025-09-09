@@ -1,7 +1,7 @@
 /* ParallaxSection.css */
 .parallax-section {
   position: relative;
-  color: #ffffff;
+  color: #333333; /* Dark text for light theme */
 }
 
 .parallax-banner {
@@ -27,7 +27,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(61, 74, 79, 0.7); /* Using slate-darker with opacity */
+  background-color: rgba(255, 255, 255, 0.85); /* Light overlay for light theme */
+  opacity: 0.6;
   z-index: 1;
 }
 
@@ -37,10 +38,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(var(--gold-copper) 1px, transparent 1px),
-                    linear-gradient(90deg, var(--gold-copper) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(184, 115, 51, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(184, 115, 51, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
-  opacity: 0.05;
+
   z-index: 2;
 }
 
@@ -66,8 +67,7 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(90deg, var(--gold-copper-light), var(--gold-copper), var(--slate-base));
+  background: linear-gradient(90deg, #642a00, #bf7530,#cA8c50); /* Using copper and gray colors */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -78,30 +78,29 @@
   font-size: 1.3rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #4A5455; /* Dark gray for subtitle */
 }
 
 .tech-button {
-  background: rgba(201, 166, 107, 0.2); /* Using gold-copper with opacity */
-  color: var(--text-light);
-  border: 1px solid var(--gold-copper);
+  background: rgba(255, 255, 255, 0.9); /* Light background */
+  color: #B87333; /* Copper color for text */
+  border: 1px solid #B87333; /* Copper border */
   padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: var(--border-radius);
+  border-radius: 4px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: var(--transition-medium);
-  backdrop-filter: blur(5px);
-  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tech-button:hover {
-  background: var(--gold-copper);
-  color: var(--slate-darker);
+  background: #B87333; /* Copper background on hover */
+  color: #FFFFFF; /* White text on hover */
   transform: translateY(-3px);
-  box-shadow: var(--shadow-lg), var(--glow-gold);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 0 20px rgba(184, 115, 51, 0.3);
 }
 
 .button-glow {
@@ -110,7 +109,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(212, 175, 55, 0) 70%);
+  background: radial-gradient(circle, rgba(212, 167, 106, 0.3) 0%, rgba(212, 167, 106, 0) 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -141,9 +140,10 @@
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 3rem 2rem;
-  background: linear-gradient(to bottom, #0a0a1a, #141432);
+  background: linear-gradient(to bottom, #d4d4d4, #FFFFFF); /* Light gradient */
   position: relative;
   z-index: 4;
+  border-top: 1px solid rgba(117, 131, 132, 0.2); /* Light gray border */
 }
 
 .tech-stat {
@@ -158,7 +158,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  background: linear-gradient(90deg, #D4AF37, #B87333);
+  background: linear-gradient(90deg, #D4A76A, #B87333); /* Copper gradient */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -167,7 +167,7 @@
 
 .stat-label {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #4A5455; /* Dark gray for labels */
 }
 
 .stat-circle {
@@ -178,7 +178,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(184, 115, 51, 0.2); /* Light copper border */
   z-index: -1;
 }
 
@@ -190,7 +190,7 @@
   right: -10px;
   bottom: -10px;
   border-radius: 50%;
-  border: 1px dashed rgba(212, 175, 55, 0.2);
+  border: 1px dashed rgba(184, 115, 51, 0.1); /* Subtle dashed border */
   animation: rotate 20s linear infinite;
 }
 

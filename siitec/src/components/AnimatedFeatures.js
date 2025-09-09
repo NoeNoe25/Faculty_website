@@ -3,6 +3,35 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import '../styles/AnimatedFeatures.css';
 
+// SVG Icons
+const ResearchIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+    <path fill="none" d="M0 0h24v24H0z"/>
+    <path fill="#B87333" d="M19.8 18.4L14 10.67V6.5l1.35-1.69c.26-.33.03-.81-.39-.81H9.04c-.42 0-.65.48-.39.81L10 6.5v4.17L4.2 18.4c-.53.67-.05 1.6.83 1.6h14c.88 0 1.36-.93.83-1.6z"/>
+  </svg>
+);
+
+const InterdisciplinaryIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+    <path fill="none" d="M0 0h24v24H0z"/>
+    <path fill="#B87333" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-5-7h10v-2H7v2z"/>
+  </svg>
+);
+
+const PartnershipIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+    <path fill="none" d="M0 0h24v24H0z"/>
+    <path fill="#B87333" d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.19 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/>
+  </svg>
+);
+
+const EducationIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+    <path fill="none" d="M0 0h24v24H0z"/>
+    <path fill="#B87333" d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+  </svg>
+);
+
 const AnimatedFeatures = () => {
   // Animation variants for container
   const containerVariants = {
@@ -36,29 +65,29 @@ const AnimatedFeatures = () => {
       id: 1,
       title: 'Innovative Research',
       description: 'Pushing boundaries with cutting-edge technology research and development.',
-      icon: '🔬',
-      color: '#D4AF37', // Gold
+      icon: <ResearchIcon />,
+      color: '#B87333', // Copper
     },
     {
       id: 2,
       title: 'Interdisciplinary Approach',
       description: 'Combining technology with various disciplines for comprehensive solutions.',
-      icon: '🔄',
-      color: '#B87333', // Copper
+      icon: <InterdisciplinaryIcon />,
+      color: '#4A5455', // Dark gray
     },
     {
       id: 3,
       title: 'Industry Partnerships',
       description: 'Collaborating with leading tech companies for real-world applications.',
-      icon: '🤝',
-      color: '#758384', // Slate gray
+      icon: <PartnershipIcon />,
+      color: '#B87333', // Copper
     },
     {
       id: 4,
       title: 'Future-Ready Education',
       description: 'Preparing students for the evolving technological landscape.',
-      icon: '🎓',
-      color: '#D4AF37', // Gold
+      icon: <EducationIcon />,
+      color: '#4A5455', // Dark gray
     },
   ];
 

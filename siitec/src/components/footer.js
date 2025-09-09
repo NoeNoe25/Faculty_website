@@ -2,14 +2,15 @@
 import React from 'react';
 import '../styles/theme.css';
 import '../styles/footer.css';
-
+import logoImage from '../assets/logos/siiteclogo (1).png'; 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-main-content">
           <div className="footer-logo">
-            <h2>Sii<span>Tec</span></h2>
+          <img src={logoImage} alt="SIITec Logo" class="logo-img"/>
+                     
             <p>School of Integrated Innovative Technology</p>
           </div>
           

@@ -1,6 +1,6 @@
 /* src/styles/footer.css */
 .footer {
-  background-color: var(--slate-darker);
+  background-color: #4c5354;
   color: var(--slate-lighter);
   padding: 5rem 8% 2rem;
   position: relative;
@@ -35,31 +35,17 @@
   margin-bottom: 3rem;
 }
 
-.footer-logo {
+.logo-img {
   flex: 1;
-  min-width: 250px;
-  max-width: 300px;
+  min-width: 50px;
+  max-width: 80px;
 }
 
-.footer-logo h2 {
-  font-size: 2.4rem;
-  margin-bottom: 0.8rem;
-  color: var(--text-light);
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-.footer-logo h2 span {
-  color: var(--gold-copper);
-  text-shadow: 0 0 10px rgba(184, 115, 51, 0.5);
-  position: relative;
-}
 
 .footer-logo p {
   font-size: 1.1rem;
   opacity: 0.8;
-  margin-bottom: 1.5rem;
+  margin-top:0rem;
   max-width: 280px;
   line-height: 1.5;
 }

@@ -16,10 +16,8 @@ function App() {
       <Header />
       <main>
         <ParallaxSection />
-        
         <AnimatedFeatures />
         <ScrollRevealSection />
-        <FacultyMembers />
         <PartnersBanner/>
       </main>
       <Footer />

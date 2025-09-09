@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/theme.css';
 import '../styles/header.css';
+import logoImage from '../assets/logos/siiteclogo (1).png'; // Adjust path to your logo
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -64,9 +65,14 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">
-          <h1>Sii<span>Tec</span></h1>
-          <p>{language === 'EN' ? 'School of Integrated Innovative Technology' : 'คณะเทคโนโลยีบูรณาการนวัตกรรม'}</p>
+        <div className="logo-container">
+          <div className="logo-image">
+            <img src={logoImage} alt="SIITec Logo" />
+          </div>
+          <div className="logo-text">
+          
+            <p>{language === 'EN' ? 'School of Integrated Innovative Technology' : 'คณะเทคโนโลยีบูรณาการนวัตกรรม'}</p>
+          </div>
         </div>
         
         <button 
@@ -147,4 +153,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header

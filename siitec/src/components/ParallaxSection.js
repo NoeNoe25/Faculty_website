@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import '../styles/ParallaxSection.css';
+import bgimg from "../assets/albums/KMITL.12.jpg";
 
 const ParallaxSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,7 +41,7 @@ const ParallaxSection = () => {
   return (
       <section className="parallax-section" ref={sectionRef}>
         <div className="parallax-banner" style={{ height: '80vh' }}>
-          <div className="parallax-background" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80)' }}></div>
+          <div className="parallax-background" style={{ backgroundImage:`url(${bgimg})`  }}></div>
           
           <div className="overlay">
             <div className="tech-grid-overlay"></div>
