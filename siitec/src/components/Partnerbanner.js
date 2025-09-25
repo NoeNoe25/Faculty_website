@@ -1,6 +1,6 @@
 // components/PartnersBanner.jsx
 import React from 'react';
-import '../styles/PartnerBanner.css';
+import '../styles/components/PartnerBanner.css';
 import abb from '../assets/logos/abb-logo.png';
 import nvidia from '../assets/logos/nvidia-logo.png';
 import nissan from '../assets/logos/nissan.png';

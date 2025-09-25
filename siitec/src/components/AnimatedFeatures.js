@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+
+
 import { useInView } from 'react-intersection-observer';
-import '../styles/AnimatedFeatures.css';
+import '../styles/components/AnimatedFeatures.css';
 
 // SVG Icons
 const ResearchIcon = () => (

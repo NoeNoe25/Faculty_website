@@ -1,0 +1,57 @@
+/* Nanotech Innovation Contest */
+.nanotech-contest {
+  margin: 3rem 0;
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  background: var(--tech-gradient);
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.nanotech-contest h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.nanotech-contest p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.nanotech-contest .contest-details {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.nanotech-contest .contest-box {
+  background: var(--background-secondary);
+  color: var(--text-dark);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  min-width: 180px;
+}
+
+.nanotech-contest button {
+  background: var(--gold-copper-forbutton);
+  color: var(--text-dark);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--glow-gold);
+}
+
+.nanotech-contest button:hover {
+  background: var(--gold-copper-dark);
+  color: #fff;
+}
