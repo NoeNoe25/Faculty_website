@@ -1,0 +1,132 @@
+/* src/styles/STEMSection.css */
+.stem-section {
+  background: var(--background-primary);
+  position: relative;
+}
+
+.stem-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--tech-gradient);
+  opacity: 0.3;
+}
+
+.stem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stem-card {
+  text-align: center;
+  padding: 40px 30px;
+  transition: var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.stem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--tech-gradient);
+  opacity: 0.1;
+  transition: var(--transition-slow);
+  z-index: 1;
+}
+
+.stem-card:hover::before {
+  left: 0;
+}
+
+.stem-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.stem-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: var(--transition-medium);
+}
+
+.stem-card:hover .stem-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.stem-card h3 {
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.stem-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Individual card hover effects */
+.stem-card:nth-child(1):hover {
+  border-color: var(--gold-copper);
+  box-shadow: 0 10px 30px rgba(201, 166, 107, 0.2);
+}
+
+.stem-card:nth-child(2):hover {
+  border-color: var(--slate-base);
+  box-shadow: 0 10px 30px rgba(117, 131, 132, 0.2);
+}
+
+.stem-card:nth-child(3):hover {
+  border-color: var(--gold-copper-dark);
+  box-shadow: 0 10px 30px rgba(168, 132, 72, 0.2);
+}
+
+/* STEM background pattern */
+.stem-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  background-image: 
+    linear-gradient(45deg, var(--slate-base) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--slate-base) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--slate-base) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--slate-base) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .stem-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .stem-card {
+    padding: 30px 20px;
+  }
+  
+  .stem-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stem-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -31,7 +31,7 @@ const Header = () => {
 
   // Menu Items with EN + TH versions
   const menuItems = [
-    { name: language === 'EN' ? 'Home' : 'หน้าหลัก', link: '#home' },
+    { name: language === 'EN' ? 'Home' : 'หน้าหลัก', link: '/' },
     { 
       name: language === 'EN' ? 'Academics' : 'การศึกษา',
       submenu: [
@@ -57,7 +57,7 @@ const Header = () => {
         { name: language === 'EN' ? 'News & Events' : 'ข่าวและกิจกรรม', link: '#news' }
       ]
     },
-    { name: language === 'EN' ? 'Admissions' : 'การรับสมัคร', link: '#admissions' },
+    { name: language === 'EN' ? 'Programs' : 'การรับสมัคร', link: '/programs' },
     { name: language === 'EN' ? 'About Us' : 'เกี่ยวกับเรา', link: '#about' },
     { name: language === 'EN' ? 'Contact' : 'ติดต่อ', link: '#contact' }
   ];

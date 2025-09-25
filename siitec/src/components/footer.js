@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/theme.css';
 import '../styles/footer.css';
 import logoImage from '../assets/logos/siiteclogo (1).png'; 

@@ -1,0 +1,99 @@
+/* src/components/ui/HighlightsSection.css */
+.highlights-section {
+  padding: 80px 0;
+  background: var(--background-primary);
+}
+
+.highlights-section .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--text-dark);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.highlights-grid {
+  display: grid;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.highlights-columns-1 {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+}
+
+.highlights-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.highlights-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.highlights-columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .highlights-columns-3,
+  .highlights-columns-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .highlights-section {
+    padding: 60px 0;
+  }
+  
+  .highlights-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .highlights-grid {
+    gap: 20px;
+    padding: 0 15px;
+  }
+  
+  .highlights-columns-2,
+  .highlights-columns-3,
+  .highlights-columns-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlights-section {
+    padding: 40px 0;
+  }
+  
+  .highlights-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .highlights-grid {
+    gap: 15px;
+  }
+}
+
+/* Optional: Carousel variant */
+.highlights-section.carousel .highlights-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+}
+
+.highlights-section.carousel .highlight-card {
+  min-width: 300px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}

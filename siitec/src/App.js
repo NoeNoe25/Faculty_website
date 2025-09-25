@@ -1,27 +1,17 @@
 // src/App.js
 import React from 'react';
-import Header from './components/header';
-import FacultyMembers from './components/faculty.tsx';
-import Footer from './components/footer';
-import './App.css';
-
-import PartnersBanner from './components/Partnerbanner';
-import AnimatedFeatures from './components/AnimatedFeatures';
-import ParallaxSection from './components/ParallaxSection';
-import ScrollRevealSection from './components/ScrollRevealSection';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+import './styles/theme.css';
+import './styles/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <ParallaxSection />
-        <AnimatedFeatures />
-        <ScrollRevealSection />
-        <PartnersBanner/>
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <AppRoutes />
+      </div>
+    </Router>
   );
 }
 

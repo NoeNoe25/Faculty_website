@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import '../styles/ParallaxSection.css';
+import '../styles/components/ParallaxSection.css';
 import bgimg from "../assets/albums/KMITL.12.jpg";
 
 const ParallaxSection = () => {
