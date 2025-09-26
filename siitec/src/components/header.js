@@ -51,14 +51,14 @@ const Header = () => {
     { 
       name: language === 'EN' ? 'Student Life' : 'ชีวิตนักศึกษา',
       submenu: [
-        { name: language === 'EN' ? 'Clubs & Activities' : 'ชมรมและกิจกรรม', link: '#clubs' },
+        { name: language === 'EN' ? 'Clubs & Activities' : 'ชมรมและกิจกรรม', link: '/OrganizationalStructure' },
         { name: language === 'EN' ? 'Housing' : 'หอพัก', link: '#housing' },
         { name: language === 'EN' ? 'Events' : 'กิจกรรมพิเศษ', link: '#events' },
         { name: language === 'EN' ? 'News & Events' : 'ข่าวและกิจกรรม', link: '#news' }
       ]
     },
     { name: language === 'EN' ? 'Programs' : 'การรับสมัคร', link: '/programs' },
-    { name: language === 'EN' ? 'About Us' : 'เกี่ยวกับเรา', link: '#about' },
+    { name: language === 'EN' ? 'About Us' : 'เกี่ยวกับเรา', link: '/aboutus' },
     { name: language === 'EN' ? 'Contact' : 'ติดต่อ', link: '#contact' }
   ];
 
