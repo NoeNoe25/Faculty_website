@@ -5,8 +5,9 @@ import BreadcrumbSection from './BreadcrumbSection';
 import MainContent from './MainContent';
 
 
-const BachelorEngineeringManufacturingSystem = () => {
+const ProgramDetails = () => {
   return (
+
     <>
       <Helmet>
         <title>Bachelor of Engineering in Manufacturing System Engineering | SIIT Academic Programs</title>
@@ -31,4 +32,4 @@ const BachelorEngineeringManufacturingSystem = () => {
   );
 };
 
-export default BachelorEngineeringManufacturingSystem;
+export default ProgramDetails;

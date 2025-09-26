@@ -2,9 +2,11 @@
 import React, { useState } from 'react';
 import '../styles/Programs.css';
 import image1 from "../assets/photo1.jpg";
+import { useNavigate } from 'react-router-dom';
 
 const Programs = () => {
   const [activeDegree, setActiveDegree] = useState('bachelor');
+  const navigate = useNavigate(); // Move this to the top level of component
 
   const programsData = {
     bachelor: {
@@ -12,6 +14,7 @@ const Programs = () => {
       duration: "4 Years",
       degrees: [
         {
+          id: "its-bsc", // Add unique IDs for each program
           name: "B.Sc. in Integrated Technology Systems",
           code: "ITS-BSC",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.Comprehensive foundation in technology integration across multiple disciplines",
@@ -21,6 +24,7 @@ const Programs = () => {
           image: "/images/bachelor-its.jpg"
         },
         {
+          id: "nte-bsc",
           name: "B.Sc. in Nanotechnology Engineering",
           code: "NTE-BSC",
           description: "Focus on nanoscale materials, devices, and applications. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.",
@@ -30,6 +34,7 @@ const Programs = () => {
           image: image1
         },
         {
+          id: "stem-bsc",
           name: "B.Sc. in STEM Education",
           code: "STEM-BSC",
           description: "Prepare for teaching and educational leadership in STEM fields",
@@ -45,6 +50,7 @@ const Programs = () => {
       duration: "2 Years",
       degrees: [
         {
+          id: "ati-msc",
           name: "M.Sc. in Advanced Technology Integration",
           code: "ATI-MSC",
           description: "Advanced study in integrating emerging technologies across industries",
@@ -54,6 +60,7 @@ const Programs = () => {
           image: image1
         },
         {
+          id: "nme-msc",
           name: "M.Sc. in Nanoscience and Molecular Engineering",
           code: "NME-MSC",
           description: "Specialized research in molecular-scale engineering and applications",
@@ -63,6 +70,7 @@ const Programs = () => {
           image: image1
         },
         {
+          id: "stem-msc",
           name: "M.Sc. in STEM Leadership",
           code: "STEM-MSC",
           description: "Leadership and management in STEM education and innovation",
@@ -78,6 +86,7 @@ const Programs = () => {
       duration: "4-5 Years",
       degrees: [
         {
+          id: "iit-phd",
           name: "Ph.D. in Integrated Innovative Technology",
           code: "IIT-PHD",
           description: "Pioneering research at the intersection of multiple technology disciplines Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.",
@@ -87,6 +96,7 @@ const Programs = () => {
           image: image1
         },
         {
+          id: "nms-phd",
           name: "Ph.D. in Nanotechnology and Materials Science",
           code: "NMS-PHD",
           description: "Cutting-edge research in nanomaterials and their applications",
@@ -96,6 +106,7 @@ const Programs = () => {
           image: image1
         },
         {
+          id: "ser-phd",
           name: "Ph.D. in STEM Education Research",
           code: "SER-PHD",
           description: "Research-focused program advancing STEM education methodologies",
@@ -107,6 +118,33 @@ const Programs = () => {
       ]
     }
   };
+
+  // Function to handle program details navigation
+  const handleProgramDetails = (program) => {
+    navigate('/ProgramDetails', { 
+      state: { program } // Pass the entire program object
+    });
+  };
+
+  // // Function to handle Apply Now
+  // const handleApplyNow = (program) => {
+  //   navigate('/apply', { 
+  //     state: { program } 
+  //   });
+  // };
+
+  // // Functions for the additional info cards
+  // const handleFinancialAid = () => {
+  //   navigate('/financial-aid');
+  // };
+
+  // const handleResearchOpportunities = () => {
+  //   navigate('/research');
+  // };
+
+  // const handleInternationalStudents = () => {
+  //   navigate('/international-students');
+  // };
 
   return (
     <section id="programs" className="section programs-section">
@@ -150,39 +188,27 @@ const Programs = () => {
                   <img src={degree.image} alt={degree.name} className="degree-image" />
                 </div>
                 <div className='details-des'>
-                <div className="degree-card-header">
-                  <h4>{degree.name}</h4>
-                  <span className="degree-code">{degree.code}</span>
-                </div>
-                
-                <p className="degree-description">{degree.description}</p>
-                
-                {/* <div className="degree-details">
-                  <div className="detail-section">
-                    <h5>Core Courses</h5>
-                    <ul>
-                      {degree.courses.map((course, idx) => (
-                        <li key={idx}>{course}</li>
-                      ))}
-                    </ul>
+                  <div className="degree-card-header">
+                    <h4>{degree.name}</h4>
+                    <span className="degree-code">{degree.code}</span>
                   </div>
                   
-                  <div className="detail-section">
-                    <h5>Career Paths</h5>
-                    <div className="career-tags">
-                      {degree.careerPaths.map((path, idx) => (
-                        <span key={idx} className="career-tag">{path}</span>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="degree-description">{degree.description}</p>
                   
-              
-                </div> */}
-                
-                <div className="degree-actions">
-                  <button className="btn btn-primary">Apply Now</button>
-                  <button className="btn btn-secondary">Program Details</button>
-                </div>
+                  <div className="degree-actions">
+                    <button 
+                      className="btn btn-primary"
+                  
+                    >
+                      Apply Now
+                    </button>
+                    <button 
+                      className="btn btn-secondary" 
+                      onClick={() => handleProgramDetails(degree)}
+                    >
+                      Program Details
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -194,19 +220,34 @@ const Programs = () => {
           <div className="info-card card">
             <h4>Financial Aid & Scholarships</h4>
             <p>We offer various scholarship opportunities for outstanding students at all degree levels.</p>
-            <button className="btn btn-secondary">Learn More</button>
+            <button 
+              className="btn btn-secondary" 
+              
+            >
+              Learn More
+            </button>
           </div>
           
           <div className="info-card card">
             <h4>Research Opportunities</h4>
             <p>Work with leading researchers and access state-of-the-art facilities.</p>
-            <button className="btn btn-secondary">Explore Research</button>
+            <button 
+              className="btn btn-secondary"
+             
+            >
+              Explore Research
+            </button>
           </div>
           
           <div className="info-card card">
             <h4>International Students</h4>
             <p>Join our diverse community with dedicated support for international applicants.</p>
-            <button className="btn btn-secondary">International Info</button>
+            <button 
+              className="btn btn-secondary"
+              
+            >
+              International Info
+            </button>
           </div>
         </div>
       </div>

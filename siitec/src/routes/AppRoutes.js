@@ -15,7 +15,7 @@ const AppRoutes = () => {
         <Route path="/programs" element={<Programs />} />
         <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/OrganizationalStructure" element={<OrganizationalStructure />} />
-        <Route path="/OrganizationalStructure" element={<OrganizationalStructure />} />
+        <Route path="/ProgramDetails" element={<ProgramDetails />} />
       </Routes>
     </Layout>
   );
