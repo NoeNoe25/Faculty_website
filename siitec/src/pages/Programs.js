@@ -1,6 +1,7 @@
 // src/components/Programs.js
 import React, { useState } from 'react';
 import '../styles/Programs.css';
+import image1 from "../assets/photo1.jpg";
 
 const Programs = () => {
   const [activeDegree, setActiveDegree] = useState('bachelor');
@@ -13,18 +14,20 @@ const Programs = () => {
         {
           name: "B.Sc. in Integrated Technology Systems",
           code: "ITS-BSC",
-          description: "Comprehensive foundation in technology integration across multiple disciplines",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.Comprehensive foundation in technology integration across multiple disciplines",
           courses: ["Systems Engineering", "Data Analytics", "Technology Management", "Innovation Design"],
           careerPaths: ["Technology Analyst", "Systems Integrator", "Project Coordinator"],
-          requirements: ["High School Diploma", "Math & Science prerequisites"]
+          requirements: ["High School Diploma", "Math & Science prerequisites"],
+          image: "/images/bachelor-its.jpg"
         },
         {
           name: "B.Sc. in Nanotechnology Engineering",
           code: "NTE-BSC",
-          description: "Focus on nanoscale materials, devices, and applications",
+          description: "Focus on nanoscale materials, devices, and applications. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.",
           courses: ["Nanomaterials Science", "Quantum Mechanics", "Microfabrication", "Nano-characterization"],
           careerPaths: ["Nano-technician", "Research Assistant", "Quality Control Specialist"],
-          requirements: ["High School Diploma", "Chemistry & Physics prerequisites"]
+          requirements: ["High School Diploma", "Chemistry & Physics prerequisites"],
+          image: image1
         },
         {
           name: "B.Sc. in STEM Education",
@@ -32,7 +35,8 @@ const Programs = () => {
           description: "Prepare for teaching and educational leadership in STEM fields",
           courses: ["Educational Technology", "Curriculum Design", "STEM Pedagogy", "Classroom Innovation"],
           careerPaths: ["STEM Teacher", "Educational Coordinator", "Curriculum Developer"],
-          requirements: ["High School Diploma", "Teaching aptitude assessment"]
+          requirements: ["High School Diploma", "Teaching aptitude assessment"],
+          image: image1
         }
       ]
     },
@@ -46,7 +50,8 @@ const Programs = () => {
           description: "Advanced study in integrating emerging technologies across industries",
           courses: ["Advanced Systems Design", "Technology Strategy", "Innovation Management", "Research Methods"],
           careerPaths: ["Technology Manager", "Innovation Consultant", "R&D Lead"],
-          requirements: ["Bachelor's degree in related field", "3.0 GPA minimum", "Research proposal"]
+          requirements: ["Bachelor's degree in related field", "3.0 GPA minimum", "Research proposal"],
+          image: image1
         },
         {
           name: "M.Sc. in Nanoscience and Molecular Engineering",
@@ -54,7 +59,8 @@ const Programs = () => {
           description: "Specialized research in molecular-scale engineering and applications",
           courses: ["Advanced Nanomaterials", "Molecular Dynamics", "Nanofabrication Techniques", "Thesis Research"],
           careerPaths: ["Research Scientist", "Process Engineer", "Materials Specialist"],
-          requirements: ["Bachelor's in Engineering or Science", "3.2 GPA minimum", "Lab experience"]
+          requirements: ["Bachelor's in Engineering or Science", "3.2 GPA minimum", "Lab experience"],
+          image: image1
         },
         {
           name: "M.Sc. in STEM Leadership",
@@ -62,7 +68,8 @@ const Programs = () => {
           description: "Leadership and management in STEM education and innovation",
           courses: ["STEM Policy", "Leadership Theory", "Program Evaluation", "Capstone Project"],
           careerPaths: ["STEM Director", "Education Administrator", "Policy Advisor"],
-          requirements: ["Bachelor's degree", "2 years relevant experience", "Leadership statement"]
+          requirements: ["Bachelor's degree", "2 years relevant experience", "Leadership statement"],
+          image: image1
         }
       ]
     },
@@ -73,10 +80,11 @@ const Programs = () => {
         {
           name: "Ph.D. in Integrated Innovative Technology",
           code: "IIT-PHD",
-          description: "Pioneering research at the intersection of multiple technology disciplines",
+          description: "Pioneering research at the intersection of multiple technology disciplines Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.",
           courses: ["Advanced Research Methods", "Interdisciplinary Theory", "Dissertation Research", "Academic Writing"],
           careerPaths: ["University Professor", "Chief Technology Officer", "Research Director"],
-          requirements: ["Master's degree", "3.5 GPA minimum", "Research publications", "Faculty interview"]
+          requirements: ["Master's degree", "3.5 GPA minimum", "Research publications", "Faculty interview"],
+          image: image1
         },
         {
           name: "Ph.D. in Nanotechnology and Materials Science",
@@ -84,7 +92,8 @@ const Programs = () => {
           description: "Cutting-edge research in nanomaterials and their applications",
           courses: ["Advanced Characterization", "Theoretical Modeling", "Grant Writing", "Laboratory Management"],
           careerPaths: ["Research Scientist", "Materials Engineer", "Academic Researcher"],
-          requirements: ["Master's in related field", "Strong research background", "Publication record"]
+          requirements: ["Master's in related field", "Strong research background", "Publication record"],
+          image: image1
         },
         {
           name: "Ph.D. in STEM Education Research",
@@ -92,7 +101,8 @@ const Programs = () => {
           description: "Research-focused program advancing STEM education methodologies",
           courses: ["Qualitative Research", "Statistical Analysis", "Educational Theory", "Dissertation Development"],
           careerPaths: ["Education Researcher", "University Professor", "Policy Analyst"],
-          requirements: ["Master's degree", "Teaching experience", "Research proposal"]
+          requirements: ["Master's degree", "Teaching experience", "Research proposal"],
+          image: image1
         }
       ]
     }
@@ -136,6 +146,10 @@ const Programs = () => {
           <div className="degrees-grid">
             {programsData[activeDegree].degrees.map((degree, index) => (
               <div key={index} className="degree-card card">
+                <div className="degree-image-wrapper">
+                  <img src={degree.image} alt={degree.name} className="degree-image" />
+                </div>
+                <div className='details-des'>
                 <div className="degree-card-header">
                   <h4>{degree.name}</h4>
                   <span className="degree-code">{degree.code}</span>
@@ -143,7 +157,7 @@ const Programs = () => {
                 
                 <p className="degree-description">{degree.description}</p>
                 
-                <div className="degree-details">
+                {/* <div className="degree-details">
                   <div className="detail-section">
                     <h5>Core Courses</h5>
                     <ul>
@@ -162,19 +176,13 @@ const Programs = () => {
                     </div>
                   </div>
                   
-                  <div className="detail-section">
-                    <h5>Admission Requirements</h5>
-                    <ul>
-                      {degree.requirements.map((req, idx) => (
-                        <li key={idx}>{req}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+              
+                </div> */}
                 
                 <div className="degree-actions">
                   <button className="btn btn-primary">Apply Now</button>
                   <button className="btn btn-secondary">Program Details</button>
+                </div>
                 </div>
               </div>
             ))}
