@@ -1,7 +1,12 @@
 // src/components/Programs.js
 import React, { useState } from 'react';
 import '../styles/Programs.css';
-import image1 from "../assets/photo1.jpg";
+import image1 from "../assets/albums/DSC_3872.jpg";
+import image2 from "../assets/albums/Nano123456.JPG";
+import image3 from "../assets/albums/fbrication.webp";
+import image4 from "../assets/albums/DSC_3894.jpg";
+import { FaUserGraduate, FaBook, FaMicroscope } from 'react-icons/fa';
+
 import { useNavigate } from 'react-router-dom';
 
 const Programs = () => {
@@ -21,7 +26,7 @@ const Programs = () => {
           courses: ["Systems Engineering", "Data Analytics", "Technology Management", "Innovation Design"],
           careerPaths: ["Technology Analyst", "Systems Integrator", "Project Coordinator"],
           requirements: ["High School Diploma", "Math & Science prerequisites"],
-          image: "/images/bachelor-its.jpg"
+          image: image1
         },
         {
           id: "nte-bsc",
@@ -31,7 +36,7 @@ const Programs = () => {
           courses: ["Nanomaterials Science", "Quantum Mechanics", "Microfabrication", "Nano-characterization"],
           careerPaths: ["Nano-technician", "Research Assistant", "Quality Control Specialist"],
           requirements: ["High School Diploma", "Chemistry & Physics prerequisites"],
-          image: image1
+          image: 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         },
         {
           id: "stem-bsc",
@@ -41,7 +46,7 @@ const Programs = () => {
           courses: ["Educational Technology", "Curriculum Design", "STEM Pedagogy", "Classroom Innovation"],
           careerPaths: ["STEM Teacher", "Educational Coordinator", "Curriculum Developer"],
           requirements: ["High School Diploma", "Teaching aptitude assessment"],
-          image: image1
+          image: 'https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=1225&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         }
       ]
     },
@@ -57,7 +62,7 @@ const Programs = () => {
           courses: ["Advanced Systems Design", "Technology Strategy", "Innovation Management", "Research Methods"],
           careerPaths: ["Technology Manager", "Innovation Consultant", "R&D Lead"],
           requirements: ["Bachelor's degree in related field", "3.0 GPA minimum", "Research proposal"],
-          image: image1
+          image: image2
         },
         {
           id: "nme-msc",
@@ -67,7 +72,7 @@ const Programs = () => {
           courses: ["Advanced Nanomaterials", "Molecular Dynamics", "Nanofabrication Techniques", "Thesis Research"],
           careerPaths: ["Research Scientist", "Process Engineer", "Materials Specialist"],
           requirements: ["Bachelor's in Engineering or Science", "3.2 GPA minimum", "Lab experience"],
-          image: image1
+          image: image3
         },
         {
           id: "stem-msc",
@@ -77,7 +82,7 @@ const Programs = () => {
           courses: ["STEM Policy", "Leadership Theory", "Program Evaluation", "Capstone Project"],
           careerPaths: ["STEM Director", "Education Administrator", "Policy Advisor"],
           requirements: ["Bachelor's degree", "2 years relevant experience", "Leadership statement"],
-          image: image1
+          image: image4
         }
       ]
     },
@@ -93,7 +98,7 @@ const Programs = () => {
           courses: ["Advanced Research Methods", "Interdisciplinary Theory", "Dissertation Research", "Academic Writing"],
           careerPaths: ["University Professor", "Chief Technology Officer", "Research Director"],
           requirements: ["Master's degree", "3.5 GPA minimum", "Research publications", "Faculty interview"],
-          image: image1
+          image: 'https://images.unsplash.com/photo-1729843420196-1ff32bb39db5?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         },
         {
           id: "nms-phd",
@@ -103,7 +108,7 @@ const Programs = () => {
           courses: ["Advanced Characterization", "Theoretical Modeling", "Grant Writing", "Laboratory Management"],
           careerPaths: ["Research Scientist", "Materials Engineer", "Academic Researcher"],
           requirements: ["Master's in related field", "Strong research background", "Publication record"],
-          image: image1
+          image: "https://images.pexels.com/photos/17485658/pexels-photo-17485658.png"
         },
         {
           id: "ser-phd",
@@ -113,7 +118,7 @@ const Programs = () => {
           courses: ["Qualitative Research", "Statistical Analysis", "Educational Theory", "Dissertation Development"],
           careerPaths: ["Education Researcher", "University Professor", "Policy Analyst"],
           requirements: ["Master's degree", "Teaching experience", "Research proposal"],
-          image: image1
+          image: 'https://images.pexels.com/photos/6755136/pexels-photo-6755136.jpeg'
         }
       ]
     }
@@ -163,7 +168,8 @@ const Programs = () => {
               onClick={() => setActiveDegree(degree)}
             >
               <span className="degree-icon">
-                {degree === 'bachelor' ? '🎓' : degree === 'master' ? '📚' : '🔬'}
+                {degree === 'bachelor' ? <FaUserGraduate /> : degree === 'master' ? <FaBook /> : <FaMicroscope />}
+
               </span>
               <span className="degree-text">
                 {degree === 'bachelor' ? 'Bachelor' : degree === 'master' ? 'Master' : 'Doctoral'}

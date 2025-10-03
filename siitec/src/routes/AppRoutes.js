@@ -6,7 +6,10 @@ import Home from '../pages/Home';
 import Programs from '../pages/Programs';
 import Aboutus from '../pages/Aboutus';
 import OrganizationalStructure from '../pages/OrganizationalStructure';
-import ProgramDetails from '../pages/ProgramDetails';
+import ProgramDetails from '../pages/bsc';
+import ProgramDetailsWithNav from '../pages/details';
+import AcademicCalendar from '../pages/academiccalendar';
+
 const AppRoutes = () => {
   return (
     <Layout>
@@ -15,7 +18,9 @@ const AppRoutes = () => {
         <Route path="/programs" element={<Programs />} />
         <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/OrganizationalStructure" element={<OrganizationalStructure />} />
-        <Route path="/ProgramDetails" element={<ProgramDetails />} />
+        <Route path="/bsc" element={<ProgramDetails />} />
+        <Route path="/ProgramDetailsWithNav" element={<ProgramDetailsWithNav />} />
+        <Route path="/AcademicCalendar" element={<AcademicCalendar />} />
       </Routes>
     </Layout>
   );

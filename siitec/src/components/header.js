@@ -1,8 +1,9 @@
 // src/components/Header.jsx
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Add this import
 import '../styles/theme.css';
 import '../styles/header.css';
-import logoImage from '../assets/logos/siiteclogo (1).png'; // Adjust path to your logo
+import logoImage from '../assets/logos/siiteclogo (1).png';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,8 +36,8 @@ const Header = () => {
     { 
       name: language === 'EN' ? 'Academics' : 'การศึกษา',
       submenu: [
-        { name: language === 'EN' ? 'Undergraduate' : 'ปริญญาตรี', link: '#undergrad' },
-        { name: language === 'EN' ? 'Graduate' : 'บัณฑิตศึกษา', link: '#grad' },
+        { name: language === 'EN' ? 'Undergraduate' : 'ปริญญาตรี', link: '/bsc' },
+        { name: language === 'EN' ? 'Graduate' : 'บัณฑิตศึกษา', link: '/ProgramDetailsWithNav' },
         { name: language === 'EN' ? 'Online Programs' : 'หลักสูตรออนไลน์', link: '#online' }
       ]
     },
@@ -52,7 +53,7 @@ const Header = () => {
       name: language === 'EN' ? 'Student Life' : 'ชีวิตนักศึกษา',
       submenu: [
         { name: language === 'EN' ? 'Clubs & Activities' : 'ชมรมและกิจกรรม', link: '/OrganizationalStructure' },
-        { name: language === 'EN' ? 'Housing' : 'หอพัก', link: '#housing' },
+        { name: language === 'EN' ? 'Academic Calendar' : 'หอพัก', link: '/AcademicCalendar' },
         { name: language === 'EN' ? 'Events' : 'กิจกรรมพิเศษ', link: '#events' },
         { name: language === 'EN' ? 'News & Events' : 'ข่าวและกิจกรรม', link: '#news' }
       ]
@@ -67,10 +68,11 @@ const Header = () => {
       <div className="header-container">
         <div className="logo-container">
           <div className="logo-image">
-            <img src={logoImage} alt="SIITec Logo" />
+            <Link to="/">
+              <img src={logoImage} alt="SIITec Logo" />
+            </Link>
           </div>
           <div className="logo-text">
-          
             <p>{language === 'EN' ? 'School of Integrated Innovative Technology' : 'คณะเทคโนโลยีบูรณาการนวัตกรรม'}</p>
           </div>
         </div>
@@ -105,31 +107,31 @@ const Header = () => {
                     <ul className={`dropdown-menu vertical ${activeDropdown === item.name ? 'show' : ''}`}>
                       {item.submenu.map((subItem, subIndex) => (
                         <li key={subIndex}>
-                          <a 
+                          <Link 
                             className="dropdown-item" 
-                            href={subItem.link}
+                            to={subItem.link}
                             onClick={() => {
                               setMenuOpen(false);
                               setActiveDropdown(null);
                             }}
                           >
                             {subItem.name}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   </>
                 ) : (
-                  <a 
+                  <Link 
                     className="nav-link"
-                    href={item.link}
+                    to={item.link}
                     onClick={() => {
                       setMenuOpen(false);
                       setActiveDropdown(null);
                     }}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </li>
             ))}
@@ -153,4 +155,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default Header;
