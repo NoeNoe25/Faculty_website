@@ -11,7 +11,10 @@
   color: white;
   position: relative;
   overflow: hidden;
+  z-index: 0;
+  
 }
+
 
 .program-page__hero .program-page__container {
   display: flex;
@@ -25,14 +28,19 @@
 .program-page__hero-content {
   flex: 1;
   max-width: 600px;
+   z-index: 3;
 }
 
 .program-page__hero-title {
   font-size: 3.2rem;
-  font-weight: 200;
+  font-weight: 400;
   margin-bottom: 1.5rem;
-  color: white;
+  background: linear-gradient(90deg, #642a00, #bf7530,#cA8c50); 
   line-height: 1.1;
+   -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
 }
 
 .program-page__hero-subtitle {
@@ -41,6 +49,7 @@
   line-height: 1.6;
   font-weight: 300;
   opacity: 0.9;
+  color: #4A5455;
 }
 
 .program-page__hero-actions {
@@ -284,6 +293,7 @@
   background: var(--background-secondary);
   border-radius: var(--border-radius);
   transition: var(--transition-medium);
+  font-family: var(--font-body);
 }
 
 .program-page__feature-card:hover {
@@ -294,6 +304,7 @@
 .program-page__feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--gold-copper);
 }
 
 .program-page__feature-card h4 {

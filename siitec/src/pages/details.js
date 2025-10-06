@@ -1,6 +1,31 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/details.css';
+import { 
+  FaChartBar, 
+  FaBook, 
+  FaBriefcase, 
+  FaGraduationCap, 
+  FaAward, 
+  FaUniversity,
+  FaDownload
+} from 'react-icons/fa';
 
+import {  
+  FaHandshake, 
+  FaGlobeAmericas,
+  FaUserTie,
+  FaLightbulb,
+  FaRocket
+} from 'react-icons/fa';
+
+import { 
+  FaAtom,
+  FaMicroscope,
+  FaFlask,
+  FaLaptopCode,
+  FaThermometerHalf,
+  FaDna
+} from 'react-icons/fa';
 const ProgramDetailsWithNav = () => {
   const [activeSection, setActiveSection] = useState('overview');
   const [activeYear, setActiveYear] = useState(1);
@@ -109,8 +134,10 @@ const ProgramDetailsWithNav = () => {
   return (
     <div className="program-page">
       {/* Hero Section */}
-      <section className="program-page__hero">
-        <div className="program-page__container">
+      <section className="program-page__hero" style={{ height: '80vh' }}>
+         
+        <div className="program-page__container" >
+         
           <div className="program-page__hero-content">
             <h1 className="program-page__hero-title">B.Sc. in Nanotechnology Engineering</h1>
             <p className="program-page__hero-subtitle">
@@ -134,84 +161,98 @@ const ProgramDetailsWithNav = () => {
             </div>
           </div>
         </div>
+        <div className="overlay">
+            <div className="tech-grid-overlay"></div>
+          </div>
       </section>
 
       <div className="program-page__main-wrapper">
         {/* Side Navigation */}
         <nav className="program-page__side-nav">
-          <div className="program-page__nav-header">
-            <h3>Program Details</h3>
-          </div>
-          <ul className="program-page__nav-links">
-            <li>
-              <button 
-                className={`program-page__nav-link ${activeSection === 'overview' ? 'program-page__nav-link--active' : ''}`}
-                onClick={() => scrollToSection('overview')}
-              >
-                <span className="program-page__nav-icon">📊</span>
-                Program Overview
-              </button>
-            </li>
-            <li>
-              <button 
-                className={`program-page__nav-link ${activeSection === 'curriculum' ? 'program-page__nav-link--active' : ''}`}
-                onClick={() => scrollToSection('curriculum')}
-              >
-                <span className="program-page__nav-icon">📚</span>
-                Curriculum
-              </button>
-            </li>
-            <li>
-              <button 
-                className={`program-page__nav-link ${activeSection === 'careers' ? 'program-page__nav-link--active' : ''}`}
-                onClick={() => scrollToSection('careers')}
-              >
-                <span className="program-page__nav-icon">💼</span>
-                Career Paths
-              </button>
-            </li>
-            <li>
-              <button 
-                className={`program-page__nav-link ${activeSection === 'admissions' ? 'program-page__nav-link--active' : ''}`}
-                onClick={() => scrollToSection('admissions')}
-              >
-                <span className="program-page__nav-icon">🎓</span>
-                Admissions
-              </button>
-            </li>
-            <li>
-              <button 
-                className={`program-page__nav-link ${activeSection === 'scholarships' ? 'program-page__nav-link--active' : ''}`}
-                onClick={() => scrollToSection('scholarships')}
-              >
-                <span className="program-page__nav-icon">🏆</span>
-                Scholarships
-              </button>
-            </li>
-            
-            <li>
-              <button 
-                className={`program-page__nav-link ${activeSection === 'facilities' ? 'program-page__nav-link--active' : ''}`}
-                onClick={() => scrollToSection('facilities')}
-              >
-                <span className="program-page__nav-icon">🏛️</span>
-                Facilities
-              </button>
-            </li>
-          </ul>
-          <div className="program-page__nav-footer">
-            <button className="program-page__btn program-page__btn--outline program-page__nav-cta">
-              Download Brochure
-            </button>
-
-            
-          </div>
-          <div className="program-page__nav-footer">
-            <button className="program-page__btn program-page__btn--outline program-page__nav-cta">
-              Download Academic Calendar
-            </button>
-          </div>
-        </nav>
+  <div className="program-page__nav-header">
+    <h3>Program Details</h3>
+  </div>
+  <ul className="program-page__nav-links">
+    <li>
+      <button 
+        className={`program-page__nav-link ${activeSection === 'overview' ? 'program-page__nav-link--active' : ''}`}
+        onClick={() => scrollToSection('overview')}
+      >
+        <span className="program-page__nav-icon">
+          <FaChartBar />
+        </span>
+        Program Overview
+      </button>
+    </li>
+    <li>
+      <button 
+        className={`program-page__nav-link ${activeSection === 'curriculum' ? 'program-page__nav-link--active' : ''}`}
+        onClick={() => scrollToSection('curriculum')}
+      >
+        <span className="program-page__nav-icon">
+          <FaBook />
+        </span>
+        Curriculum
+      </button>
+    </li>
+    <li>
+      <button 
+        className={`program-page__nav-link ${activeSection === 'careers' ? 'program-page__nav-link--active' : ''}`}
+        onClick={() => scrollToSection('careers')}
+      >
+        <span className="program-page__nav-icon">
+          <FaBriefcase />
+        </span>
+        Career Paths
+      </button>
+    </li>
+    <li>
+      <button 
+        className={`program-page__nav-link ${activeSection === 'admissions' ? 'program-page__nav-link--active' : ''}`}
+        onClick={() => scrollToSection('admissions')}
+      >
+        <span className="program-page__nav-icon">
+          <FaGraduationCap />
+        </span>
+        Admissions
+      </button>
+    </li>
+    <li>
+      <button 
+        className={`program-page__nav-link ${activeSection === 'scholarships' ? 'program-page__nav-link--active' : ''}`}
+        onClick={() => scrollToSection('scholarships')}
+      >
+        <span className="program-page__nav-icon">
+          <FaAward />
+        </span>
+        Scholarships
+      </button>
+    </li>
+    <li>
+      <button 
+        className={`program-page__nav-link ${activeSection === 'facilities' ? 'program-page__nav-link--active' : ''}`}
+        onClick={() => scrollToSection('facilities')}
+      >
+        <span className="program-page__nav-icon">
+          <FaUniversity />
+        </span>
+        Facilities
+      </button>
+    </li>
+  </ul>
+  <div className="program-page__nav-footer">
+    <button className="program-page__btn program-page__btn--outline program-page__nav-cta">
+      <FaDownload className="program-page__btn-icon" /> &nbsp;
+      Download Brochure
+    </button>
+  </div>
+  <div className="program-page__nav-footer">
+    <button className="program-page__btn program-page__btn--outline program-page__nav-cta">
+      <FaDownload className="program-page__btn-icon" />  &nbsp;
+      Download Academic Calendar
+    </button>
+  </div>
+</nav>
 
         {/* Main Content */}
         <main className="program-page__main-content">
@@ -254,22 +295,28 @@ const ProgramDetailsWithNav = () => {
               </div>
 
               <div className="program-page__features-grid">
-                <div className="program-page__feature-card">
-                  <div className="program-page__feature-icon">🔬</div>
-                  <h4>Hands-on Learning</h4>
-                  <p>Extensive laboratory experience with state-of-the-art equipment including SEM, TEM, and cleanroom facilities</p>
-                </div>
-                <div className="program-page__feature-card">
-                  <div className="program-page__feature-icon">🤝</div>
-                  <h4>Industry Connections</h4>
-                  <p>Partnerships with leading tech companies and research institutions for internships and co-op opportunities</p>
-                </div>
-                <div className="program-page__feature-card">
-                  <div className="program-page__feature-icon">🌍</div>
-                  <h4>Global Perspective</h4>
-                  <p>International research opportunities and exchange programs with partner universities worldwide</p>
-                </div>
-              </div>
+  <div className="program-page__feature-card">
+    <div className="program-page__feature-icon">
+      <FaFlask />
+    </div>
+    <h4>Hands-on Learning</h4>
+    <p>Extensive laboratory experience with state-of-the-art equipment including SEM, TEM, and cleanroom facilities</p>
+  </div>
+  <div className="program-page__feature-card">
+    <div className="program-page__feature-icon">
+      <FaHandshake />
+    </div>
+    <h4>Industry Connections</h4>
+    <p>Partnerships with leading tech companies and research institutions for internships and co-op opportunities</p>
+  </div>
+  <div className="program-page__feature-card">
+    <div className="program-page__feature-icon">
+      <FaGlobeAmericas />
+    </div>
+    <h4>Global Perspective</h4>
+    <p>International research opportunities and exchange programs with partner universities worldwide</p>
+  </div>
+</div>
             </div>
           </section>
 
@@ -576,39 +623,51 @@ const ProgramDetailsWithNav = () => {
               <p>State-of-the-art infrastructure for nanotechnology research and education</p>
             </div>
             <div className="program-page__section-content">
-              <div className="program-page__facilities-grid">
-                <div className="program-page__facility-card">
-                  <div className="program-page__facility-icon">🔬</div>
-                  <h4>Cleanroom Facility</h4>
-                  <p>Class 100/1000 cleanroom with electron beam lithography, plasma etching, thin film deposition systems, and photolithography equipment for nanoscale device fabrication.</p>
-                </div>
-                <div className="program-page__facility-card">
-                  <div className="program-page__facility-icon">⚡</div>
-                  <h4>Characterization Lab</h4>
-                  <p>Advanced microscopy suite including SEM, TEM, AFM, X-ray diffraction, and spectroscopy equipment for comprehensive nanoscale analysis and materials characterization.</p>
-                </div>
-                <div className="program-page__facility-card">
-                  <div className="program-page__facility-icon">🧪</div>
-                  <h4>Wet Chemistry Labs</h4>
-                  <p>Specialized laboratories for nanoparticle synthesis, surface functionalization, biological applications, and chemical processing with fume hoods and specialized equipment.</p>
-                </div>
-                <div className="program-page__facility-card">
-                  <div className="program-page__facility-icon">💻</div>
-                  <h4>Computational Center</h4>
-                  <p>High-performance computing cluster for molecular dynamics simulations, quantum mechanical calculations, and computational modeling of nanoscale systems.</p>
-                </div>
-                <div className="program-page__facility-card">
-                  <div className="program-page__facility-icon">🌡️</div>
-                  <h4>Advanced Materials Testing</h4>
-                  <p>Comprehensive testing facilities for mechanical, thermal, electrical, and optical properties of nanomaterials under various environmental conditions.</p>
-                </div>
-                <div className="program-page__facility-card">
-                  <div className="program-page__facility-icon">🔍</div>
-                  <h4>Bio-Nano Interface Lab</h4>
-                  <p>Specialized facility for studying interactions between nanomaterials and biological systems, including cell culture facilities and biosafety cabinets.</p>
-                </div>
-              </div>
-            </div>
+  <div className="program-page__facilities-grid">
+    <div className="program-page__facility-card">
+      <div className="program-page__facility-icon">
+        <FaAtom />
+      </div>
+      <h4>Cleanroom Facility</h4>
+      <p>Class 100/1000 cleanroom with electron beam lithography, plasma etching, thin film deposition systems, and photolithography equipment for nanoscale device fabrication.</p>
+    </div>
+    <div className="program-page__facility-card">
+      <div className="program-page__facility-icon">
+        <FaMicroscope />
+      </div>
+      <h4>Characterization Lab</h4>
+      <p>Advanced microscopy suite including SEM, TEM, AFM, X-ray diffraction, and spectroscopy equipment for comprehensive nanoscale analysis and materials characterization.</p>
+    </div>
+    <div className="program-page__facility-card">
+      <div className="program-page__facility-icon">
+        <FaFlask />
+      </div>
+      <h4>Wet Chemistry Labs</h4>
+      <p>Specialized laboratories for nanoparticle synthesis, surface functionalization, biological applications, and chemical processing with fume hoods and specialized equipment.</p>
+    </div>
+    <div className="program-page__facility-card">
+      <div className="program-page__facility-icon">
+        <FaLaptopCode />
+      </div>
+      <h4>Computational Center</h4>
+      <p>High-performance computing cluster for molecular dynamics simulations, quantum mechanical calculations, and computational modeling of nanoscale systems.</p>
+    </div>
+    <div className="program-page__facility-card">
+      <div className="program-page__facility-icon">
+        <FaThermometerHalf />
+      </div>
+      <h4>Advanced Materials Testing</h4>
+      <p>Comprehensive testing facilities for mechanical, thermal, electrical, and optical properties of nanomaterials under various environmental conditions.</p>
+    </div>
+    <div className="program-page__facility-card">
+      <div className="program-page__facility-icon">
+        <FaDna />
+      </div>
+      <h4>Bio-Nano Interface Lab</h4>
+      <p>Specialized facility for studying interactions between nanomaterials and biological systems, including cell culture facilities and biosafety cabinets.</p>
+    </div>
+  </div>
+</div>
           </section>
 
           {/* Final CTA */}

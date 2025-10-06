@@ -124,12 +124,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-align: center;
 }
 
 .section-title p {
   font-size: 1.2rem;
   color: var(--text-light);
   font-weight: 400;
+    text-align: center;
 }
 
 /* Program Overview */
@@ -447,8 +449,8 @@
 
 .btn-secondary {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--slate-dark);
+  border: 2px solid var(--gold-copper-light);
 }
 
 .btn-secondary:hover {
@@ -459,7 +461,7 @@
 .btn-outline {
   background: transparent;
   color: var(--slate-dark);
-  border: 2px solid var(--slate-base);
+  background: var(--gold-copper);
 }
 
 .btn-outline:hover {

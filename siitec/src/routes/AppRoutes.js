@@ -9,6 +9,7 @@ import OrganizationalStructure from '../pages/OrganizationalStructure';
 import ProgramDetails from '../pages/bsc';
 import ProgramDetailsWithNav from '../pages/details';
 import AcademicCalendar from '../pages/academiccalendar';
+import SIITECAbout from '../pages/About';
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Route path="/bsc" element={<ProgramDetails />} />
         <Route path="/ProgramDetailsWithNav" element={<ProgramDetailsWithNav />} />
         <Route path="/AcademicCalendar" element={<AcademicCalendar />} />
+        <Route path="/About2" element={<SIITECAbout />} />
       </Routes>
     </Layout>
   );
