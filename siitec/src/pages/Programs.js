@@ -126,7 +126,7 @@ const Programs = () => {
 
   // Function to handle program details navigation
   const handleProgramDetails = (program) => {
-    navigate('/ProgramDetails', { 
+    navigate('/ProgramDetailsWithNav', { 
       state: { program } // Pass the entire program object
     });
   };
