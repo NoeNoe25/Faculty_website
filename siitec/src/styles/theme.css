@@ -196,6 +196,19 @@ h6 {
   font-weight: 300;
 }
 
+.social-icon {
+  color: var(--gold-copper-bright);
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 1rem; /* Consistent social icon size */
+}
+
+
 /* Responsive Typography */
 @media (max-width: 1024px) {
   h1 { font-size: 3rem; }

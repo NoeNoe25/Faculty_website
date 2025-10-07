@@ -105,7 +105,7 @@ const Header = () => {
         { name: language === 'EN' ? 'Faculty Committee' : 'หอพัก', link: '#' },
         { name: language === 'EN' ? 'Executive' : 'หอพัก', link: '#' },
         { name: language === 'EN' ? 'Lecturer' : 'หอพัก', link: '#' },
-        { name: language === 'EN' ? 'Staff' : 'หอพัก', link: '#' }
+        { name: language === 'EN' ? 'Staff' : 'หอพัก', link: '/AcademicStaff' }
       ]
     },
     { name: language === 'EN' ? 'Contact' : 'ติดต่อเรา', link: '/Contact' }
