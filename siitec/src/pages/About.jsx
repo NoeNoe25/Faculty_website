@@ -52,10 +52,10 @@ export default function SIITECAbout() {
   return (
     <section className="about-section">
       {/* Hero Section */}
-      <div className="about-hero">
-        <div className="hero-content">
+      <div className="aboutpage_hero"  style={{ height: '80vh' }}>
+        <div className="about_hero-content">
           <h1>About SIITEC</h1>
-          <p className="hero-subtitle">
+          <p className="about_hero-subtitle">
             The Faculty of Integrated Innovative Technology (SIITEC) at KMITL is
             home to two pioneering programs, MediloT and AMI. With hands-on
             labs, cutting-edge research, and close industry ties, we equip
@@ -70,6 +70,9 @@ export default function SIITECAbout() {
             ))}
           </div>
         </div>
+         {/* <div className="about_overlay">
+            <div className="tech-grid-overlay"></div>
+          </div> */}
       </div>
 
       {/* About Innovation Section */}

@@ -9,8 +9,9 @@
 }
 
 /* Hero Section */
-.about-hero {
-  background: var(--tech-gradient);
+.aboutpage_hero {
+
+  background: url('../assets/albums/KMITL.16.jpg') no-repeat center center/cover;
   padding: 100px 0;
   color: white;
   text-align: center;
@@ -18,23 +19,28 @@
   align-items: center;
   justify-content: center;
   min-height: 400px;
+  z-index: 0;
+  
 }
 
-.hero-content h1 {
+.about_hero-content h1 {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   font-weight: 200;
-  color: white;
+  color: slategrey;
   letter-spacing: -0.02em;
+  z-index:3;
 }
 
-.hero-subtitle {
+.about_hero-subtitle {
   font-size: 1.3rem;
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto 3rem;
   opacity: 0.9;
   font-weight: 300;
+  color: var(--slate-dark);
+  z-index: 3;
 }
 
 .hero-stats {
@@ -171,8 +177,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-  color: white;
+  background: linear-grdient(to top, rgba(0, 0, 0, 0.9), transparent);
+  color: rgb(201, 199, 199);
   padding: 2rem;
 }
 
@@ -382,6 +388,17 @@
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.about_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:white; /* Light overlay for light theme */
+  opacity: 0.4;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {

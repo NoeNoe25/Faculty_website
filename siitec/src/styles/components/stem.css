@@ -5,7 +5,7 @@
 }
 
 .stem-section::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -15,23 +15,67 @@
   opacity: 0.3;
 }
 
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  flex: 0 0 auto;
+  text-align: left;
+}
+
+.section-subtitle {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  text-align: left;
+}
+
+.section-description {
+  flex: 1;
+  max-width: 600px;
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  text-align: left;
+}
+
 .stem-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   margin-top: 40px;
 }
 
 .stem-card {
-  text-align: center;
-  padding: 40px 30px;
+  text-align: left;
+  padding: 30px 25px;
   transition: var(--transition-medium);
   position: relative;
   overflow: hidden;
+  border-radius: 8px;
+  background: white;
 }
 
 .stem-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -53,9 +97,9 @@
 }
 
 .stem-icon {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 20px;
-  display: inline-block;
+  display: block;
   transition: var(--transition-medium);
 }
 
@@ -73,7 +117,22 @@
 .stem-card p {
   color: var(--text-light);
   line-height: 1.6;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.stem-link {
+  color: var(--gold-copper);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: var(--transition-medium);
+}
+
+.stem-link:hover {
+  color: var(--gold-copper-dark);
+  transform: translateX(5px);
 }
 
 /* Individual card hover effects */
@@ -92,6 +151,11 @@
   box-shadow: 0 10px 30px rgba(168, 132, 72, 0.2);
 }
 
+.stem-card:nth-child(4):hover {
+  border-color: var(--gold-copper);
+  box-shadow: 0 10px 30px rgba(201, 166, 107, 0.2);
+}
+
 /* STEM background pattern */
 .stem-pattern {
   position: absolute;
@@ -100,33 +164,57 @@
   width: 100%;
   height: 100%;
   opacity: 0.03;
-  background-image: 
+  background-image:
     linear-gradient(45deg, var(--slate-base) 25%, transparent 25%),
     linear-gradient(-45deg, var(--slate-base) 25%, transparent 25%),
     linear-gradient(45deg, transparent 75%, var(--slate-base) 75%),
     linear-gradient(-45deg, transparent 75%, var(--slate-base) 75%);
   background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0px;
 }
 
 /* Responsive design */
+@media (max-width: 1024px) {
+  .section-header {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .section-description {
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .stem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .stem-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .stem-card {
     padding: 30px 20px;
   }
-  
+
   .stem-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .stem-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
   }
 }
