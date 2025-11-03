@@ -16,17 +16,17 @@ import logoImage from '../assets/logos/siiteclogo (1).png';
 
 // Social Icons Component with consistent size
 const SocialIcons = () => (
-  <div className="social-icons">
-    <a href="#" aria-label="Facebook" className="social-icon">
+  <div className="header_social-icons">
+    <a href="#" aria-label="Facebook" className="header_social-icon">
       <FaFacebookF />
     </a>
-    <a href="#" aria-label="Twitter" className="social-icon">
+    <a href="#" aria-label="Twitter" className="header_social-icon">
       <FaTwitter />
     </a>
-    <a href="#" aria-label="YouTube" className="social-icon">
+    <a href="#" aria-label="YouTube" className="header_social-icon">
       <FaYoutube />
     </a>
-    <a href="#" aria-label="LinkedIn" className="social-icon">
+    <a href="#" aria-label="LinkedIn" className="header_social-icon">
       <FaLinkedinIn />
     </a>
   </div>
@@ -105,7 +105,7 @@ const Header = () => {
         { name: language === 'EN' ? 'Faculty Committee' : 'หอพัก', link: '#' },
         { name: language === 'EN' ? 'Executive' : 'หอพัก', link: '#' },
         { name: language === 'EN' ? 'Lecturer' : 'หอพัก', link: '#' },
-        { name: language === 'EN' ? 'Staff' : 'หอพัก', link: '#' }
+        { name: language === 'EN' ? 'Staff' : 'หอพัก', link: '/AcademicStaff' }
       ]
     },
     { name: language === 'EN' ? 'Contact' : 'ติดต่อเรา', link: '/Contact' }

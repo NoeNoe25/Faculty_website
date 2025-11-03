@@ -150,20 +150,20 @@
 }
 
 .social-icons a {
+  color: var(--gold-copper-bright);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--text-light);
   margin-right: 1rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  font-size: 1rem;
+  padding: 0.5rem;
   border: 1px solid rgba(184, 115, 51, 0.3);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   text-decoration: none;
 }
 
 .social-icons a:before {
@@ -178,6 +178,8 @@
   transition: all 0.3s ease;
   transform: scale(0);
   border-radius: 50%;
+ 
+
 }
 
 .social-icons a i {
@@ -187,7 +189,7 @@
 }
 
 .social-icons a:hover {
-  color: var(--slate-darker);
+  color: var(--text-dark);
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(184, 115, 51, 0.3);
 }

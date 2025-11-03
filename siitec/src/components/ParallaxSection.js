@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import '../styles/components/ParallaxSection.css';
+import AnimatedNumber from '../components/AnimatedNumber';  
 import bgimg from "../assets/albums/KMITL.12.jpg";
 
 const ParallaxSection = () => {
@@ -72,50 +73,46 @@ const ParallaxSection = () => {
         </div>
         
         <div className="tech-stats-container">
-          <motion.div 
-            className="tech-stat"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="stat-value">15+</div>
-            <div className="stat-label">Research Labs</div>
-            <div className="stat-circle"></div>
-          </motion.div>
-          
-          <motion.div 
-            className="tech-stat"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className="stat-value">50+</div>
-            <div className="stat-label">Industry Partners</div>
-            <div className="stat-circle"></div>
-          </motion.div>
-          
-          <motion.div 
-            className="tech-stat"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <div className="stat-value">200+</div>
-            <div className="stat-label">Publications</div>
-            <div className="stat-circle"></div>
-          </motion.div>
-          
-          <motion.div 
-            className="tech-stat"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <div className="stat-value">95%</div>
-            <div className="stat-label">Graduate Employment</div>
-            <div className="stat-circle"></div>
-          </motion.div>
-        </div>
+  <motion.div 
+    className="tech-stat"
+    initial={{ opacity: 0, y: 20 }}
+    animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+    transition={{ duration: 0.4, delay: 0.1 }}
+  >
+    <AnimatedNumber value={15} suffix="+" />
+    <div className="stat-label">Research Labs</div>
+  </motion.div>
+  
+  <motion.div 
+    className="tech-stat"
+    initial={{ opacity: 0, y: 20 }}
+    animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+    transition={{ duration: 0.4, delay: 0.2 }}
+  >
+    <AnimatedNumber value={50} suffix="+" />
+    <div className="stat-label">Industry Partners</div>
+  </motion.div>
+  
+  <motion.div 
+    className="tech-stat"
+    initial={{ opacity: 0, y: 20 }}
+    animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+    transition={{ duration: 0.4, delay: 0.3 }}
+  >
+    <AnimatedNumber value={200} suffix="+" />
+    <div className="stat-label">Publications</div>
+  </motion.div>
+  
+  <motion.div 
+    className="tech-stat"
+    initial={{ opacity: 0, y: 20 }}
+    animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+    transition={{ duration: 0.4, delay: 0.4 }}
+  >
+    <AnimatedNumber value={95} suffix="%" />
+    <div className="stat-label">Graduate Employment</div>
+  </motion.div>
+</div>
       </section>
   );
 };

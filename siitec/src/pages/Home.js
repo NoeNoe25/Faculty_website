@@ -10,6 +10,7 @@ import ScrollRevealSection from '../components/ScrollRevealSection';
 import TrekkersHighlights from '../components/TrekkersHighlights';
 import '../styles/App.css';
 
+
 function Home() {
   return (
     <div className="Home">
