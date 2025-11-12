@@ -92,7 +92,7 @@ const Header = () => {
     { 
       name: language === 'EN' ? 'Departments/Organization' : 'ชีวิตนักศึกษา',
       submenu: [
-        { name: language === 'EN' ? 'Department of Nanoscience and Nanotechnology (NANO)' : 'ชมรมและกิจกรรม', link: '#' },
+        { name: language === 'EN' ? 'Department of Nanoscience and Nanotechnology (NANO)' : 'ชมรมและกิจกรรม', link: '/NANODepartmentPage' },
         { name: language === 'EN' ? 'Department of Manufacturing System Technology (MANU)' : 'หอพัก', link: '#' },
         { name: language === 'EN' ? 'Organization' : 'หอพัก', link: '/AcademicCalendar' }
       ]

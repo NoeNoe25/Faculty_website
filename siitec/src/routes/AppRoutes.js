@@ -11,6 +11,9 @@ import ProgramDetailsWithNav from '../pages/details';
 import AcademicCalendar from '../pages/academiccalendar';
 import SIITECAbout from '../pages/About';
 import AcademicStaff from '../pages/AcademicStaff';
+import NANODepartmentPage from '../pages/nano'; 
+
+
 
 const AppRoutes = () => {
   return (
@@ -25,6 +28,7 @@ const AppRoutes = () => {
         <Route path="/AcademicCalendar" element={<AcademicCalendar />} />
         <Route path="/About2" element={<SIITECAbout />} />
         <Route path="/AcademicStaff" element={<AcademicStaff />} />
+        <Route path="/NANODepartmentPage" element={<NANODepartmentPage />} />
       </Routes>
     </Layout>
   );
