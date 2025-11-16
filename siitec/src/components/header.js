@@ -8,7 +8,15 @@ import {
   FaLinkedinIn,
   FaChevronDown,
   FaBars,
-  FaTimes
+  FaTimes,
+  FaGraduationCap,
+  FaUserTie,
+  FaUsers,
+  FaFlask,
+  FaBook,
+  FaHome,
+  FaUniversity,
+  FaIdCard
 } from 'react-icons/fa';
 import '../styles/theme.css';
 import '../styles/header.css';
@@ -62,9 +70,68 @@ const Header = () => {
     setActiveDropdown(null);
   };
 
+  const toggleMobileMenu = () => {
+    setMenuOpen(!menuOpen);
+    setActiveDropdown(null);
+  };
+
+  // Services Mega Menu Data
+  const servicesMegaMenu = {
+    categories: [
+      {
+        title: language === 'EN' ? 'For Students' : 'สำหรับนักศึกษา',
+        icon: <FaGraduationCap />,
+        items: [
+          { name: language === 'EN' ? 'Academic Services' : 'บริการวิชาการ', link: '/student-academic' },
+          { name: language === 'EN' ? 'Career Services' : 'บริการอาชีพ', link: '/student-career' },
+          { name: language === 'EN' ? 'Student Portal' : 'พอร์ทัลนักศึกษา', link: '/student-portal' },
+          { name: language === 'EN' ? 'Scholarships' : 'ทุนการศึกษา', link: '/scholarships' }
+        ]
+      },
+      {
+        title: language === 'EN' ? 'For Faculty & Staff' : 'สำหรับคณาจารย์และบุคลากร',
+        icon: <FaUserTie />,
+        items: [
+          { name: language === 'EN' ? 'HR Services' : 'บริการทรัพยากรบุคคล', link: '/faculty-hr' },
+          { name: language === 'EN' ? 'Research Support' : 'สนับสนุนการวิจัย', link: '/research-support' },
+          { name: language === 'EN' ? 'Teaching Resources' : 'ทรัพยากรการสอน', link: '/teaching-resources' },
+          { name: language === 'EN' ? 'Faculty Portal' : 'พอร์ทัลคณาจารย์', link: '/faculty-portal' }
+        ]
+      },
+      {
+        title: language === 'EN' ? 'For External Partners' : 'สำหรับพันธมิตรภายนอก',
+        icon: <FaUsers />,
+        items: [
+          { name: language === 'EN' ? 'Industry Collaboration' : 'ความร่วมมืออุตสาหกรรม', link: '/industry-collab' },
+          { name: language === 'EN' ? 'Consulting Services' : 'บริการให้คำปรึกษา', link: '/consulting' },
+          { name: language === 'EN' ? 'Training Programs' : 'โปรแกรมฝึกอบรม', link: '/training' },
+          { name: language === 'EN' ? 'Partnership Opportunities' : 'โอกาสการเป็นหุ้นส่วน', link: '/partnership' }
+        ]
+      },
+      {
+        title: language === 'EN' ? 'Research Services' : 'บริการวิจัย',
+        icon: <FaFlask />,
+        items: [
+          { name: language === 'EN' ? 'Lab Facilities' : 'สิ่งอำนวยความสะดวกห้องปฏิบัติการ', link: '/lab-facilities' },
+          { name: language === 'EN' ? 'Grant Support' : 'สนับสนุนทุนวิจัย', link: '/grant-support' },
+          { name: language === 'EN' ? 'Publication Support' : 'สนับสนุนการตีพิมพ์', link: '/publication-support' },
+          { name: language === 'EN' ? 'Research Consultation' : 'ให้คำปรึกษาการวิจัย', link: '/research-consultation' }
+        ]
+      }
+    ],
+    featured: {
+      title: language === 'EN' ? 'Quick Services' : 'บริการด่วน',
+      items: [
+        { name: language === 'EN' ? 'Online Application' : 'สมัครออนไลน์', link: '/online-apply', icon: <FaIdCard /> },
+        { name: language === 'EN' ? 'Document Request' : 'ขอเอกสาร', link: '/document-request', icon: <FaBook /> },
+        { name: language === 'EN' ? 'Schedule Appointment' : 'นัดหมาย', link: '/appointment', icon: <FaUniversity /> }
+      ]
+    }
+  };
+
   // Menu Items with EN + TH versions
   const menuItems = [
-    { name: language === 'EN' ? 'Home' : 'หน้าหลัก', link: '/' },
+    { name: language === 'EN' ? 'Home' : 'หน้าหลัก', link: '/', icon: <FaHome /> },
     { 
       name: language === 'EN' ? 'Apply' : 'การศึกษา', 
       link: '/programs',
@@ -75,25 +142,22 @@ const Header = () => {
       ]
     },
     { 
-      name: language === 'EN' ? 'Services' : 'งานวิจัย',
-      submenu: [
-        { name: language === 'EN' ? 'Students' : 'ศูนย์วิจัย', link: '#centers' },
-        { name: language === 'EN' ? 'Faculty staff' : 'โครงการวิจัย', link: '#projects' },
-        { name: language === 'EN' ? 'External' : 'สิ่งตีพิมพ์', link: '#pubs' }
-      ]
+      name: language === 'EN' ? 'Services' : 'บริการ',
+      isMegaMenu: true,
+      megaMenuData: servicesMegaMenu
     },
     { 
       name: language === 'EN' ? 'Research and Center' : 'ชีวิตนักศึกษา',
       submenu: [
-        { name: language === 'EN' ? 'Center' : 'ชมรมและกิจกรรม', link: '/OrganizationalStructure' },
-        { name: language === 'EN' ? 'Research' : 'หอพัก', link: '/AcademicCalendar' }
+        { name: language === 'EN' ? 'Center' : 'ชมรมและกิจกรรม', link: '/OrgStructure' },
+        { name: language === 'EN' ? 'Research' : 'หอพัก', link: '/CiRAPage' }
       ]
     },
     { 
       name: language === 'EN' ? 'Departments/Organization' : 'ชีวิตนักศึกษา',
       submenu: [
-        { name: language === 'EN' ? 'Department of Nanoscience and Nanotechnology (NANO)' : 'ชมรมและกิจกรรม', link: '#' },
-        { name: language === 'EN' ? 'Department of Manufacturing System Technology (MANU)' : 'หอพัก', link: '#' },
+        { name: language === 'EN' ? 'Department of Nanoscience and Nanotechnology (NANO)' : 'ชมรมและกิจกรรม', link: '/NANODepartmentPage' },
+        { name: language === 'EN' ? 'Department of Manufacturing System Technology (MANU)' : 'หอพัก', link: '/MANUDepartmentPage' },
         { name: language === 'EN' ? 'Organization' : 'หอพัก', link: '/AcademicCalendar' }
       ]
     }, 
@@ -103,13 +167,67 @@ const Header = () => {
         { name: language === 'EN' ? 'Vision/Mission' : 'ชมรมและกิจกรรม', link: '/About2' },
         { name: language === 'EN' ? 'Organizational structure' : 'หอพัก', link: '/OrganizationalStructure' },
         { name: language === 'EN' ? 'Faculty Committee' : 'หอพัก', link: '#' },
-        { name: language === 'EN' ? 'Executive' : 'หอพัก', link: '#' },
-        { name: language === 'EN' ? 'Lecturer' : 'หอพัก', link: '#' },
+        { name: language === 'EN' ? 'Executive' : 'หอพัก', link: '/Executive' },
+        { name: language === 'EN' ? 'Lecturer' : 'หอพัก', link: '/LecturerPage' },
         { name: language === 'EN' ? 'Staff' : 'หอพัก', link: '/AcademicStaff' }
       ]
     },
     { name: language === 'EN' ? 'Contact' : 'ติดต่อเรา', link: '/Contact' }
   ];
+
+  // Mega Menu Component
+  const MegaMenu = ({ data, isOpen }) => {
+    if (!isOpen) return null;
+
+    return (
+      <div className="mega-menu">
+        <div className="mega-menu-container">
+          <div className="mega-menu-content">
+            <div className="mega-menu-grid">
+              {data.categories.map((category, index) => (
+                <div key={index} className="mega-menu-category">
+                  <div className="mega-menu-category-header">
+                    <span className="mega-menu-category-icon">{category.icon}</span>
+                    <h4 className="mega-menu-category-title">{category.title}</h4>
+                  </div>
+                  <ul className="mega-menu-category-list">
+                    {category.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="mega-menu-item">
+                        <Link 
+                          to={item.link} 
+                          className="mega-menu-link"
+                          onClick={closeMenu}
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mega-menu-featured">
+              <h4 className="mega-menu-featured-title">{data.featured.title}</h4>
+              <div className="mega-menu-featured-grid">
+                {data.featured.items.map((item, index) => (
+                  <Link 
+                    key={index}
+                    to={item.link}
+                    className="mega-menu-featured-item"
+                    onClick={closeMenu}
+                  >
+                    <span className="mega-menu-featured-icon">{item.icon}</span>
+                    <span className="mega-menu-featured-text">{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <header className="header">
@@ -146,7 +264,7 @@ const Header = () => {
               {menuItems.map((item, index) => (
                 <li 
                   key={index} 
-                  className={`nav-item ${item.submenu ? 'has-dropdown' : ''}`}
+                  className={`nav-item ${item.submenu || item.isMegaMenu ? 'has-dropdown' : ''} ${item.isMegaMenu ? 'has-mega-menu' : ''}`}
                 >
                   {item.submenu ? (
                     <>
@@ -172,6 +290,21 @@ const Header = () => {
                         ))}
                       </ul>
                     </>
+                  ) : item.isMegaMenu ? (
+                    <>
+                      <button 
+                        className="nav-link dropdown-toggle mega-menu-toggle"
+                        onClick={() => toggleDropdown(item.name)}
+                        aria-expanded={activeDropdown === item.name}
+                      >
+                        <span className="nav-text">{item.name}</span>
+                        <FaChevronDown className="dropdown-arrow" />
+                      </button>
+                      <MegaMenu 
+                        data={item.megaMenuData} 
+                        isOpen={activeDropdown === item.name}
+                      />
+                    </>
                   ) : (
                     <Link 
                       className="nav-link"
@@ -184,6 +317,16 @@ const Header = () => {
                 </li>
               ))}
             </ul>
+
+            {/* Mobile Actions Inside Navigation */}
+            <div className="mobile-actions">
+              <button className="apply-button mobile-apply">
+                {language === 'EN' ? 'Apply Now' : 'สมัครเรียน'}
+              </button>
+              <button className="language-switcher" onClick={toggleLanguage}>
+                {language === 'EN' ? 'TH' : 'EN'}
+              </button>
+            </div>
           </nav>
           
           <div className="nav-actions">
@@ -195,24 +338,18 @@ const Header = () => {
             </button>
             <button 
               className="menu-toggle"
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={toggleMobileMenu}
               aria-label="Toggle menu"
+              aria-expanded={menuOpen}
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
-
-          {/* Mobile Actions */}
-          <div className="mobile-actions">
-            <button className="apply-button mobile-apply">
-              {language === 'EN' ? 'Apply Now' : 'สมัครเรียน'}
-            </button>
-            <button className="language-switcher" onClick={toggleLanguage}>
-              {language === 'EN' ? 'TH' : 'EN'}
-            </button>
-          </div>
         </div>
       </div>
+
+      {/* Mobile Overlay */}
+      {menuOpen && <div className="mobile-overlay" onClick={closeMenu}></div>}
     </header>
   );
 };

@@ -11,6 +11,13 @@ import ProgramDetailsWithNav from '../pages/details';
 import AcademicCalendar from '../pages/academiccalendar';
 import SIITECAbout from '../pages/About';
 import AcademicStaff from '../pages/AcademicStaff';
+import NANODepartmentPage from '../pages/nano'; 
+import MANUDepartmentPage from '../pages/manu';
+import OrgStructure from '../pages/OrgStructure';
+import Executive from '../pages/Executive';
+import LecturerPage from '../pages/LecturerPage';
+import ContactPage from '../pages/Contact';
+import CiRAPage from '../pages/cira';
 
 const AppRoutes = () => {
   return (
@@ -25,6 +32,14 @@ const AppRoutes = () => {
         <Route path="/AcademicCalendar" element={<AcademicCalendar />} />
         <Route path="/About2" element={<SIITECAbout />} />
         <Route path="/AcademicStaff" element={<AcademicStaff />} />
+        <Route path="/NANODepartmentPage" element={<NANODepartmentPage />} />
+        <Route path="/MANUDepartmentPage" element={<MANUDepartmentPage />} />
+        <Route path="/OrgStructure" element={<OrgStructure />} />
+        <Route path="/Executive" element={<Executive />} />
+        <Route path="/LecturerPage" element={<LecturerPage />} />
+        <Route path="/Contact" element={<ContactPage />} />
+        <Route path="/CiRAPage" element={<CiRAPage />} />
+        
       </Routes>
     </Layout>
   );

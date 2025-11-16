@@ -125,7 +125,7 @@ export default function AcademicStaff() {
         <div className="bg-stripe-3"></div>
       </div>
       {/* Hero Section */}
-      <div className="staff-hero">
+      <div className="staff-hero" style={{ height: '80vh' }}>
         <div className="container">
           <p className="hero-label">
             School of Integrated Innovative Technology (SIITEC)
@@ -144,6 +144,9 @@ export default function AcademicStaff() {
             <span className="search-icon">🔍</span>
           </div>
         </div>
+        <div className="overlay">
+            <div className="tech-grid-overlay"></div>
+          </div>
       </div>
 
       {/* Staff Grid */}
