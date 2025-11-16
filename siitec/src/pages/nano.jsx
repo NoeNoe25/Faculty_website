@@ -1,7 +1,10 @@
-import React from 'react';
+// src/components/DepartmentPage.js
+import React, { useState } from 'react';
 import '../styles/nano.css';
 
 const NANODepartmentPage = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const facultyMembers = [
     {
       name: "Dr. Sarah Johnson",
@@ -46,57 +49,77 @@ const NANODepartmentPage = () => {
 
   const facilities = [
     {
-      icon: "🔬",
       name: "Research Laboratories",
-      description: "State-of-the-art research facilities with cutting-edge equipment"
+      description: "State-of-the-art research facilities with cutting-edge equipment",
+      imageUrl: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop"
     },
+    
     {
-      icon: "💻",
-      name: "Computer Labs",
-      description: "Modern computing facilities with latest hardware and software"
-    },
-    {
-      icon: "📚",
       name: "Departmental Library",
-      description: "Specialized collection of journals, books, and digital resources"
+      description: "Specialized collection of journals, books, and digital resources",
+      imageUrl: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=300&fit=crop"
     },
     {
-      icon: "🎓",
       name: "Seminar Halls",
-      description: "Well-equipped spaces for lectures, seminars, and conferences"
+      description: "Well-equipped spaces for lectures, seminars, and conferences",
+      imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Fabrication Lab",
+      description: "Advanced nanofabrication and characterization equipment",
+      imageUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop"
     }
   ];
+
+
+
+  const handleLike = (e, cardId) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('Liked:', cardId);
+    // Add your like logic here
+  };
+
+  const handleBookmark = (e, cardId) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('Bookmarked:', cardId);
+    // Add your bookmark logic here
+  };
 
   return (
     <div className="department-page">
       {/* Hero Section */}
-      <section className="dept-hero">
+      <section className="nanodept-hero" style={{ height: '80vh' }}>
         <div className="hero-overlay">
           <div className="hero-content">
-            <h1 className="hero-title">Department of Computer Science</h1>
+            <h1 className="hero-title">Department of Nanoscience and Nanotechnology</h1>
             <p className="hero-subtitle">
-              Pioneering innovation in technology and research since 1985
+              Pioneering innovation at the atomic scale since 2005
             </p>
             <button className="hero-cta-btn">Apply Now</button>
           </div>
         </div>
+        {/*overlay*/}
+        <div className="overlay">
+            <div className="tech-grid-overlay"></div>
+          </div>
       </section>
 
       {/* About Section */}
       <section className="dept-section">
-        <div className="section-container">
-          <h2 className="section-title">About Our Department</h2>
+        <div className="dept-section_section-container">
+          <h2 className="dept-section_section-title">About Our Department</h2>
           <div className="about-content">
             <p>
-              The Department of Computer Science is committed to excellence in education, 
-              research, and innovation. Our world-class faculty members are dedicated to 
-              advancing the frontiers of knowledge while providing exceptional learning 
-              experiences to our students.
+              The Department of Nanoscience and Nanotechnology is committed to excellence in education, 
+              research, and innovation at the nanoscale. Our world-class faculty members are dedicated to 
+              advancing the frontiers of knowledge while providing exceptional learning experiences to our students.
             </p>
             <p>
               We offer comprehensive programs at undergraduate, graduate, and doctoral levels, 
               preparing students for successful careers in academia, industry, and entrepreneurship. 
-              Our research spans artificial intelligence, cybersecurity, data science, and more.
+              Our research spans nanomaterials, quantum devices, biomedical applications, and energy systems.
             </p>
           </div>
         </div>
@@ -104,8 +127,8 @@ const NANODepartmentPage = () => {
 
       {/* Programs Section */}
       <section className="dept-section programs-section">
-        <div className="section-container">
-          <h2 className="section-title">Academic Programs</h2>
+        <div className="dept-section_section-container">
+          <h2 className="dept-section_section-title">Academic Programs</h2>
           <div className="programs-grid">
             {programs.map((program, index) => (
               <div key={index} className="program-card">
@@ -120,7 +143,7 @@ const NANODepartmentPage = () => {
       </section>
 
       {/* Faculty Section */}
-      <section className="dept-section">
+      {/* <section className="dept-section">
         <div className="section-container">
           <h2 className="section-title">Our Faculty</h2>
           <div className="faculty-grid">
@@ -145,23 +168,31 @@ const NANODepartmentPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Facilities Section */}
       <section className="dept-section facilities-section">
-        <div className="section-container">
-          <h2 className="section-title">Our Facilities</h2>
+        <div className="dept-section_section-container">
+          <h2 className="dept-section_section-title">Our Facilities</h2>
           <div className="facilities-grid">
             {facilities.map((facility, index) => (
               <div key={index} className="facility-card">
-                <span className="facility-icon">{facility.icon}</span>
-                <h3 className="facility-name">{facility.name}</h3>
-                <p className="facility-description">{facility.description}</p>
+                <img 
+                  src={facility.imageUrl} 
+                  alt={facility.name}
+                  className="facility-image"
+                />
+                <div className="facility-card-grad" />
+                <div className="facility-card-info">
+                  <h3 className="facility-name">{facility.name}</h3>
+                  <p className="facility-description">{facility.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Contact Section */}
       <section className="dept-section contact-section">
@@ -169,9 +200,9 @@ const NANODepartmentPage = () => {
           <div className="contact-card">
             <h2 className="contact-title">Get In Touch</h2>
             <div className="contact-info">
-              <p><strong>Address:</strong> Building A, Room 301, University Campus</p>
-              <p><strong>Phone:</strong> +1 (555) 100-2000</p>
-              <p><strong>Email:</strong> cs.dept@university.edu</p>
+              <p><strong>Address:</strong> Nano Science Building, Room 301-310, University Campus</p>
+              <p><strong>Phone:</strong> +1 (555) 100-NANO</p>
+              <p><strong>Email:</strong> nano.dept@university.edu</p>
               <p><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
             </div>
           </div>
