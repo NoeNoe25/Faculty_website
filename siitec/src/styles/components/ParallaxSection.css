@@ -2,6 +2,7 @@
 .parallax-section {
   position: relative;
   color: #333333; /* Dark text for light theme */
+ 
 }
 
 .parallax-banner {
@@ -139,7 +140,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 3rem 2rem;
+  padding: 2rem 4rem;
   background: linear-gradient(to bottom, #d4d4d4, #FFFFFF); /* Light gradient */
   position: relative;
   z-index: 4;
@@ -150,7 +151,8 @@
   text-align: center;
   padding: 2rem;
   position: relative;
-  width: 200px;
+  width: auto;
+  max-width: 240px;
   margin: 1rem;
 }
 
@@ -165,10 +167,18 @@
   display: inline-block;
 }
 
-.stat-label {
+/* .stat-label {
   font-size: 1rem;
-  color: #4A5455; /* Dark gray for labels */
+  color: #4A5455 !important; /* Dark gray for labels 
+} 
+*/
+
+.tech-stats-container .tech-stat .stat-label {
+  font-size: 1rem;
+  color: #4A5455; /* Force dark gray */
 }
+
+
 
 .stat-circle {
   position: absolute;
@@ -214,7 +224,8 @@
   }
   
   .tech-stats-container {
-    padding: 2rem 1rem;
+    /* padding: 2rem 1rem; */
+    padding: 0;
   }
   
   .tech-stat {

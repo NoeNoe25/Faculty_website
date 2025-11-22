@@ -8,7 +8,8 @@
   display: grid;
   gap: 30px;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 20px auto;
+  
 }
 
 .activity-item {
@@ -64,7 +65,8 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  
 }
 
 .activity-details span {
@@ -177,3 +179,4 @@
     text-align: center;
   }
 }
+

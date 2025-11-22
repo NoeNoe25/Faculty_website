@@ -13,7 +13,7 @@
         .container {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 20px;
+          /* padding: 20px; */
         }
 
         .lateststories_header {
@@ -26,7 +26,7 @@
         .lateststories_header h2 {
           font-size: 28px;
           font-weight: 700;
-          color: #1a1a1a;
+          color: var(--text-dark);
         }
 
         .see-all-btn {
@@ -126,11 +126,12 @@
         .tags {
           display: flex;
           flex-wrap: wrap;
-          gap: 8px;
+          padding-bottom: 20px;
+          gap: 10px;
         }
 
         .tag {
-          padding: 6px 12px;
+          padding: 12px 12px;
           background-color: #f3f4f6;
           border-radius: 16px;
           font-size: 12px;

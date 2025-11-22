@@ -1,4 +1,4 @@
-// src/components/ui/HighlightsSection.jsx
+// src/components/ui/HighlightSection.jsx
 import React from 'react';
 import HighlightCard from './HighlightCard';
 import './HighlightSection.css';
@@ -7,10 +7,11 @@ const HighlightsSection = ({
   title = "Trekker's Highlights",
   highlights = [],
   columns = 3,
-  className = '' 
+  // className = '' 
 }) => {
   return (
-    <section className={`highlights-section ${className}`}>
+    // <section className={`highlights-section ${className}`}>
+    <section className="highlights-section">
       <h2 className="section-title">{title}</h2>
       <div className={`highlights-grid highlights-columns-${columns}`}>
         {highlights.map((highlight, index) => (

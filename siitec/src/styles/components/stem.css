@@ -2,6 +2,7 @@
 .stem-section {
   background: var(--background-primary);
   position: relative;
+  
 }
 
 .stem-section::after {

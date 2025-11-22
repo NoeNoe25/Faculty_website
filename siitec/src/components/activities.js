@@ -1,12 +1,13 @@
 // src/components/Activities.js
 import React from 'react';
 import '../styles/components/Activities.css';
+import { FiCalendar, FiUsers } from "react-icons/fi";
 
 const Activities = () => {
   const activities = [
     {
       title: "Research Labs Tour",
-      description: "Weekly tours of our state-of-the-art research facilities",
+      description: "Weekly tours of our campus research facilities",
       schedule: "Every Friday, 2:00 PM",
       participants: "Open to all students"
     },
@@ -37,10 +38,12 @@ const Activities = () => {
               <h3>{activity.title}</h3>
               <p>{activity.description}</p>
               <div className="activity-details">
-                <span>🕒 {activity.schedule}</span>
-                <span>👥 {activity.participants}</span>
+                <span><FiCalendar size={20} /> {activity.schedule}</span>
+                <span><FiUsers size={20} /> {activity.participants}</span>
               </div>
-              <button className="btn btn-secondary">Join Activity</button>
+              <button className="btn btn-secondary">
+                <span>Join Activity</span>
+              </button>
             </div>
           ))}
         </div>
