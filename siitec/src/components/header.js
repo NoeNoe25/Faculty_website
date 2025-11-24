@@ -79,43 +79,35 @@ const Header = () => {
   const servicesMegaMenu = {
     categories: [
       {
-        title: language === 'EN' ? 'For Students' : 'สำหรับนักศึกษา',
+        title: language === 'EN' ? 'Students' : 'n',
         icon: <FaGraduationCap />,
         items: [
-          { name: language === 'EN' ? 'Academic Services' : 'บริการวิชาการ', link: '/student-academic' },
-          { name: language === 'EN' ? 'Career Services' : 'บริการอาชีพ', link: '/student-career' },
-          { name: language === 'EN' ? 'Student Portal' : 'พอร์ทัลนักศึกษา', link: '/student-portal' },
-          { name: language === 'EN' ? 'Scholarships' : 'ทุนการศึกษา', link: '/scholarships' }
+          { name: language === 'EN' ? 'Apply for study' : 'n', link: '/student-academic' },
+          { name: language === 'EN' ? 'Rules and Regulations' : 'n', link: '/student-career' },
+          { name: language === 'EN' ? 'Scholarships' : 'ทุนการศึกษา', link: '/student-portal' },
+          { name: language === 'EN' ? 'Download Documents' : 'n', link: '/scholarships' },
+          { name: language === 'EN' ? 'Nano Classroom' : 'n', link: '/student-academic' },
+          { name: language === 'EN' ? 'Manu Skill Certificate' : 'n', link: '/student-career' },
+          { name: language === 'EN' ? 'Academic Services' : 'ทุนการศึกษา', link: '/student-portal' }
         ]
       },
       {
         title: language === 'EN' ? 'For Faculty & Staff' : 'สำหรับคณาจารย์และบุคลากร',
         icon: <FaUserTie />,
         items: [
-          { name: language === 'EN' ? 'HR Services' : 'บริการทรัพยากรบุคคล', link: '/faculty-hr' },
-          { name: language === 'EN' ? 'Research Support' : 'สนับสนุนการวิจัย', link: '/research-support' },
-          { name: language === 'EN' ? 'Teaching Resources' : 'ทรัพยากรการสอน', link: '/teaching-resources' },
-          { name: language === 'EN' ? 'Faculty Portal' : 'พอร์ทัลคณาจารย์', link: '/faculty-portal' }
+          { name: language === 'EN' ? 'Report Repair' : 'n', link: '/faculty-hr' },
+          { name: language === 'EN' ? 'Position form/ Request' : 'n', link: '/research-support' },
+          { name: language === 'EN' ? 'Information System KMITL' : 'n', link: '/teaching-resources' },
+          { name: language === 'EN' ? 'Instrument booking service for KMITL' : 'n', link: '/faculty-portal' }
         ]
       },
       {
         title: language === 'EN' ? 'For External Partners' : 'สำหรับพันธมิตรภายนอก',
         icon: <FaUsers />,
         items: [
-          { name: language === 'EN' ? 'Industry Collaboration' : 'ความร่วมมืออุตสาหกรรม', link: '/industry-collab' },
-          { name: language === 'EN' ? 'Consulting Services' : 'บริการให้คำปรึกษา', link: '/consulting' },
-          { name: language === 'EN' ? 'Training Programs' : 'โปรแกรมฝึกอบรม', link: '/training' },
-          { name: language === 'EN' ? 'Partnership Opportunities' : 'โอกาสการเป็นหุ้นส่วน', link: '/partnership' }
-        ]
-      },
-      {
-        title: language === 'EN' ? 'Research Services' : 'บริการวิจัย',
-        icon: <FaFlask />,
-        items: [
-          { name: language === 'EN' ? 'Lab Facilities' : 'สิ่งอำนวยความสะดวกห้องปฏิบัติการ', link: '/lab-facilities' },
-          { name: language === 'EN' ? 'Grant Support' : 'สนับสนุนทุนวิจัย', link: '/grant-support' },
-          { name: language === 'EN' ? 'Publication Support' : 'สนับสนุนการตีพิมพ์', link: '/publication-support' },
-          { name: language === 'EN' ? 'Research Consultation' : 'ให้คำปรึกษาการวิจัย', link: '/research-consultation' }
+          { name: language === 'EN' ? 'Faculty Visit Request' : 'n', link: '/industry-collab' },
+          { name: language === 'EN' ? 'Instrument Booking Service' : 'n', link: '/consulting' }
+      
         ]
       }
     ],
