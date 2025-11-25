@@ -1,182 +1,209 @@
-/* src/styles/Activities.css */
+/* src/styles/components/Activities.css */
 .activities-section {
-  background: var(--background-secondary);
-  position: relative;
+  padding: 3rem 0;
+  background: #f8f9fa;
+}
+
+.section-title {
+  margin-bottom: 4rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .activities-list {
-  display: grid;
-  gap: 30px;
-  max-width: 900px;
-  margin: 20px auto;
-  
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .activity-item {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 20px;
-  align-items: start;
-  padding: 30px;
-  transition: var(--transition-medium);
-  position: relative;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: white;
+  border-radius: 16px;
   overflow: hidden;
-}
-
-.activity-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--tech-gradient);
-  transform: scaleY(0);
-  transition: var(--transition-medium);
-}
-
-.activity-item:hover::before {
-  transform: scaleY(1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .activity-item:hover {
-  transform: translateX(10px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.activity-item.reverse {
+  direction: rtl;
+}
+
+.activity-item.reverse > * {
+  direction: ltr;
+}
+
+.activity-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.activity-item:hover .activity-image img {
+  transform: scale(1.05);
 }
 
 .activity-content {
-  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content:left;
 }
 
-.activity-item h3 {
-  color: var(--text-dark);
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+.activity-content h3 {
+  font-size: 1.75rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
-.activity-item p {
-  color: var(--text-light);
-  line-height: 1.6;
-  margin-bottom: 15px;
+.activity-description {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
 }
 
 .activity-details {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  
-}
-
-.activity-details span {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--text-greywhite);
-  font-size: 0.9rem;
-  background: rgba(117, 131, 132, 0.1);
-  padding: 5px 12px;
-  border-radius: 15px;
-}
-
-.activity-actions {
-  display: flex;
   flex-direction: column;
-  gap: 10px;
-  min-width: 120px;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* Activity type indicators */
-.activity-item:nth-child(1) {
-  border-left: 4px solid var(--gold-copper);
+.detail-item {
+  display: flex;
+  align-items: left;
+  gap: 0.75rem;
+  color: #666;
+  font-size: 0.95rem;
 }
 
-.activity-item:nth-child(2) {
-  border-left: 4px solid var(--slate-base);
+.detail-icon {
+  color: #3498db;
+  flex-shrink: 0;
 }
 
-.activity-item:nth-child(3) {
-  border-left: 4px solid var(--gold-copper-dark);
+.btn {
+  display: inline-flex;
+  align-items: left;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
 }
 
-/* Hover effects for different activity types */
-.activity-item:nth-child(1):hover {
-  background: linear-gradient(90deg, rgba(201, 166, 107, 0.05) 0%, transparent 100%);
+.btn:hover {
+  background: #2980b9;
+  transform: translateX(5px);
+  color: white;
+  text-decoration: none;
 }
 
-.activity-item:nth-child(2):hover {
-  background: linear-gradient(90deg, rgba(117, 131, 132, 0.05) 0%, transparent 100%);
+.btn-icon {
+  transition: transform 0.3s ease;
 }
 
-.activity-item:nth-child(3):hover {
-  background: linear-gradient(90deg, rgba(168, 132, 72, 0.05) 0%, transparent 100%);
+.btn:hover .btn-icon {
+  transform: translateX(3px);
 }
 
-/* Animation for activity items */
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.activity-item {
-  animation: slideInFromLeft 0.6s ease-out;
-}
-
-.activity-item:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.activity-item:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.activity-item:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 968px) {
   .activity-item {
     grid-template-columns: 1fr;
-    text-align: center;
-    gap: 15px;
+    gap: 0;
   }
   
-  .activity-details {
-    justify-content: center;
+  .activity-item.reverse {
+    direction: ltr;
   }
   
-  .activity-actions {
-    flex-direction: row;
-    justify-content: center;
+  .activity-image {
+    height: 300px;
+    order: -1;
   }
   
-  .activity-item:hover {
-    transform: translateY(-5px);
+  .activity-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .activities-section {
+    padding: 3rem 0;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+  }
+  
+  .activities-list {
+    gap: 2.5rem;
+  }
+  
+  .activity-content {
+    padding: 1.5rem;
+  }
+  
+  .activity-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .activity-image {
+    height: 250px;
   }
 }
 
 @media (max-width: 480px) {
-  .activity-item {
-    padding: 20px;
+  .activity-content {
+    padding: 1.25rem;
   }
   
   .activity-details {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 0.75rem;
   }
   
-  .activity-details span {
-    justify-content: center;
-    text-align: center;
+  .detail-item {
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
   }
 }
-

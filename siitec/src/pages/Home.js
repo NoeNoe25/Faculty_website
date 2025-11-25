@@ -17,7 +17,7 @@ function Home() {
       <ParallaxSection />
       <STEMSection />
       <Activities />
-      <NanotechContest />
+    
       <LatestStories/>
       <TrekkersHighlights/>
    
