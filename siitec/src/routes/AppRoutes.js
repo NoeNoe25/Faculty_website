@@ -17,7 +17,7 @@ import OrgStructure from '../pages/OrgStructure';
 import Executive from '../pages/Executive';
 import LecturerPage from '../pages/LecturerPage';
 import ContactPage from '../pages/Contact';
-import CiRAPage from '../pages/cira';
+import CiRAPage from '../pages/ResearchLabs';
 
 const AppRoutes = () => {
   return (
