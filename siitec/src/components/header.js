@@ -136,8 +136,8 @@ const randcMegaMenu = {
       icon: <FaUserTie />,
       items: [
         { name: language === 'EN' ? 'Center of industrial Robots and Automation (CiRA)' : 'null', link: '/CiRAPage' },
-        { name: language === 'EN' ? 'Advanced Technology Testing and Analysis Center (ATTAC)' : 'null', link: '/research-support' },
-        { name: language === 'EN' ? 'Academy of Innovative Semiconductor (KAISEM)': 'null', link: '/teaching-resources' },
+        { name: language === 'EN' ? 'Advanced Technology Testing and Analysis Center (ATTAC)' : 'null', link: '/ATTACPage' },
+        { name: language === 'EN' ? 'Academy of Innovative Semiconductor (KAISEM)': 'null', link: '/KAISEMPage' },
       ]
     }
   ]

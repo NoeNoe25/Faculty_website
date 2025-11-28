@@ -1,82 +1,91 @@
-// src/components/Activities.js
 import React from 'react';
-import '../styles/components/Activities.css';
-import { FiCalendar, FiUsers, FiArrowRight } from "react-icons/fi";
-import stema from '../assets/albums/stema2018.webp';
 
-const Activities = () => {
-  const activities = [
+import '../styles/components/Activities.css';
+export default function Activities() {
+  const newsItems = [
     {
-      title: "Research Labs Tour",
-      image: stema,
-      description: "Get an inside look at our state-of-the-art research facilities and cutting-edge equipment used by students and faculty for groundbreaking research.",
-      // schedule: "Every Friday, 2:00 PM",
-      // participants: "Open to all students",
-      link: "/activities/research-labs"
+      id: 1,
+      image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=800&h=500&fit=crop",
+      date: "23.03.2025",
+      title: "ТГУ готов к онлайн-приему вступительных экзаменов у абитуриентов",
+      description: "Университет полностью подготовил техническую базу для проведения дистанционных экзаменов",
+      tag: "НОВОСТИ",
+      featured: true
     },
     {
-      title: "Innovation Hackathons",
-      image: stema,
-      description: "Participate in exciting 24-hour coding challenges where students collaborate to solve real-world problems and showcase their technical skills.",
-      // schedule: "Monthly - Check schedule",
-      // participants: "Teams of 3-5 students",
-      link: "/activities/hackathons"
+      id: 2,
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
+      date: "22.03.2025",
+      title: "Жизнь замечательных ученых: биофизики и Владислав Замша",
+      description: "История выдающегося ученого и его вклад в развитие биофизики",
+      tag: "НАУКА"
     },
     {
-      title: "Industry Speaker Series",
-      image: stema,
-      description: "Learn from industry leaders and professionals who share their experiences, insights, and career advice in our regular talk series.",
-      // schedule: "Bi-weekly, Tuesdays",
-      // participants: "All faculty and students",
-      link: "/activities/speaker-series"
+      id: 3,
+      date: "21.03.2025",
+      title: "Ко Дню Победы в ТГУ проведен разговор о важном с первокурсниками Великой Отечественной войны",
+      description: "Студенты встретились с ветеранами и обсудили исторические события",
+      tag: "СОБЫТИЯ",
+      noPicture: true
+    },
+    {
+      id: 4,
+      date: "20.03.2025",
+      title: "Онлайн-консультации – помощь студентам в период пандемии и трудоустройства",
+      description: "Университет запускает сервис онлайн-консультаций для студентов",
+      tag: "ОБРАЗОВАНИЕ",
+      noPicture: true
+    },
+    {
+      id: 5,
+      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=300&fit=crop",
+      date: "19.03.2025",
+      title: "Ученые выяснили, почему «ядовита» Тува и как сделать регион чистым",
+      description: "Экологическое исследование показало пути решения проблем региона",
+      tag: "ИССЛЕДОВАНИЯ"
     }
   ];
 
   return (
-    <section id="activities" className="section activities-section">
-      <div className="container">
-        <div className="section-title">
-          <h2>Campus Activities</h2>
-          <p>Engage with our vibrant community through various activities and events</p>
+    <div className="news-section">
+      <div className="news-container">
+        <div className="news-header">
+          <h2 className="news-title">Новости</h2>
+          <a href="#" className="news-view-all">
+            все новости
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7 4L13 10L7 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          </a>
         </div>
-        
-        <div className="activities-list">
-          {activities.map((activity, index) => (
-            <div key={index} className={`activity-item ${index % 2 === 1 ? 'reverse' : ''}`}>
-              <div className="activity-image">
-                <img 
-                  src={activity.image} 
-                  alt={activity.title}
-                  loading="lazy"
-                />
-              </div>
-              
-              <div className="activity-content">
-                <h3>{activity.title}</h3>
-                <p className="activity-description">{activity.description}</p>
-                
-                {/* <div className="activity-details">
-                  <div className="detail-item">
-                    <FiCalendar className="detail-icon" />
-                    <span>{activity.schedule}</span>
-                  </div>
-                  <div className="detail-item">
-                    <FiUsers className="detail-icon" />
-                    <span>{activity.participants}</span>
-                  </div>
-                </div> */}
-                
-                <a href={activity.link} className="btn btn-secondary">
-                  <span>Learn More</span>
-                  <FiArrowRight className="btn-icon" />
+
+        <div className="news-grid">
+          {newsItems.map((item, index) => (
+            <article key={item.id} className={`news-card ${index === 0 ? 'featured' : ''} ${item.noPicture ? 'no-picture' : ''}`}>
+              {!item.noPicture && (
+                <div className="news-card-image">
+                  <img src={item.image} alt={item.title} />
+                  <span className="news-tag">{item.tag}</span>
+                </div>
+              )}
+              <div className="news-card-content">
+                {item.noPicture && <span className="news-tag-inline">{item.tag}</span>}
+                <time className="news-date">{item.date}</time>
+                <h3 className="news-card-title">{item.title}</h3>
+                {item.description && (
+                  <p className="news-description">{item.description}</p>
+                )}
+                <a href="#" className="news-read-more">
+                  подробнее
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 4L10 8L6 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
                 </a>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
-};
-
-export default Activities;
+}

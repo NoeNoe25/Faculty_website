@@ -16,10 +16,9 @@ function Home() {
     <div className="Home">
       <ParallaxSection />
       <STEMSection />
-      <Activities />
-    
-      <LatestStories/>
       <TrekkersHighlights/>
+      <LatestStories/>
+      <Activities />
    
     </div>
   );
