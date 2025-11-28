@@ -61,7 +61,7 @@ export default function SIITECAbout() {
             labs, cutting-edge research, and close industry ties, we equip
             students to lead in AI, robotics, and next-gen manufacturing.
           </p>
-          <div className="hero-stats">
+          <div className="about_hero-stats">
             {statistics.map((stat, index) => (
               <div key={index} className="stat-item">
                 <span className="stat-number">{stat.number}</span>
@@ -70,9 +70,9 @@ export default function SIITECAbout() {
             ))}
           </div>
         </div>
-         {/* <div className="about_overlay">
+         <div className="about_overlay">
             <div className="tech-grid-overlay"></div>
-          </div> */}
+          </div>
       </div>
 
       {/* About Innovation Section */}

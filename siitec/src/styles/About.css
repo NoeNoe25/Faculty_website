@@ -21,6 +21,7 @@
   min-height: 400px;
   z-index: 0;
   
+  
 }
 
 .about_hero-content h1 {
@@ -29,7 +30,8 @@
   font-weight: 200;
   color: slategrey;
   letter-spacing: -0.02em;
-  z-index:3;
+  position: relative;
+  z-index:2;
 }
 
 .about_hero-subtitle {
@@ -40,10 +42,11 @@
   opacity: 0.9;
   font-weight: 300;
   color: var(--slate-dark);
-  z-index: 3;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-stats {
+.about_hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;

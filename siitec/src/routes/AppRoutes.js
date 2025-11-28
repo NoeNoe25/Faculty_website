@@ -17,7 +17,9 @@ import OrgStructure from '../pages/OrgStructure';
 import Executive from '../pages/Executive';
 import LecturerPage from '../pages/LecturerPage';
 import ContactPage from '../pages/Contact';
-import CiRAPage from '../pages/ResearchLabs';
+import CiRAPage from '../pages/Cira';
+import KAISEMPage from '../pages/kaisem';
+import ATTACPage from '../pages/attac';
 
 const AppRoutes = () => {
   return (
@@ -39,6 +41,8 @@ const AppRoutes = () => {
         <Route path="/LecturerPage" element={<LecturerPage />} />
         <Route path="/Contact" element={<ContactPage />} />
         <Route path="/CiRAPage" element={<CiRAPage />} />
+        <Route path="/KAISEMPage" element={<KAISEMPage />} />
+        <Route path="/ATTACPage" element={<ATTACPage />} />
         
       </Routes>
     </Layout>
