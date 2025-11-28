@@ -28,6 +28,7 @@ const TrekkersHighlights = () => {
   ];
 
   return (
+    
     <HighlightSection 
       // title="Trekker's Highlights"
       highlights={highlightsData}

@@ -12,7 +12,13 @@ const HighlightsSection = ({
   return (
     // <section className={`highlights-section ${className}`}>
     <section className="highlights-section">
-      <h2 className="section-title">{title}</h2>
+      <div className="testimonials-header">
+          <span className="testimonials-subtitle">Success Stories</span>
+          <h2 className="testimonials-title">Innovation Contest</h2>
+          <p className="testimonials-description">
+            Hear from graduates who are making an impact in technology and innovation
+          </p>
+        </div>
       <div className={`highlights-grid highlights-columns-${columns}`}>
         {highlights.map((highlight, index) => (
           <HighlightCard

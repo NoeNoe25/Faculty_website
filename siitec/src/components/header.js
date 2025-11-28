@@ -43,6 +43,7 @@ const SocialIcons = () => (
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeNestedDropdown, setActiveNestedDropdown] = useState(null); // New state for nested dropdowns
   const [language, setLanguage] = useState('EN');
   const navRef = useRef(null);
 
@@ -51,6 +52,7 @@ const Header = () => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setActiveDropdown(null);
+        setActiveNestedDropdown(null);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -59,7 +61,13 @@ const Header = () => {
 
   const toggleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+    setActiveNestedDropdown(null); // Close nested dropdowns when main dropdown changes
   };
+
+  const toggleNestedDropdown = (dropdownName) => {
+    setActiveNestedDropdown(activeNestedDropdown === dropdownName ? null : dropdownName);
+  };
+
 
   const toggleLanguage = () => {
     setLanguage(language === 'EN' ? 'TH' : 'EN');
@@ -82,13 +90,14 @@ const Header = () => {
         title: language === 'EN' ? 'Students' : 'นักศึกษา',
         icon: <FaGraduationCap />,
         items: [
-          { name: language === 'EN' ? 'Apply for study' : 'สมัครเรียน', link: '/student-academic' },
-          { name: language === 'EN' ? 'Rules and Regulations' : 'กฎระเบียบ', link: '/student-career' },
-          { name: language === 'EN' ? 'Scholarships' : 'ทุนการศึกษา', link: '/student-portal' },
-          { name: language === 'EN' ? 'Download Documents' : 'ดาวน์โหลดเอกสาร', link: '/scholarships' },
-          { name: language === 'EN' ? 'Nano Classroom' : 'คลาสรูมนาโน', link: '/student-academic' },
-          { name: language === 'EN' ? 'Manu Skill Certificate' : 'ใบรับรองทักษะ MANU', link: '/student-career' },
-          { name: language === 'EN' ? 'Academic Services' : 'บริการวิชาการ', link: '/student-portal' }
+          { name: language === 'EN' ? 'Apply for study' : 'สมัครเรียน', link: 'https://admission.reg.kmitl.ac.th/#/' },
+          { name: language === 'EN' ? 'Rules and Regulations' : 'กฎระเบียบ', link: 'https://www.reg.kmitl.ac.th/rule/index.php?links=1' },
+          { name: language === 'EN' ? 'Scholarships' : 'ทุนการศึกษา', link: 'https://osda.kmitl.ac.th/scholarship/' },
+          { name: language === 'EN' ? 'Academic Calendar' : 'null', link: 'https://www.reg.kmitl.ac.th/educalendar/' },
+          { name: language === 'EN' ? 'Download Documents' : 'ดาวน์โหลดเอกสาร', link: 'https://drive.google.com/drive/folders/1J8w6NbAtBitgrqsvetnkWFQHWtTpPVQo' },
+          { name: language === 'EN' ? 'Nano Classroom' : 'คลาสรูมนาโน', link: 'http://www.cmit.kmitl.ac.th/classroom/login/index.php' },
+          { name: language === 'EN' ? 'Manu Skill Certificate' : 'ใบรับรองทักษะ MANU', link: 'https://skill.ami.kmitl.ac.th/ '},
+          { name: language === 'EN' ? 'Academic Services' : 'บริการวิชาการ', link: 'https://www.kllc.kmitl.ac.th/' }
         ]
       },
       {
@@ -96,16 +105,16 @@ const Header = () => {
         icon: <FaUserTie />,
         items: [
           // Faculty & Staff items
-          { name: language === 'EN' ? 'Report Repair' : 'แจ้งซ่อม', link: '/faculty-hr' },
-          { name: language === 'EN' ? 'Position form/ Request' : 'แบบฟอร์มตำแหน่ง/คำขอ', link: '/research-support' },
-          { name: language === 'EN' ? 'Information System KMITL' : 'ระบบสารสนเทศ KMITL', link: '/teaching-resources' },
-          { name: language === 'EN' ? 'Instrument booking service for KMITL' : 'บริการจองเครื่องมือ KMITL', link: '/faculty-portal' },
+          { name: language === 'EN' ? 'Report Repair' : 'แจ้งซ่อม', link: 'https://lin.ee/UOFslzH' },
+          { name: language === 'EN' ? 'Position form/ Request' : 'แบบฟอร์มตำแหน่ง/คำขอ', link: 'https://www.ami.kmitl.ac.th/research/ami-research-center/' },
+          { name: language === 'EN' ? 'Information System KMITL' : 'ระบบสารสนเทศ KMITL', link: 'https://www.kmitl.ac.th/' },
+          { name: language === 'EN' ? 'Instrument booking service for KMITL' : 'บริการจองเครื่องมือ KMITL', link: 'http://www.cmit.kmitl.ac.th:9000/' },
           
           // External Partners header and items - now under Faculty & Staff section
           { name: language === 'EN' ? 'For External Partners' : 'สำหรับพันธมิตรภายนอก', link: '#', isHeader: true,  icon: <FaUsers /> },
           { name: language === 'EN' ? 'Faculty Visit Request' : 'คำขอเยี่ยมชมคณะ', link: '/industry-collab' },
-          { name: language === 'EN' ? 'Instrument Booking Service' : 'บริการจองเครื่องมือ', link: '/consulting' },
-          { name: language === 'EN' ? 'Partnership Inquiry' : 'สอบถามความร่วมมือ', link: '/partnership' }
+          { name: language === 'EN' ? 'Instrument Booking Service' : 'บริการจองเครื่องมือ', link: 'http://www.cmit.kmitl.ac.th/testing-process/' },
+          { name: language === 'EN' ? 'Partnership Inquiry' : 'สอบถามความร่วมมือ', mailto: 'ssitec@kmitl.ac.th' }
         ]
       }
     ],
@@ -164,14 +173,28 @@ const randcMegaMenu = {
       isMegaMenu: true,
       megaMenuData: randcMegaMenu
     },
+    // In your menuItems array, update the "Departments/Organization" item:
+{ 
+  name: language === 'EN' ? 'Departments/Organization' : 'ชีวิตนักศึกษา',
+  submenu: [
     { 
-      name: language === 'EN' ? 'Departments/Organization' : 'ชีวิตนักศึกษา',
-      submenu: [
-        { name: language === 'EN' ? 'Department of Nanoscience and Nanotechnology (NANO)' : 'ชมรมและกิจกรรม', link: '/NANODepartmentPage' },
-        { name: language === 'EN' ? 'Department of Manufacturing System Technology (MANU)' : 'หอพัก', link: '/MANUDepartmentPage' },
-        { name: language === 'EN' ? 'Organization' : 'หอพัก', link: '/AcademicCalendar' }
+      name: language === 'EN' ? 'Department of Nanoscience and Nanotechnology (NANO)' : 'ชมรมและกิจกรรม', 
+      link: '/NANODepartmentPage' 
+    },
+    { 
+      name: language === 'EN' ? 'Department of Manufacturing System Technology (MANU)' : 'หอพัก', 
+      link: '/MANUDepartmentPage' 
+    },
+    { 
+      name: language === 'EN' ? 'Organization' : 'องค์กร',
+      hasNested: true, // Flag to indicate nested dropdown
+      nestedItems: [
+        { name: language === 'EN' ? 'Alumni Association' : 'ศิษย์เก่า', link: 'https://www.kmitlalumni.org/' },
+        { name: language === 'EN' ? 'Student Union SiiTec' : 'สหภาพนักศึกษา', link: 'https://www.facebook.com/share/17aVVVWXqf/' },
       ]
-    }, 
+    }
+  ]
+},
     { 
       name: language === 'EN' ? 'About Us' : 'เกี่ยวกับเรา',
       submenu: [
@@ -284,35 +307,64 @@ const MegaMenu = ({ data, isOpen }) => {
         <div className="header-container">
           <nav className={`nav ${menuOpen ? 'active' : ''}`} ref={navRef}>
             <ul className="nav-list">
-              {menuItems.map((item, index) => (
-                <li 
-                  key={index} 
-                  className={`nav-item ${item.submenu || item.isMegaMenu ? 'has-dropdown' : ''} ${item.isMegaMenu ? 'has-mega-menu' : ''}`}
-                >
-                  {item.submenu ? (
-                    <>
-                      <button 
-                        className="nav-link dropdown-toggle"
-                        onClick={() => toggleDropdown(item.name)}
-                        aria-expanded={activeDropdown === item.name}
+      {menuItems.map((item, index) => (
+        <li 
+          key={index} 
+          className={`nav-item ${item.submenu || item.isMegaMenu ? 'has-dropdown' : ''} ${item.isMegaMenu ? 'has-mega-menu' : ''}`}
+        >
+          {item.submenu ? (
+            <>
+              <button 
+                className="nav-link dropdown-toggle"
+                onClick={() => toggleDropdown(item.name)}
+                aria-expanded={activeDropdown === item.name}
+              >
+                <span className="nav-text">{item.name}</span>
+                <FaChevronDown className="dropdown-arrow" />
+              </button>
+              <ul className={`dropdown-menu ${activeDropdown === item.name ? 'show' : ''}`}>
+                {item.submenu.map((subItem, subIndex) => (
+                  <li 
+                    key={subIndex} 
+                    className={`dropdown-item ${subItem.hasNested ? 'has-nested-dropdown' : ''}`}
+                  >
+                    {subItem.hasNested ? (
+                      <>
+                        <button 
+                          className="dropdown-link nested-dropdown-toggle"
+                          onClick={() => toggleNestedDropdown(subItem.name)}
+                          aria-expanded={activeNestedDropdown === subItem.name}
+                        >
+                          <span>{subItem.name}</span>
+                          <FaChevronDown className="nested-dropdown-arrow" />
+                        </button>
+                        <ul className={`nested-dropdown-menu ${activeNestedDropdown === subItem.name ? 'show' : ''}`}>
+                          {subItem.nestedItems.map((nestedItem, nestedIndex) => (
+                            <li key={nestedIndex} className="nested-dropdown-item">
+                              <Link 
+                                to={nestedItem.link}
+                                onClick={closeMenu}
+                                className="nested-dropdown-link"
+                              >
+                                {nestedItem.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : (
+                      <Link 
+                        to={subItem.link}
+                        onClick={closeMenu}
+                        className="dropdown-link"
                       >
-                        <span className="nav-text">{item.name}</span>
-                        <FaChevronDown className="dropdown-arrow" />
-                      </button>
-                      <ul className={`dropdown-menu ${activeDropdown === item.name ? 'show' : ''}`}>
-                        {item.submenu.map((subItem, subIndex) => (
-                          <li key={subIndex} className="dropdown-item">
-                            <Link 
-                              to={subItem.link}
-                              onClick={closeMenu}
-                              className="dropdown-link"
-                            >
-                              {subItem.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
+                        {subItem.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </>
                   ) : item.isMegaMenu ? (
                     <>
                       <button 
