@@ -2,6 +2,15 @@ import React from "react";
 import "../styles/About.css";
 import deanImage from "../assets/professor1.jpg";
 
+import { 
+  LuGraduationCap, 
+  LuMicroscope, 
+  LuHandshake, 
+  LuGlobe, 
+  LuHeartHandshake, 
+  LuRocket 
+} from "react-icons/lu";
+
 export default function SIITECAbout() {
   const statistics = [
     { number: "2,500+", label: "Students Enrolled" },
@@ -10,51 +19,53 @@ export default function SIITECAbout() {
     { number: "88%", label: "Employment Rate" },
   ];
 
-  const features = [
-    {
-      icon: "🎧",
-      title: "Support",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipis elit. Id enim sem, piam hendrerit nibh et quamlis. Laornis purus an ullis.",
-    },
-    {
-      icon: "📊",
-      title: "Sales",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipis elit. Id enim sem, piam hendrerit nibh et quamlis. Laornis purus an ullis.",
-    },
-    {
-      icon: "⚡",
-      title: "Onboarding",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipis elit. Id enim sem, piam hendrerit nibh et quamlis. Laornis purus an ullis.",
-    },
-    {
-      icon: "💼",
-      title: "Product",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipis elit. Id enim sem, piam hendrerit nibh et quamlis. Laornis purus an ullis.",
-    },
-    {
-      icon: "✓",
-      title: "Quality",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipis elit. Id enim sem, piam hendrerit nibh et quamlis. Laornis purus an ullis.",
-    },
-    {
-      icon: "⏱",
-      title: "Result",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipis elit. Id enim sem, piam hendrerit nibh et quamlis. Laornis purus an ullis.",
-    },
-  ];
+  
+    const features = [
+  {
+    icon: <LuHeartHandshake />,
+    title: "Student Support",
+    description:
+      "Providing comprehensive mentorship, career guidance, and a supportive community to ensure every student reaches their full potential.",
+  },
+  {
+    icon: <LuHandshake />,
+    title: "Industry Partners", 
+    description:
+      "Collaborating with leading global tech companies to provide hands-on labs and real-world internship opportunities.",
+  },
+  {
+    icon: <LuGraduationCap />, 
+    title: "Academic Excellence", 
+    description: 
+      "Delivering pioneering programs in Technology and Science that combine theoretical depth with practical application.",
+  },
+  {
+    icon: <LuMicroscope />,
+    title: "Innovative Research", 
+    description: 
+      "Driving cutting-edge discoveries in Nanotechnology and next-gen manufacturing to solve global challenges.",
+  },
+  {
+    icon: <LuGlobe />,
+    title: "Global Vision",
+    description: 
+      "Cultivating a diverse, international learning environment that prepares students for leadership on the world stage.",
+  },
+  {
+    icon: <LuRocket />,
+    title: "Future Impact",
+    description: 
+      "Empowering graduates to become the innovators and leaders who will shape the future of technology and society.",
+  },
+];
+
 
   return (
     <section className="about-section">
       {/* Hero Section */}
       <div className="aboutpage_hero"  style={{ height: '80vh' }}>
         <div className="about_hero-content">
-          <h1>About SIITEC</h1>
+          <h2>About SIITEC</h2>
           <p className="about_hero-subtitle">
             The Faculty of Integrated Innovative Technology (SIITEC) at KMITL is
             home to two pioneering programs, MediloT and AMI. With hands-on
@@ -78,20 +89,16 @@ export default function SIITECAbout() {
       {/* About Innovation Section */}
       <div className="innovation-section">
         <div className="container">
-          <p className="label">Get started for free</p>
           <div className="innovation-grid">
-            <div className="innovation-left">
-              <h2>
-                About SIITec
-                <br />
-                Innovation Starts Here
-              </h2>
+            <div className="section-title">
+              <h2>Join our SIITech</h2>
               <button className="btn btn-primary">Apply Now</button>
             </div>
             <div className="innovation-right">
               <p>
-                The Faculty of Integrated Innovative Technology (SIITEC) at
-                KMITL is home to two pioneering programs MediloT and AMI.
+                SIIiTec is more than a faculty — it is an incubator for the next generation of innovators. 
+                We move beyond traditional education to create a hands-on ecosystem where students don't 
+                just learn about the future; they build it.
               </p>
             </div>
           </div>
@@ -105,10 +112,8 @@ export default function SIITECAbout() {
               <div className="card-overlay">
                 <h3>Our Story</h3>
                 <p>
-                  As a pioneer school in advanced manufacturing at KMITL, we are
-                  at the forefront of cultivating talented and a growing legacy
-                  of innovation. MIT continues to lead in influencing success,
-                  higher education.
+                  Pioneering advanced manufacturing at KMITL, we cultivate world-class 
+                  talent to drive the future of innovation.
                 </p>
               </div>
             </div>
@@ -136,11 +141,11 @@ export default function SIITECAbout() {
       {/* What Makes Us Unique */}
       <div className="unique-section">
         <div className="container">
-          <div className="section-header">
+          <div className="section-title">
             <h2>What Makes Us Unique</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipis elit</p>
+            <p>Equipping students to lead in a rapidly evolving global landscape.</p>
           </div>
-
+        {/* </div> */}
           <div className="features-grid">
             {features.map((feature, index) => (
               <div key={index} className="feature-card">
@@ -150,13 +155,13 @@ export default function SIITECAbout() {
               </div>
             ))}
           </div>
-        </div>
+       </div> 
       </div>
 
       {/* Dean's Message */}
       <div className="dean-section">
         <div className="container">
-          <div className="section-header">
+          <div className="section-title">
             <h2>Dean's Message</h2>
           </div>
           <div className="dean-card">

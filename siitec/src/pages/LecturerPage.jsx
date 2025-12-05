@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import '../styles/LecturerPage.css';
-import professor1 from '../assets/professor1.jpg';
 const LecturerPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDepartment, setSelectedDepartment] = useState('all');
@@ -9,121 +8,472 @@ const LecturerPage = () => {
   const lecturers = [
     {
       id: 1,
-      name: 'Dr. Somchai Tanaka',
-      thaiName: 'ดร. สมชาย ทานากะ',
-      title: 'Associate Professor',
-      department: 'AMI',
-      email: 'somchai.t@kmitl.ac.th',
-      phone: '+66 2 329 8000',
-      office: 'AMI Building, Room 301',
-      research: 'Artificial Intelligence, Machine Learning',
-      image: professor1
+      name: 'Dr. Jiti Nookaew',
+      thaiName: 'ศาสตราจารย์.ดร.จิติ หนูแก้ว',
+      title: 'Professor',
+      department: 'CMIT',
+      email: 'jiti.nu@kmitl.ac.th',
+      phone: '02-3298000 ext. 3079',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6602130911',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Jiti.png?w=742'
     },
     {
       id: 2,
-      name: 'Dr. Siriwan Patel',
-      thaiName: 'ดร. ศิริวรรณ พาเทล',
-      title: 'Assistant Professor',
-      department: 'AMI',
-      email: 'siriwan.p@kmitl.ac.th',
-      phone: '+66 2 329 8001',
-      office: 'AMI Building, Room 305',
-      research: 'Data Science, Neural Networks',
-      image: professor1
+      name: 'Dr. Wisanu Petchpa',
+      thaiName: 'ศาสตราจารย์.ดร.วิษณุ เพชรภา',
+      title: 'Professor',
+      department: 'CMIT',
+      email: 'wisanu.pe@kmitl.ac.th',
+      phone: '02-3298000 ext. 3119',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8558302900',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Wisanu.png?w=685'
     },
     {
       id: 3,
-      name: 'Dr. Anirut Kumar',
-      thaiName: 'ดร. อนิรุทธิ์ กุมาร',
-      title: 'Professor',
-      department: 'AMI',
-      email: 'anirut.k@kmitl.ac.th',
-      phone: '+66 2 329 8002',
-      office: 'AMI Building, Room 310',
-      research: 'Computer Vision, Deep Learning',
-      image: professor1
+      name: 'Dr. Benjapon Tanhoo',
+      thaiName: 'รองศาสตราจารย์.ดร.เบญจพล ตันฮู้',
+      title: 'Associate Professor',
+      department: 'CMIT',
+      email: 'benchapol.tu@kmitl.ac.th',
+      phone: '02-3298000 ext. 3128',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19640778900',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 4,
-      name: 'Dr. Natthaphon Lee',
-      thaiName: 'ดร. ณัฐพล ลี',
-      title: 'Lecturer',
-      department: 'AMI',
-      email: 'natthaphon.l@kmitl.ac.th',
-      phone: '+66 2 329 8003',
-      office: 'AMI Building, Room 308',
-      research: 'Robotics, Automation Systems',
-      image: 'https://via.placeholder.com/150'
+      name: 'Dr. Wanwilai Witthayakorn',
+      thaiName: 'รองศาสตราจารย์.ดร.วรรณวิลัย วิทยากร',
+      title: 'Associate Professor',
+      department: 'CMIT',
+      email: 'wanwilai.vi@kmitl.ac.th',
+      phone: '02-3298000 ext. 2169',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=26422631000',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Wanwilai.png?resize=768%2C771'
     },
     {
       id: 5,
-      name: 'Dr. Praewa Wilson',
-      thaiName: 'ดร. แพรวา วิลสัน',
+      name: 'Dr. Winadda Wongwiriyaphan',
+      thaiName: 'รองศาสตราจารย์.ดร. วินัดดา วงศ์วิริยะพันธ์',
       title: 'Associate Professor',
       department: 'CMIT',
-      email: 'praewa.w@kmitl.ac.th',
-      phone: '+66 2 329 8010',
-      office: 'CMIT Building, Room 201',
-      research: 'Software Engineering, Cloud Computing',
-      image: 'https://via.placeholder.com/150'
+      email: 'winadda.wo@kmitl.ac.th',
+      phone: '02-3298000 ext. 3133',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6507140809',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 6,
-      name: 'Dr. Kittipong Chen',
-      thaiName: 'ดร. กิตติพงษ์ เฉิน',
-      title: 'Assistant Professor',
+      name: 'Dr. Suthee Chutipaijit',
+      thaiName: 'รองศาสตราจารย์.ดร.สุธี ชุติไพจิตร',
+      title: 'Associate Professor',
       department: 'CMIT',
-      email: 'kittipong.c@kmitl.ac.th',
-      phone: '+66 2 329 8011',
+      email: 'sutee.ch@kmitl.ac.th',
+      phone: '02-3298000 ext. 3140',
       office: 'CMIT Building, Room 205',
-      research: 'Cybersecurity, Network Systems',
-      image: 'https://via.placeholder.com/150'
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35344429600',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Sutee.png?resize=768%2C771'
     },
     {
       id: 7,
-      name: 'Dr. Siriporn Nakamura',
-      thaiName: 'ดร. ศิริพร นากามูระ',
-      title: 'Professor',
+      name: 'Dr. Darinee Promyothin',
+      thaiName: 'รองศาสตราจารย์.ดร. ดารินี พรหมโยธิน',
+      title: 'Associate Professor',
       department: 'CMIT',
-      email: 'siriporn.n@kmitl.ac.th',
-      phone: '+66 2 329 8012',
-      office: 'CMIT Building, Room 210',
-      research: 'Database Systems, Big Data Analytics',
-      image: 'https://via.placeholder.com/150'
+      email: 'darinee.ph@kmitl.ac.th',
+      phone: '02-3298000 ext. 3133',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=55082047500',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 8,
-      name: 'Dr. Thanakorn Singh',
-      thaiName: 'ดร. ธนากร สิงห์',
-      title: 'Lecturer',
+      name: 'Dr. Nawaphan Khayankit',
+      thaiName: 'รองศาสตราจารย์.ดร. นวพันธ์ ขยันกิจ',
+      title: 'Associate Professor',
       department: 'CMIT',
-      email: 'thanakorn.s@kmitl.ac.th',
-      phone: '+66 2 329 8013',
-      office: 'CMIT Building, Room 208',
-      research: 'Mobile Computing, IoT Systems',
-      image: 'https://via.placeholder.com/150'
+      email: 'navaphun.ka@kmitl.ac.th',
+      phone: '02-3298000 ext. 2176',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19639732300',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 9,
-      name: 'Dr. Waraporn Martinez',
-      thaiName: 'ดร. วราพร มาร์ติเนซ',
+      name: 'Dr. Thotsapol Meluangnon',
+      thaiName: 'รองศาสตราจารย์.ดร. ทศพล เมลืองนนท์',
+      title: 'Associate Professor',
+      department: 'CMIT',
+      email: 'tosapol.ma@kmitl.ac.th',
+      phone: '02-3298000 ext. 2173',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36622681600',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 10,
+      name: 'Dr. Apilak Eiaduea',
+      thaiName: 'รองศาสตราจารย์.ดร. อภิลักษณ์ เอียดเอื้อ',
+      title: 'Associate Professor',
+      department: 'CMIT',
+      email: 'apiluck.ei@kmitl.ac.th',
+      phone: '02-3298000 ext. 3132',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8539060400',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/11/CMIT-Apilak.png?resize=768%2C766'
+    },
+    {
+      id: 11,
+      name: 'Dr. Korakot Onlao',
+      thaiName: 'รองศาสตราจารย์.ดร. กรกช อ่อนละออ',
+      title: 'Associate Professor',
+      department: 'CMIT',
+      email: 'korakot.on@kmitl.ac.th',
+      phone: '02-3298000 ext. 3128',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35362507400',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 12,
+      name: 'Dr. Sakon Rahong',
+      thaiName: 'รองศาสตราจารย์.ดร. สากล ระหงษ์',
+      title: 'Associate Professor',
+      department: 'CMIT',
+      email: 'sakon.ra@kmitl.ac.th',
+      phone: '02-3298000 ext. 3075',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8558302600',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 13,
+      name: 'Dr. Nonglak Huangkamhaeng',
+      thaiName: 'รองศาสตราจารย์.ดร. นงลักษณ์ หวงกำแหง',
+      title: 'Associate Professor',
+      department: 'CMIT',
+      email: 'nongluck.ho@kmitl.ac.th',
+      phone: '02-3298000 ext. 2173',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36760947500',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 14,
+      name: 'Dr. Kanokthip Bunyaratglin',
+      thaiName: 'รองศาสตราจารย์.ดร. กนกทิพย์ บุณยรัตกลิน',
+      title: 'Associate Professor',
+      department: 'CMIT',
+      email: 'kanokthip.bo@kmitl.ac.th',
+      phone: '02-3298000 ext. 2176',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36833541100',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Kanokthip.png?w=763'
+    },
+    {
+      id: 15,
+      name: 'Dr. Wanitchaya Mekprasat',
+      thaiName: 'รองศาสตราจารย์.ดร. วณิชยา เมฆประสาท',
+      title: 'Associate Professor',
+      department: 'CMIT',
+      email: 'wanichaya.me@kmitl.ac.th',
+      phone: '02-3298000 ext. 2176',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36105458200',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Wanichaya.png?w=760'
+    },
+    {
+      id: 16,
+      name: 'Dr. Pitiporn Thanomngam',
+      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. ปิติพร ถนอมงาม',
       title: 'Assistant Professor',
       department: 'CMIT',
-      email: 'waraporn.m@kmitl.ac.th',
-      phone: '+66 2 329 8014',
-      office: 'CMIT Building, Room 215',
-      research: 'Human-Computer Interaction, UX Design',
-      image: 'https://via.placeholder.com/150'
+      email: 'pitiporn.th@kmitl.ac.th',
+      phone: '02-3298000 ext. 3081',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6506862906',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 17,
+      name: 'Dr. Tutiyaporn Thiwawong',
+      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. ทุติยาภรณ์ ทิวาวงศ์',
+      title: 'Assistant Professor',
+      department: 'CMIT',
+      email: 'thutiyaporn.th@kmitl.ac.th',
+      phone: '02-3298000 ext. 3128',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19640410000',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 18,
+      name: 'Dr. Adirek Rangkasikorn',
+      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. อดิเรก แรงกสิกรณ์',
+      title: 'Assistant Professor',
+      department: 'CMIT',
+      email: 'adirek.ra@kmitl.ac.th',
+      phone: '02-3298000 ext. 3075',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=55659954200',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 19,
+      name: 'Dr. Kanoknan Phachirak',
+      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. กนกนันทน์ ภาชีรักษ์',
+      title: 'Assistant Professor',
+      department: 'CMIT',
+      email: 'kanoknan.ph@kmitl.ac.th',
+      phone: '02-3298000 ext. 3132',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=16317407800',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Kanoknan.png?w=762'
+    },
+    {
+      id: 20,
+      name: 'Dr. Mayuree Ployiem Riley',
+      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. มยุรี พลเยี่ยม ไรลีย์',
+      title: 'Assistant Professor',
+      department: 'CMIT',
+      email: 'mayuree.ph@kmitl.ac.th',
+      phone: '02-3298000 ext. 2173',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=23991156500',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 21,
+      name: 'Dr. Kittipong Amnuaysawat',
+      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. กิตติพงศ์ อำนวยสวัสดิ์',
+      title: 'Assistant Professor',
+      department: 'CMIT',
+      email: 'kittiphong.am@kmitl.ac.th',
+      phone: '02-3298000 ext. 3075',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35361698900',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2017/07/aj_kittiphong-e1499763646756.jpg?fit=141%2C180'
+    },
+    {
+      id: 22,
+      name: 'Dr. Supamas Wirunchit',
+      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร.ศุภมาส วิรุญจิตร',
+      title: 'Assistant Professor',
+      department: 'CMIT',
+      email: 'supamas.wi@kmitl.ac.th',
+      phone: '02-3298000 ext. 3075',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=16320167600',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 23,
+      name: 'Dr. Khattiya Chalapat',
+      thaiName: 'ดร. ขัตติยา ชลาพัฒน์',
+      title: 'Professor',
+      department: 'CMIT',
+      email: 'khattiya.ch@kmitl.ac.th',
+      phone: '02-3298000 ext. 2175',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=24537036500',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 24,
+      name: 'Dr. Thirayut Uwanno',
+      thaiName: 'ดร. ธีรยุทธ อุวรรณโณ',
+      title: 'Professor',
+      department: 'CMIT',
+      email: 'teerayut.uw@kmitl.ac.th',
+      phone: '02-3298000 ext. 2177',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=57039260800',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 25,
+      name: 'Dr. Chanyanan Bunrod',
+      thaiName: 'ดร. ชญาน์นันท์ บุญรอด',
+      title: 'Professor',
+      department: 'CMIT',
+      email: 'chayanan.bo@kmitl.ac.th',
+      phone: '02-3298000 ext. ??',
+      office: 'CMIT Building',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=57201667754',
+      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+    },
+    {
+      id: 26,
+      name: 'Dr. Kamol Wasapinyokul',
+      thaiName: '-',
+      title: 'Assistant Professor (Head of Department)',
+      department: 'AMI',
+      email: 'kamol.wa@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2183',
+      office: '55-Year Chalermprakiat Building, Room 405',
+      research: 'Optoelectronics, inorganic and organic semiconductor-based devices, Photometry',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2017/12/2-286x400.jpg'
+    },
+    {
+      id: 27,
+      name: 'Dr. Jatuporn Thongsri ',
+      thaiName: '-',
+      title: 'Associate Professor (Associate Dean)',
+      department: 'AMI',
+      email: 'Jatuporn.th@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2183',
+      office: '55-Year Chalermprakiat Building, Room 406',
+      research: 'Finite Element Analysis, Computational Fluid Dynamics and Numerical Method for Applied Mechanics',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0007-286x400.jpg'
+    },
+    {
+      id: 28,
+      name: 'Dr. Ananta Sinchai ',
+      thaiName: '-',
+      title: 'Assistant Professor (Associate Dean)',
+      department: 'AMI',
+      email: 'ananta.sin@kmitl.ac.th',
+      phone: '02-329-8271 ext. 2182',
+      office: '55-Year Chalermprakiat Building, Room 404',
+      research: 'Image processing, Machine learning, IoT, Automation',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2023/07/2-286x400.jpg'
+    },
+    {
+      id: 29,
+      name: 'Dr. Ploypailin Yongsiri',
+      thaiName: '-',
+      title: 'Assistant Professor (Assistant Dean)',
+      department: 'AMI',
+      email: 'ploypailin.yo@kmitl.ac.th',
+      phone: '02-329-8271 ext. 2182',
+      office: '55-Year Chalermprakiat Building',
+      research: 'Glass and Glass-Ceramic Processing and Characterization, Electroceramics, Ferroelectric Materials, Energy Materials, Material Analysis',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0020-286x400.jpg'
+    },
+    {
+      id: 30,
+      name: 'Dr. Santhad Chuwongin',
+      thaiName: '-',
+      title: 'Assistant Professor (Head of CiRA)',
+      department: 'AMI',
+      email: 'santhad.ch@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2183',
+      office: '55-Year Chalermprakiat Building, Room 405',
+      research: 'Industrial Robot & AI, Deep Learning, Machine Learning, Optoelectronic devices, Nanophotonics',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2017/12/14-286x400.jpg'
+    },
+    {
+      id: 31,
+      name: 'Dr. Chatrpol Pakasiri',
+      thaiName: '-',
+      title: 'Associate Professor (Dean)',
+      department: 'AMI',
+      email: 'chatrpol.pa@kmitl.ac.th',
+      phone: ' 02-329-8264 ext. 2182',
+      office: '55-Year Chalermprakiat Building, Room 404',
+      research: 'Wireless Communication, electromagnetic compatibility research, RF/Microwave active and passive Design, numerical Method for Electromagnetics Research',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0025-286x400.jpg'
+    },
+    {
+      id: 32,
+      name: 'Dr. Rachsak Sakdanuphab',
+      thaiName: '-',
+      title: 'Associate Professor',
+      department: 'AMI',
+      email: 'rachsak.sa@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2183',
+      office: '55-Year Chalermprakiat Building, Room 405',
+      research: 'Thin film semiconductor devices such as solar cells and thermoelectric module',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0028-286x400.jpg'
+    },
+    {
+      id: 33,
+      name: 'Dr. Chanon Warisarn',
+      thaiName: '-',
+      title: 'Associate Professor',
+      department: 'AMI',
+      email: 'chanon.wa@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2150',
+      office: '55-Year Chalermprakiat Building, Room 406',
+      research: 'Magnetic recording technology, realistic writing/reading channel model, micromagnetic modeling, coding and signal processing',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0026-286x400.jpg'
+    },
+    {
+      id: 34,
+      name: 'Dr. Lertsak Lekawat ',
+      thaiName: '-',
+      title: 'Assistant Professor',
+      department: 'AMI',
+      email: 'lertsak@ine.co.th',
+      phone: '02-329-8264 ext. 2152',
+      office: '55-Year Chalermprakiat Building, 4th floor',
+      research: 'Management by fact and systematic thinking using Six-Sigma DMAIC approach, computer software such as MINITAB is required for statistical data analysis',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2021/05/44FB38FF-9492-4D77-B06D-FE729E20684A.jpeg'
+    },
+    {
+      id: 35,
+      name: 'Dr. Komgrit Jaksukam',
+      thaiName: '-',
+      title: 'Assistant Professor',
+      department: 'AMI',
+      email: 'komgrit.ja@kmitl.ac.th',
+      phone: '02-329-8271',
+      office: '55-Year Chalermprakiat Building',
+      research: 'Wireless sensor networks, Embedded system, Multi-hop networks, Ultrasound measurement application',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0002-286x400.jpg'
+    },
+    {
+      id: 36,
+      name: 'Dr. Kittipon Kankhunthod',
+      thaiName: '-',
+      title: 'Professor',
+      department: 'AMI',
+      email: 'kittipon.ka@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2182',
+      office: '55-Year Chalermprakiat Building, Room 404',
+      research: 'Industrial robot and Automation, AI, Signal processing, and Data analysis',
+      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2023/07/1-286x400.jpg'
     }
+
   ];
+
+  // Filter lecturers based on search and department
+  // const filteredLecturers = useMemo(() => {
+  //   return lecturers.filter(lecturer => {
+  //     const matchesSearch = 
+  //       lecturer.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //       lecturer.thaiName.includes(searchQuery) ||
+  //       lecturer.research.toLowerCase().includes(searchQuery.toLowerCase());
+      
+  //     const matchesDepartment = 
+  //       selectedDepartment === 'all' || lecturer.department === selectedDepartment;
+      
+  //     return matchesSearch && matchesDepartment;
+  //   });
+  // }, [searchQuery, selectedDepartment]);
 
   // Filter lecturers based on search and department
   const filteredLecturers = useMemo(() => {
     return lecturers.filter(lecturer => {
+      // 1. Prepare search term safely
+      const term = searchQuery.toLowerCase();
+
+      // 2. Prepare data safely (Use || "" to prevent crashes)
+      const name = (lecturer.name || "").toLowerCase();
+      const thaiName = (lecturer.thaiName || ""); 
+      const research = (lecturer.research || "").toLowerCase();
+      const title = (lecturer.title || "").toLowerCase(); // <--- ADDED THIS
+
+      // 3. Check for matches
       const matchesSearch = 
-        lecturer.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        lecturer.thaiName.includes(searchQuery) ||
-        lecturer.research.toLowerCase().includes(searchQuery.toLowerCase());
+        name.includes(term) ||
+        thaiName.includes(searchQuery) ||
+        research.includes(term) ||
+        title.includes(term); // <--- ADDED THIS
       
       const matchesDepartment = 
         selectedDepartment === 'all' || lecturer.department === selectedDepartment;
@@ -260,7 +610,15 @@ const LecturerPage = () => {
                   
                   <div className="research-area">
                     <h4 className="research-label">Research Interests</h4>
-                    <p className="research-text">{lecturer.research}</p>
+                    {lecturer.department === 'CMIT' ? (
+                    <a 
+                    href={lecturer.researchLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="research-link">
+                    Research Profile &rarr;
+                    </a>) : (
+                    <p className="research-text">{lecturer.research}</p>)}
                   </div>
                 </div>
               </article>
