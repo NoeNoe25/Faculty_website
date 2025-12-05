@@ -3,16 +3,8 @@
   max-width: 1200px;
   margin: 0 auto 50px auto; 
   padding: 20px 0;
-  background: var(--background-primary);
 }
 
-.highlights-section h2 {
-  margin-bottom: 40px;
-  padding: 0 20px;
-  color: var(--text-dark);
-  font-size: 28px;
-  font-weight: 700;
-}
 
 .highlights-grid {
   display: grid;
