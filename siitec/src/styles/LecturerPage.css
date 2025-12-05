@@ -74,11 +74,12 @@
 
 .header-title {
   font-family: var(--font-title);
-  font-size: 3rem;
-  font-weight: 300;
-  color: var(--slate-dark);
-  margin-bottom: 1rem;
-  letter-spacing: 0.02em;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  background: var(--tech-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .header-subtitle {
@@ -265,6 +266,9 @@
   overflow: hidden;
   transition: var(--transition-medium);
   position: relative;
+  display: flex;
+  flex-direction: column; 
+  height: 100%;
 }
 
 .lecturer-card::before {
@@ -335,6 +339,9 @@
 .card-body {
   padding: 1.5rem 2rem 2rem;
   background: var(--background-primary);
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
 }
 
 .lecturer-name {
@@ -413,6 +420,7 @@
   padding: 1rem;
   border-radius: var(--border-radius);
   border-left: 3px solid var(--gold-copper);
+  width: 100%;
 }
 
 .research-label {
@@ -423,6 +431,19 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
+}
+
+.research-link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--gold-copper);
+  text-decoration: underline;
+  transition: var(--transition-fast);
+}
+
+.research-link:hover {
+  color: var(--gold-copper-dark);
+  font-weight: 600;
 }
 
 .research-text {

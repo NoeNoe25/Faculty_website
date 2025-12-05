@@ -10,22 +10,30 @@
 
 /* Hero Section */
 .aboutpage_hero {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../assets/albums/KMITL.16.jpg');
 
-  background: url('../assets/albums/KMITL.16.jpg') no-repeat center center/cover;
-  padding: 100px 0;
-  color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  color: lightgray; 
+
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
+  min-height: 500px;
   z-index: 0;
   
   
 }
 
-.about_hero-content h1 {
-  font-size: 3.5rem;
+
+.about_hero-content h2 {
+  font-size: 2.5rem;
+  color: var(--tech-gradient-reverse);
   margin-bottom: 1.5rem;
   font-weight: 200;
   color: slategrey;
@@ -35,11 +43,10 @@
 }
 
 .about_hero-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto 3rem;
-  opacity: 0.9;
   font-weight: 300;
   color: var(--slate-dark);
   position: relative;
@@ -50,7 +57,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -84,46 +91,49 @@
 
 /* Innovation Section */
 .innovation-section {
-  padding: 80px 0;
   background: var(--background-primary);
 }
 
-.label {
-  color: var(--gold-copper);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+/* .label {
+  color: var(--slate-dark);
+  font-size: 1rem;
+  padding-bottom: 20px;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
-}
+} */
 
 .innovation-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
   align-items: center;
 }
 
-.innovation-left h2 {
+.innovation-grid .section-title h2 {
+  margin-bottom: 0;
+}
+
+/* .innovation-left h2 {
   font-size: 2.8rem;
   line-height: 1.2;
-  margin-bottom: 2rem;
-  color: var(--slate-dark);
+  color: linear-gradient(135deg, #ffb84d, #e9904c);
   font-weight: 300;
-}
+} */
+
 
 
 .innovation-right p {
   color: var(--text-light);
-  line-height: 1.8;
-  font-size: 1.1rem;
+  line-height: 2;
+  font-size: 1rem;
 }
 
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .card {
@@ -147,6 +157,7 @@
   height: 100%;
   object-fit: cover;
   transition: var(--transition-medium);
+  filter: brightness(0.8);
 }
 
 .card:hover .card-story img {
@@ -165,32 +176,36 @@
 
 .card-overlay h3 {
   font-size: 1.8rem;
-  margin-bottom: 0.75rem;
-  color: white;
+  margin-bottom: 0.7rem;
+  color: #ffffff;
   font-weight: 300;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .card-overlay p {
   font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.9;
+  margin-bottom: 1.2rem;
+  color: #ffffff; 
+  padding: 0 30px;
+  font-weight: 300; 
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .cards-right {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .card-mission {
-  background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+  background: linear-gradient(135deg, #1c2e4a 0%, #131e38 100%);
   color: white;
   padding: 2.5rem;
   min-height: 190px;
 }
 
 .card-vision {
-  background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
+  background: linear-gradient(135deg, #d4a76a 0%, #8d6930 100%);
   color: white;
   padding: 2.5rem;
   min-height: 190px;
@@ -213,7 +228,6 @@
 
 /* Unique Section */
 .unique-section {
-  padding: 80px 0;
   background: var(--background-secondary);
 }
 
@@ -224,16 +238,16 @@
 
 .section-header h2 {
   font-size: 2.8rem;
-  color: var(--slate-dark);
+  color: var(--gold-copper-dark);
   margin-bottom: 1rem;
   font-weight: 300;
 }
 
-.section-header p {
+/* .section-header p {
   font-size: 1.2rem;
   color: var(--text-light);
   font-weight: 400;
-}
+} */
 
 .features-grid {
   display: grid;
@@ -278,12 +292,12 @@
 
 /* Dean Section */
 .dean-section {
-  padding: 80px 0;
   background: var(--background-primary);
 }
 
 .dean-section .section-header {
-  text-align: left;
+  /* text-align: center; */
+  margin-bottom: 1rem;
 }
 
 .dean-card {
