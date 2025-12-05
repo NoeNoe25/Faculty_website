@@ -113,28 +113,6 @@
   font-weight: 300;
 }
 
-.btn {
-  font-family: var(--font-body);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition-medium);
-  border-radius: var(--border-radius);
-}
-
-.btn-primary {
-  background: var(--gold-copper);
-  color: white;
-  padding: 0.875rem 2rem;
-  font-size: 1rem;
-}
-
-.btn-primary:hover {
-  background: var(--gold-copper-dark);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
 
 .innovation-right p {
   color: var(--text-light);
