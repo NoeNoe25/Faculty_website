@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-
+import { 
+  FaFacebookF, 
+  FaTwitter, 
+  FaYoutube, 
+  FaLinkedinIn,
+} from 'react-icons/fa';
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -183,9 +188,9 @@ const ContactPage = () => {
                     color: '#7F8C8D',
                     lineHeight: '1.6'
                   }}>
-                    Tel: +66 2 329 8000<br/>
-                    Fax: +66 2 329 8001<br/>
-                    Mon-Fri: 8:30 AM - 4:30 PM
+                    Tel:02-329-8000 <br/>
+                    Ext. 1175<br/>
+                    Mon-Fri: 8:30 AM - 4:00 PM
                   </p>
                 </div>
               </div>
@@ -226,8 +231,8 @@ const ContactPage = () => {
                     color: '#7F8C8D',
                     lineHeight: '1.6'
                   }}>
-                    <a href="mailto:siit@kmitl.ac.th" style={{ color: '#B8860B', textDecoration: 'none' }}>siit@kmitl.ac.th</a><br/>
-                    <a href="mailto:info@siit.kmitl.ac.th" style={{ color: '#B8860B', textDecoration: 'none' }}>info@siit.kmitl.ac.th</a>
+                    <a href="mailto:siit@kmitl.ac.th" style={{ color: '#B8860B', textDecoration: 'none' }}>ssitec@kmitl.ac.th</a><br/>
+                   
                   </p>
                 </div>
               </div>
@@ -264,23 +269,20 @@ const ContactPage = () => {
                     color: '#2C3E50',
                     marginBottom: '0.5rem'
                   }}>Follow Us</h3>
-                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    {['Facebook', 'Twitter', 'LinkedIn', 'Instagram'].map(social => (
-                      <a key={social} href="#" style={{
-                        width: '36px',
-                        height: '36px',
-                        background: '#2C3E50',
-                        borderRadius: '8px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'white',
-                        transition: 'all 0.2s ease'
-                      }}>
-                        <span style={{ fontSize: '0.7rem' }}>{social[0]}</span>
-                      </a>
-                    ))}
-                  </div>
+                   <div className="header_social-icons">
+                     <a href="#" aria-label="Facebook" className="header_social-icon">
+                       <FaFacebookF />
+                     </a>
+                     <a href="#" aria-label="Twitter" className="header_social-icon">
+                       <FaTwitter />
+                     </a>
+                     <a href="#" aria-label="YouTube" className="header_social-icon">
+                       <FaYoutube />
+                     </a>
+                     <a href="#" aria-label="LinkedIn" className="header_social-icon">
+                       <FaLinkedinIn />
+                     </a>
+                   </div>
                 </div>
               </div>
             </div>

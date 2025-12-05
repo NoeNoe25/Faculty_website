@@ -51,12 +51,14 @@
 }
 
 .btn-primary {
-  background: var(--gold-copper-forbutton);
-  color: var(--text-dark);
+  background: var(--gold-copper-dark);
+  color: var(--background-primary);
 }
 
 .btn-primary:hover {
-  background: var(--gold-copper-dark);
+  background: var(--background-primary);
+  color: var(--gold-copper-dark);
+  border: 1px solid var(--gold-copper-dark);
   transform: translateY(-2px);
   box-shadow: var(--glow-gold);
 }
