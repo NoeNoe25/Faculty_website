@@ -38,12 +38,16 @@ export default function PartnersSection() {
 
         <div className="partners-cta">
           <p>Interested in partnering with us?</p>
-          <button className="partner-btn">
-            Become a Partner
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M6 4L11 9L6 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-          </button>
+          <a 
+  href="mailto:ssitec@kmitl.ac.th?subject=Partnership Inquiry&body=I am interested in becoming a partner with Siitec. Please send me more information." 
+  className="partner-btn"
+  style={{textDecoration: 'none', display: 'inline-flex', alignItems: 'center'}}
+>
+  Become a Partner
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+    <path d="M6 4L11 9L6 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+</a>
         </div>
       </div>
     </section>

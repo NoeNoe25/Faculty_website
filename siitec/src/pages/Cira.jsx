@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 
 import '../styles/Center.css';
-
-
-
+import image1 from '../assets/images/cira/1.jpg';
+import image2 from '../assets/images/cira/2.jpg';
+import image3 from '../assets/images/cira/3.jpg';
+import image4 from '../assets/images/cira/4.jpg';
+import image5 from '../assets/images/cira/5.jpg';
+import image6 from '../assets/images/cira/6.png';
 const CiRAPage = () => {
 
   const [activeTab, setActiveTab] = useState('overview');
@@ -131,13 +134,9 @@ const CiRAPage = () => {
     {
 
       id: 1,
-
       title: 'Smart Manufacturing System',
-
       status: 'Ongoing',
-
       description: 'Development of an intelligent manufacturing system integrating robotics, IoT, and AI for Industry 4.0.',
-
       year: '2024'
 
     },
@@ -188,41 +187,23 @@ const CiRAPage = () => {
 
 
 
-  const teamMembers = [
+  const cira_activities = [
 
     {
 
       id: 1,
 
-      name: 'Dr. Suntad Chuawongin',
-
-      thaiName: 'ผศ.ดร.สันทัด ชูวงศ์อินทร์',
-
-      position: 'Center Director',
-
-      expertise: 'Robotics, Automation Systems',
-
-      email: 'suntad.c@kmitl.ac.th',
-
-      image: 'https://via.placeholder.com/150'
+      description: 'สกว. พัฒนาแพลตฟอร์มเทคโนโลยีฐานด้านการบูรณาการระบบเพื่องานหุ่นยนต์ฯ ด้วยระบบปฏิบัติการหุ่นยนต์ (ROS) ในภาคอุตสาหกรรมให้มีความเสถียรและน่าเชื่อถือ',
+      image:image1
 
     },
 
     {
 
-      id: 2,
+       id: 2,
 
-      name: 'Dr. Research Associate',
-
-      thaiName: 'ดร. นักวิจัย',
-
-      position: 'Senior Researcher',
-
-      expertise: 'Machine Vision, AI',
-
-      email: 'research@kmitl.ac.th',
-
-      image: 'https://via.placeholder.com/150'
+      description: 'NAC2018 ตอบโจทย์ประเทศไทยด้วยงานวิจัย ประเด็นมุ่งเน้น (Targeted R&D:Tracking Thailand Challenge) ',
+      image:image2
 
     },
 
@@ -230,19 +211,35 @@ const CiRAPage = () => {
 
       id: 3,
 
-      name: 'Eng. Technical Staff',
+      description: 'NAC2018 ตอบโจทย์ประเทศไทยด้วยงานวิจัย ประเด็นมุ่งเน้น (Targeted R&D:Tracking Thailand Challenge) ',
+      image:image3
 
-      thaiName: 'วศ. เจ้าหน้าที่เทคนิค',
+    },
+    {
 
-      position: 'Lead Engineer',
+      id: 4,
 
-      expertise: 'Control Systems, Integration',
+      description: 'NAC2018 ตอบโจทย์ประเทศไทยด้วยงานวิจัย ประเด็นมุ่งเน้น (Targeted R&D:Tracking Thailand Challenge) ',
+      image:image4
 
-      email: 'engineer@kmitl.ac.th',
+    },
+    {
 
-      image: 'https://via.placeholder.com/150'
+      id:5,
 
-    }
+      description: 'เรียนรู้การใช้งาน ROS (Robotics Operation  System) at CiRA ',
+      image:image5
+
+    },
+      {
+
+      id:6,
+
+      description: 'อบรมการใช้งาน KUKA Robot ',
+      image:image6
+
+    },
+   
 
   ];
 
@@ -339,7 +336,7 @@ const CiRAPage = () => {
 
         >
 
-          Our Team
+          Activities
 
         </button>
 
@@ -693,62 +690,43 @@ const CiRAPage = () => {
 
 
 
-        {/* Team Tab */}
-
-        {activeTab === 'team' && (
-
-          <section className="content-section">
-
-            <div className="section-header">
-
-              <h2 className="section-title">Our Team</h2>
-
-              <div className="title-underline"></div>
-
-              <p className="section-description">
-
-                Meet the experts driving innovation in robotics and automation
-
-              </p>
-
-            </div>
 
 
+          {/* Team Tab */}
+{activeTab === 'team' && (
+  <section className="content-section">
+    <div className="section-header">
+      <h2 className="section-title">Activities</h2>
+      <div className="title-underline"></div>
+      <p className="section-description">
+        Our recent activities and workshops
+      </p>
+    </div>
 
-            <div className="team-grid">
+    {/* Add the team grid here */}
+    <div className="team-grid">
 
-              {teamMembers.map((member) => (
+              {cira_activities.map((activities) => (
 
-                <div key={member.id} className="team-card">
+                <div key={activities.id} className="team-card">
 
                   <div className="team-image-wrapper">
 
-                    <img src={member.image} alt={member.name} className="team-image" />
+                    <img src={activities.image} alt={activities.name} className="team-image" />
 
                   </div>
 
                   <div className="team-info">
 
-                    <h3 className="team-name">{member.name}</h3>
-
-                    <p className="team-thai-name">{member.thaiName}</p>
-
-                    <p className="team-position">{member.position}</p>
-
                     <div className="team-divider"></div>
-
-                    <p className="team-expertise">
-
-                      <strong>Expertise:</strong> {member.expertise}
+                    <p className="image_description">
+                     {activities.description}
 
                     </p>
 
-                    <a href={`mailto:${member.email}`} className="team-email">
+                  
 
-                      {member.email}
-
-                    </a>
-
+                  
                   </div>
 
                 </div>
@@ -756,10 +734,10 @@ const CiRAPage = () => {
               ))}
 
             </div>
+  </section>
+)}
 
-          </section>
-
-        )}
+       
 
       </div>
 
