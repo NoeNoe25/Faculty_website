@@ -427,14 +427,14 @@
 
 
 
-.btn-secondary {
-  background: transparent;
+.hero-actions .btn .btn-secondary {
+  background: white;
   color: var(--slate-dark);
   border: 2px solid var(--gold-copper-light);
 }
 
-.btn-secondary:hover {
-  background: white;
+.hero-actions .btn-secondary:hover {
+  background: #ffffffd0;
   color: var(--slate-dark);
 }
 

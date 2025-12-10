@@ -9,80 +9,76 @@ import { FaUserGraduate, FaBook, FaMicroscope } from 'react-icons/fa';
 
 import { useNavigate } from 'react-router-dom';
 
+
 const Programs = () => {
   const [activeDegree, setActiveDegree] = useState('bachelor');
   const navigate = useNavigate(); // Move this to the top level of component
 
   const programsData = {
     bachelor: {
-      title: "Bachelor of Science Programs",
+      title: "Bachelor Programs",
       duration: "4 Years",
       degrees: [
         {
-          id: "its-bsc", // Add unique IDs for each program
-          name: "B.Sc. in Integrated Technology Systems",
-          code: "ITS-BSC",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.Comprehensive foundation in technology integration across multiple disciplines",
+          id: "be-nme", // Add unique IDs for each program
+          name: "BE. in Nanomaterial Engineering",
+          code: "CMIT",
+          department: "Department of Nanoscience and Nanotechnology",
+          description: "Nanotechnology is a crucial new field of science for national development in the era of globalization. It requires the integration of knowledge from various disciplines, and thus has been included in the national strategic plan.",
           courses: ["Systems Engineering", "Data Analytics", "Technology Management", "Innovation Design"],
-          careerPaths: ["Technology Analyst", "Systems Integrator", "Project Coordinator"],
-          requirements: ["High School Diploma", "Math & Science prerequisites"],
+          careerPaths: ["Production Engineer", "Process Control Engineer", "R&D Engineer", "Failure Analysis Engineer", "Material Engineering", "Researcher", "Government Jobs / Leading State Enterprise Jobs", "Robotics and Artificial Intelligence Engineer", "Systems Integration Engineer", "Programming Engineer", "Professor at Science and Technology Institute", "Freelancer", "Entrepreneur", "Self-Employed in Related Fields"],
+          requirements: ["Currently studying or have completed grade 12 (or equivalent) of the 2014 Basic Education Curriculum.", "Science-Mathematics study plan", "Be a Thai national or legally residing in Thailand."],
           image: image1
         },
         {
-          id: "nte-bsc",
-          name: "B.Sc. in Nanotechnology Engineering",
-          code: "NTE-BSC",
-          description: "Focus on nanoscale materials, devices, and applications. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.",
+          id: "be-mse",
+          name: "BE. in Manufacturing System Engineering",
+          code: "AMI",
+          department: "College of Advanced Manufacturing Innovation",
+          description: "The program integrates various disciplinaries including Electrical engineering, Industry engineering, Mechanical engineering, Electronics engineering, Control engineering, and Management industry.",
           courses: ["Nanomaterials Science", "Quantum Mechanics", "Microfabrication", "Nano-characterization"],
-          careerPaths: ["Nano-technician", "Research Assistant", "Quality Control Specialist"],
-          requirements: ["High School Diploma", "Chemistry & Physics prerequisites"],
+          careerPaths: ["Production Engineer", "Process Control Engineer", "R&D Engineer", "Failure Analysis Engineer", "Material Engineering", "Researcher", "Government Jobs / Leading State Enterprise Jobs", "Robotics and Artificial Intelligence Engineer", "Systems Integration Engineer", "Programming Engineer", "Professor at Science and Technology Institute", "Freelancer", "Entrepreneur", "Self-Employed in Related Fields"],
+          requirements: ["Currently studying or have completed grade 12 (or equivalent) of the 2014 Basic Education Curriculum.", "Science-Mathematics study plan", "Be a Thai national or legally residing in Thailand."],
           image: 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         },
         {
-          id: "stem-bsc",
-          name: "B.Sc. in STEM Education",
-          code: "STEM-BSC",
-          description: "Prepare for teaching and educational leadership in STEM fields",
+          id: "be-msecp",
+          name: "BE. in Manufacturing System Engineering (Continuing Program)",
+          code: "AMI",
+          department: "College of Advanced Manufacturing Innovation",
+          description: "Similar to the Bachelor of Engineering Program in Manufacturing System Engineering, this continuing program condenses various disciplinaries in a very short period of study (2 years) to accommodate working professionals.",
           courses: ["Educational Technology", "Curriculum Design", "STEM Pedagogy", "Classroom Innovation"],
-          careerPaths: ["STEM Teacher", "Educational Coordinator", "Curriculum Developer"],
-          requirements: ["High School Diploma", "Teaching aptitude assessment"],
+          careerPaths: ["Production Engineer", "Process Control Engineer", "R&D Engineer", "Failure Analysis Engineer", "Material Engineering", "Researcher", "Government Jobs / Leading State Enterprise Jobs", "Robotics and Artificial Intelligence Engineer", "Systems Integration Engineer", "Programming Engineer", "Professor at Science and Technology Institute", "Freelancer", "Entrepreneur", "Self-Employed in Related Fields"],
+          requirements: ["Currently studying or have completed grade 12 (or equivalent) of the 2014 Basic Education Curriculum.", "Science-Mathematics study plan", "Be a Thai national or legally residing in Thailand."],
           image: 'https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=1225&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         }
       ]
     },
     master: {
-      title: "Master of Science Programs",
+      title: "Master Programs",
       duration: "2 Years",
       degrees: [
         {
-          id: "ati-msc",
-          name: "M.Sc. in Advanced Technology Integration",
-          code: "ATI-MSC",
-          description: "Advanced study in integrating emerging technologies across industries",
+          id: "me-amse",
+          name: "ME. in Advanced Manufacturing System Engineering",
+          code: "AMI",
+          department: "College of Advanced Manufacturing Innovation",
+          description: "Master advanced manufacturing with a curriculum tailored to your goals. Choose from research-focused (Thesis) or professional (Course-based) tracks to gain specialized skills in system engineering, research methodology, and process innovation.",
           courses: ["Advanced Systems Design", "Technology Strategy", "Innovation Management", "Research Methods"],
           careerPaths: ["Technology Manager", "Innovation Consultant", "R&D Lead"],
           requirements: ["Bachelor's degree in related field", "3.0 GPA minimum", "Research proposal"],
           image: image2
         },
         {
-          id: "nme-msc",
-          name: "M.Sc. in Nanoscience and Molecular Engineering",
-          code: "NME-MSC",
-          description: "Specialized research in molecular-scale engineering and applications",
+          id: "msc-nnt",
+          name: "M.Sc. in Nanoscience and Nanotechnology",
+          code: "CMIT",
+          department: "Department of Nanoscience and Nanotechnology",
+          description: "Explore the frontier of technology at the atomic level. Our graduate programs in Nanoscience and Nanotechnology offer rigorous training and cutting-edge research opportunities, from fundamental discovery to real-world application.",
           courses: ["Advanced Nanomaterials", "Molecular Dynamics", "Nanofabrication Techniques", "Thesis Research"],
-          careerPaths: ["Research Scientist", "Process Engineer", "Materials Specialist"],
-          requirements: ["Bachelor's in Engineering or Science", "3.2 GPA minimum", "Lab experience"],
+          careerPaths: ["Researchers and scientists in nanotechnology", "Teachers or Lecturers", "Experts in quality assurance and control of goods and products in related industries", "Experts in the use of advanced instruments", "Independent entrepreneurs in nanotechnology", "Nanotechnology consultants"],
+          requirements: ["Applicants must hold a Bachelor's degree in Science, Engineering, Nanotechnology, or a related field from an institution accredited by the Civil Service Commission (CSC), or be currently pursuing a Master's degree in Science, Engineering, Nanotechnology, or a related field through transfer from another program.", "If an applicant does not meet the requirements in point 1, the decision will be at the discretion of the program committee."],
           image: image3
-        },
-        {
-          id: "stem-msc",
-          name: "M.Sc. in STEM Leadership",
-          code: "STEM-MSC",
-          description: "Leadership and management in STEM education and innovation",
-          courses: ["STEM Policy", "Leadership Theory", "Program Evaluation", "Capstone Project"],
-          careerPaths: ["STEM Director", "Education Administrator", "Policy Advisor"],
-          requirements: ["Bachelor's degree", "2 years relevant experience", "Leadership statement"],
-          image: image4
         }
       ]
     },
@@ -91,34 +87,26 @@ const Programs = () => {
       duration: "4-5 Years",
       degrees: [
         {
-          id: "iit-phd",
-          name: "Ph.D. in Integrated Innovative Technology",
-          code: "IIT-PHD",
-          description: "Pioneering research at the intersection of multiple technology disciplines Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.",
+          id: "phd-amse",
+          name: "Ph.D. in Advanced Manufacturing System Engineering (International Program)",
+          code: "AMI",
+          department: "College of Advanced Manufacturing Innovation",
+          description: "An advanced research degree offering flexible study plans for graduates of all levels. Combine deep theoretical study with practical thesis research to master the complexities of modern manufacturing system engineering.",
           courses: ["Advanced Research Methods", "Interdisciplinary Theory", "Dissertation Research", "Academic Writing"],
           careerPaths: ["University Professor", "Chief Technology Officer", "Research Director"],
           requirements: ["Master's degree", "3.5 GPA minimum", "Research publications", "Faculty interview"],
           image: 'https://images.unsplash.com/photo-1729843420196-1ff32bb39db5?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         },
         {
-          id: "nms-phd",
-          name: "Ph.D. in Nanotechnology and Materials Science",
-          code: "NMS-PHD",
-          description: "Cutting-edge research in nanomaterials and their applications",
+          id: "phd-nnt",
+          name: "Ph.D. in Nanoscience and Nanotechnology",
+          code: "CMIT",
+          department: "Department of Nanoscience and Nanotechnology",
+          description: "A research-intensive program designed to push the boundaries of nanoscale science. Candidates engage in pioneering research, developing novel materials and technologies to solve complex global challenges.",
           courses: ["Advanced Characterization", "Theoretical Modeling", "Grant Writing", "Laboratory Management"],
           careerPaths: ["Research Scientist", "Materials Engineer", "Academic Researcher"],
-          requirements: ["Master's in related field", "Strong research background", "Publication record"],
+          requirements: ["Applicants must hold a Master's degree in Science, Engineering, Nanotechnology, or a related field from an institution accredited by the Civil Service Commission (CSC), or be currently pursuing a Doctoral degree in Science,Engineering, Nanotechnology, or a related field transferred from another program.", "Applicants must hold a Bachelor's degree with First Class Honors in Science, Engineering, Nanotechnology, or a related field from an institution accredited by the CSC.", "If an applicant does not meet the requirements in point 1, the decision will be at the discretion of the program committee."],
           image: "https://images.pexels.com/photos/17485658/pexels-photo-17485658.png"
-        },
-        {
-          id: "ser-phd",
-          name: "Ph.D. in STEM Education Research",
-          code: "SER-PHD",
-          description: "Research-focused program advancing STEM education methodologies",
-          courses: ["Qualitative Research", "Statistical Analysis", "Educational Theory", "Dissertation Development"],
-          careerPaths: ["Education Researcher", "University Professor", "Policy Analyst"],
-          requirements: ["Master's degree", "Teaching experience", "Research proposal"],
-          image: 'https://images.pexels.com/photos/6755136/pexels-photo-6755136.jpeg'
         }
       ]
     }
@@ -131,6 +119,7 @@ const Programs = () => {
     });
   };
 
+  
   // // Function to handle Apply Now
   // const handleApplyNow = (program) => {
   //   navigate('/apply', { 
@@ -210,6 +199,7 @@ const Programs = () => {
                     </button>
                     <button 
                       className="btn btn-secondary" 
+                      // onClick={() => handleProgramDetails(degree)}
                       onClick={() => handleProgramDetails(degree)}
                     >
                       Program Details

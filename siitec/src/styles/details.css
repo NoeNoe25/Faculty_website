@@ -6,13 +6,44 @@
 
 /* Hero Section */
 .program-page__hero {
-  background: url('../assets/albums/NANO-cover-02.jpg') no-repeat center center/cover;
+  /* background: url('../assets/albums/NANO-cover-02.jpg') no-repeat center center/cover;
   padding: 6rem 0 4rem;
   color: white;
   position: relative;
   overflow: hidden;
-  z-index: 0;
+  z-index: 0; */
   
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.program-page__back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.program-page__back-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 
@@ -35,21 +66,18 @@
   font-size: 3.2rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, #642a00, #bf7530,#cA8c50); 
-  line-height: 1.1;
+  background: linear-gradient(90deg, #f19408, #e28e3f, #e4a260); 
    -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  display: inline-block;
 }
 
 .program-page__hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 2.5rem;
-  line-height: 1.6;
   font-weight: 300;
   opacity: 0.9;
-  color: #4A5455;
+  color: white;
 }
 
 .program-page__hero-actions {
@@ -431,6 +459,7 @@
   color: var(--slate-dark);
   margin-bottom: 1rem;
   font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .program-page__career-card p {
@@ -776,13 +805,14 @@
 
 .program-page .program-page__btn--secondary {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--slate-dark);
+  border: var(--slate-dark) 1px solid;
 }
 
 .program-page .program-page__btn--secondary:hover {
   background: white;
-  color: var(--slate-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-blue);
 }
 
 .program-page .program-page__btn--outline {

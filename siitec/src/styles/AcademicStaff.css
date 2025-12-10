@@ -49,12 +49,11 @@
   font-weight: 500;  
   position: relative;
   z-index: 2;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: #e2e8f0; 
+.staff-hero .hero-subtitle {
+  font-size: 1.05rem;
+  color: #ffffff; 
   background-color: transparent; 
   margin-bottom: 4rem;
   font-weight: 400;
@@ -91,11 +90,10 @@
   box-shadow: 0 0 0 3px rgba(201, 166, 107, 0.1);
 }
 
-.search-icon {
+.search-bar .search-icon {
   position: absolute;
   left: 1rem;
-  top: 58%; 
-  transform: translateY(-50%);
+  transform: translateY(-42%);
   font-size: 1.2rem;
   opacity: 0.5;
   z-index: 2;

@@ -70,9 +70,9 @@
 }
 
 .btn-secondary:hover {
-  color: var(--gold-copper) !important; 
+  color: var(--gold-copper-dark) !important; 
   text-decoration: underline; 
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
   text-underline-offset: 4px;
   transform: translateY(-3px);
 }
