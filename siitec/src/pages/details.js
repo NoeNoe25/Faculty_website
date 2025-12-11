@@ -858,17 +858,26 @@ const ProgramDetailsWithNav = () => {
           </ul>
 
           <div className="program-page__nav-footer">
-            <button className="program-page__btn program-page__btn--outline program-page__nav-cta">
-              <FaDownload className="program-page__btn-icon" /> &nbsp;
-              Download Brochure
-            </button>
+             <a className="program-page__btn program-page__btn--outline program-page__nav-cta" 
+    href="https://drive.google.com/file/d/1D3iQ2yQY29jMm5eadVS2-M2LuY34G0Rd/view"
+        target="_blank"
+        rel="noopener noreferrer" aria-label="Download Brochure (opens in new tab)">
+      <FaDownload className="program-page__btn-icon" /> &nbsp;
+      Download Brochure
+    </a>
           </div>
           
           <div className="program-page__nav-footer" style={{ marginTop: '10px' }}>
-            <button className="program-page__btn program-page__btn--outline program-page__nav-cta">
-              <FaDownload className="program-page__btn-icon" /> &nbsp;
-              Download Academic Calendar
-            </button>
+             <a
+        className="program-page__btn program-page__btn--outline program-page__nav-cta"
+        href="https://www.kmitl.ac.th/academic-calendar"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download Academic Calendar (opens in new tab)"
+      >
+        <FaDownload className="program-page__btn-icon" />{" "}
+        &nbsp; Download Academic Calendar
+      </a>
           </div>
 
         </nav>

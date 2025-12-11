@@ -3,36 +3,33 @@ import React from "react";
 import "../styles/components/stem.css";
 import { LuFlaskConical, LuCpu, LuChartBar, LuMicroscope } from "react-icons/lu";
 
-
 const STEMSection = () => {
   const programs = [
-  {
-    title: "Science Innovation",
-    description:
-      "Cutting-edge research in physics, chemistry, and biological sciences",
-    icon: LuFlaskConical,
-  },
-  {
-    title: "Technology Engineering",
-    description:
-      "Advanced engineering programs focusing on emerging technologies",
-    icon: LuCpu,
-  },
-  {
-    title: "Mathematics & Analytics",
-    description:
-      "Data science, analytics, and mathematical modeling programs",
-    icon: LuChartBar,
-  },
-  {
-    title: "Research & Development",
-    description:
-      "Innovation labs and applied research in emerging scientific fields",
-    icon: LuMicroscope,
-  },
-];
-
-  
+    {
+      title: "Research Excellence Centers",
+      description:
+        "Interdisciplinary centers driving high-impact research in science, engineering, and technology.",
+      icon: LuFlaskConical,
+    },
+    {
+      title: "Technology & Innovation Labs",
+      description:
+        "State-of-the-art laboratories supporting advanced experimentation, prototyping, and innovation.",
+      icon: LuCpu,
+    },
+    {
+      title: "Data & Computational Research",
+      description:
+        "Applied research in data science, AI, analytics, and computational modeling to solve real-world challenges.",
+      icon: LuChartBar,
+    },
+    {
+      title: "Scientific Discovery & Development",
+      description:
+        "Cutting-edge studies in emerging scientific fields, supporting breakthroughs and industry collaborations.",
+      icon: LuMicroscope,
+    },
+  ];
 
   return (
     <section id="stem" className="section stem-section">
@@ -40,16 +37,17 @@ const STEMSection = () => {
         <div className="section-header">
           <div className="section-title">
             <span className="section-subtitle">
-              Advancing Knowledge in Science & Technology
+              Advancing Knowledge Through Research
             </span>
-            <h2>STEM Programs</h2>
+            <h2>Research Highlights</h2>
           </div>
           <p className="section-description">
-            Explore diverse STEM fields supported by expert faculty, modern facilities, 
-            and research-driven learning. Our programs help students grow their knowledge, 
-            creativity, and technical skills for future careers.
+            Explore diverse research initiatives led by expert faculty, supported by modern 
+            facilities and interdisciplinary collaboration. Our research programs drive innovation, 
+            scientific discovery, and solutions that shape the future of technology and society.
           </p>
         </div>
+
         <div className="stem-grid">
           {programs.map((program, index) => (
             <div key={index} className="stem-card card">
