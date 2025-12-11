@@ -253,7 +253,12 @@ const KAISEMPage = () => {
             Advancing the future of industrial automation through cutting-edge research,
             innovation, and collaboration with industry partners.
           </p>
-          <div className="hero-stats">
+           <div className="hero-cta-buttons">
+            <a href="https://www.kmitl.ac.th/article/%E0%B8%AA%E0%B8%88%E0%B8%A5-%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%A7%E0%B8%B4%E0%B8%88%E0%B8%B1%E0%B8%A2%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%8B%E0%B8%A1%E0%B8%B4%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B8%94%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E2%80%9Ckaisem%E2%80%9D%E0%B8%84%E0%B8%A3%E0%B8%9A%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%A3%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B9%81%E0%B8%A3%E0%B8%81%E0%B9%83%E0%B8%99%E0%B9%84%E0%B8%97%E0%B8%A2" target="_blank" rel="noopener noreferrer" className="hero-cta-btn">
+                Visit Website
+            </a>
+        </div>
+          {/* <div className="hero-stats">
             <div className="stat-item">
               <div className="stat-number">15+</div>
               <div className="stat-label">Research Projects</div>
@@ -266,7 +271,7 @@ const KAISEMPage = () => {
               <div className="stat-number">50+</div>
               <div className="stat-label">Publications</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
