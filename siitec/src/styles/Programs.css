@@ -1,7 +1,6 @@
 /* src/styles/Programs.css */
 .programs-section {
   background: var(--background-primary);
-  margin-top: 80px;
 }
 
 /* Degree Selector Tabs */
@@ -81,7 +80,7 @@
 
 .program-header h3 {
   color: var(--text-dark);
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -228,6 +227,12 @@
   flex: 1;
   min-width: 120px;
   text-align: center;
+}
+
+.btn .btn-secondary:hover {
+  background: var(--gold-copper-light);
+  color: var(--text-dark);
+  border-color: var(--gold-copper-light);
 }
 
 /* Additional Info Cards */

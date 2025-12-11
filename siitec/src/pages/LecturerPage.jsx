@@ -441,39 +441,23 @@ const LecturerPage = () => {
 
   ];
 
-  // Filter lecturers based on search and department
-  // const filteredLecturers = useMemo(() => {
-  //   return lecturers.filter(lecturer => {
-  //     const matchesSearch = 
-  //       lecturer.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-  //       lecturer.thaiName.includes(searchQuery) ||
-  //       lecturer.research.toLowerCase().includes(searchQuery.toLowerCase());
-      
-  //     const matchesDepartment = 
-  //       selectedDepartment === 'all' || lecturer.department === selectedDepartment;
-      
-  //     return matchesSearch && matchesDepartment;
-  //   });
-  // }, [searchQuery, selectedDepartment]);
 
   // Filter lecturers based on search and department
   const filteredLecturers = useMemo(() => {
     return lecturers.filter(lecturer => {
-      // 1. Prepare search term safely
+  
       const term = searchQuery.toLowerCase();
-
-      // 2. Prepare data safely (Use || "" to prevent crashes)
+      
       const name = (lecturer.name || "").toLowerCase();
       const thaiName = (lecturer.thaiName || ""); 
       const research = (lecturer.research || "").toLowerCase();
-      const title = (lecturer.title || "").toLowerCase(); // <--- ADDED THIS
-
-      // 3. Check for matches
+      const title = (lecturer.title || "").toLowerCase(); 
+      
       const matchesSearch = 
         name.includes(term) ||
         thaiName.includes(searchQuery) ||
         research.includes(term) ||
-        title.includes(term); // <--- ADDED THIS
+        title.includes(term); 
       
       const matchesDepartment = 
         selectedDepartment === 'all' || lecturer.department === selectedDepartment;

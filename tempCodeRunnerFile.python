@@ -1,0 +1,78 @@
+from fpdf import FPDF
+import textwrap
+
+class PDF(FPDF):
+    def header(self):
+        self.set_font('Arial', 'B', 15)
+        self.cell(0, 10, 'Book Summary: Why Machines Learn', 0, 1, 'C')
+        self.ln(5)
+
+    def footer(self):
+        self.set_y(-15)
+        self.set_font('Arial', 'I', 8)
+        self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
+
+    def chapter_title(self, title):
+        self.set_font('Arial', 'B', 12)
+        self.set_fill_color(200, 220, 255)
+        self.cell(0, 6, title, 0, 1, 'L', 1)
+        self.ln(4)
+
+    def chapter_body(self, body):
+        self.set_font('Arial', '', 11)
+        self.multi_cell(0, 6, body)
+        self.ln()
+
+def create_summary_pdf(filename):
+    pdf = PDF()
+    pdf.add_page()
+    
+    # Overview
+    pdf.chapter_title("1. Book Overview")
+    overview_text = (
+        "Title: Why Machines Learn: The Elegant Math Behind Modern AI\n"
+        "Author: Anil Ananthaswamy\n"
+        "Core Premise: The book demystifies AI by explaining the fundamental mathematics "
+        "(Linear Algebra, Calculus, Probability) that power machine learning. "
+        "It weaves these concepts into a historical narrative, showing how mathematical "
+        "breakthroughs ended 'AI Winters' and led to the Deep Learning revolution."
+    )
+    pdf.chapter_body(overview_text)
+
+    # The Math
+    pdf.chapter_title("2. The Three Mathematical Pillars")
+    math_text = (
+        "- Linear Algebra (Vectors): The language of data. Everything from images to words "
+        "is converted into lists of numbers (vectors) in high-dimensional space.\n\n"
+        "- Calculus (Optimization): The engine of learning. Concepts like Gradient Descent "
+        "are used to minimize error (loss). The book uses the metaphor of descending a misty mountain "
+        "to find the lowest point (zero error).\n\n"
+        "- Probability: The tool for uncertainty. Using Bayes' Theorem to update predictions "
+        "as new data arrives."
+    )
+    pdf.chapter_body(math_text)
+
+    # Historical Flow
+    pdf.chapter_title("3. Key Historical & Technical Milestones")
+    history_text = (
+        "Phase 1: The Perceptron (1950s)\n"
+        "Frank Rosenblatt created the Perceptron to mimic neurons. It failed to solve non-linear "
+        "problems (the XOR problem), leading to the first AI Winter.\n\n"
+        "Phase 2: The Kernel Trick & SVMs\n"
+        "Scientists used a mathematical trick to project data into higher dimensions, allowing "
+        "complex data to be easily separated by a plane.\n\n"
+        "Phase 3: Backpropagation\n"
+        "The application of the Chain Rule of Calculus allowed multi-layer neural networks "
+        "to 'learn' by propagating error backward from output to input.\n\n"
+        "Phase 4: Deep Learning & Transformers\n"
+        "Modern eras defined by Convolutional Neural Networks (CNNs) for images and "
+        "Transformers (Attention mechanisms) for language."
+    )
+    pdf.chapter_body(history_text)
+
+    pdf.output(filename)
+    return filename
+
+# Create the file
+file_path = "Why_Machines_Learn_Summary.pdf"
+create_summary_pdf(file_path)

@@ -26,21 +26,15 @@
   justify-content: center;
   min-height: 500px;
   z-index: 0;
-  
-  
 }
-
 
 .about_hero-content h2 {
   font-size: 2.5rem;
   color: var(--tech-gradient-reverse);
   margin-bottom: 1.5rem;
-  font-weight: 200;
-  color: slategrey;
-  letter-spacing: -0.02em;
-  position: relative;
-  z-index:2;
-}
+  font-weight: 300;
+  z-index:3;
+} 
 
 .about_hero-subtitle {
   font-size: 1.2rem;
