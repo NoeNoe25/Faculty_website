@@ -93,15 +93,22 @@ const MANUDepartmentPage = () => {
       <section className="nanodept-hero" style={{ height: '80vh' }}>
         <div className="hero-overlay">
           <div className="hero-content">
-            <h1 className="hero-title">Department of Nanoscience and Nanotechnology</h1>
+            <h1 className="hero-title">Department of Manufacturing System Technology (MANU)</h1>
             <p className="hero-subtitle">
               Pioneering innovation at the atomic scale since 2005
             </p>
-            <button className="hero-cta-btn">Apply Now</button>
+           <div className="hero-cta-buttons">
+            <a href="https://admission.reg.kmitl.ac.th/" target="_blank" rel="noopener noreferrer" className="hero-cta-btn">
+                Apply Now
+            </a>
+            <a href="http://www.cmit.kmitl.ac.th/program-undergrad/" target="_blank" rel="noopener noreferrer" className="hero-cta-btn">
+                Visit Website
+            </a>
+        </div>
           </div>
         </div>
-        <div className="overlay">
-            <div className="tech-grid-overlay"></div>
+        <div className="dept_overlay">
+            <div className="dept_tech-grid-overlay"></div>
           </div>
       </section>
 

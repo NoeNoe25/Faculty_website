@@ -15,14 +15,14 @@ const Programs = () => {
 
   const programsData = {
     bachelor: {
-      title: "Bachelor of Science Programs",
+      title: "Bachelor of Engineering Program in Nanomaterial Engineering",
       duration: "4 Years",
       degrees: [
         {
           id: "its-bsc", // Add unique IDs for each program
-          name: "B.Sc. in Integrated Technology Systems",
+          name: "B.Eng. in Nanomaterial Engineering",
           code: "ITS-BSC",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.Comprehensive foundation in technology integration across multiple disciplines",
+          description: "Nanotechnology is a crucial new field of science for national development in the era of globalization. It requires the integration of knowledge from various disciplines, and thus has been included in the national strategic plan. However, Thailand faces a significant shortage of experts in this emerging field. Therefore, this curriculum is directly vital for supporting national development in nanoscience and nanotechnology. It emphasizes integrated research fostering collaboration among faculty members from the college, other faculties at King Mongkut's Institute of Technology Ladkrabang, and external experts in various fields.",
           courses: ["Systems Engineering", "Data Analytics", "Technology Management", "Innovation Design"],
           careerPaths: ["Technology Analyst", "Systems Integrator", "Project Coordinator"],
           requirements: ["High School Diploma", "Math & Science prerequisites"],

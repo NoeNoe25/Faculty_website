@@ -2,13 +2,12 @@
 import React from 'react';
 import ParallaxSection from '../components/ParallaxSection';
 import STEMSection from '../components/stem';
-import TrekkersHighlights from '../components/TrekkersHighlights';
+import HighlightsSection from '../components/HighlightsSection';
 import LatestStories from '../components/LatestStories';
 import Activities from '../components/activities';
-import CTASection from '../components/CTASection';
 import Testimonials from '../components/Testimonials';
 import PartnersSection from '../components/PartnersSection';
-import Newsletter from '../components/Newsletter';
+import VideoSection from '../components/Video';
 import '../styles/App.css';
 
 function Home() {
@@ -21,15 +20,14 @@ function Home() {
       <STEMSection />
       
       {/* Admission & Event Highlights */}
-      <TrekkersHighlights />
+      <HighlightsSection />
       
       
       {/* Latest News & Stories */}
-      <LatestStories />
       
       {/* Activities & Events */}
       <Activities />
-      
+      <VideoSection />
       {/* Success Stories & Testimonials */}
       <Testimonials />
       

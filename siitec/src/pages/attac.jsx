@@ -256,7 +256,12 @@ const ATTACPage = () => {
             Advancing the future of industrial automation through cutting-edge research,
             innovation, and collaboration with industry partners.
           </p>
-          <div className="hero-stats">
+           <div className="hero-cta-buttons">
+            <a href="http://www.cmit.kmitl.ac.th/attac-instrument/" target="_blank" rel="noopener noreferrer" className="hero-cta-btn">
+                Visit Website
+            </a>
+        </div>
+          {/* <div className="hero-stats">
             <div className="stat-item">
               <div className="stat-number">15+</div>
               <div className="stat-label">Research Projects</div>
@@ -269,7 +274,7 @@ const ATTACPage = () => {
               <div className="stat-number">50+</div>
               <div className="stat-label">Publications</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
