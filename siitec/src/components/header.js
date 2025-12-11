@@ -114,7 +114,11 @@ const Header = () => {
           { name: language === 'EN' ? 'For External Partners' : 'สำหรับพันธมิตรภายนอก', link: '#', isHeader: true,  icon: <FaUsers /> },
           { name: language === 'EN' ? 'Faculty Visit Request' : 'คำขอเยี่ยมชมคณะ', link: '/industry-collab' },
           { name: language === 'EN' ? 'Instrument Booking Service' : 'บริการจองเครื่องมือ', link: 'http://www.cmit.kmitl.ac.th/testing-process/' },
-          { name: language === 'EN' ? 'Partnership Inquiry' : 'สอบถามความร่วมมือ', mailto: 'ssitec@kmitl.ac.th' }
+          { 
+  name: language === 'EN' ? 'Partnership Inquiry' : 'สอบถามความร่วมมือ', 
+  link: 'mailto:ssitec@kmitl.ac.th',
+  isMailto: true // Add a flag to identify mailto links
+}
         ]
       }
     ],
@@ -200,7 +204,6 @@ const randcMegaMenu = {
       submenu: [
         { name: language === 'EN' ? 'Vision/Mission' : 'ชมรมและกิจกรรม', link: '/About2' },
         { name: language === 'EN' ? 'Organizational structure' : 'หอพัก', link: '/OrgStructure' },
-        { name: language === 'EN' ? 'Faculty Committee' : 'หอพัก', link: '#' },
         { name: language === 'EN' ? 'Executive' : 'หอพัก', link: '/Executive' },
         { name: language === 'EN' ? 'Lecturer' : 'หอพัก', link: '/LecturerPage' },
         { name: language === 'EN' ? 'Staff' : 'หอพัก', link: '/AcademicStaff' }

@@ -16,14 +16,14 @@ export default function PartnersSection() {
   return (
     <section className="partners-section">
       <div className="partners-container">
-        <div className="partners-header">
+        {/* <div className="partners-header">
           <span className="partners-subtitle">Trusted Partnerships</span>
           <h2 className="partners-title">Industry & Academic Partners</h2>
           <p className="partners-description">
             Collaborating with leading organizations to provide real-world experience and opportunities
           </p>
-        </div>
-
+        </div> */}
+{/* 
         <div className="partners-grid">
           {partners.map((partner) => (
             <div key={partner.id} className="partner-card">
@@ -34,7 +34,7 @@ export default function PartnersSection() {
               />
             </div>
           ))}
-        </div>
+        </div> */}
 
         <div className="partners-cta">
           <p>Interested in partnering with us?</p>
