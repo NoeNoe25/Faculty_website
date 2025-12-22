@@ -140,7 +140,7 @@ const randcMegaMenu = {
       title: language === 'EN' ? 'Research' : 'หอพัก',
       icon: <FaGraduationCap />,
       items: [
-        { name: language === 'EN' ? 'Manu Research Group' : 'null', link: '/AcademicCalendar' },
+        { name: language === 'EN' ? 'Manu Research Group' : 'null', link: '/ResearcherProfile' },
         { name: language === 'EN' ? 'Nano Laboratory' : 'null', link: '/student-career' },
       ]
     },

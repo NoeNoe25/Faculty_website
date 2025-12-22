@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/components/Testimonials.css';
 
 export default function Testimonials() {
@@ -39,9 +39,19 @@ export default function Testimonials() {
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  // 🔁 AUTO SLIDE
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextTestimonial();
+    }, 3000); // 5 seconds
+
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
   return (
     <section className="testimonials-section">
       <div className="testimonials-container">
+
         <div className="testimonials-header">
           <span className="testimonials-subtitle">Success Stories</span>
           <h2 className="testimonials-title">What Our Alumni Say</h2>
@@ -56,10 +66,10 @@ export default function Testimonials() {
             <p className="testimonial-quote">
               {testimonials[activeIndex].quote}
             </p>
-            
+
             <div className="testimonial-author">
-              <img 
-                src={testimonials[activeIndex].image} 
+              <img
+                src={testimonials[activeIndex].image}
                 alt={testimonials[activeIndex].name}
                 className="author-image"
               />
@@ -73,32 +83,26 @@ export default function Testimonials() {
 
           <div className="carousel-controls">
             <button onClick={prevTestimonial} className="carousel-btn prev">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
+              ‹
             </button>
-            
+
             <div className="carousel-dots">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
                   className={`dot ${index === activeIndex ? 'active' : ''}`}
-                  aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>
 
             <button onClick={nextTestimonial} className="carousel-btn next">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
+              ›
             </button>
           </div>
         </div>
-        
-      </div>
 
+      </div>
     </section>
   );
 }

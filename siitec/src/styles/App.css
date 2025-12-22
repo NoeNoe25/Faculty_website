@@ -64,14 +64,15 @@
 }
 
 .btn-secondary {
-  background: transparent !important;
-  color: var(--gold-copper) !important;
+  background: transparent;
+  color: var(--gold-copper) ;
+  border: 2px solid var(--gold-copper) ;
   
 }
 
 .btn-secondary:hover {
   color: var(--gold-copper-dark) !important; 
-  text-decoration: underline; 
+  text-decoration:  none; 
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
   transform: translateY(-3px);
