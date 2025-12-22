@@ -11,7 +11,7 @@ const LecturerPage = () => {
       name: 'Dr. Jiti Nookaew',
       thaiName: 'ศาสตราจารย์.ดร.จิติ หนูแก้ว',
       title: 'Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'jiti.nu@kmitl.ac.th',
       phone: '02-3298000 ext. 3079',
       office: 'CMIT Building',
@@ -23,7 +23,7 @@ const LecturerPage = () => {
       name: 'Dr. Wisanu Petchpa',
       thaiName: 'ศาสตราจารย์.ดร.วิษณุ เพชรภา',
       title: 'Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'wisanu.pe@kmitl.ac.th',
       phone: '02-3298000 ext. 3119',
       office: 'CMIT Building',
@@ -35,7 +35,7 @@ const LecturerPage = () => {
       name: 'Dr. Benjapon Tanhoo',
       thaiName: 'รองศาสตราจารย์.ดร.เบญจพล ตันฮู้',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'benchapol.tu@kmitl.ac.th',
       phone: '02-3298000 ext. 3128',
       office: 'CMIT Building',
@@ -47,7 +47,7 @@ const LecturerPage = () => {
       name: 'Dr. Wanwilai Witthayakorn',
       thaiName: 'รองศาสตราจารย์.ดร.วรรณวิลัย วิทยากร',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'wanwilai.vi@kmitl.ac.th',
       phone: '02-3298000 ext. 2169',
       office: 'CMIT Building',
@@ -59,7 +59,7 @@ const LecturerPage = () => {
       name: 'Dr. Winadda Wongwiriyaphan',
       thaiName: 'รองศาสตราจารย์.ดร. วินัดดา วงศ์วิริยะพันธ์',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'winadda.wo@kmitl.ac.th',
       phone: '02-3298000 ext. 3133',
       office: 'CMIT Building',
@@ -71,7 +71,7 @@ const LecturerPage = () => {
       name: 'Dr. Suthee Chutipaijit',
       thaiName: 'รองศาสตราจารย์.ดร.สุธี ชุติไพจิตร',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'sutee.ch@kmitl.ac.th',
       phone: '02-3298000 ext. 3140',
       office: 'CMIT Building, Room 205',
@@ -83,7 +83,7 @@ const LecturerPage = () => {
       name: 'Dr. Darinee Promyothin',
       thaiName: 'รองศาสตราจารย์.ดร. ดารินี พรหมโยธิน',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'darinee.ph@kmitl.ac.th',
       phone: '02-3298000 ext. 3133',
       office: 'CMIT Building',
@@ -95,7 +95,7 @@ const LecturerPage = () => {
       name: 'Dr. Nawaphan Khayankit',
       thaiName: 'รองศาสตราจารย์.ดร. นวพันธ์ ขยันกิจ',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'navaphun.ka@kmitl.ac.th',
       phone: '02-3298000 ext. 2176',
       office: 'CMIT Building',
@@ -107,7 +107,7 @@ const LecturerPage = () => {
       name: 'Dr. Thotsapol Meluangnon',
       thaiName: 'รองศาสตราจารย์.ดร. ทศพล เมลืองนนท์',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'tosapol.ma@kmitl.ac.th',
       phone: '02-3298000 ext. 2173',
       office: 'CMIT Building',
@@ -119,7 +119,7 @@ const LecturerPage = () => {
       name: 'Dr. Apilak Eiaduea',
       thaiName: 'รองศาสตราจารย์.ดร. อภิลักษณ์ เอียดเอื้อ',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'apiluck.ei@kmitl.ac.th',
       phone: '02-3298000 ext. 3132',
       office: 'CMIT Building',
@@ -131,7 +131,7 @@ const LecturerPage = () => {
       name: 'Dr. Korakot Onlao',
       thaiName: 'รองศาสตราจารย์.ดร. กรกช อ่อนละออ',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'korakot.on@kmitl.ac.th',
       phone: '02-3298000 ext. 3128',
       office: 'CMIT Building',
@@ -143,7 +143,7 @@ const LecturerPage = () => {
       name: 'Dr. Sakon Rahong',
       thaiName: 'รองศาสตราจารย์.ดร. สากล ระหงษ์',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'sakon.ra@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
       office: 'CMIT Building',
@@ -155,7 +155,7 @@ const LecturerPage = () => {
       name: 'Dr. Nonglak Huangkamhaeng',
       thaiName: 'รองศาสตราจารย์.ดร. นงลักษณ์ หวงกำแหง',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'nongluck.ho@kmitl.ac.th',
       phone: '02-3298000 ext. 2173',
       office: 'CMIT Building',
@@ -167,7 +167,7 @@ const LecturerPage = () => {
       name: 'Dr. Kanokthip Bunyaratglin',
       thaiName: 'รองศาสตราจารย์.ดร. กนกทิพย์ บุณยรัตกลิน',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'kanokthip.bo@kmitl.ac.th',
       phone: '02-3298000 ext. 2176',
       office: 'CMIT Building',
@@ -179,7 +179,7 @@ const LecturerPage = () => {
       name: 'Dr. Wanitchaya Mekprasat',
       thaiName: 'รองศาสตราจารย์.ดร. วณิชยา เมฆประสาท',
       title: 'Associate Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'wanichaya.me@kmitl.ac.th',
       phone: '02-3298000 ext. 2176',
       office: 'CMIT Building',
@@ -191,7 +191,7 @@ const LecturerPage = () => {
       name: 'Dr. Pitiporn Thanomngam',
       thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. ปิติพร ถนอมงาม',
       title: 'Assistant Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'pitiporn.th@kmitl.ac.th',
       phone: '02-3298000 ext. 3081',
       office: 'CMIT Building',
@@ -203,7 +203,7 @@ const LecturerPage = () => {
       name: 'Dr. Tutiyaporn Thiwawong',
       thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. ทุติยาภรณ์ ทิวาวงศ์',
       title: 'Assistant Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'thutiyaporn.th@kmitl.ac.th',
       phone: '02-3298000 ext. 3128',
       office: 'CMIT Building',
@@ -215,7 +215,7 @@ const LecturerPage = () => {
       name: 'Dr. Adirek Rangkasikorn',
       thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. อดิเรก แรงกสิกรณ์',
       title: 'Assistant Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'adirek.ra@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
       office: 'CMIT Building',
@@ -227,7 +227,7 @@ const LecturerPage = () => {
       name: 'Dr. Kanoknan Phachirak',
       thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. กนกนันทน์ ภาชีรักษ์',
       title: 'Assistant Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'kanoknan.ph@kmitl.ac.th',
       phone: '02-3298000 ext. 3132',
       office: 'CMIT Building',
@@ -239,7 +239,7 @@ const LecturerPage = () => {
       name: 'Dr. Mayuree Ployiem Riley',
       thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. มยุรี พลเยี่ยม ไรลีย์',
       title: 'Assistant Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'mayuree.ph@kmitl.ac.th',
       phone: '02-3298000 ext. 2173',
       office: 'CMIT Building',
@@ -251,7 +251,7 @@ const LecturerPage = () => {
       name: 'Dr. Kittipong Amnuaysawat',
       thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. กิตติพงศ์ อำนวยสวัสดิ์',
       title: 'Assistant Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'kittiphong.am@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
       office: 'CMIT Building',
@@ -263,7 +263,7 @@ const LecturerPage = () => {
       name: 'Dr. Supamas Wirunchit',
       thaiName: 'ผู้ช่วยศาสตราจารย์.ดร.ศุภมาส วิรุญจิตร',
       title: 'Assistant Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'supamas.wi@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
       office: 'CMIT Building',
@@ -275,7 +275,7 @@ const LecturerPage = () => {
       name: 'Dr. Khattiya Chalapat',
       thaiName: 'ดร. ขัตติยา ชลาพัฒน์',
       title: 'Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'khattiya.ch@kmitl.ac.th',
       phone: '02-3298000 ext. 2175',
       office: 'CMIT Building',
@@ -287,7 +287,7 @@ const LecturerPage = () => {
       name: 'Dr. Thirayut Uwanno',
       thaiName: 'ดร. ธีรยุทธ อุวรรณโณ',
       title: 'Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'teerayut.uw@kmitl.ac.th',
       phone: '02-3298000 ext. 2177',
       office: 'CMIT Building',
@@ -299,7 +299,7 @@ const LecturerPage = () => {
       name: 'Dr. Chanyanan Bunrod',
       thaiName: 'ดร. ชญาน์นันท์ บุญรอด',
       title: 'Professor',
-      department: 'CMIT',
+      department: 'NANO',
       email: 'chayanan.bo@kmitl.ac.th',
       phone: '02-3298000 ext. ??',
       office: 'CMIT Building',
@@ -311,7 +311,7 @@ const LecturerPage = () => {
       name: 'Dr. Kamol Wasapinyokul',
       thaiName: '-',
       title: 'Assistant Professor (Head of Department)',
-      department: 'AMI',
+      department: 'MANU',
       email: 'kamol.wa@kmitl.ac.th',
       phone: '02-329-8264 ext. 2183',
       office: '55-Year Chalermprakiat Building, Room 405',
@@ -323,7 +323,7 @@ const LecturerPage = () => {
       name: 'Dr. Jatuporn Thongsri ',
       thaiName: '-',
       title: 'Associate Professor (Associate Dean)',
-      department: 'AMI',
+      department: 'MANU',
       email: 'Jatuporn.th@kmitl.ac.th',
       phone: '02-329-8264 ext. 2183',
       office: '55-Year Chalermprakiat Building, Room 406',
@@ -335,7 +335,7 @@ const LecturerPage = () => {
       name: 'Dr. Ananta Sinchai ',
       thaiName: '-',
       title: 'Assistant Professor (Associate Dean)',
-      department: 'AMI',
+      department: 'MANU',
       email: 'ananta.sin@kmitl.ac.th',
       phone: '02-329-8271 ext. 2182',
       office: '55-Year Chalermprakiat Building, Room 404',
@@ -347,7 +347,7 @@ const LecturerPage = () => {
       name: 'Dr. Ploypailin Yongsiri',
       thaiName: '-',
       title: 'Assistant Professor (Assistant Dean)',
-      department: 'AMI',
+      department: 'MANU',
       email: 'ploypailin.yo@kmitl.ac.th',
       phone: '02-329-8271 ext. 2182',
       office: '55-Year Chalermprakiat Building',
@@ -359,7 +359,7 @@ const LecturerPage = () => {
       name: 'Dr. Santhad Chuwongin',
       thaiName: '-',
       title: 'Assistant Professor (Head of CiRA)',
-      department: 'AMI',
+      department: 'MANU',
       email: 'santhad.ch@kmitl.ac.th',
       phone: '02-329-8264 ext. 2183',
       office: '55-Year Chalermprakiat Building, Room 405',
@@ -371,7 +371,7 @@ const LecturerPage = () => {
       name: 'Dr. Chatrpol Pakasiri',
       thaiName: '-',
       title: 'Associate Professor (Dean)',
-      department: 'AMI',
+      department: 'MANU',
       email: 'chatrpol.pa@kmitl.ac.th',
       phone: ' 02-329-8264 ext. 2182',
       office: '55-Year Chalermprakiat Building, Room 404',
@@ -383,7 +383,7 @@ const LecturerPage = () => {
       name: 'Dr. Rachsak Sakdanuphab',
       thaiName: '-',
       title: 'Associate Professor',
-      department: 'AMI',
+      department: 'MANU',
       email: 'rachsak.sa@kmitl.ac.th',
       phone: '02-329-8264 ext. 2183',
       office: '55-Year Chalermprakiat Building, Room 405',
@@ -395,7 +395,7 @@ const LecturerPage = () => {
       name: 'Dr. Chanon Warisarn',
       thaiName: '-',
       title: 'Associate Professor',
-      department: 'AMI',
+      department: 'MANU',
       email: 'chanon.wa@kmitl.ac.th',
       phone: '02-329-8264 ext. 2150',
       office: '55-Year Chalermprakiat Building, Room 406',
@@ -407,7 +407,7 @@ const LecturerPage = () => {
       name: 'Dr. Lertsak Lekawat ',
       thaiName: '-',
       title: 'Assistant Professor',
-      department: 'AMI',
+      department: 'MANU',
       email: 'lertsak@ine.co.th',
       phone: '02-329-8264 ext. 2152',
       office: '55-Year Chalermprakiat Building, 4th floor',
@@ -419,7 +419,7 @@ const LecturerPage = () => {
       name: 'Dr. Komgrit Jaksukam',
       thaiName: '-',
       title: 'Assistant Professor',
-      department: 'AMI',
+      department: 'MANU',
       email: 'komgrit.ja@kmitl.ac.th',
       phone: '02-329-8271',
       office: '55-Year Chalermprakiat Building',
@@ -431,7 +431,7 @@ const LecturerPage = () => {
       name: 'Dr. Kittipon Kankhunthod',
       thaiName: '-',
       title: 'Professor',
-      department: 'AMI',
+      department: 'MANU',
       email: 'kittipon.ka@kmitl.ac.th',
       phone: '02-329-8264 ext. 2182',
       office: '55-Year Chalermprakiat Building, Room 404',
@@ -467,8 +467,8 @@ const LecturerPage = () => {
   }, [searchQuery, selectedDepartment]);
 
   // Count lecturers by department
-  const amiCount = lecturers.filter(l => l.department === 'AMI').length;
-  const cmitCount = lecturers.filter(l => l.department === 'CMIT').length;
+  const amiCount = lecturers.filter(l => l.department === 'MANU').length;
+  const cmitCount = lecturers.filter(l => l.department === 'NANO').length;
 
   return (
     <div className="lecturer-container">
@@ -518,17 +518,17 @@ const LecturerPage = () => {
             <span className="count-badge">{lecturers.length}</span>
           </button>
           <button
-            className={`filter-btn ${selectedDepartment === 'AMI' ? 'active' : ''}`}
-            onClick={() => setSelectedDepartment('AMI')}
+            className={`filter-btn ${selectedDepartment === 'MANU' ? 'active' : ''}`}
+            onClick={() => setSelectedDepartment('MANU')}
           >
-            AMI
+            MANU
             <span className="count-badge">{amiCount}</span>
           </button>
           <button
-            className={`filter-btn ${selectedDepartment === 'CMIT' ? 'active' : ''}`}
-            onClick={() => setSelectedDepartment('CMIT')}
+            className={`filter-btn ${selectedDepartment === 'NANO' ? 'active' : ''}`}
+            onClick={() => setSelectedDepartment('NANO')}
           >
-            CMIT
+            NANO
             <span className="count-badge">{cmitCount}</span>
           </button>
         </div>

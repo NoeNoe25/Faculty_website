@@ -8,11 +8,7 @@ import academicDeanImage from '../assets/professor1.jpg';
 import researchDeanImage from '../assets/professor1.jpg';
 import adminDeanImage from '../assets/professor1.jpg';
 
-
 const Executive = () => {
-  const [activeView, setActiveView] = useState('chart'); // 'chart' or 'list'
-  const [expandedDepartment, setExpandedDepartment] = useState(null);
-
   // Leadership Data
   const leadership = [
     {
@@ -85,72 +81,95 @@ const Executive = () => {
     }
   ];
 
-  
-
-
   return (
-    <section id="organizational-structure" className="section org-structure-section">
-      <div className="container">
-        {/* Header Section */}
-        <div className="org-header">
-          <h1> Leadership Directory</h1>
-          <p>Transparent leadership and governance framework driving our technological excellence</p>
-          
-
-         
+    <div className="executive-container">
+      {/* Header Section */}
+      <header className="executive-header">
+        <div className="header-decoration"></div>
+        <div className="header-content">
+          <h1 className="header-title">Executive Leadership</h1>
+          <p className="header-subtitle">School of Integrated Innovative Technology</p>
+          <p className="header-institution">Leadership and Governance Framework</p>
         </div>
+      </header>
 
-
-
-        {/* List View */}
-       
-          <div className="list-view">
-            {/* Executive Leadership */}
-            <div className="leadership-section">
-              <h2>Executive Leadership</h2>
-              <div className="leadership-grid">
-                {leadership.map((leader) => (
-                  <div key={leader.id} className="leader-card">
-                    <div className="leader-image">
-                      <img src={leader.image} alt={leader.name} />
-                    </div>
-                    <div className="leader-details">
-                      <h3>{leader.name}</h3>
-                      <p className="leader-title">{leader.title}</p>
-                      <p className="leader-department">{leader.department}</p>
-                      
-                      <div className="contact-info">
-                        <span>📧 {leader.email}</span>
-                        <span>📞 {leader.phone}</span>
+      {/* Executive Leadership Section */}
+      <div className="executive-content">
+        <div className="leadership-grid">
+          {leadership.map((leader) => (
+            <article key={leader.id} className="leader-card">
+              <div className="card-header">
+                <div className="leader-image-wrapper">
+                  <img 
+                    src={leader.image} 
+                    alt={leader.name}
+                    className="leader-image"
+                  />
+                  <div className="position-badge">{leader.department}</div>
+                </div>
+              </div>
+              
+              <div className="card-body">
+                <h3 className="leader-name">{leader.name}</h3>
+                <p className="leader-title">{leader.title}</p>
+                
+                <div className="card-divider"></div>
+                
+                <div className="contact-info">
+                  <div className="info-item">
+                    <svg className="info-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M2.5 5.5L8 9l5.5-3.5M3 11h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <a href={`mailto:${leader.email}`} className="info-link">
+                      {leader.email}
+                    </a>
+                  </div>
+                  
+                  <div className="info-item">
+                    <svg className="info-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M14 11v2a1.5 1.5 0 0 1-1.5 1.5A12.5 12.5 0 0 1 2 4 1.5 1.5 0 0 1 3.5 2.5H6l1 3-1.5 1a9 9 0 0 0 5 5l1-1.5 3 1z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <span className="info-text">{leader.phone}</span>
+                  </div>
+                </div>
+                
+                <div className="responsibilities-section">
+                  <h4 className="section-label">Key Responsibilities</h4>
+                  <div className="responsibilities-list">
+                    {leader.responsibilities.map((resp, idx) => (
+                      <div key={idx} className="responsibility-item">
+                        <span className="responsibility-marker">•</span>
+                        <span className="responsibility-text">{resp}</span>
                       </div>
-                      
-                      <div className="responsibilities">
-                        <h4>Key Responsibilities:</h4>
-                        <ul>
-                          {leader.responsibilities.map((resp, idx) => (
-                            <li key={idx}>{resp}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div className="reporting">
-                        <p><strong>Reports to:</strong> {leader.reportsTo}</p>
-                        <p><strong>Direct reports:</strong> {leader.directReports.join(', ')}</p>
-                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="reporting-section">
+                  <div className="reporting-item">
+                    <span className="reporting-label">Reports to:</span>
+                    <span className="reporting-value">{leader.reportsTo}</span>
+                  </div>
+                  <div className="reporting-item">
+                    <span className="reporting-label">Direct reports:</span>
+                    <div className="direct-reports-list">
+                      {leader.directReports.map((report, idx) => (
+                        <span key={idx} className="report-tag">{report}</span>
+                      ))}
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
-
-          
-            
-          </div>
-     
-
-        
+            </article>
+          ))}
+        </div>
       </div>
-    </section>
+
+      {/* Footer */}
+      <footer className="executive-footer">
+        <p>© 2024 School of Integrated Innovative Technology — KMITL</p>
+      </footer>
+    </div>
   );
 };
 
