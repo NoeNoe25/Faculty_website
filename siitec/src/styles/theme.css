@@ -38,7 +38,7 @@
   --text-greywhite: var(--text-tertiary);
 
   /* Typography System */
-  --font-title:  'Times New Roman', serif;
+  --font-title: 'Canela Trial', 'Canela', 'Times New Roman', serif,'Georgia', 'Platino', serif;
   --font-body: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --font-accent: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
