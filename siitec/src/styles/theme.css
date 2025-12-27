@@ -3,65 +3,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Light Theme Variables */
+  /* Background Hierarchy */
   --background-primary: #ffffff;
   --background-secondary: #f8f9fa;
   --background-tertiary: #e9ecef;
   
-  /* New Slate Grey (#758384) and Gold-Copper Palette */
+  /* Core Brand Colors - Slate Grey Family */
+  --slate-darkest: #3d4647;
+  --slate-dark: #4c5354;
   --slate-base: #758384;
-  --slate-dark: #5a686e;
   --slate-light: #8f9fa6;
   --slate-lighter: #b0bec5;
+  --slate-pale: #d4dde0;
   
-  /* Gold-Copper Colors */
+  /* Core Brand Colors - Gold-Copper Family */
+  --gold-copper-darkest: #8a6a36;
+  --gold-copper-darker: #a88448;
+  --gold-copper-dark: #ca8c50;
   --gold-copper: #c9a66b;
-  --gold-copper-dark: #a88448;
-  --gold-copper-darker: #8a6a36;
   --gold-copper-light: #e0c28a;
   --gold-copper-bright: #f0d5a0;
   --gold-copper-forbutton: #fcbe42;
   
-  /* Text Colors for Light Theme */
-  --text-dark: #2d3748;
-  --text-light: #495057;
-  --text-greywhite: #6c757d;
-  --text-muted: #adb5bd;
+  /* Text Colors - Hierarchical */
+  --text-primary: #2d3748;
+  --text-secondary: #4c5354;
+  --text-tertiary: #758384;
+  --text-muted: #8f9fa6;
+  --text-disabled: #b0bec5;
+  
+  /* Legacy Text Variables (mapped to new system) */
+  --text-dark: var(--text-primary);
+  --text-light: var(--text-secondary);
+  --text-greywhite: var(--text-tertiary);
 
-  /* Typography */
+  /* Typography System */
   --font-title: 'Canela Trial', 'Canela', 'Times New Roman', serif;
   --font-body: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --font-accent: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
-  /* Gradients */
-  --tech-gradient: linear-gradient(135deg, var(--gold-copper) 0%, var(--slate-base) 100%);
-  --tech-gradient-reverse: linear-gradient(135deg, var(--slate-base) 0%, var(--gold-copper) 100%);
+  /* Brand Gradients */
+  --tech-gradient: linear-gradient(135deg, var(--gold-copper-dark) 0%, var(--slate-dark) 100%);
+  --tech-gradient-reverse: linear-gradient(135deg, var(--slate-dark) 0%, var(--gold-copper-dark) 100%);
+  --tech-gradient-soft: linear-gradient(135deg, var(--gold-copper) 0%, var(--slate-base) 100%);
+  --tech-gradient-light: linear-gradient(135deg, var(--gold-copper-bright) 0%, var(--slate-lighter) 100%);
   
-  /* Shadows */
-  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
-  --glow-gold: 0 0 10px rgba(201, 166, 107, 0.3);
+  /* Elevation System - Shadows */
+  --shadow-xs: 0 1px 3px rgba(76, 83, 84, 0.06);
+  --shadow-sm: 0 2px 8px rgba(76, 83, 84, 0.08);
+  --shadow-md: 0 4px 16px rgba(76, 83, 84, 0.12);
+  --shadow-lg: 0 8px 24px rgba(76, 83, 84, 0.15);
+  --shadow-xl: 0 12px 36px rgba(76, 83, 84, 0.18);
+  --glow-gold: 0 0 20px rgba(202, 140, 80, 0.3);
+  --glow-slate: 0 0 20px rgba(76, 83, 84, 0.2);
   
-  /* Borders */
+  /* Border System */
+  --border-radius-sm: 6px;
   --border-radius: 8px;
+  --border-radius-md: 12px;
   --border-radius-lg: 16px;
+  --border-radius-xl: 20px;
   --border-gold: 1px solid var(--gold-copper);
   --border-slate: 1px solid var(--slate-light);
+  --border-light: 1px solid var(--slate-pale);
   
-  /* Transitions */
-  --transition-fast: all 0.2s ease;
+  /* Transition Timing */
+  --transition-fast: all 0.15s ease;
   --transition-medium: all 0.3s ease;
   --transition-slow: all 0.5s ease;
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Spacing Scale */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
 }
 
-/* Light theme base styles */
+/* Base Styles */
 body {
   background-color: var(--background-primary);
-  color: var(--text-dark);
+  color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -70,49 +99,68 @@ body {
   padding: 0;
 }
 
-/* Typography Scale with Canela Trial */
+/* Typography Hierarchy with Canela */
 h1, h2, h3, h4, h5, h6 {
- 
   font-weight: 300;
   line-height: 1.2;
   margin-bottom: 1rem;
-  color: var(--text-dark);
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
 }
 
 h1 {
+  font-family: var(--font-title);
   font-size: 3.5rem;
   font-weight: 200;
   letter-spacing: -0.02em;
-   font-family: var(--font-title);
+  color: var(--slate-dark);
 }
 
 h2 {
+  font-family: var(--font-title);
   font-size: 2.8rem;
   font-weight: 300;
-  letter-spacing: -0.01em;
-   font-family: var(--font-title);
+  letter-spacing: -0.015em;
+  color: var(--slate-dark);
 }
 
 h3 {
+  font-family: var(--font-body);
   font-size: 2.2rem;
-  font-weight: 300;
+  font-weight: 400;
+  color: var(--text-primary);
 }
 
 h4 {
+  font-family: var(--font-title);
   font-size: 1.8rem;
   font-weight: 400;
-  font-family: var(--font-title);
+  color: var(--text-secondary);
 }
 
 h5 {
+  font-family: var(--font-body);
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 h6 {
-  font-size: 1.1rem;
-  font-weight: 500;
   font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Body Text */
+p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
 }
 
 /* Section Titles */
@@ -128,16 +176,18 @@ h6 {
 .section-title p {
   font-family: var(--font-body);
   font-size: 1.2rem;
-  color: var(--text-light);
+  color: var(--text-tertiary);
   font-weight: 400;
 }
 
-/* Hero Titles */
+/* Hero Styles */
 .hero-title {
+  font-family: var(--font-title);
   font-size: 4rem;
   font-weight: 100;
   letter-spacing: -0.03em;
   line-height: 1.1;
+  color: var(--slate-darkest);
 }
 
 .hero-subtitle {
@@ -145,12 +195,13 @@ h6 {
   font-size: 1.3rem;
   font-weight: 300;
   line-height: 1.6;
+  color: var(--text-tertiary);
 }
 
 /* Card Titles */
 .card h3,
 .card h4 {
-  font-weight: 300;
+  font-weight: 400;
   color: var(--slate-dark);
   margin-bottom: 1rem;
 }
@@ -159,15 +210,20 @@ h6 {
   font-family: var(--font-title);
   font-size: 1.5rem;
   font-weight: 300;
-  color: var(--text-dark);
+  color: var(--text-primary);
 }
 
-/* Navigation Titles */
+.card p {
+  color: var(--text-tertiary);
+}
+
+/* Navigation */
 .nav-brand {
   font-family: var(--font-title);
   font-size: 1.8rem;
   font-weight: 200;
   letter-spacing: -0.01em;
+  color: var(--slate-dark);
 }
 
 /* Button Text */
@@ -175,6 +231,7 @@ h6 {
   font-family: var(--font-body);
   font-weight: 600;
   letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 /* Special Title Classes */
@@ -187,7 +244,7 @@ h6 {
 }
 
 .gold-title {
-  color: var(--gold-copper);
+  color: var(--gold-copper-dark);
   font-weight: 300;
 }
 
@@ -196,18 +253,36 @@ h6 {
   font-weight: 300;
 }
 
+/* Social Icons */
 .social-icon {
   color: var(--gold-copper-bright);
-  transition: all 0.3s ease;
+  transition: var(--transition-medium);
   padding: 0.5rem;
-  border-radius: 6px;
+  border-radius: var(--border-radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  font-size: 1rem; /* Consistent social icon size */
+  background: rgba(202, 140, 80, 0.1);
+  font-size: 1rem;
 }
 
+.social-icon:hover {
+  background: var(--gold-copper-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--glow-gold);
+}
+
+/* Links */
+a {
+  color: var(--gold-copper-dark);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-copper-darker);
+}
 
 /* Responsive Typography */
 @media (max-width: 1024px) {
@@ -235,34 +310,61 @@ h6 {
   .hero-title { font-size: 2.2rem; }
 }
 
+/* Utility Classes */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-muted { color: var(--text-muted); }
+
+.bg-gold { background-color: var(--gold-copper-dark); }
+.bg-slate { background-color: var(--slate-dark); }
+.bg-light { background-color: var(--background-secondary); }
+
 /* Font Weight Utilities */
 .font-light { font-weight: 100; }
 .font-regular { font-weight: 300; }
 .font-medium { font-weight: 400; }
-.font-bold { font-weight: 500; }
+.font-semibold { font-weight: 500; }
+.font-bold { font-weight: 600; }
 
-/* Letter Spacing Utilities */
+/* Letter Spacing */
 .tight-spacing { letter-spacing: -0.03em; }
 .normal-spacing { letter-spacing: -0.01em; }
 .wide-spacing { letter-spacing: 0.02em; }
 
-/* Text Transform */
-.title-case {
-  text-transform: none;
-  font-feature-settings: "c2sc" 0;
+/* Selection */
+::selection {
+  background-color: var(--gold-copper-dark);
+  color: white;
 }
 
-/* Fallback for Canela Trial */
+::-moz-selection {
+  background-color: var(--gold-copper-dark);
+  color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--slate-light);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-copper-dark);
+}
+
+/* Fallback for Canela */
 @supports not (font-family: 'Canela Trial') {
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h4, .hero-title, .nav-brand, .card-title {
     font-family: 'Times New Roman', serif;
-    font-weight: normal;
-  }
-  
-  .section-title h1,
-  .section-title h2 {
-    font-family: 'Times New Roman', serif;
-    font-weight: normal;
   }
 }
 

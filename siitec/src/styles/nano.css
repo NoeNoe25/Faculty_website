@@ -105,8 +105,8 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 8px;
-    background: linear-gradient(90deg, #FFD700, #B8860B, #FFD700);
+    height: 2px;
+    background: var(--gold-copper-light);
     z-index: 1;
 }
 

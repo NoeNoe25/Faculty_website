@@ -5,7 +5,8 @@ import image1 from "../assets/albums/DSC_3872.jpg";
 import image2 from "../assets/albums/Nano123456.JPG";
 import image3 from "../assets/albums/fbrication.webp";
 import image4 from "../assets/albums/DSC_3894.jpg";
-import { FaUserGraduate, FaBook, FaMicroscope } from 'react-icons/fa';
+import image5 from "../assets/albums/DSC_3844.jpg";
+import { FaUserGraduate, FaBook, FaMicroscope, FaBriefcase, FaGraduationCap, FaGlobeAmericas } from 'react-icons/fa';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -21,7 +22,7 @@ const programsData = {
       {
         id: "be-nme",
         name: "BE. in Nanomaterial Engineering",
-        code: "CMIT",
+        code: "NANO",
         department: "Department of Nanoscience and Nanotechnology",
         description: "Nanotechnology is a crucial new field of science for national development in the era of globalization. It requires the integration of knowledge from various disciplines, and thus has been included in the national strategic plan.",
         image: image1,
@@ -368,7 +369,7 @@ const programsData = {
         name: "BE. in Manufacturing System Engineering",
         code: "MANU", 
         department: "College of Advanced Manufacturing Innovation",
-        description: "The program integrates various disciplinaries including Electrical engineering, Industry engineering, Mechanical engineering, Electronics engineering, Control engineering, and Management industry. Duration: 4 Years. SIITec Project Tracker.",
+        description: "The manufacturing system engineering is 4 years program designed to develop specialized engineers for today's rapidly evolving industrial landscape. The program cultivates innovators who create distinctive solutions for real-world challenges and launch Deep Tech Startups from their research into business.",
         image: 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         
         overview: {
@@ -441,7 +442,7 @@ const programsData = {
         name: "BE. in Manufacturing System Engineering (Continuing Program)",
         code: "MANU",
         department: "College of Advanced Manufacturing Innovation",
-        description: "Similar to the Bachelor of Engineering Program in Manufacturing System Engineering, this continuing program condenses various disciplinaries in a very short period of study (2 years) to accommodate working professionals. Duration: 2 Years. SIITec Project Tracker.",
+        description: "The Manufacturing System Engineering (Continue program) is 2years program tailored for vocational diploma holders pursuing an undergraduate degree with the industry-co-designed curriculum, the program develops specialized manufacturing engineers ready for real-world careers.",
         image: 'https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=1225&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         
         overview: {
@@ -651,7 +652,7 @@ const programsData = {
     {
       id: "msc-nnt",
       name: "M.Sc. in Nanoscience and Nanotechnology",
-      code: "CMIT",
+      code: "NANO",
       department: "Department of Nanoscience and Nanotechnology",
       description: "Explore the frontier of technology at the atomic level. Our graduate programs in Nanoscience and Nanotechnology offer rigorous training and cutting-edge research opportunities, from fundamental discovery to real-world application.",
       image: image3,
@@ -814,7 +815,7 @@ doctoral: {
     {
       id: "phd-nnt",
       name: "Ph.D. in Nanoscience and Nanotechnology",
-      code: "CMIT",
+      code: 'NANO', 
       department: "Department of Nanoscience and Nanotechnology",
       description: "A research-intensive program designed to push the boundaries of nanoscale science. Candidates engage in pioneering research, developing novel materials and technologies to solve complex global challenges.",
       image: "https://images.pexels.com/photos/17485658/pexels-photo-17485658.png",
@@ -831,26 +832,18 @@ doctoral: {
     });
   };
 
-  
-  // // Function to handle Apply Now
-  // const handleApplyNow = (program) => {
-  //   navigate('/apply', { 
-  //     state: { program } 
-  //   });
-  // };
+  // Function to handle navigation for additional info cards
+  const handleFinancialAid = () => {
+    navigate('/financial-aid');
+  };
 
-  // // Functions for the additional info cards
-  // const handleFinancialAid = () => {
-  //   navigate('/financial-aid');
-  // };
+  const handleInternships = () => {
+    navigate('/internships');
+  };
 
-  // const handleResearchOpportunities = () => {
-  //   navigate('/research');
-  // };
-
-  // const handleInternationalStudents = () => {
-  //   navigate('/international-students');
-  // };
+  const handleInternationalStudents = () => {
+    navigate('/international-students');
+  };
 
   return (
     <section id="programs" className="section programs-section">
@@ -870,7 +863,6 @@ doctoral: {
             >
               <span className="degree-icon">
                 {degree === 'bachelor' ? <FaUserGraduate /> : degree === 'master' ? <FaBook /> : <FaMicroscope />}
-
               </span>
               <span className="degree-text">
                 {degree === 'bachelor' ? 'Bachelor' : degree === 'master' ? 'Master' : 'Doctoral'}
@@ -884,13 +876,13 @@ doctoral: {
           <div className="program-header">
             <h3>{programsData[activeDegree].title}</h3>
             <div className="programs_program-duration">
-             <span className="programs_duration-badge">
-  Duration: {
-    activeDegree === 'bachelor' ? '4 years' : 
-    activeDegree === 'master' ? '2 years' : 
-    '4-5 years' // for doctoral
-  }
-</span>
+              <span className="programs_duration-badge">
+                Duration: {
+                  activeDegree === 'bachelor' ? '4 years' : 
+                  activeDegree === 'master' ? '2 years' : 
+                  '4-5 years'
+                }
+              </span>
             </div>
           </div>
 
@@ -909,15 +901,11 @@ doctoral: {
                   <p className="degree-description">{degree.description}</p>
                   
                   <div className="degree-actions">
-                    <button 
-                      className="btn btn-primary"
-                  
-                    >
+                    <button className="btn btn-primary">
                       Apply Now
                     </button>
                     <button 
                       className="btn btn-secondary" 
-                      // onClick={() => handleProgramDetails(degree)}
                       onClick={() => handleProgramDetails(degree)}
                     >
                       Program Details
@@ -932,33 +920,48 @@ doctoral: {
         {/* Additional Information */}
         <div className="programs-info">
           <div className="info-card card">
+            <div className="info-card-icon">
+              <FaGraduationCap />
+            </div>
             <h4>Financial Aid & Scholarships</h4>
             <p>We offer various scholarship opportunities for outstanding students at all degree levels.</p>
             <button 
               className="btn btn-secondary" 
-              
+              onClick={handleFinancialAid}
             >
               Learn More
             </button>
           </div>
           
           <div className="info-card card">
-            <h4>Research Opportunities</h4>
-            <p>Work with leading researchers and access state-of-the-art facilities.</p>
+            <div className="info-card-icon">
+              {activeDegree === 'bachelor' ? <FaBriefcase /> : <FaMicroscope />}
+            </div>
+            <h4>
+              {activeDegree === 'bachelor' ? 'Internships Opportunity' : 'Research Opportunities'}
+            </h4>
+            <p>
+              {activeDegree === 'bachelor' 
+                ? 'Gain real-world experience through industry partnerships and internship programs.' 
+                : 'Work with leading researchers and access state-of-the-art facilities.'}
+            </p>
             <button 
               className="btn btn-secondary"
-             
+              onClick={handleInternships}
             >
-              Explore Research
+              {activeDegree === 'bachelor' ? 'Explore Internships' : 'Explore Research'}
             </button>
           </div>
           
           <div className="info-card card">
+            <div className="info-card-icon">
+              <FaGlobeAmericas />
+            </div>
             <h4>International Students</h4>
             <p>Join our diverse community with dedicated support for international applicants.</p>
             <button 
               className="btn btn-secondary"
-              
+              onClick={handleInternationalStudents}
             >
               International Info
             </button>

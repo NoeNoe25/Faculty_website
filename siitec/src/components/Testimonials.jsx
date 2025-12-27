@@ -53,7 +53,7 @@ export default function Testimonials() {
       <div className="testimonials-container">
 
         <div className="testimonials-header">
-          <span className="testimonials-subtitle">Success Stories</span>
+          <span className="testimonials-subtitle">SIITec Success Stories</span>
           <h2 className="testimonials-title">What Our Alumni Say</h2>
           <p className="testimonials-description">
             Hear from graduates who are making an impact in technology and innovation

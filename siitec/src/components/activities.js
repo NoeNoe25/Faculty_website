@@ -13,7 +13,7 @@ export default function Activities() {
       image: news1,
       date: "23.03.2025",
       title: "Faculty of Integrated Innovative Technology",
-      description: "The Faculty of Integrated Innovative Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL), announced the establishment of the #School of Integrated Innovative Technology to promote teaching, research, and academic services in materials innovation.",
+      description: "The Faculty of Integrated Innovative Technology",
       tag: "Highlights",
       featured: true,
       link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-2025-copy/"
@@ -55,6 +55,16 @@ export default function Activities() {
       description: "DIRECT ADMISSION 1-1 (Early Round) Academic Year 2023 Dual Degree...",
       tag: "News",
       link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-early-round/"
+    },
+    // Add this new card below Faculty of Integrated Innovative Technology
+    {
+      id: 6,
+      image: news3, // Using the same image as the second card
+      date: "15.09.2025",
+      title: "Direct Admission 1-1 2025",
+      description: "DIRECT ADMISSION 1-1 Early Round Academic Year 2025 Dual Degree",
+      tag: "News",
+      link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-2023/"
     }
   ];
 
@@ -80,7 +90,7 @@ export default function Activities() {
                 ${item.imageAfter ? 'image-after' : ''}
               `}
             >
-              {/* Normal Layout (Cards 1, 2, 5) */}
+              {/* Normal Layout (Cards 1, 2, 5, 6) */}
               {!item.imageAfter && (
                 <div className="news-card-image">
                   <img src={item.image} alt={item.title} />

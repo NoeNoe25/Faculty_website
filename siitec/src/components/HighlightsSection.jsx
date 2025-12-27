@@ -36,9 +36,9 @@ const HighlightsSection = ({
   className = '',
   // Props for custom header
   showHeader = true,
-  subtitle = "Success Stories",
-  headerTitle = "Innovation Contest",
-  description = "Hear from graduates who are making an impact in technology and innovation"
+  subtitle = "SIITec Success Stories",
+  headerTitle = "Pride Spotlight",
+  description = "Showing Excellence Across Our Community"
 }) => {
   // Default data if no highlights provided
   const defaultHighlights = [
