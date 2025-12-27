@@ -80,6 +80,7 @@
 
 /* Button System */
 .btn {
+  text-align: center;
   padding: 14px 32px;
   border: none;
   border-radius: var(--border-radius);
