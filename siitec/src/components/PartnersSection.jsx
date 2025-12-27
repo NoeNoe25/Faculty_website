@@ -1,42 +1,49 @@
+// components/PartnersSection.jsx
 import React from 'react';
-import '../styles/components/PartnersSection.css';
+import '../styles/components/PartnerBanner.css';
+import abb from '../assets/logos/abb-logo.png';
+import nvidia from '../assets/logos/nvidia-logo.png';
+import nissan from '../assets/logos/nissan.png';
+import nintendo from '../assets/logos/nintendo.png';
+import reactjs from '../assets/logos/nodejs.png';
+import bosh from '../assets/logos/bosh.png';
+import harvard from '../assets/logos/harvard.png';
 
-export default function PartnersSection() {
+
+const PartnersSection = () => {
+  // Sample university logos - replace with your actual partner logos
   const partners = [
-    { id: 1, name: "Tech Corp", logo: "https://via.placeholder.com/150x60/c9a66b/FFFFFF?text=Tech+Corp" },
-    { id: 2, name: "Innovation Labs", logo: "https://via.placeholder.com/150x60/758384/FFFFFF?text=Innovation" },
-    { id: 3, name: "Future Systems", logo: "https://via.placeholder.com/150x60/a88448/FFFFFF?text=Future+Sys" },
-    { id: 4, name: "AI Research", logo: "https://via.placeholder.com/150x60/c9a66b/FFFFFF?text=AI+Research" },
-    { id: 5, name: "Robotics Inc", logo: "https://via.placeholder.com/150x60/758384/FFFFFF?text=Robotics" },
-    { id: 6, name: "Data Analytics", logo: "https://via.placeholder.com/150x60/a88448/FFFFFF?text=Data+Co" },
-    { id: 7, name: "Smart Tech", logo: "https://via.placeholder.com/150x60/c9a66b/FFFFFF?text=Smart+Tech" },
-    { id: 8, name: "Cloud Solutions", logo: "https://via.placeholder.com/150x60/758384/FFFFFF?text=Cloud+Sol" }
+    { id: 1, name: 'Harvard', logo: abb },
+    { id: 2, name: 'Stanford', logo:nvidia },
+    { id: 3, name: 'MIT', logo:nissan },
+    { id: 4, name: 'Oxford', logo: nintendo },
+    { id: 5, name: 'Cambridge', logo: reactjs },
+    { id: 6, name: 'ETH Zurich', logo: bosh},
+    { id: 7, name: 'Tokyo University', logo: harvard },
+
   ];
 
+  // Duplicate the array to create seamless infinite scroll
+  const duplicatedPartners = [...partners, ...partners];
+
   return (
-    <section className="partners-section">
-      <div className="partners-container">
-        {/* <div className="partners-header">
-          <span className="partners-subtitle">Trusted Partnerships</span>
-          <h2 className="partners-title">Industry & Academic Partners</h2>
-          <p className="partners-description">
-            Collaborating with leading organizations to provide real-world experience and opportunities
-          </p>
-        </div> */}
-{/* 
-        <div className="partners-grid">
-          {partners.map((partner) => (
-            <div key={partner.id} className="partner-card">
+    <div className="partners-banner-container">
+      <h3 className="banner-title">Our Partners</h3>
+      <div className="partners-banner">
+        <div className="partners-track">
+          {duplicatedPartners.map((partner, index) => (
+            <div key={`partner-${partner.id}-${index}`} className="partner-logo">
               <img 
                 src={partner.logo} 
-                alt={partner.name}
-                className="partner-logo"
+                alt={partner.name} 
+                title={partner.name}
+                loading="lazy"
               />
             </div>
           ))}
-        </div> */}
-
-        <div className="partners-cta">
+        </div>
+      </div>
+      <div className="partners-cta">
           <p>Interested in partnering with us?</p>
           <a 
   href="mailto:ssitec@kmitl.ac.th?subject=Partnership Inquiry&body=I am interested in becoming a partner with Siitec. Please send me more information." 
@@ -49,7 +56,9 @@ export default function PartnersSection() {
   </svg>
 </a>
         </div>
-      </div>
-    </section>
+    </div>
+    
   );
-}
+};
+
+export default PartnersSection;

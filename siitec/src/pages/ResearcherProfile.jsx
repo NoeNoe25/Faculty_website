@@ -1,7 +1,51 @@
 
 import React, { useState, useMemo } from 'react';
 import '../styles/ResearcherProfile.css';
+import profploypailin from '../assets/images/research/researchers/ProfPloypailin.png';
+import proftosapol from '../assets/images/research/researchers/ProfTosapol.jpg';
+import profchatrpol from '../assets/images/research/researchers/ProfChatrpol.png';
+import profsakon from '../assets/images/research/researchers/ProfSakon.png';
+import profkorakot from '../assets/images/research/researchers/Prof.jpg';
+import profjatuporn from '../assets/images/research/researchers/ProfJatuporn.jpg';
+import profrachsak from '../assets/images/research/researchers/Prof.jpg';
+import profkomgrit from '../assets/images/research/researchers/ProfKomgrit.jpg';
+import profsanthad from '../assets/images/research/researchers/ProfSanthad.jpg';
+import profwanwilai from '../assets/images/research/researchers/ProfWanwilai.jpg';
+import profteerayut from '../assets/images/research/researchers/ProfTeerayut.jpg';
+import profnongluck from '../assets/images/research/researchers/ProfNongluck.png';
+import profkittiphong from '../assets/images/research/researchers/Dr.Kittipon.jpg';
+import profkanoknan from '../assets/images/research/researchers/ProfKanoknan.jpg';
+import profkhattiya from '../assets/images/research/researchers/Dr.Khattiya.jpg';
+import profkittipong from '../assets/images/research/researchers/ProfKittiphong.jpg';
+import profprasert from '../assets/images/research/researchers/Prof.jpg';
+import profsuwit from '../assets/images/research/researchers/Prof.jpg';
+import profthanapat from '../assets/images/research/researchers/Prof.jpg';
+import profsittichai from '../assets/images/research/researchers/Prof.jpg';
+import profsompong from '../assets/images/research/researchers/Prof.jpg';
 
+import project1 from '../assets/images/research/projects/Project1.png';
+import project2 from '../assets/images/research/projects/Project2.png';
+import project3 from '../assets/images/research/projects/Project3.png';
+import project4 from '../assets/images/research/projects/Project4.png';
+import project5 from '../assets/images/research/projects/Project5.png';
+import project6 from '../assets/images/research/projects/Project6.jpg';
+import project7 from '../assets/images/research/projects/Project7.png';
+import project8 from '../assets/images/research/projects/Project8.png';
+import project9 from '../assets/images/research/projects/Project9.png';
+import project10 from '../assets/images/research/projects/Project10.jpg';
+import project11 from '../assets/images/research/projects/Project11.png'; 
+import project12 from '../assets/images/research/projects/Project12.png';
+import project13 from '../assets/images/research/projects/Project13.jpg';
+import project14 from '../assets/images/research/projects/Project14.jpg';
+import project15 from '../assets/images/research/projects/Project15.jpg';
+import  project16 from '../assets/images/research/projects/Project16.png';
+import project17 from '../assets/images/research/projects/Project17.png';
+import project18 from '../assets/images/research/projects/Project18.png';
+import project19 from '../assets/images/research/projects/Project19.png';
+import project20 from '../assets/images/research/projects/Project20.png';
+import  project21 from '../assets/images/research/projects/Project21.png'; 
+import  project22 from '../assets/images/research/projects/Project21.png'; 
+import  project23 from '../assets/images/research/projects/Project23.png'; 
 const ResearcherCard = ({ researcher }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -118,8 +162,8 @@ const ResearcherProfile = () => {
       email: "ploypailin.yo@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
       researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?w=600&h=300&fit=crop"
+      profileImage: profploypailin,
+      projectImage: project1
     },
     {
       id: 2,
@@ -132,8 +176,8 @@ const ResearcherProfile = () => {
       email: "tosapol.ma@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
       researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?w=600&h=300&fit=crop"
+      profileImage: proftosapol,
+      projectImage: project2
     },
     {
       id: 3,
@@ -146,8 +190,8 @@ const ResearcherProfile = () => {
       email: "chatrpol.pa@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
       researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1557862921-37829c790f19?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1629654291660-3c98113a0437?w=600&h=300&fit=crop"
+      profileImage: profchatrpol,
+      projectImage: project3
     },
     {
       id: 4,
@@ -161,8 +205,8 @@ const ResearcherProfile = () => {
       email: "sakon.ra@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
       orcid: "https://orcid.org",
-      profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=300&fit=crop"
+      profileImage: profsakon,
+      projectImage: project4
     },
     {
       id: 5,
@@ -174,8 +218,8 @@ const ResearcherProfile = () => {
       keywords: ["Resistive Switching", "Nanomaterials", "Thin Films", "Metal Oxide Semiconductors"],
       email: "korakot.on@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
-      profileImage: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=300&fit=crop"
+      profileImage: profkorakot,
+      projectImage: project5
     },
     {
       id: 6,

@@ -20,7 +20,7 @@ import ContactPage from '../pages/Contact';
 import CiRAPage from '../pages/Cira';
 import KAISEMPage from '../pages/kaisem';
 import ATTACPage from '../pages/attac';
-
+import InstrumentBooking from '../pages/InstrumentBooking';
 const AppRoutes = () => {
   return (
     <Layout>
@@ -43,6 +43,7 @@ const AppRoutes = () => {
         <Route path="/CiRAPage" element={<CiRAPage />} />
         <Route path="/KAISEMPage" element={<KAISEMPage />} />
         <Route path="/ATTACPage" element={<ATTACPage />} />
+        <Route path="/InstrumentBooking" element={<InstrumentBooking />} />
         
       </Routes>
     </Layout>

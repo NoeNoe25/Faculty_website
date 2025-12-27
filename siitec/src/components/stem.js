@@ -5,30 +5,31 @@ import { LuFlaskConical, LuCpu, LuChartBar, LuMicroscope } from "react-icons/lu"
 
 const STEMSection = () => {
   const programs = [
-    {
-      title: "Research Excellence Centers",
-      description:
-        "Interdisciplinary centers driving high-impact research in science, engineering, and technology.",
-      icon: LuFlaskConical,
-    },
-    {
-      title: "Technology & Innovation Labs",
-      description:
-        "State-of-the-art laboratories supporting advanced experimentation, prototyping, and innovation.",
-      icon: LuCpu,
-    },
-    {
-      title: "Data & Computational Research",
-      description:
-        "Applied research in data science, AI, analytics, and computational modeling to solve real-world challenges.",
-      icon: LuChartBar,
-    },
-    {
-      title: "Scientific Discovery & Development",
-      description:
-        "Cutting-edge studies in emerging scientific fields, supporting breakthroughs and industry collaborations.",
-      icon: LuMicroscope,
-    },
+ {
+  title: "Research Groups",
+  description:
+    "Interdisciplinary research groups and centers conducting high-impact studies across science, engineering, and technology to address real-world challenges.",
+  icon: LuFlaskConical,
+},
+{
+  title: "Research Publications",
+  description:
+    "Peer-reviewed journals, conference papers, and scholarly publications showcasing innovative research and academic contributions at national and international levels.",
+  icon: LuCpu,
+},
+{
+  title: "Patents & International Awards",
+  description:
+    "Research-driven innovations leading to patents and international awards, reflecting excellence in applied research and technological advancement.",
+  icon: LuChartBar,
+},
+{
+  title: "MOUs/MOAs and Partnerships",
+  description:
+    "Strategic collaborations with universities, industries, and global partners through MOUs and MOAs to strengthen research, innovation, and student opportunities.",
+  icon: LuMicroscope,
+},
+
   ];
 
   return (
@@ -42,9 +43,21 @@ const STEMSection = () => {
             <h2>Research Highlights</h2>
           </div>
           <p className="section-description">
-            Explore diverse research initiatives led by expert faculty, supported by modern 
-            facilities and interdisciplinary collaboration. Our research programs drive innovation, 
-            scientific discovery, and solutions that shape the future of technology and society.
+            SITTec research addresses real-world challenges through projects ranging from advanced
+
+materials to advanced manu-
+facturing. Through international
+
+collabolations ,
+
+our faculty create innovations that make
+ patent partners
+
+a difference while students gain
+hands-on experience preparing
+
+them for future careers.
+
           </p>
         </div>
 
