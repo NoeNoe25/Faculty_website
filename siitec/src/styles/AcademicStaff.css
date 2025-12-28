@@ -1,44 +1,4 @@
 
-@import url('https://fonts.cdnfonts.com/css/canela');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-:root {
-  /* Brand Colors */
-  --background-primary: #ffffff;
-  --background-secondary: #f8f9fa;
-  --background-tertiary: #e9ecef;
-  
-  --slate-base: #758384;
-  --slate-dark: #5a686e;
-  --slate-light: #8f9fa6;
-  --slate-lighter: #b0bec5;
-  
-  --gold-copper: #c9a66b;
-  --gold-copper-dark: #a88448;
-  --gold-copper-light: #e0c28a;
-  --gold-copper-bright: #f0d5a0;
-  
-  --text-dark: #2d3748;
-  --text-light: #495057;
-  --text-greywhite: #6c757d;
-  --text-muted: #adb5bd;
-
-  --font-title: 'Canela Trial', 'Canela', 'Times New Roman', serif;
-  --font-body: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
-  --tech-gradient: linear-gradient(135deg, var(--gold-copper) 0%, var(--slate-base) 100%);
-  
-  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
-  
-  --border-radius: 8px;
-  --border-radius-lg: 16px;
-  
-  --transition-fast: all 0.2s ease;
-  --transition-medium: all 0.3s ease;
-}
-
 /* Container */
 .academic-staff-container {
   max-width: 1400px;

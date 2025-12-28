@@ -107,7 +107,7 @@ const Header = () => {
           // Faculty & Staff items
           { name: language === 'EN' ? 'Report Repair' : 'แจ้งซ่อม', link: 'https://lin.ee/UOFslzH' },
           { name: language === 'EN' ? 'Position form/ Request' : 'แบบฟอร์มตำแหน่ง/คำขอ', link: 'https://www.ami.kmitl.ac.th/research/ami-research-center/' },
-          { name: language === 'EN' ? 'Instrument booking service for KMITL' : 'บริการจองเครื่องมือ KMITL', link: '/InstrumentBooking' },
+          { name: language === 'EN' ? 'Instrument booking service for Faculty' : 'บริการจองเครื่องมือ KMITL', link: '/InstrumentBooking' },
           
           // External Partners header and items - now under Faculty & Staff section
           { name: language === 'EN' ? 'For External Partners' : 'สำหรับพันธมิตรภายนอก', link: '#', isHeader: true,  icon: <FaUsers /> },
