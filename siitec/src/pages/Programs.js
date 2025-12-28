@@ -834,11 +834,11 @@ doctoral: {
 
   // Function to handle navigation for additional info cards
   const handleFinancialAid = () => {
-    navigate('/financial-aid');
+    navigate('https://osda.kmitl.ac.th/scholarship/');
   };
 
   const handleInternships = () => {
-    navigate('/internships');
+    navigate('https://oia.kmitl.ac.th/');
   };
 
   const handleInternationalStudents = () => {
