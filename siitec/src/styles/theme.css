@@ -1,6 +1,7 @@
 /* src/styles/theme.css */
 @import url('https://fonts.cdnfonts.com/css/canela');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&display=swap');
 
 :root {
   /* Background Hierarchy */
@@ -38,9 +39,19 @@
   --text-greywhite: var(--text-tertiary);
 
   /* Typography System */
-  --font-title: 'Canela Trial', 'Canela', 'Times New Roman', serif,'Georgia', 'Platino', serif;
+  /* --font-title: 'Canela Trial', 'Canela', 'Times New Roman','Georgia', 'Platino', serif;
   --font-body: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-accent: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-accent: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  --font-title: 'Canela Trial', 'Playfair Display',
+  Georgia, 'Palatino', 'Times New Roman', serif;
+
+--font-body: 'Inter',
+  -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+--font-accent: -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
   
   /* Brand Gradients */
   --tech-gradient: linear-gradient(135deg, var(--gold-copper-dark) 0%, var(--slate-dark) 100%);
