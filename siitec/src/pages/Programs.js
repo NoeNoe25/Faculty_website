@@ -145,7 +145,7 @@ const programsData = {
         code: "NANO",
         department: "Department of Nanoscience and Nanotechnology",
         description: "A cutting-edge multidisciplinary program focusing on smart materials, sensor technology, robotics, and AI, aligned with Thailand 4.0 strategy and new S-curve industries. This international program prepares engineers for the future of industrial robotics and sensor technology.",
-        image: image1,
+        image: image4,
         
         // Program Overview
         overview: {
