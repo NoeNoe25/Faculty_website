@@ -1,33 +1,7 @@
-/* src/components/InstrumentBooking.css */
-
-.instrument-booking-page {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  min-height: 100vh;
-}
 
 
 
-/* Hero Section */
-.booking-hero {
-  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  color: white;
-  padding: 80px 0 60px;
-  position: relative;
-  overflow: hidden;
-}
 
-.booking-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%23ffffff" opacity="0.1"/></svg>');
-  background-size: cover;
-  background-position: bottom;
-}
 
 .booking-hero-content {
   position: relative;
@@ -47,7 +21,7 @@
 
 .booking-hero-icon {
   font-size: 3rem;
-  color: #3498db;
+  color: var(--gold-copper-light);
   background: white;
   padding: 15px;
   border-radius: 50%;
@@ -68,6 +42,7 @@
   gap: 40px;
   flex-wrap: wrap;
   margin-top: 40px;
+  color: var(--gold-copper)  ;
 }
 
 .booking-stat-item {
@@ -90,7 +65,7 @@
 .booking-stat-icon {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #3498db;
+  color: var(--gold-copper-light);
 }
 
 .booking-stat-number {
@@ -120,12 +95,12 @@
 
 .section-header h2 {
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: var(--gold-copper-dark);
   margin-bottom: 15px;
 }
 
 .section-header p {
-  color: #7f8c8d;
+  color: var(--gold-copper-dark);
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -157,14 +132,14 @@
 }
 
 .user-tab:hover {
-  border-color: #3498db;
+  border-color: var(--gold-copper-light);
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+  box-shadow: 0 10px 30px rgba(251, 219, 12, 0.2);
 }
 
 .user-tab.active {
-  border-color: #3498db;
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  border-color: var(--gold-copper-light);
+  background: linear-gradient(135deg, var(--gold-copper-light) 0%,var(--gold-copper-dark) 100%);
   color: white;
   box-shadow: 0 15px 35px rgba(52, 152, 219, 0.3);
 }
@@ -175,7 +150,7 @@
 
 .tab-icon {
   font-size: 2.5rem;
-  color: #3498db;
+  color: var(--gold-copper-dark);
   margin-bottom: 10px;
 }
 

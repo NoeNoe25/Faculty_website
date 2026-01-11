@@ -2,10 +2,13 @@
 import React, { useState } from 'react';
 import '../styles/Programs.css';
 import image1 from "../assets/albums/DSC_3872.jpg";
-import image2 from "../assets/albums/Nano123456.JPG";
-import image3 from "../assets/albums/fbrication.webp";
+import image2 from "../assets/albums/DSC_7121.jpg";
+import image3 from "../assets/albums/continuing.jpg";
 import image4 from "../assets/albums/DSC_3894.jpg";
-import image5 from "../assets/albums/DSC_3844.jpg";
+import matbot from "../assets/albums/IMG_5932.jpg";
+import manu from "../assets/albums/manu.jpg";
+import image5 from "../assets/albums/advsystem.jpg";
+import image6 from "../assets/albums/Nano123456.JPG";
 import { FaUserGraduate, FaBook, FaMicroscope, FaBriefcase, FaGraduationCap, FaGlobeAmericas } from 'react-icons/fa';
 
 import { useNavigate } from 'react-router-dom';
@@ -250,7 +253,7 @@ const programsData = {
         code: "NANO",
         department: "Department of Nanoscience and Nanotechnology",
         description: "An intensive 4-year dual degree program combining Smart Materials Technology with Robotics and AI Engineering. Designed for students seeking mastery in both nanotechnology-enabled sensors/energy systems and intelligent robotics/AI systems to drive innovation across industrial applications.",
-        image: image1,
+        image: matbot,
         
         // Program Overview
         overview: {
@@ -370,7 +373,7 @@ const programsData = {
         code: "MANU", 
         department: "College of Advanced Manufacturing Innovation",
         description: "The manufacturing system engineering is 4 years program designed to develop specialized engineers for today's rapidly evolving industrial landscape. The program cultivates innovators who create distinctive solutions for real-world challenges and launch Deep Tech Startups from their research into business.",
-        image: 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        image: manu,
         
         overview: {
           introText: "The Manufacturing System Engineering program integrates various disciplinaries including Electrical engineering, Industry engineering, Mechanical engineering, Electronics engineering, Control engineering, and Management industry. Duration: 4 Years. SIITec Project Tracker.",
@@ -443,7 +446,7 @@ const programsData = {
         code: "MANU",
         department: "College of Advanced Manufacturing Innovation",
         description: "The Manufacturing System Engineering (Continue program) is 2years program tailored for vocational diploma holders pursuing an undergraduate degree with the industry-co-designed curriculum, the program develops specialized manufacturing engineers ready for real-world careers.",
-        image: 'https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=1225&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        image: image3,
         
         overview: {
           introText: "This continuing program condenses various disciplinaries in a very short period of study (2 years) to accommodate working professionals. Duration: 2 Years. SIITec Project Tracker.",
@@ -523,7 +526,7 @@ const programsData = {
       department: "College of Advanced Manufacturing Innovation",
       abbreviation: "M.Eng. (Advanced Manufacturing System Engineering)",
       description: "Advance your career in manufacturing innovation with a flexible program offering three distinct plans tailored to your professional goals. Choose between research-intensive, balanced coursework-research, or course-based approaches to master advanced manufacturing systems.",
-      image: image2,
+      image: image5,
       
       overview: {
         introText: "The Master of Engineering in Advanced Manufacturing System Engineering offers a flexible, career-oriented graduate education with three distinct study plans. Designed for engineers seeking to lead in smart manufacturing, Industry 4.0 implementation, and advanced production systems, this program combines rigorous academic training with practical applications. Students can select from research-focused, balanced, or course-based paths to match their professional aspirations and learning preferences.",
@@ -655,7 +658,7 @@ const programsData = {
       code: "NANO",
       department: "Department of Nanoscience and Nanotechnology",
       description: "Explore the frontier of technology at the atomic level. Our graduate programs in Nanoscience and Nanotechnology offer rigorous training and cutting-edge research opportunities, from fundamental discovery to real-world application.",
-      image: image3,
+      image: image6,
       // ... existing content ...
     }
   ]
@@ -671,7 +674,7 @@ doctoral: {
       department: "College of Advanced Manufacturing Innovation", 
       abbreviation: "Ph.D. (Advanced Manufacturing System Engineering)",
       description: "An advanced research degree offering flexible study plans for graduates of all levels. Combine deep theoretical study with practical thesis research to master the complexities of modern manufacturing system engineering in our international program.",
-      image: 'https://images.unsplash.com/photo-1729843420196-1ff32bb39db5?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: image2,
       
       overview: {
         introText: "The Doctor of Philosophy in Advanced Manufacturing System Engineering (International Program) represents the highest level of academic achievement in manufacturing systems research. This research-intensive program is designed to develop world-class researchers and innovators capable of advancing the frontiers of manufacturing technology. With three flexible study plans accommodating both Master's and exceptional Bachelor's graduates, the program provides comprehensive training in advanced research methodologies, theoretical frameworks, and practical applications for next-generation manufacturing systems.",
@@ -842,7 +845,7 @@ doctoral: {
   };
 
   const handleInternationalStudents = () => {
-    navigate('/international-students');
+    navigate('/InternationalStudentPage');
   };
 
   return (

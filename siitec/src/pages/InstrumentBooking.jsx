@@ -1,6 +1,7 @@
 // src/components/InstrumentBooking.js
 import React, { useState } from 'react';
 import '../styles/InstrumentBooking.css';
+import '../styles/components/ParallaxSection.css';
 import { 
   FaMicroscope, 
   FaFlask, 
@@ -18,6 +19,7 @@ import {
   FaExternalLinkAlt,
   FaCalendarCheck
 } from 'react-icons/fa';
+import bgimg from "../assets/albums/instruments.webp";
 
 const InstrumentBooking = () => {
   const [activeTab, setActiveTab] = useState('general');
@@ -200,37 +202,50 @@ const InstrumentBooking = () => {
 
   return (
     <div className="instrument-booking-page">
-      {/* Hero Section */}
-      <section className="booking-hero">
-        <div className="container">
-          <div className="booking-hero-content">
-            <h1 className="booking-hero-title">
-              <FaMicroscope className="booking-hero-icon" />
-              Instrument Booking Service
-            </h1>
-            <p className="booking-hero-subtitle">
-              Access state-of-the-art research instrumentation at Faculty of Integrated Innovative Technology
-            </p>
-            <div className="booking-hero-stats">
-              <div className="booking-stat-item">
-                <FaFlask className="booking-stat-icon" />
-                <span className="stat-number">25+</span>
-                <span className="stat-label">Instruments</span>
-              </div>
-              <div className="booking-stat-item">
-                <FaUserFriends className="booking-stat-icon" />
-                <span className="booking-stat-number">500+</span>
-                <span className="booking-stat-label">Active Users</span>
-              </div>
-              <div className="booking-stat-item">
-                <FaCalendarAlt className="booking-stat-icon" />
-                <span className="booking-stat-number">98%</span>
-                <span className="booking-stat-label">Uptime</span>
-              </div>
-              <div className="booking-stat-item">
-                <FaUniversity className="booking-stat-icon" />
-                <span className="booking-stat-number">24/7</span>
-                <span className="booking-stat-label">Access*</span>
+      {/* Hero Section with Parallax Background */}
+      <section className="parallax-section">
+        <div className="parallax-banner" style={{ height: '90vh' }}>
+          {/* Single static background image (no slideshow) */}
+          <div 
+            className="parallax-background active"
+            style={{ backgroundImage: `url(${bgimg})` }}
+          ></div>
+          
+          <div className="overlay">
+            <div className="tech-grid-overlay"></div>
+          </div>
+          
+          <div className="content-container">
+            <div className="parallax-content">
+              <h1 className="parallax-main-title" style={{ color: '#fff' }}>
+                Instrument Booking Service
+              </h1>
+              <p className="parallax-subtitle">
+                Access state-of-the-art research instrumentation at Faculty of Integrated Innovative Technology
+              </p>
+              
+              {/* Stats Section */}
+              <div className="booking-hero-stats" style={{ marginTop: '40px' }}>
+                <div className="booking-stat-item">
+                  <FaFlask className="booking-stat-icon" />
+                  <span className="booking-stat-number">25+</span>
+                  <span className="booking-stat-label">Instruments</span>
+                </div>
+                <div className="booking-stat-item">
+                  <FaUserFriends className="booking-stat-icon" />
+                  <span className="booking-stat-number">500+</span>
+                  <span className="booking-stat-label">Active Users</span>
+                </div>
+                <div className="booking-stat-item">
+                  <FaCalendarAlt className="booking-stat-icon" />
+                  <span className="booking-stat-number">98%</span>
+                  <span className="booking-stat-label">Uptime</span>
+                </div>
+                <div className="booking-stat-item">
+                  <FaUniversity className="booking-stat-icon" />
+                  <span className="booking-stat-number">24/7</span>
+                  <span className="booking-stat-label">Access*</span>
+                </div>
               </div>
             </div>
           </div>
@@ -299,7 +314,7 @@ const InstrumentBooking = () => {
                 </ul>
               </div>
 
-              <div className="info-card">
+              <div className="instruments-info-card">
                 <h4><FaCalendarAlt className="card-icon" /> Booking Process</h4>
                 <ol className="process-list">
                   {userTypes[activeTab].bookingProcess.map((step, index) => (
@@ -311,7 +326,7 @@ const InstrumentBooking = () => {
                 </ol>
               </div>
 
-              <div className="info-card">
+              <div className="instruments-info-card">
                 <h4><FaCheckCircle className="card-icon" /> Benefits</h4>
                 <ul className="benefits-list">
                   {userTypes[activeTab].benefits.map((benefit, index) => (
@@ -323,7 +338,7 @@ const InstrumentBooking = () => {
                 </ul>
               </div>
 
-              <div className="info-card contact-card">
+              <div className="instruments-info-card contact-card">
                 <h4><FaExternalLinkAlt className="card-icon" /> Quick Access</h4>
                 <div className="contact-info">
                   <p className="contact-email">
@@ -381,7 +396,7 @@ const InstrumentBooking = () => {
                       <h5>{instrument.name}</h5>
                       <div className="instrument-details">
                         <span className="category">{instrument.category}</span>
-                        <span className={`availability ${instrument.availability}`}>
+                        <span className={`availability ${instrument.availability.replace(' ', '-')}`}>
                           {instrument.availability}
                         </span>
                       </div>
