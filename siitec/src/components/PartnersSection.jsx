@@ -28,7 +28,7 @@ const PartnersSection = () => {
 
   return (
     <div className="partners-banner-container">
-      <h3 className="banner-title">Our Partners</h3>
+      <h1 className="banner-title">Our Partners</h1>
       <div className="partners-banner">
         <div className="partners-track">
           {duplicatedPartners.map((partner, index) => (
