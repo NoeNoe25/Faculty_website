@@ -9,84 +9,76 @@ const LecturerPage = () => {
     {
       id: 1,
       name: 'Dr. Jiti Nookaew',
-      thaiName: 'ศาสตราจารย์.ดร.จิติ หนูแก้ว',
       title: 'Professor',
       department: 'NANO',
       email: 'jiti.nu@kmitl.ac.th',
       phone: '02-3298000 ext. 3079',
-      office: 'CMIT Building',
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6602130911',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Jiti.png?w=742'
     },
     {
       id: 2,
       name: 'Dr. Wisanu Petchpa',
-      thaiName: 'ศาสตราจารย์.ดร.วิษณุ เพชรภา',
       title: 'Professor',
       department: 'NANO',
       email: 'wisanu.pe@kmitl.ac.th',
       phone: '02-3298000 ext. 3119',
-      office: 'CMIT Building',
+    
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8558302900',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Wisanu.png?w=685'
     },
     {
       id: 3,
       name: 'Dr. Benjapon Tanhoo',
-      thaiName: 'รองศาสตราจารย์.ดร.เบญจพล ตันฮู้',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'benchapol.tu@kmitl.ac.th',
       phone: '02-3298000 ext. 3128',
-      office: 'CMIT Building',
+     
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19640778900',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 4,
       name: 'Dr. Wanwilai Witthayakorn',
-      thaiName: 'รองศาสตราจารย์.ดร.วรรณวิลัย วิทยากร',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'wanwilai.vi@kmitl.ac.th',
       phone: '02-3298000 ext. 2169',
-      office: 'CMIT Building',
+   
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=26422631000',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Wanwilai.png?resize=768%2C771'
     },
     {
       id: 5,
       name: 'Dr. Winadda Wongwiriyaphan',
-      thaiName: 'รองศาสตราจารย์.ดร. วินัดดา วงศ์วิริยะพันธ์',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'winadda.wo@kmitl.ac.th',
       phone: '02-3298000 ext. 3133',
-      office: 'CMIT Building',
+     
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6507140809',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 6,
       name: 'Dr. Suthee Chutipaijit',
-      thaiName: 'รองศาสตราจารย์.ดร.สุธี ชุติไพจิตร',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'sutee.ch@kmitl.ac.th',
       phone: '02-3298000 ext. 3140',
-      office: 'CMIT Building, Room 205',
+     
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35344429600',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Sutee.png?resize=768%2C771'
     },
     {
       id: 7,
       name: 'Dr. Darinee Promyothin',
-      thaiName: 'รองศาสตราจารย์.ดร. ดารินี พรหมโยธิน',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'darinee.ph@kmitl.ac.th',
       phone: '02-3298000 ext. 3133',
-      office: 'CMIT Building',
+  
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=55082047500',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
@@ -98,206 +90,188 @@ const LecturerPage = () => {
       department: 'NANO',
       email: 'navaphun.ka@kmitl.ac.th',
       phone: '02-3298000 ext. 2176',
-      office: 'CMIT Building',
+    
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19639732300',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 9,
       name: 'Dr. Thotsapol Meluangnon',
-      thaiName: 'รองศาสตราจารย์.ดร. ทศพล เมลืองนนท์',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'tosapol.ma@kmitl.ac.th',
       phone: '02-3298000 ext. 2173',
-      office: 'CMIT Building',
+     
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36622681600',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 10,
       name: 'Dr. Apilak Eiaduea',
-      thaiName: 'รองศาสตราจารย์.ดร. อภิลักษณ์ เอียดเอื้อ',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'apiluck.ei@kmitl.ac.th',
       phone: '02-3298000 ext. 3132',
-      office: 'CMIT Building',
+     
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8539060400',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/11/CMIT-Apilak.png?resize=768%2C766'
     },
     {
       id: 11,
       name: 'Dr. Korakot Onlao',
-      thaiName: 'รองศาสตราจารย์.ดร. กรกช อ่อนละออ',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'korakot.on@kmitl.ac.th',
       phone: '02-3298000 ext. 3128',
-      office: 'CMIT Building',
+  
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35362507400',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 12,
       name: 'Dr. Sakon Rahong',
-      thaiName: 'รองศาสตราจารย์.ดร. สากล ระหงษ์',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'sakon.ra@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
-      office: 'CMIT Building',
+    
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8558302600',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 13,
       name: 'Dr. Nonglak Huangkamhaeng',
-      thaiName: 'รองศาสตราจารย์.ดร. นงลักษณ์ หวงกำแหง',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'nongluck.ho@kmitl.ac.th',
       phone: '02-3298000 ext. 2173',
-      office: 'CMIT Building',
+
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36760947500',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 14,
       name: 'Dr. Kanokthip Bunyaratglin',
-      thaiName: 'รองศาสตราจารย์.ดร. กนกทิพย์ บุณยรัตกลิน',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'kanokthip.bo@kmitl.ac.th',
       phone: '02-3298000 ext. 2176',
-      office: 'CMIT Building',
+
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36833541100',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Kanokthip.png?w=763'
     },
     {
       id: 15,
       name: 'Dr. Wanitchaya Mekprasat',
-      thaiName: 'รองศาสตราจารย์.ดร. วณิชยา เมฆประสาท',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'wanichaya.me@kmitl.ac.th',
       phone: '02-3298000 ext. 2176',
-      office: 'CMIT Building',
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36105458200',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Wanichaya.png?w=760'
     },
     {
       id: 16,
       name: 'Dr. Pitiporn Thanomngam',
-      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. ปิติพร ถนอมงาม',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'pitiporn.th@kmitl.ac.th',
       phone: '02-3298000 ext. 3081',
-      office: 'CMIT Building',
+  
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6506862906',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 17,
       name: 'Dr. Tutiyaporn Thiwawong',
-      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. ทุติยาภรณ์ ทิวาวงศ์',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'thutiyaporn.th@kmitl.ac.th',
       phone: '02-3298000 ext. 3128',
-      office: 'CMIT Building',
+  
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19640410000',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 18,
       name: 'Dr. Adirek Rangkasikorn',
-      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. อดิเรก แรงกสิกรณ์',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'adirek.ra@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
-      office: 'CMIT Building',
+   
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=55659954200',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 19,
       name: 'Dr. Kanoknan Phachirak',
-      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. กนกนันทน์ ภาชีรักษ์',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'kanoknan.ph@kmitl.ac.th',
       phone: '02-3298000 ext. 3132',
-      office: 'CMIT Building',
+  
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=16317407800',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Kanoknan.png?w=762'
     },
     {
       id: 20,
       name: 'Dr. Mayuree Ployiem Riley',
-      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. มยุรี พลเยี่ยม ไรลีย์',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'mayuree.ph@kmitl.ac.th',
       phone: '02-3298000 ext. 2173',
-      office: 'CMIT Building',
+      
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=23991156500',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 21,
       name: 'Dr. Kittipong Amnuaysawat',
-      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร. กิตติพงศ์ อำนวยสวัสดิ์',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'kittiphong.am@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
-      office: 'CMIT Building',
+
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35361698900',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2017/07/aj_kittiphong-e1499763646756.jpg?fit=141%2C180'
     },
     {
       id: 22,
       name: 'Dr. Supamas Wirunchit',
-      thaiName: 'ผู้ช่วยศาสตราจารย์.ดร.ศุภมาส วิรุญจิตร',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'supamas.wi@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
-      office: 'CMIT Building',
+  
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=16320167600',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 23,
       name: 'Dr. Khattiya Chalapat',
-      thaiName: 'ดร. ขัตติยา ชลาพัฒน์',
       title: 'Professor',
       department: 'NANO',
       email: 'khattiya.ch@kmitl.ac.th',
       phone: '02-3298000 ext. 2175',
-      office: 'CMIT Building',
+    
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=24537036500',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 24,
       name: 'Dr. Thirayut Uwanno',
-      thaiName: 'ดร. ธีรยุทธ อุวรรณโณ',
       title: 'Professor',
       department: 'NANO',
       email: 'teerayut.uw@kmitl.ac.th',
       phone: '02-3298000 ext. 2177',
-      office: 'CMIT Building',
+
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=57039260800',
       image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
     },
     {
       id: 25,
       name: 'Dr. Chanyanan Bunrod',
-      thaiName: 'ดร. ชญาน์นันท์ บุญรอด',
       title: 'Professor',
       department: 'NANO',
       email: 'chayanan.bo@kmitl.ac.th',
@@ -309,7 +283,6 @@ const LecturerPage = () => {
     {
       id: 26,
       name: 'Dr. Kamol Wasapinyokul',
-      thaiName: '-',
       title: 'Assistant Professor (Head of Department)',
       department: 'MANU',
       email: 'kamol.wa@kmitl.ac.th',
@@ -321,7 +294,6 @@ const LecturerPage = () => {
     {
       id: 27,
       name: 'Dr. Jatuporn Thongsri ',
-      thaiName: '-',
       title: 'Associate Professor (Associate Dean)',
       department: 'MANU',
       email: 'Jatuporn.th@kmitl.ac.th',
@@ -333,7 +305,6 @@ const LecturerPage = () => {
     {
       id: 28,
       name: 'Dr. Ananta Sinchai ',
-      thaiName: '-',
       title: 'Assistant Professor (Associate Dean)',
       department: 'MANU',
       email: 'ananta.sin@kmitl.ac.th',
@@ -345,7 +316,6 @@ const LecturerPage = () => {
     {
       id: 29,
       name: 'Dr. Ploypailin Yongsiri',
-      thaiName: '-',
       title: 'Assistant Professor (Assistant Dean)',
       department: 'MANU',
       email: 'ploypailin.yo@kmitl.ac.th',
@@ -357,7 +327,6 @@ const LecturerPage = () => {
     {
       id: 30,
       name: 'Dr. Santhad Chuwongin',
-      thaiName: '-',
       title: 'Assistant Professor (Head of CiRA)',
       department: 'MANU',
       email: 'santhad.ch@kmitl.ac.th',
@@ -369,7 +338,7 @@ const LecturerPage = () => {
     {
       id: 31,
       name: 'Dr. Chatrpol Pakasiri',
-      thaiName: '-',
+
       title: 'Associate Professor (Dean)',
       department: 'MANU',
       email: 'chatrpol.pa@kmitl.ac.th',
@@ -381,7 +350,7 @@ const LecturerPage = () => {
     {
       id: 32,
       name: 'Dr. Rachsak Sakdanuphab',
-      thaiName: '-',
+
       title: 'Associate Professor',
       department: 'MANU',
       email: 'rachsak.sa@kmitl.ac.th',
@@ -393,7 +362,6 @@ const LecturerPage = () => {
     {
       id: 33,
       name: 'Dr. Chanon Warisarn',
-      thaiName: '-',
       title: 'Associate Professor',
       department: 'MANU',
       email: 'chanon.wa@kmitl.ac.th',
@@ -405,7 +373,6 @@ const LecturerPage = () => {
     {
       id: 34,
       name: 'Dr. Lertsak Lekawat ',
-      thaiName: '-',
       title: 'Assistant Professor',
       department: 'MANU',
       email: 'lertsak@ine.co.th',
@@ -417,7 +384,6 @@ const LecturerPage = () => {
     {
       id: 35,
       name: 'Dr. Komgrit Jaksukam',
-      thaiName: '-',
       title: 'Assistant Professor',
       department: 'MANU',
       email: 'komgrit.ja@kmitl.ac.th',
@@ -429,7 +395,6 @@ const LecturerPage = () => {
     {
       id: 36,
       name: 'Dr. Kittipon Kankhunthod',
-      thaiName: '-',
       title: 'Professor',
       department: 'MANU',
       email: 'kittipon.ka@kmitl.ac.th',
@@ -566,7 +531,7 @@ const LecturerPage = () => {
                   
                   <div className="card-divider"></div>
                   
-                  <div className="contact-info">
+                  <div className="people-contact-info">
                     <div className="info-item">
                       <svg className="info-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M2.5 5.5L8 9l5.5-3.5M3 11h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -583,13 +548,13 @@ const LecturerPage = () => {
                       <span className="info-text">{lecturer.phone}</span>
                     </div>
                     
-                    <div className="info-item">
+                    {/* <div className="info-item">
                       <svg className="info-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M8 8.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" stroke="currentColor" strokeWidth="1.5"/>
                         <path d="M13 6.5c0 4-5 8-5 8s-5-4-5-8a5 5 0 0 1 10 0z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                       <span className="info-text">{lecturer.office}</span>
-                    </div>
+                    </div> */}
                   </div>
                   
                   <div className="research-area">

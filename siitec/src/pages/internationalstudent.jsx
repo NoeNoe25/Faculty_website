@@ -171,7 +171,7 @@ const InternationalStudentPage = () => {
               <div className="international-accommodation-grid">
                 {accommodationOptions.map(option => (
                   <div key={option.id} className="international-card international-accommodation-card">
-                    <h3>{option.name}</h3>
+                    <h4>{option.name}</h4>
                     <div className="international-accommodation-details">
                       <div className="international-detail-item">
                         <span className="international-detail-label">Type:</span>
@@ -332,38 +332,7 @@ const InternationalStudentPage = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="international-footer">
-        <div className="international-container">
-          <div className="international-footer-content">
-            <div className="international-footer-section">
-              <h4>International Student Office</h4>
-              <p>123 University Avenue</p>
-              <p>City, Country 12345</p>
-              <p>Phone: +1 (123) 456-7890</p>
-              <p>Email: international@university.edu</p>
-            </div>
-            <div className="international-footer-section">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><button onClick={() => setActiveSection('programs')}>Academic Programs</button></li>
-                <li><button onClick={() => setActiveSection('finances')}>Visa Information</button></li>
-                <li><button onClick={() => setActiveSection('transportation')}>Transportation</button></li>
-                <li><button onClick={() => setActiveSection('activities')}>Student Activities</button></li>
-              </ul>
-            </div>
-            <div className="international-footer-section">
-              <h4>Emergency Contacts</h4>
-              <p>Campus Security: 911 (or local emergency number)</p>
-              <p>International Office: +1 (123) 456-7890 (24/7)</p>
-              <p>Health Services: +1 (123) 456-7891</p>
-            </div>
-          </div>
-          <div className="international-footer-bottom">
-            <p>&copy; {new Date().getFullYear()} International Student Portal. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 };

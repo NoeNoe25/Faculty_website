@@ -1,13 +1,15 @@
+/* src/styles/Executive.css */
+/* Executive Leadership Page Styling - Matching AcademicStaff style */
 
 /* Container */
-.academic-staff-container {
+.executive-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
 /* Header Section */
-.academic-staff-header {
+.executive-header {
   background: var(--background-primary);
   border-radius: var(--border-radius-lg);
   padding: 3rem 2rem;
@@ -49,7 +51,7 @@
   margin-bottom: 0.5rem;
 }
 
-.header-department {
+.header-institution {
   font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: 400;
@@ -201,8 +203,8 @@
   font-weight: 600;
 }
 
-/* Staff Content */
-.staff-content {
+/* Executive Content */
+.executive-content {
   background: var(--background-primary);
   border-radius: var(--border-radius-lg);
   padding: 2rem;
@@ -236,15 +238,15 @@
   border-radius: 2px;
 }
 
-/* Staff Grid */
-.staff-grid {
+/* Executive Grid */
+.executive-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
 }
 
-/* Staff Card */
-.staff-card {
+/* Executive Card */
+.executive-card {
   background: var(--background-secondary);
   border: 1px solid var(--background-tertiary);
   border-radius: var(--border-radius);
@@ -256,7 +258,7 @@
   height: 100%;
 }
 
-.staff-card::before {
+.executive-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -268,13 +270,13 @@
   transition: transform 0.3s ease;
 }
 
-.staff-card:hover {
+.executive-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: var(--gold-copper-light);
 }
 
-.staff-card:hover::before {
+.executive-card:hover::before {
   transform: scaleX(1);
 }
 
@@ -286,13 +288,13 @@
   justify-content: center;
 }
 
-.staff-image-wrapper {
+.executive-image-wrapper {
   position: relative;
   width: 150px;
   height: 150px;
 }
 
-.staff-image {
+.executive-image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -301,12 +303,12 @@
   transition: var(--transition-medium);
 }
 
-.staff-card:hover .staff-image {
+.executive-card:hover .executive-image {
   border-color: var(--gold-copper);
   transform: scale(1.05);
 }
 
-.dept-badge {
+.executive-badge {
   position: absolute;
   bottom: 5px;
   right: 5px;
@@ -329,7 +331,7 @@
   flex-direction: column;
 }
 
-.staff-name {
+.executive-name {
   font-family: var(--font-title);
   font-size: 1.4rem;
   font-weight: 400;
@@ -338,7 +340,7 @@
   text-align: center;
 }
 
-.staff-position {
+.executive-title {
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--gold-copper);
@@ -355,7 +357,7 @@
 }
 
 /* Contact Info */
-.people-contact-info {
+.contact-info {
   margin-bottom: 1.5rem;
 }
 
@@ -389,6 +391,97 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--text-light);
+}
+
+/* Responsibilities Section */
+.responsibilities-section {
+  margin: 1.5rem 0;
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--slate-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+
+.responsibilities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.responsibility-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.responsibility-marker {
+  color: var(--gold-copper);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.responsibility-text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* Reporting Section */
+.reporting-section {
+  background: var(--background-secondary);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--slate-base);
+  margin-top: auto;
+}
+
+.reporting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.reporting-item:last-child {
+  margin-bottom: 0;
+}
+
+.reporting-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-greywhite);
+}
+
+.reporting-value {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-left: 0.5rem;
+}
+
+.direct-reports-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.report-tag {
+  background: var(--background-tertiary);
+  color: var(--text-light);
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 /* Department Info */
@@ -442,101 +535,9 @@
   font-size: 1rem;
   color: var(--text-greywhite);
 }
-/*Executive Staff Overrides */
-/* Additional styles for Executive component */
 
-/* Responsibilities Section */
-.responsibilities-section {
-  margin: 1.5rem 0;
-}
-
-.section-label {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--slate-base);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.8rem;
-}
-
-.responsibilities-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.responsibility-item {
-  display: flex;
-  gap: 0.5rem;
-  align-items: flex-start;
-}
-
-.responsibility-marker {
-  color: var(--gold-copper);
-  font-size: 1.2rem;
-  line-height: 1.2;
-  flex-shrink: 0;
-}
-
-.responsibility-text {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--text-light);
-  line-height: 1.4;
-}
-
-/* Reporting Section */
-.reporting-section {
-  background: var(--background-secondary);
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  border-left: 3px solid var(--slate-base);
-  margin-top: 1rem;
-}
-
-.reporting-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin-bottom: 0.8rem;
-}
-
-.reporting-item:last-child {
-  margin-bottom: 0;
-}
-
-.reporting-label {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-greywhite);
-}
-
-.reporting-value {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--text-light);
-  margin-left: 0.5rem;
-}
-
-.direct-reports-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.report-tag {
-  background: var(--background-tertiary);
-  color: var(--text-light);
-  padding: 0.3rem 0.7rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
 /* Footer */
-.academic-staff-footer {
+.executive-footer {
   text-align: center;
   padding: 2rem;
   margin-top: 2rem;
@@ -545,7 +546,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.academic-staff-footer p {
+.executive-footer p {
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text-greywhite);
@@ -558,17 +559,17 @@
     font-size: 2.5rem;
   }
   
-  .staff-grid {
+  .executive-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .academic-staff-container {
+  .executive-container {
     padding: 1rem 0.5rem;
   }
 
-  .academic-staff-header {
+  .executive-header {
     padding: 2rem 1.5rem;
   }
 
@@ -580,7 +581,7 @@
     font-size: 1.1rem;
   }
 
-  .header-department {
+  .header-institution {
     font-size: 1rem;
   }
 
@@ -601,11 +602,11 @@
     font-size: 0.9rem;
   }
 
-  .staff-content {
+  .executive-content {
     padding: 1.5rem;
   }
 
-  .staff-grid {
+  .executive-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
@@ -633,7 +634,7 @@
     font-size: 0.85rem;
   }
 
-  .staff-image-wrapper {
+  .executive-image-wrapper {
     width: 120px;
     height: 120px;
   }
@@ -642,7 +643,7 @@
     padding: 1rem 1.5rem 1.5rem;
   }
 
-  .staff-name {
+  .executive-name {
     font-size: 1.2rem;
   }
   
@@ -664,4 +665,3 @@
     transition: none !important;
   }
 }
-
