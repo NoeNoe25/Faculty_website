@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 import Home from '../pages/Home';
 import Programs from '../pages/Programs';
 import Aboutus from '../pages/Aboutus';
-import OrganizationalStructure from '../pages/OrganizationalStructure';
 import ProgramDetails from '../pages/bsc';
 import ProgramDetailsWithNav from '../pages/details';
 import ResearcherProfile from '../pages/ResearcherProfile';
@@ -29,7 +28,6 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/programs" element={<Programs />} />
         <Route path="/aboutus" element={<Aboutus />} />
-        <Route path="/OrganizationalStructure" element={<OrganizationalStructure />} />
         <Route path="/bsc" element={<ProgramDetails />} />
         <Route path="/ProgramDetailsWithNav" element={<ProgramDetailsWithNav />} />
         <Route path="/ResearcherProfile" element={<ResearcherProfile />} />
