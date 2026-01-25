@@ -69,9 +69,9 @@ them for future careers.
               </div>
               <h3>{program.title}</h3>
               <p>{program.description}</p>
-              <a href="#" className="stem-link">
+              {/* <a href="#" className="stem-link">
                 Read more +
-              </a>
+              </a> */}
             </div>
           ))}
         </div>

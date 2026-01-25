@@ -7,7 +7,8 @@ import Programs from '../pages/Programs';
 import Aboutus from '../pages/Aboutus';
 import ProgramDetails from '../pages/bsc';
 import ProgramDetailsWithNav from '../pages/details';
-import ResearcherProfile from '../pages/ResearcherProfile';
+import NanoResearcherProfile from '../pages/NanoResearcherProfile';
+import ManuResearcherProfile from '../pages/ManuResearcherProfile';
 import SIITECAbout from '../pages/About';
 import AcademicStaff from '../pages/AcademicStaff';
 import NANODepartmentPage from '../pages/nano'; 
@@ -30,7 +31,8 @@ const AppRoutes = () => {
         <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/bsc" element={<ProgramDetails />} />
         <Route path="/ProgramDetailsWithNav" element={<ProgramDetailsWithNav />} />
-        <Route path="/ResearcherProfile" element={<ResearcherProfile />} />
+        <Route path="/NanoResearcherProfile" element={<NanoResearcherProfile />} />
+        <Route path="/ManuResearcherProfile" element={<ManuResearcherProfile />} />
         <Route path="/About2" element={<SIITECAbout />} />
         <Route path="/AcademicStaff" element={<AcademicStaff />} />
         <Route path="/NANODepartmentPage" element={<NANODepartmentPage />} />

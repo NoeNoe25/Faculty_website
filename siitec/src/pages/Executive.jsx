@@ -396,7 +396,7 @@ const Executive = () => {
                       
                       <div className="card-divider"></div>
                       
-                      <div className="contact-info">
+                      <div className="people-contact-info">
                         <div className="info-item">
                           <svg className="info-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M2.5 5.5L8 9l5.5-3.5M3 11h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

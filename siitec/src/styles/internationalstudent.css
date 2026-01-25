@@ -452,3 +452,191 @@ p{
     font-size: 0.9rem;
   }
 }
+
+/* Add these styles to your existing internationalstudent.css file */
+
+/* Image styling */
+.international-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 2px solid var(--slate-pale);
+}
+
+/* Card image container */
+.international-card-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Google Maps container */
+.international-map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 30px 0;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--gold-copper-light);
+}
+
+.international-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Dining map section */
+.international-dining-map {
+  background: var(--background-primary);
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.international-dining-map h3 {
+  color: var(--slate-dark);
+  margin-bottom: 20px;
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+}
+
+.international-map-description {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Dining hours badge */
+.international-hours-badge {
+  display: inline-block;
+  background-color: var(--gold-copper-light);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Price tag styling */
+.international-price-tag {
+  background-color: var(--gold-copper-bright);
+  color: var(--slate-darkest);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  display: inline-block;
+  margin: 15px 0;
+  box-shadow: var(--shadow-xs);
+}
+
+/* Highlight card */
+.international-card.highlight {
+  border: 2px solid var(--gold-copper);
+  background: linear-gradient(135deg, var(--background-primary), var(--background-secondary));
+}
+
+.international-card.highlight h3 {
+  color: var(--gold-copper-dark);
+}
+
+/* Food type badges */
+.international-food-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+
+.international-thai-badge {
+  background-color: #dc2626;
+  color: white;
+}
+
+.international-halal-badge {
+  background-color: #059669;
+  color: white;
+}
+
+.international-international-badge {
+  background-color: #2563eb;
+  color: white;
+}
+
+.international-vegetarian-badge {
+  background-color: #7c3aed;
+  color: white;
+}
+
+/* Image gallery for accommodation */
+.international-image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.international-image-gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Cost breakdown */
+.international-cost-breakdown {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--background-tertiary);
+}
+
+.international-cost-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--slate-pale);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .international-image-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .international-image {
+    height: 180px;
+  }
+  
+  .international-map-container {
+    height: 250px;
+  }
+  
+  .international-dining-map {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .international-image {
+    height: 150px;
+  }
+  
+  .international-map-container {
+    height: 200px;
+  }
+  
+  .international-food-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+}
