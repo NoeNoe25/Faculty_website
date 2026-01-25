@@ -1,50 +1,37 @@
 
 import React, { useState, useMemo } from 'react';
 import '../styles/ResearcherProfile.css';
-import profploypailin from '../assets/images/research/researchers/ProfPloypailin.png';
+
 import proftosapol from '../assets/images/research/researchers/ProfTosapol.jpg';
-import profchatrpol from '../assets/images/research/researchers/ProfChatrpol.png';
 import profsakon from '../assets/images/research/researchers/ProfSakon.png';
-import profkorakot from '../assets/images/research/researchers/Prof.jpg';
-import profjatuporn from '../assets/images/research/researchers/ProfJatuporn.jpg';
-import profrachsak from '../assets/images/research/researchers/Prof.jpg';
-import profkomgrit from '../assets/images/research/researchers/ProfKomgrit.jpg';
-import profsanthad from '../assets/images/research/researchers/ProfSanthad.jpg';
+import profkorakot from '../assets/images/research/researchers/ProfKorakot.jpg';
 import profwanwilai from '../assets/images/research/researchers/ProfWanwilai.jpg';
 import profteerayut from '../assets/images/research/researchers/ProfTeerayut.jpg';
 import profnongluck from '../assets/images/research/researchers/ProfNongluck.png';
-import profkittiphong from '../assets/images/research/researchers/Dr.Kittipon.jpg';
+import profkittiphong from '../assets/images/research/researchers/ProfKittiphong.jpg';
 import profkanoknan from '../assets/images/research/researchers/ProfKanoknan.jpg';
 import profkhattiya from '../assets/images/research/researchers/Dr.Khattiya.jpg';
-import profkittipong from '../assets/images/research/researchers/ProfKittiphong.jpg';
-import profprasert from '../assets/images/research/researchers/Prof.jpg';
-import profsuwit from '../assets/images/research/researchers/Prof.jpg';
-import profthanapat from '../assets/images/research/researchers/Prof.jpg';
-import profsittichai from '../assets/images/research/researchers/Prof.jpg';
-import profsompong from '../assets/images/research/researchers/Prof.jpg';
+import profkanokthip from '../assets/images/research/researchers/ProfKanokthip.png';
+import profwisanu from '../assets/images/research/researchers/ProfWisanu.jpg';
+import profnarathon from '../assets/images/research/researchers/Dr.Narathon.jpg';
+import ProfWanichaya from '../assets/images/research/researchers/ProfWanichaya.png';
+import profchayanan from '../assets/images/research/researchers/Dr.Chayanan.jpg';
+import profApiluck from '../assets/images/research/researchers/Dr.Apiluck.jpg';
 
-import project1 from '../assets/images/research/projects/Project1.png';
+
 import project2 from '../assets/images/research/projects/Project2.png';
-import project3 from '../assets/images/research/projects/Project3.png';
 import project4 from '../assets/images/research/projects/Project4.png';
 import project5 from '../assets/images/research/projects/Project5.png';
-import project6 from '../assets/images/research/projects/Project6.jpg';
-import project7 from '../assets/images/research/projects/Project7.png';
-import project8 from '../assets/images/research/projects/Project8.png';
-import project9 from '../assets/images/research/projects/Project9.png';
 import project10 from '../assets/images/research/projects/Project10.jpg';
 import project11 from '../assets/images/research/projects/Project11.png'; 
 import project12 from '../assets/images/research/projects/Project12.png';
 import project13 from '../assets/images/research/projects/Project13.jpg';
 import project14 from '../assets/images/research/projects/Project14.jpg';
 import project15 from '../assets/images/research/projects/Project15.jpg';
-import  project16 from '../assets/images/research/projects/Project16.png';
 import project17 from '../assets/images/research/projects/Project17.png';
 import project18 from '../assets/images/research/projects/Project18.png';
-import project19 from '../assets/images/research/projects/Project19.png';
-import project20 from '../assets/images/research/projects/Project20.png';
 import  project21 from '../assets/images/research/projects/Project21.png'; 
-import  project22 from '../assets/images/research/projects/Project21.png'; 
+import  project24 from '../assets/images/research/projects/Project24.png'; 
 import  project23 from '../assets/images/research/projects/Project23.png'; 
 const ResearcherCard = ({ researcher }) => {
   const [expanded, setExpanded] = useState(false);
@@ -146,25 +133,12 @@ const ResearcherCard = ({ researcher }) => {
   );
 };
 
-const ResearcherProfile = () => {
+const NanoResearcherProfile = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const researchers = [
-    {
-      id: 1,
-      name: "Asst. Prof. Dr. Ploypailin Yongsiri",
-      position: "Assistant Professor",
-      researchGroup: "Advanced Materials Manufacturing",
-      category: "Materials Science",
-      overview: "Researcher expertise focuses on the valorization of industrial waste and residual materials, transforming them into high-value products through rigorous scientific methodologies. Specialization lies in the fabrication of electroceramic materials, with particular expertise in glass and glass-ceramic systems. The work encompasses comprehensive characterization and development of these advanced materials, with special interest in ferroelectric properties.",
-      keywords: ["Advanced Ceramics", "Ferroelectric", "Industrial Waste Valorization", "Glass-Ceramics"],
-      email: "ploypailin.yo@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: profploypailin,
-      projectImage: project1
-    },
+   
     {
       id: 2,
       name: "Assoc. Prof. Dr. Tosapol Maluangnont",
@@ -179,20 +153,7 @@ const ResearcherProfile = () => {
       profileImage: proftosapol,
       projectImage: project2
     },
-    {
-      id: 3,
-      name: "Assoc. Prof. Dr. Chatrpol Pakasiri",
-      position: "Associate Professor",
-      researchGroup: "Microelectronics and Sensors for Manufacturing",
-      category: "Electronics",
-      overview: "Radio frequency integrated circuit (RFIC). RF power combiner/divider, RF power amplifier, RF low noise amplifier, mixers, oscillator, phase locked loops/frequency synthesisers, phase shifter, RF switches, transceivers, passive microwave circuits, antenna design, digital circuit design using hardware description language (verilog).",
-      keywords: ["RFIC", "Transceivers", "Digital Circuit Design", "FPGA", "Antenna Design"],
-      email: "chatrpol.pa@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: profchatrpol,
-      projectImage: project3
-    },
+    
     {
       id: 4,
       name: "Assoc. Prof. Sakon Rahong",
@@ -221,63 +182,8 @@ const ResearcherProfile = () => {
       profileImage: profkorakot,
       projectImage: project5
     },
-    {
-      id: 6,
-      name: "Assoc. Prof. Dr. Jatuporn Thongsri",
-      position: "Associate Professor",
-      researchGroup: "Computational Manufacturing Systems",
-      category: "Computational",
-      overview: "Research expertise spans Computational Fluid Dynamics (CFD), Finite Element Method (FEM), manufacturing systems, computer simulation, and digital twin technologies. His work focuses on integrating advanced computational modeling with intelligent manufacturing to enhance system performance, optimize processes, and support data-driven decision making.",
-      keywords: ["Computational Fluid Dynamics", "Finite Element Method", "Manufacturing Process", "Digital Twin"],
-      email: "jatuporn.th@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=300&fit=crop"
-    },
-    {
-      id: 7,
-      name: "Assoc. Prof. Dr. Rachsak Sakdanuphab",
-      position: "Associate Professor",
-      researchGroup: "PVD Coating Technology for Industry",
-      category: "Materials Science",
-      overview: "ADOPT PVD COATINGS TECHNOLOGY IN THAILAND PVD CLUSTER. Research focuses on thin film semiconductor devices such as solar cells and thermoelectric modules, with expertise in PVD coating technology applications for industrial use.",
-      keywords: ["PVD Coating", "Thin Films", "Semiconductor Physics", "Thermoelectric Materials"],
-      email: "rachsak.sa@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      profileImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1519452639340-ef50a6e7e5f5?w=600&h=300&fit=crop"
-    },
-    {
-      id: 8,
-      name: "Asst. Prof. Komgrit Jaksukam",
-      position: "Assistant Professor",
-      researchGroup: "IoT and Industrial Automation",
-      category: "Automation",
-      overview: "Research expertise focuses on the convergence of IoT Edge-Cloud Computing and Industrial Automation Systems, embedded systems, multi-hop network, industrial robotics integration, and ultrasound measurement system.",
-      keywords: ["IoT Edge-Cloud Computing", "Industrial Robotics", "Wireless Sensor Networks", "Embedded Systems", "Industry 4.0"],
-      specialties: ["Multi-hop Networks", "Predictive Maintenance", "Automation Systems"],
-      email: "komgrit.ja@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=300&fit=crop"
-    },
-    {
-      id: 9,
-      name: "Asst. Prof. Dr. Santhad Chuwongin",
-      position: "Assistant Professor",
-      researchGroup: "Center of Industrial Robots & Automation (CiRA Lab)",
-      category: "AI & Automation",
-      overview: "Practical AI in Advanced Manufacturing: AI-driven solutions for Industry 4.0, emphasizing automation, quality assurance, and process optimization. AI in Healthcare Applications: Deep learning approaches for healthcare including Medical image analysis using deep learning architectures, Vision Transformers for diagnostic systems.",
-      keywords: ["Industrial Robot & AI", "Machine Learning", "Deep Learning", "Self-Supervised Learning"],
-      specialties: ["Computer Vision", "Medical Image Analysis", "Tropical Disease Diagnostics"],
-      email: "santhad.ch@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop"
-    },
+   
+    
     {
       id: 10,
       name: "Assoc. Prof. Dr. Wanwilai Vittayakorn",
@@ -288,8 +194,8 @@ const ResearcherProfile = () => {
       keywords: ["Electroceramics", "Ferroelectric", "Piezoelectric", "Nanocomposites"],
       email: "wanwilai.vi@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
-      profileImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=300&fit=crop"
+      profileImage: profwanwilai,
+      projectImage: project10
     },
     {
       id: 11,
@@ -303,8 +209,8 @@ const ResearcherProfile = () => {
       googleScholar: "https://scholar.google.com",
       researchGate: "https://researchgate.net",
       orcid: "https://orcid.org",
-      profileImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=300&fit=crop"
+      profileImage: profteerayut,
+      projectImage: project11
     },
     {
       id: 12,
@@ -316,8 +222,8 @@ const ResearcherProfile = () => {
       keywords: ["Biosensors", "Point of Care Diagnostic", "Gold Nanoparticles Assay"],
       email: "nongluck.ho@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
-      profileImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=300&fit=crop"
+      profileImage: profnongluck,
+      projectImage: project12
     },
     {
       id: 13,
@@ -331,8 +237,8 @@ const ResearcherProfile = () => {
       email: "kittiphong.am@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
       researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=300&fit=crop"
+      profileImage: profkittiphong,
+      projectImage: project13
     },
     {
       id: 14,
@@ -345,8 +251,8 @@ const ResearcherProfile = () => {
       email: "kanoknan.ph@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
       researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=300&fit=crop"
+      profileImage: profkanoknan,
+      projectImage: project14
     },
     {
       id: 15,
@@ -359,23 +265,10 @@ const ResearcherProfile = () => {
       email: "khattiya.ch@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
       researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600&h=300&fit=crop"
+      profileImage: profkhattiya,
+      projectImage: project15
     },
-    {
-      id: 16,
-      name: "Dr. Kittipon Kankhunthod",
-      position: "Researcher",
-      researchGroup: "Intelligent Automation and Data Analytics (IADA)",
-      category: "AI & Data Science",
-      overview: "Our research interests include Digital Signal Processing, Machine Learning, Data Analytics, and Magnetic Recording. We focus on developing advanced signal processing algorithms and data-driven models for intelligent analysis for the next-generation data storage technologies.",
-      keywords: ["Digital Signal Processing", "Machine Learning", "Data Analytics", "Magnetic Recording"],
-      email: "kittipon.ka@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop"
-    },
+    
     {
       id: 17,
       name: "Dr. Chayanan Boonrawd",
@@ -386,8 +279,8 @@ const ResearcherProfile = () => {
       keywords: ["Natural Rubber Latex", "Shape Memory Polymer", "Thermal Insulation"],
       email: "chayanan.bo@kmitl.ac.th",
       researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1557862921-37829c790f19?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1519452639340-ef50a6e7e5f5?w=600&h=300&fit=crop"
+      profileImage: profchayanan,
+      projectImage: project17
     },
     {
       id: 18,
@@ -399,36 +292,11 @@ const ResearcherProfile = () => {
       keywords: ["Functional Nanomaterials", "Thin-film Technology", "Photoelectrochemical Sensor", "Nano/optoelectronic Devices"],
       email: "narathon.kh@kmitl.ac.th",
       researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=300&fit=crop"
+      profileImage: profnarathon,
+      projectImage: project18
     },
-    {
-      id: 19,
-      name: "Dr. Nathawirot Somjajaroen",
-      position: "Researcher",
-      researchGroup: "Thin Films and Semiconductor Applications",
-      category: "Electronics",
-      overview: "My research primarily focuses on semiconductor-based thin-film preparation, analysis, and fabrication, especially using PVD technology. The resulting films are applied to various applications such as protective coatings, transparent functional layers, sensors, and semiconductor-related devices.",
-      keywords: ["Thin Films", "Semiconductor Application", "Magnetic Behavior", "Deep Learning", "Superconductor"],
-      email: "nathawirot.so@kmitl.ac.th",
-      researchGate: "https://researchgate.net",
-      profileImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600&h=300&fit=crop"
-    },
-    {
-      id: 20,
-      name: "Assoc. Prof. Dr. Chanon Warisarn",
-      position: "Associate Professor",
-      researchGroup: "Advanced Signal Processing for Data Storage",
-      category: "Data Science",
-      overview: "Our research focuses on advanced signal processing techniques for magnetic recording and data storage systems, with an emphasis on emerging recording technologies and intelligent detection schemes. We investigate the read/write processes in ultra-high-density storage.",
-      keywords: ["Magnetic Recording", "Signal Processing", "Encoding/Decoding Design"],
-      website: "https://www.adsignlab.org",
-      email: "chanon.wa@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      profileImage: "https://images.unsplash.com/photo-1557862921-37829c790f19?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop"
-    },
+    
+   
     {
       id: 21,
       name: "Prof. Dr. Wisanu Pecharapa",
@@ -439,8 +307,8 @@ const ResearcherProfile = () => {
       keywords: ["IR Shielding", "Light Scattering", "Metal Oxide", "Thin Films", "Up-conversion"],
       email: "wisanu.pe@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
-      profileImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=600&h=300&fit=crop"
+      profileImage: profwisanu,
+      projectImage: project21
     },
     {
       id: 22,
@@ -452,8 +320,8 @@ const ResearcherProfile = () => {
       keywords: ["Nanocomposites", "Oxide Materials", "Electronic Devices", "Photocatalysis"],
       email: "kanokthip.bo@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
-      profileImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600&h=300&fit=crop"
+      profileImage: profkanokthip,
+      projectImage: project17
     },
     {
       id: 23,
@@ -465,9 +333,36 @@ const ResearcherProfile = () => {
       keywords: ["Photocatalysis", "TiO₂ Composites", "Oxygen Indicators", "Nanocomposite Films"],
       email: "wanichaya.me@kmitl.ac.th",
       googleScholar: "https://scholar.google.com",
-      profileImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
-      projectImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=300&fit=crop"
-    }
+      profileImage: ProfWanichaya,
+      projectImage: project23
+    },
+    {
+  id: 24,
+  name: "Assoc. Prof. Dr. Apiluck Eiad-Ua",
+  position: "Associate Professor",
+  researchGroup: "Nanoporous Material Research Group",
+  category: "Materials Science & Environmental Engineering",
+  overview: "Our research integrates circular economy concepts into the synthesis of nanoporous carbon and inorganic–organic hybrid materials derived from agricultural, industrial, and petroleum wastes. Advanced thermal and hydrothermal processes are employed to tailor pore structures and surface chemistry at the nanoscale. The resulting materials are applied in energy storage, adsorption, catalytic supports, and environmental remediation, contributing to sustainable energy and environmental technologies.",
+  keywords: [
+    "Nanoporous Carbon",
+    "Circular Economy",
+    "Biomass-Derived Materials",
+    "Hydrothermal Carbonization",
+    "Zeolite",
+    "Adsorbents",
+    "Electrodes",
+    "Catalyst Support",
+    "Wastewater Treatment",
+    "Air Pollution Control",
+    "Energy Storage",
+    "Direct Air Capture (DAC)"
+  ],
+  email: "apiluck.ei@kmitl.ac.th",
+  googleScholar: "https://scholar.google.com",
+  profileImage: profApiluck,
+  projectImage: project24
+}
+
   ];
 
   // Filter researchers based on search and category
@@ -497,9 +392,9 @@ const ResearcherProfile = () => {
 
   // Get unique categories for filter buttons
   const categories = ['all', 'Materials Science', 'Electronics', 'Nanotechnology', 
-                      'AI & Automation', 'Computational', 'Biotechnology', 
-                      'AI & Data Science', 'Applied Science', 'AI & Computational', 
-                      'Data Science', 'Automation'];
+                     'Computational', 'Biotechnology', 
+                       'Applied Science', 'AI & Computational', 
+                      ];
 
   // Count researchers by category
   const categoryCounts = categories.reduce((acc, category) => {
@@ -517,7 +412,7 @@ const ResearcherProfile = () => {
       <header className="researcher-header">
         <div className="header-decoration"></div>
         <div className="header-content">
-          <h1 className="header-title">Research Groups & Laboratories</h1>
+          <h1 className="header-title">Nanoscience & Nanotechnology Research Groups</h1>
           <p className="header-subtitle">School of Integrated Innovative Technology</p>
           <p className="header-institution">King Mongkut's Institute of Technology Ladkrabang</p>
         </div>
@@ -601,4 +496,4 @@ const ResearcherProfile = () => {
   );
 };
 
-export default ResearcherProfile;
+export default NanoResearcherProfile;

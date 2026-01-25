@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import '../styles/internationalstudent.css';
 
+// Import all your images
+import dorm1 from '../assets/International students/dorm4.jpg';
+import dorm2 from '../assets/International students/dorm2.jpg';
+import dorm3 from '../assets/International students/dorm3.jpg';  
+import dorm4 from '../assets/International students/dorm1.jpg';
+import canteenA from '../assets/International students/canteen_A.jpg';
+import canteenB from '../assets/International students/canteen_B.jpg';
+import canteenC from '../assets/International students/canteen_c.png';
+import eccFoodCourt from '../assets/International students/canteen_ecc.jpg';
+import archiCafe from '../assets/International students/canteen_archi.png';
+
 const InternationalStudentPage = () => {
   const [activeSection, setActiveSection] = useState('home');
 
-  // Navigation items
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'programs', label: 'Programs' },
@@ -22,19 +32,61 @@ const InternationalStudentPage = () => {
     { id: 3, name: 'Nym/Pod Initiative', description: 'Peer mentorship and community building program', duration: 'Full academic year', eligibility: 'First-year students' },
   ];
 
-  // Dining options
+  // Dining options with images
   const diningOptions = [
-    { id: 1, name: 'Main Campus Dining Hall', hours: '7:00 AM - 9:00 PM', cuisine: 'International', mealPlan: 'Required' },
-    { id: 2, name: 'อาหารไทย Restaurant', hours: '10:00 AM - 10:00 PM', cuisine: 'Thai', mealPlan: 'Optional' },
-    { id: 3, name: 'International Food Court', hours: '8:00 AM - 11:00 PM', cuisine: 'Various', mealPlan: 'Optional' },
+    { 
+      id: 1, 
+      name: 'Canteen A', 
+      description: 'Main student canteen with Thai rice dishes, noodles, halal food and drinks.',
+      hours: '7:00 AM - 5:00 PM',
+      price: '35-80 THB per meal',
+      image: canteenA,
+      badges: ['thai', 'halal']
+    },
+    { 
+      id: 2, 
+      name: 'Canteen B', 
+      description: 'Low-cost Thai meals, vegetarian food, and fresh fruit drinks.',
+      hours: '7:00 AM - 5:00 PM',
+      price: '35-80 THB per meal',
+      image: canteenB,
+ 
+    },
+    { 
+      id: 3, 
+      name: 'Canteen C', 
+      description: 'Street-food style stalls with noodles, fried rice, and snacks.',
+      hours: '7:00 AM - 5:00 PM',
+      price: '35-80 THB per meal',
+      image: canteenC,
+
+    },
+    { 
+      id: 4, 
+      name: 'ECC Food Court', 
+      description: 'Modern food court with Thai and international fast-food options.',
+      hours: '7:00 AM - 5:00 PM',
+      price: '35-80 THB per meal',
+      image: eccFoodCourt,
+ 
+    },
+    { 
+      id: 5, 
+      name: 'Archi Café & Shops', 
+      description: 'Coffee, bakery, western snacks and international drinks.',
+      hours: '8:00 AM - 10:00 PM',
+      price: '35-80 THB per meal',
+      image: archiCafe,
+ 
+    },
   ];
 
   // Transportation options
   const transportOptions = [
-    { id: 1, name: 'Campus Shuttle', schedule: 'Every 15 minutes', hours: '6:00 AM - 12:00 AM', coverage: 'Campus-wide' },
-    { id: 2, name: 'Public Bus System', schedule: 'Varies by route', hours: '5:00 AM - 1:00 AM', coverage: 'City-wide' },
-    { id: 3, name: 'Bike Share Program', schedule: '24/7', hours: 'Always available', coverage: 'Campus and nearby areas' },
-    { id: 4, name: 'OLA Rideshare', schedule: 'On-demand', hours: '24/7', coverage: 'Entire metropolitan area' },
+    { id: 1, name: 'Campus Shuttle', schedule: 'Every 15 minutes', hours: '9:00 AM - 4:00 PM', coverage: 'Campus-wide' },
+    { id: 2, name: 'Public Bus System', schedule: 'Varies by route', hours: '5:00 AM - 12:00 AM', coverage: 'City-wide' },
+    { id: 3, name: 'Any Wheel', schedule: '24/7', hours: 'Always available', coverage: 'Campus and nearby areas' }
+    
   ];
 
   // Activities data
@@ -45,20 +97,8 @@ const InternationalStudentPage = () => {
     { id: 4, name: 'Weekend Excursions', day: 'Select Saturdays', time: '9:00 AM - 5:00 PM', location: 'Various destinations' },
   ];
 
-  // Financial information
-  const financialInfo = [
-    { id: 1, name: 'Visa Requirements', details: 'Student visa required for all international students. Must maintain full-time enrollment.' },
-    { id: 2, name: 'Banking & Money', details: 'International students can open local bank accounts. Major credit cards (Visa, Mastercard) widely accepted.' },
-    { id: 3, name: 'Scholarships', details: 'Merit-based and need-based scholarships available for qualified international students.' },
-    { id: 4, name: 'Part-time Work', details: 'Up to 20 hours per week on-campus employment allowed with valid student visa.' },
-  ];
-
-  // Accommodation options
-  const accommodationOptions = [
-    { id: 1, name: 'On-Campus Dormitory', type: 'Shared room', cost: '$1200/semester', amenities: 'WiFi, laundry, meal plan included' },
-    { id: 2, name: 'International Student Housing', type: 'Single room', cost: '$1800/semester', amenities: 'Private bath, kitchen access, WiFi' },
-    { id: 3, name: 'Off-Campus Apartments', type: 'Studio/1BR', cost: '$600-$900/month', amenities: 'Varies by location' },
-  ];
+  // Google Maps embed URL for campus dining locations
+  const campusMapUrl = "https://www.google.com/maps/d/embed?mid=1UEUU0ZbmX0mktzMBgfRVX1l7BCwbqq8&ehbc=2E312F";
 
   return (
     <div className="international-student-page">
@@ -163,67 +203,101 @@ const InternationalStudentPage = () => {
           {/* Accommodation Section */}
           {activeSection === 'accommodation' && (
             <section className="international-section">
-              <h2>Accommodation Options</h2>
+              <h2>On-Campus Housing</h2>
               <p className="international-section-intro">
-                Find the perfect place to live during your studies. We offer on-campus and off-campus housing options.
+                Our on-campus dormitories provide safe, affordable, and convenient living for international students.
               </p>
-              
+
               <div className="international-accommodation-grid">
-                {accommodationOptions.map(option => (
-                  <div key={option.id} className="international-card international-accommodation-card">
-                    <h4>{option.name}</h4>
-                    <div className="international-accommodation-details">
-                      <div className="international-detail-item">
-                        <span className="international-detail-label">Type:</span>
-                        <span>{option.type}</span>
-                      </div>
-                      <div className="international-detail-item">
-                        <span className="international-detail-label">Cost:</span>
-                        <span className="international-cost">{option.cost}</span>
-                      </div>
-                      <div className="international-detail-item">
-                        <span className="international-detail-label">Amenities:</span>
-                        <span>{option.amenities}</span>
-                      </div>
-                    </div>
-                    <button className="international-action-button">Learn More</button>
+                <div className="international-card international-accommodation-card">
+                  <div className="international-image-gallery">
+                    <img src={dorm1} alt="No AC Dormitory" className="international-image" />
+                    <img src={dorm2} alt="No AC Dormitory Interior" className="international-image" />
                   </div>
-                ))}
+                  <h3>No-Air-Conditioned Dormitory (Buildings 1,2,3,4,6)</h3>
+                  <p>Shared rooms with essential facilities for budget-friendly student living.</p>
+                  <div className="international-price-tag">6,000 – 10,000 THB / semester</div>
+                  <ul>
+                    <li>Bunk bed, desk, wardrobe</li>
+                    <li>Free Wi-Fi</li>
+                    <li>Shared bathrooms</li>
+                    <li>Electricity: 7 THB/unit</li>
+                  </ul>
+                </div>
+
+                <div className="international-card international-accommodation-card">
+                  <img src={dorm3} alt="Air-Conditioned Dormitory" className="international-image" />
+                  <h3>Air-Conditioned Dormitory (Buildings 7 & 8)</h3>
+                  <p>Comfortable air-conditioned rooms suitable for 1–2 students.</p>
+                  <div className="international-price-tag">20,000 – 24,000 THB / semester</div>
+                  <ul>
+                    <li>Air-conditioner, double bed</li>
+                    <li>Free Wi-Fi</li>
+                    <li>Shared bathrooms</li>
+                    <li>Electricity: 16 THB/unit</li>
+                  </ul>
+                </div>
+
+                <div className="international-card international-accommodation-card">
+                  <img src={dorm4} alt="Type C Dormitory" className="international-image" />
+                  <h3>Type A, B, C Dormitory (Buildings 9 & 12)</h3>
+                  <p>Premium ensuite rooms with private bathroom and refrigerator.</p>
+                  <div className="international-price-tag">24,000 – 28,000 THB / semester</div>
+                  <ul>
+                    <li>Private bathroom</li>
+                    <li>Refrigerator & water heater</li>
+                    <li>Free Wi-Fi</li>
+                    <li>Air-conditioning included</li>
+                  </ul>
+                </div>
               </div>
             </section>
           )}
 
-          {/* Dining Section */}
+          {/* Dining Section with Google Maps */}
           {activeSection === 'dining' && (
             <section className="international-section">
-              <h2>Dining & Food Options</h2>
+              <h2>Campus Dining & Canteens</h2>
               <p className="international-section-intro">
-                Enjoy diverse culinary experiences on campus, including traditional Thai cuisine and international options.
+                Enjoy affordable Thai food and international dishes at multiple locations across campus.
               </p>
-              
+
               <div className="international-dining-grid">
                 {diningOptions.map(option => (
                   <div key={option.id} className="international-card international-dining-card">
+                    <img src={option.image} alt={option.name} className="international-image" />
                     <h3>{option.name}</h3>
-                    <div className="international-dining-details">
-                      <div className="international-detail-item">
-                        <span className="international-detail-label">Hours:</span>
-                        <span>{option.hours}</span>
-                      </div>
-                      <div className="international-detail-item">
-                        <span className="international-detail-label">Cuisine:</span>
-                        <span>{option.cuisine}</span>
-                      </div>
-                      <div className="international-detail-item">
-                        <span className="international-detail-label">Meal Plan:</span>
-                        <span>{option.mealPlan}</span>
-                      </div>
-                    </div>
-                    {option.name.includes('อาหารไทย') && (
-                      <div className="international-thai-food-badge">Thai Cuisine</div>
-                    )}
+                    <p>{option.description}</p>
+                    
+                    <div className="international-hours-badge">{option.hours}</div>
+                    <div className="international-price-tag">{option.price}</div>
+                    
+                    
                   </div>
                 ))}
+              </div>
+
+              {/* Google Maps Integration */}
+              <div className="international-dining-map">
+                <h3>Campus Dining Locations</h3>
+                <p className="international-map-description">
+                  Find all dining locations on campus with this interactive map. 
+                  Click on the markers to see more details about each dining option.
+                </p>
+                
+                <div className="international-map-container">
+                  <iframe
+                    src={campusMapUrl}
+                    className="international-map-iframe"
+                    title="Campus Dining Locations"
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+                
+               
+               
               </div>
             </section>
           )}
@@ -300,39 +374,112 @@ const InternationalStudentPage = () => {
           {/* Finances Section */}
           {activeSection === 'finances' && (
             <section className="international-section">
-              <h2>Financial Information & Visa Requirements</h2>
+              <h2>Estimated Monthly Living Cost</h2>
               <p className="international-section-intro">
-                Essential information about visas, banking, scholarships, and financial matters for international students.
+                These are typical living costs for international students living on campus.
               </p>
-              
+
               <div className="international-finance-grid">
-                {financialInfo.map(item => (
-                  <div key={item.id} className="international-card international-finance-card">
-                    <h3>{item.name}</h3>
-                    <p>{item.details}</p>
-                    {item.name.includes('Visa') && (
-                      <div className="international-visa-badge">Important</div>
-                    )}
+                <div className="international-card international-finance-card">
+                  <h3>🏠 Accommodation</h3>
+                  <div className="international-cost-breakdown">
+                    <div className="international-cost-item">
+                      <span>Basic Dorm:</span>
+                      <span className="international-cost">1,000 - 1,700 THB</span>
+                    </div>
+                    <div className="international-cost-item">
+                      <span>AC Dorm:</span>
+                      <span className="international-cost">3,300 - 4,000 THB</span>
+                    </div>
+                    <div className="international-cost-item">
+                      <span>Premium Dorm:</span>
+                      <span className="international-cost">4,000 - 4,700 THB</span>
+                    </div>
                   </div>
-                ))}
+                </div>
+
+                <div className="international-card international-finance-card">
+                  <h3>🍜 Food & Dining</h3>
+                  <div className="international-cost-breakdown">
+                    <div className="international-cost-item">
+                      <span>Canteen Meals:</span>
+                      <span className="international-cost">3,000 - 4,000 THB</span>
+                    </div>
+                    <div className="international-cost-item">
+                      <span>Groceries:</span>
+                      <span className="international-cost">1,000 - 2,000 THB</span>
+                    </div>
+                    <div className="international-cost-item">
+                      <span>Eating Out:</span>
+                      <span className="international-cost">500 - 1,500 THB</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="international-card international-finance-card">
+                  <h3>🚍 Transportation</h3>
+                  <div className="international-cost-breakdown">
+                    <div className="international-cost-item">
+                      <span>Campus Shuttle:</span>
+                      <span className="international-cost">Free</span>
+                    </div>
+                    <div className="international-cost-item">
+                      <span>Public Bus:</span>
+                      <span className="international-cost">20 - 30 THB</span>
+                    </div>
+                    <div className="international-cost-item">
+                      <span>Bike Rental:</span>
+                      <span className="international-cost">10 THB for 30 minutes</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="international-card international-finance-card">
+                  <h3>Visa Extension</h3>
+                  <div className="international-cost-breakdown">
+                    <div className="international-cost-item">
+                    <span>90 days Report:</span>
+                      <span className="international-cost">Free</span>
+                      </div>
+                    <div className="international-cost-item">
+                      <span>Visa Extension:</span>
+                      <span className="international-cost">1900 THB</span>
+                    </div>
+            
+                  </div>
+                </div>
+
+                <div className="international-card international-finance-card highlight">
+                  <h3>💵 Total Monthly Estimate</h3>
+                  <div className="international-cost-breakdown">
+                    <div className="international-cost-item">
+                      <span><strong>Basic Budget:</strong></span>
+                      <span className="international-cost">5,000 - 7,000 THB</span>
+                    </div>
+                    <div className="international-cost-item">
+                      <span><strong>Comfort Budget:</strong></span>
+                      <span className="international-cost">8,000 - 12,000 THB</span>
+                    </div>
+                    <div className="international-cost-item">
+                      <span><strong>Premium Budget:</strong></span>
+                      <span className="international-cost">13,000 - 18,000 THB</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
+
               <div className="international-important-notice">
-                <h3>Important Reminders</h3>
+                <h3>💰 Important Financial Notes:</h3>
                 <ul>
-                  <li>Maintain valid visa status throughout your stay</li>
-                  <li>Notify the international office of any changes to your enrollment status</li>
-                  <li>Keep copies of important documents (passport, visa, I-20/DS-2019)</li>
-                  <li>Set up a local bank account upon arrival for easier financial management</li>
+                  <li>All prices are approximate and in Thai Baht (THB)</li>
+                  <li>Living costs vary based on personal lifestyle</li>
+                  <li>Emergency funds of 10,000-20,000 THB recommended</li>
+                  <li>Health insurance is mandatory for all international students</li>
                 </ul>
               </div>
             </section>
           )}
-
         </div>
       </main>
-
-      
     </div>
   );
 };

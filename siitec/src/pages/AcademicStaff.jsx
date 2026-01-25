@@ -399,9 +399,9 @@ export default function AcademicStaff() {
                           alt={staff.name}
                           className="staff-image"
                         />
-                        <div className="dept-badge">
+                        {/* <div className="dept-badge">
                           {staff.department.includes('Nanoscience') ? 'NANO' : 'MANU'}
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     
@@ -437,10 +437,10 @@ export default function AcademicStaff() {
                         </div>
                       </div>
                       
-                      <div className="department-info">
+                      {/* <div className="department-info">
                         <h4 className="department-label">Department</h4>
                         <p className="department-text">{staff.department}</p>
-                      </div>
+                      </div> */}
                     </div>
                   </article>
                 ))}

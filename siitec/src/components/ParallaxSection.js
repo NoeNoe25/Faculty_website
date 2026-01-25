@@ -6,9 +6,10 @@ import bgimg from "../assets/albums/KMITL.8.jpg";
 import bgimg1 from "../assets/albums/KMITL.11.jpg";
 import bgimg2 from "../assets/albums/KMITL.12.jpg";
 import bgimg3 from "../assets/albums/KMITL.18.jpg";
-import photo1 from '../assets/albums/DSC_3844.jpg';
-import photo2 from '../assets/albums/DSC_3844.jpg';
-
+import news1 from '../assets/images/news/news1.webp';
+import news2 from '../assets/images/news/news2.webp';
+import news3 from '../assets/images/news/news3.webp';
+import { useNavigate } from "react-router-dom";
 const ParallaxSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,28 +21,32 @@ const ParallaxSection = () => {
     // Add more images: require("../assets/albums/image2.jpg"),
     // require("../assets/albums/image3.jpg"),
   ];
-
+  const navigate = useNavigate();
   const newsItems = [
     {
       id: 1,
-      title: "New AI Research Lab Opening",
-      date: "June 15, 2023",
-      excerpt: "Our state-of-the-art facility begins operations next month",
-      image: photo1
+      title: "SIITEC",
+      date: "March 23, 2025",
+      excerpt: "The Faculty of Integrated Innovative Technology",
+      image: news1,
+      link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-2025-copy/"
     },
     {
       id: 2,
-      title: "Industry Partnership",
-      date: "May 28, 2023",
-      excerpt: "Collaborating with TechGlobal on quantum computing",
-      image: photo2
+      title: "Direct Admission 1-1 2025",
+      date: "Sep 15, 2025",
+      excerpt: "DIRECT ADMISSION 1-1 Early Round Academic Year 2025 Dual Degree",
+      image: news2,
+      link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-2023/"
     },
       {
       id: 2,
-      title: "Industry Partnership",
-      date: "May 28, 2023",
-      excerpt: "Collaborating with TechGlobal on quantum computing",
-      image: photo2
+      title: "Direct Admission 1-1 2025",
+      date: "Feb 13, 2025",
+      excerpt: "DIRECT ADMISSION 1-1 Early Round Academic Year 2025 Dual Degree",
+      image: news3 ,
+      link: "http://www.cmit.kmitl.ac.th/news/tcas1-67/"
+
     },
     
   ];
@@ -115,14 +120,16 @@ const ParallaxSection = () => {
                 Leaders in integrating science & engineering to create innovation
               </p>
               <motion.button 
-                className="tech-button"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Explore Programs
-                <span className="button-arrow">▶</span>
-                <span className="button-glow"></span>
-              </motion.button>
+  className="tech-button"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => navigate("/programs")}
+>
+  Explore Programs
+  <span className="button-arrow">▶</span>
+  <span className="button-glow"></span>
+</motion.button>
+
 
               {/* Horizontal News Cards - Centered under button */}
               <motion.div 
@@ -132,6 +139,12 @@ const ParallaxSection = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 {newsItems.map((item, index) => (
+                   <a 
+                  href={item.link} 
+                  className="news-read-more"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                > 
                   <motion.div 
                     key={item.id} 
                     className="horizontal-card"
@@ -149,6 +162,7 @@ const ParallaxSection = () => {
                       <p className="card-date">{item.date}</p>
                     </div>
                   </motion.div>
+                  </a>
                 ))}
               </motion.div>
             </motion.div>
