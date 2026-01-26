@@ -1,4 +1,3 @@
-
 /* Reset and base styles */
 .international-student-page * {
   margin: 0;
@@ -78,6 +77,9 @@
   transition: all 0.3s ease;
   border-radius: 8px 8px 0 0;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .international-nav-button:hover {
@@ -100,6 +102,164 @@
   height: 4px;
   background-color: var(--gold-copper-dark);
   border-radius: 2px 2px 0 0;
+}
+
+/* Icon styles */
+.international-nav-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.international-section-header-icon {
+  margin-right: 15px;
+}
+
+.international-quick-link-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--gold-copper);
+}
+
+/* Sub-section navigation */
+.international-subsection-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.international-subsection-nav-button {
+  background: var(--background-primary);
+  border: 2px solid var(--slate-pale);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  width: calc(25% - 12px);
+  min-height: 80px;
+}
+
+.international-subsection-nav-button:hover {
+  border-color: var(--gold-copper-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.international-subsection-nav-button.active {
+  background: var(--gold-copper-bright);
+  border-color: var(--gold-copper);
+  color: var(--slate-darkest);
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+}
+
+.international-subsection-nav-icon {
+  font-size: 1.8rem;
+  margin-right: 15px;
+  color: var(--gold-copper);
+}
+
+.international-subsection-nav-label {
+  flex-grow: 1;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.international-subsection-nav-arrow {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.international-subsection-nav-button.active .international-subsection-nav-arrow {
+  color: var(--gold-copper-dark);
+}
+
+/* Sub-section content */
+.international-subsection-content {
+  animation: international-fadeIn 0.3s ease;
+  margin-top: 30px;
+}
+
+.subsection-icon {
+  margin-right: 15px;
+  font-size: 1.8rem;
+  color: var(--gold-copper);
+  vertical-align: middle;
+}
+
+.international-subsection-intro {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Card header with badges */
+.international-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+/* Detail item with icons */
+.detail-icon {
+  margin-right: 8px;
+  color: var(--gold-copper);
+  min-width: 20px;
+}
+
+.international-detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--slate-pale);
+}
+
+.international-detail-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-right: 10px;
+  min-width: 100px;
+}
+
+/* Transport card icon */
+.international-transport-icon {
+  font-size: 2.5rem;
+  color: var(--gold-copper);
+  margin-bottom: 15px;
+}
+
+/* Activity card icon */
+.international-activity-icon {
+  font-size: 2rem;
+  color: var(--gold-copper);
+  margin-bottom: 10px;
+}
+
+/* Service icon */
+.international-service-icon {
+  font-size: 2.5rem;
+  color: var(--gold-copper);
+  margin-bottom: 15px;
+}
+
+/* Emergency notice */
+.international-important-notice.emergency {
+  background-color: #fee2e2;
+  border-left: 6px solid #dc2626;
+}
+
+.international-important-notice.emergency h3 {
+  color: #dc2626;
 }
 
 /* Main content styles */
@@ -168,7 +328,7 @@
 }
 
 /* Program card specific */
-.international-program-card h3 {
+.international-card h3 {
   color: var(--slate-dark);
   margin-bottom: 15px;
   font-size: 1.5rem;
@@ -179,19 +339,6 @@
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--background-tertiary);
-}
-
-.international-detail-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed var(--slate-pale);
-}
-
-.international-detail-label {
-  font-weight: 600;
-  color: var(--text-secondary);
 }
 
 .international-free-badge {
@@ -296,6 +443,10 @@
   text-align: center;
   border: 2px solid transparent;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .international-quick-link-card:hover {
@@ -311,9 +462,8 @@
   font-size: 1.3rem;
 }
 
-
-p{
-  color:var(--slate-base);
+p {
+  color: var(--slate-base);
 }
 
 /* Important notice */
@@ -363,97 +513,12 @@ p{
   padding: 0 20px;
 }
 
-
-
 /* Cost styling */
 .international-cost {
   color: var(--gold-copper-dark);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .international-nav-list {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    flex-wrap: nowrap;
-  }
-  
-  .international-nav-button {
-    padding: 15px 18px;
-    font-size: 0.95rem;
-    white-space: nowrap;
-  }
-  
-  .international-logo {
-    font-size: 2.2rem;
-  }
-  
-  .international-tagline {
-    font-size: 1rem;
-    padding: 0 15px;
-  }
-  
-  .international-section h2 {
-    font-size: 2rem;
-  }
-  
-  .international-programs-grid,
-  .international-dining-grid,
-  .international-transport-grid,
-  .international-activities-grid,
-  .international-finance-grid,
-  .international-accommodation-grid,
-  .international-quick-links-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .international-footer-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .international-intro-text {
-    font-size: 1.1rem;
-    padding: 0 10px;
-  }
-  
-  .international-welcome-section h2 {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .international-logo {
-    font-size: 1.8rem;
-  }
-  
-  .international-welcome-section h2 {
-    font-size: 1.8rem;
-  }
-  
-  .international-section h2 {
-    font-size: 1.7rem;
-  }
-  
-  .international-section-intro {
-    font-size: 1rem;
-  }
-  
-  .international-card {
-    padding: 20px;
-  }
-  
-  .international-nav-button {
-    padding: 12px 15px;
-    font-size: 0.9rem;
-  }
-}
-
-/* Add these styles to your existing internationalstudent.css file */
 
 /* Image styling */
 .international-image {
@@ -522,6 +587,9 @@ p{
   font-size: 0.85rem;
   font-weight: 600;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /* Price tag styling */
@@ -534,6 +602,9 @@ p{
   display: inline-block;
   margin: 15px 0;
   box-shadow: var(--shadow-xs);
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /* Highlight card */
@@ -578,6 +649,7 @@ p{
 }
 
 /* Image gallery for accommodation */
+
 .international-image-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -607,8 +679,215 @@ p{
   border-bottom: 1px dashed var(--slate-pale);
 }
 
-/* Responsive improvements */
+/* Additional CSS for new badges */
+.international-now-badge {
+  background-color: #28a745;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Activities Section Styles */
+.international-activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.international-activity-card {
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.international-activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.international-activity-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.international-activity-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.international-activity-card:hover .international-activity-image {
+  transform: scale(1.05);
+}
+
+.international-activity-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.international-activity-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.international-activity-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: var(--slate-dark);
+}
+
+.international-activity-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.international-activity-details {
+  background: var(--background-tertiary);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.international-activity-details .international-detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.international-activity-details .international-detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.international-activity-details .international-detail-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.international-activity-details span:last-child {
+  color: var(--text-primary);
+  text-align: right;
+}
+
+/* Section Header */
+.international-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.international-section-header h2 {
+  color: var(--slate-dark);
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .international-subsection-nav-button {
+    width: calc(50% - 8px);
+  }
+}
+
 @media (max-width: 768px) {
+  .international-nav-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+  }
+  
+  .international-nav-button {
+    padding: 15px 18px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  
+  .international-logo {
+    font-size: 2.2rem;
+  }
+  
+  .international-tagline {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+  
+  .international-section h2 {
+    font-size: 2rem;
+  }
+  
+  .international-programs-grid,
+  .international-dining-grid,
+  .international-transport-grid,
+  .international-activities-grid,
+  .international-finance-grid,
+  .international-accommodation-grid,
+  .international-quick-links-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .international-subsection-nav-button {
+    width: 100%;
+    min-height: 70px;
+    padding: 15px;
+  }
+  
+  .international-subsection-nav-icon {
+    font-size: 1.5rem;
+    margin-right: 12px;
+  }
+  
+  .international-subsection-nav-label {
+    font-size: 1rem;
+  }
+  
+  .international-nav-icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
+  }
+  
+  .international-intro-text {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+  
+  .international-welcome-section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .international-activities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .international-activity-image-container {
+    height: 180px;
+  }
+  
   .international-image-gallery {
     grid-template-columns: 1fr;
   }
@@ -626,7 +905,57 @@ p{
   }
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .international-activities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 480px) {
+  .international-logo {
+    font-size: 1.8rem;
+  }
+  
+  .international-welcome-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .international-section h2 {
+    font-size: 1.7rem;
+  }
+  
+  .international-section-intro {
+    font-size: 1rem;
+  }
+  
+  .international-card {
+    padding: 20px;
+  }
+  
+  .international-nav-button {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .international-subsection-nav-button {
+    padding: 12px;
+    min-height: 60px;
+  }
+  
+  .international-subsection-nav-icon {
+    font-size: 1.3rem;
+    margin-right: 10px;
+  }
+  
+  .subsection-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  
+  .international-quick-link-icon {
+    font-size: 2rem;
+  }
+  
   .international-image {
     height: 150px;
   }
@@ -638,5 +967,11 @@ p{
   .international-food-badge {
     font-size: 0.7rem;
     padding: 3px 8px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .international-activities-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
