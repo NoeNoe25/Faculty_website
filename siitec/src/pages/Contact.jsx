@@ -47,8 +47,8 @@ const ContactPage = () => {
     {
       icon: <FaEnvelope />,
       title: 'Email Address',
-      content: 'ssitec@kmitl.ac.th',
-      secondary: 'siit@kmitl.ac.th',
+      content: 'siitec@kmitl.ac.th',
+      secondary: 'SIITEC@kmitl.ac.th',
       type: 'email'
     },
     {

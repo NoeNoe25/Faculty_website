@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import '../styles/components/ParallaxSection.css';
-import AnimatedNumber from '../components/AnimatedNumber';  
+import AnimatedNumber from './AnimatedNumber';  
 import bgimg from "../assets/albums/KMITL.8.jpg";
 import bgimg1 from "../assets/albums/KMITL.11.jpg";
 import bgimg2 from "../assets/albums/KMITL.12.jpg";

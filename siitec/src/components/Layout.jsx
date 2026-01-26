@@ -1,7 +1,7 @@
 // src/components/Layout.js
 import React, { useState } from 'react';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from './header';
+import Footer from './footer';
 
 const Layout = ({ children }) => {
   const [activePage, setActivePage] = useState('home');
