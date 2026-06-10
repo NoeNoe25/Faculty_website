@@ -1,5 +1,31 @@
 import React, { useState, useMemo } from 'react';
 import '../styles/AcademicStaff.css';
+import MrsKannika_Tummarukwattana from '../assets/images/staff/Administrative/Mrs.Kannika Tummarukwattana.png';
+import MissTiwannaporn_Poodant from '../assets/images/staff/Administrative/Miss.Tiwannaporn Poodant.jpg';
+import MrsAnna_Thanomngam from '../assets/images/staff/Administrative/Mrs.Anna Thanomngam.png';
+import MrsWijitra_Taengtang from '../assets/images/staff/Administrative/Mrs.Wijitra Taengtang.png';
+import MissKittipa_Choosree from '../assets/images/staff/Administrative/Miss.Kittipa Choosree.png';
+import MissChitchanok_Janyasomsakoon from '../assets/images/staff/Administrative/Miss.Chitchanok Janyasomsakoon.jpg';
+import MrSarayut_Wongchantra from '../assets/images/staff/Administrative/Mr.Sarayut Wongchantra.png';
+import MissWanida_Noparat from '../assets/images/staff/Administrative/Miss.Wanida Noparat.jpg';
+import MrsJintana_Thipchaksurat from '../assets/images/staff/Administrative/Mrs.Jintana Thipchaksurat.jpg';
+import MissWanthana_Changchai from '../assets/images/staff/Administrative/Miss.Wanthana Changchai.jpg';
+import MissPinyapatch_Tangpromjit from '../assets/images/staff/Administrative/Miss.Pinyapatch Tangpromjit.png';
+import MissThidarat_Pengpee from '../assets/images/staff/Administrative/Miss.Thidarat Pengpee.jpg';
+import MrPharunroj_Thitipongrat from '../assets/images/staff/Administrative/Mr.Pharunroj Thitipongrat.png';
+
+import MrAdisorn_Rakmit from '../assets/images/staff/Scientist/Mr.Adisorn Rakmit.png';
+import MissPhoosuda_Phetbaen from '../assets/images/staff/Scientist/Miss.Phoosuda Phetbaen.png';
+import MissWisa_Homchan from '../assets/images/staff/Scientist/Miss.Wisa Homchan.jpg';
+import MissNaruenard_Loedsapchinda from '../assets/images/staff/Scientist/Miss.Naruenard Loedsapchinda.jpg';
+import MissPawantree_Borthai from '../assets/images/staff/Scientist/Miss.Pawantree Borthai.png';
+import MissPimpaporn_Munpiriyakul from '../assets/images/staff/Scientist/Miss.Pimpaporn Munpiriyakul.jpg';
+
+import MrTeerawat_Tongloy from '../assets/images/staff/Engineer/Mr.Teerawat Tongloy.png';
+import MrPijit_Kochcha from '../assets/images/staff/Engineer/Mr. Pijit Kochcha.png';
+
+import MrNirut_Lekjisuer from '../assets/images/staff/Technician/Mr.Nirut Lekjaiseu.jpg';
+import MrKritsana_YaNgam from '../assets/images/staff/Technician/Mr.Kritsana Ya-ngam.png';
 
 export default function AcademicStaff() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -15,7 +41,7 @@ export default function AcademicStaff() {
       email: 'kanniga.tu@kmitl.ac.th',
       phone: '02-3298000 ext. 1175,3144',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Lek.png?w=703',
+      image: MrsKannika_Tummarukwattana,
     },
     {
       id: 2,
@@ -26,7 +52,7 @@ export default function AcademicStaff() {
       email: 'tiwannaporn.po@kmitl.ac.th',
       phone: '02-3298000 ext. 1174,3142',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Ice.png?w=687',
+      image: MissTiwannaporn_Poodant,
     },
     {
       id: 3,
@@ -37,7 +63,7 @@ export default function AcademicStaff() {
       email: 'anna.th@kmitl.ac.th',
       phone: '02-3298000 ext. 1170,3034',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Ann.png?w=682',
+      image: MrsAnna_Thanomngam,
     },
     {
       id: 4,
@@ -48,7 +74,7 @@ export default function AcademicStaff() {
       email: 'wijitra.ta@kmitl.ac.th',
       phone: '02-3298000 ext. 1172,3143',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Joy.png?w=732',
+      image: MrsWijitra_Taengtang,
     },
     {
       id: 5,
@@ -59,7 +85,7 @@ export default function AcademicStaff() {
       email: 'kittipa.ch@kmitl.ac.th',
       phone: '02-3298000 ext. 1168,3075',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Kib.png?w=682',
+      image: MissKittipa_Choosree,
     },
     {
       id: 6,
@@ -70,7 +96,7 @@ export default function AcademicStaff() {
       email: 'chitchanok.ja@kmitl.ac.th',
       phone: '02-3298000 ext. 1166,3074',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Miew.png?w=703',
+      image: MissChitchanok_Janyasomsakoon,
     },
     {
       id: 7,
@@ -81,7 +107,7 @@ export default function AcademicStaff() {
       email: 'sarayut.wo@kmitl.ac.th',
       phone: '02-3298000 ext. 1169,2135',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Tum.png?w=685',
+      image: MrSarayut_Wongchantra,
     },
     {
       id: 8,
@@ -92,7 +118,7 @@ export default function AcademicStaff() {
       email: 'wanida.no@kmitl.ac.th',
       phone: '02-3298264 ext. 1176,3158',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Miew.png?w=703', // Placeholder - update with actual image
+      image: MissWanida_Noparat,
     },
     {
       id: 9,
@@ -103,7 +129,7 @@ export default function AcademicStaff() {
       email: 'jintana.th@kmitl.ac.th',
       phone: '02-3298264 ext. 1178,2158',
       office: '55-Year Chalermprakiat Building 4th Floor',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2017/12/23-286x400.jpg',
+      image: MrsJintana_Thipchaksurat,
     },
     {
       id: 10,
@@ -114,7 +140,7 @@ export default function AcademicStaff() {
       email: 'wanthana.ch@kmitl.ac.th',
       phone: '02-3298264 ext. 1180,2157',
       office: '55-Year Chalermprakiat Building 4th Floor',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0012-1-286x400.jpg',
+      image: MissWanthana_Changchai,
     },
     {
       id: 11,
@@ -125,29 +151,18 @@ export default function AcademicStaff() {
       email: 'pinyapatch.ta@kmitl.ac.th',
       phone: '02-3298264 ext.1179,3058',
       office: '55-Year Chalermprakiat Building 4th Floor',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0013-286x400.jpg',
+      image: MissPinyapatch_Tangpromjit,
     },
     {
       id: 12,
-      name: 'Miss. Thdarat Pengpee',
+      name: 'Miss. Thidarat Pengpee',
       position: 'Procurement Officer',
       category: 'General Administration',
       department: 'College of Advanced Manufacturing Innovation',
       email: 'thidarat.pe@kmitl.ac.th',
       phone: '02-3298264 ext. 1177,2158',
       office: '55-Year Chalermprakiat Building 4th Floor',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0015-286x400.jpg',
-    },
-    {
-      id: 13,
-      name: 'Mr. Pheerasilp Yoosook',
-      position: 'Undergraduate Student Registration Office Manu, OIA',
-      category: 'General Administration',
-      department: 'College of Advanced Manufacturing Innovation',
-      email: 'pheerasilp.yo@kmitl.ac.th',
-      phone: '02-3298264 ext. 1669,3058',
-      office: '55-Year Chalermprakiat Building 4th Floor',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2021/03/IMG_8263-300x400.jpg',
+      image: MissThidarat_Pengpee,
     },
     {
       id: 14,
@@ -158,7 +173,7 @@ export default function AcademicStaff() {
       email: 'adisorn.ra@kmitl.ac.th',
       phone: '02-3298000 ext. 2199, 098-064-8440',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Tle.png?w=754',
+      image: MrAdisorn_Rakmit,
     },
     {
       id: 15,
@@ -169,7 +184,7 @@ export default function AcademicStaff() {
       email: 'poosuda.ph@kmitl.ac.th',
       phone: '02-3298000 ext. 2199, 098-064-8440',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Arm.png?w=714',
+      image: MissPhoosuda_Phetbaen,
     },
     {
       id: 16,
@@ -180,7 +195,7 @@ export default function AcademicStaff() {
       email: 'wisa.ho@kmitl.ac.th',
       phone: '02-3298000 ext. 2199, 098-064-8440',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Mee.png?w=739',
+      image: MissWisa_Homchan,
     },
     {
       id: 17,
@@ -191,7 +206,7 @@ export default function AcademicStaff() {
       email: 'naruenard.lo@kmitl.ac.th',
       phone: '02-3298000 ext. 2199, 098-064-8440',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Nut.png?w=753',
+      image: MissNaruenard_Loedsapchinda,
     },
     {
       id: 18,
@@ -202,7 +217,7 @@ export default function AcademicStaff() {
       email: 'pawantree.bo@kmitl.ac.th',
       phone: '02-3298264 ext. 2157',
       office: '55-Year Chalermprakiat Building, Room 514',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0021-286x400.jpg',
+      image: MissPawantree_Borthai,
     },
     {
       id: 19,
@@ -213,7 +228,7 @@ export default function AcademicStaff() {
       email: 'pimpaporn.mu@kmitl.ac.th',
       phone: '02-3298264 ext. 2157',
       office: '55-Year Chalermprakiat Building 4th Floor',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0014-286x400.jpg',
+      image: MissPimpaporn_Munpiriyakul,
     },
     {
       id: 20,
@@ -224,7 +239,7 @@ export default function AcademicStaff() {
       email: 'teerawat.to@kmitl.ac.th',
       phone: '02-3298264 ext. 2157',
       office: '55-Year Chalermprakiat Building 4th Floor',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0011-286x400.jpg',
+      image: MrTeerawat_Tongloy,
     },
     {
       id: 21,
@@ -235,21 +250,10 @@ export default function AcademicStaff() {
       email: 'pijit.ko@kmitl.ac.th',
       phone: '02-3298264 ext. 2157',
       office: '55-Year Chalermprakiat Building 4th Floor',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2017/12/26-286x400.jpg',
+      image: MrPijit_Kochcha,
     },
     {
       id: 22,
-      name: 'Mr. Naruchit Soiphet',
-      position: 'Engineer',
-      category: 'Scientists and Technicians',
-      department: 'College of Advanced Manufacturing Innovation',
-      email: 'naruchit.so@kmitl.ac.th',
-      phone: '02-3298264 ext. 2157',
-      office: '55-Year Chalermprakiat Building 4th Floor',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0010-286x400.jpg',
-    },
-    {
-      id: 23,
       name: 'Mr. Nirut Lekjisuer',
       position: 'Technician',
       category: 'Scientists and Technicians',
@@ -257,10 +261,10 @@ export default function AcademicStaff() {
       email: 'nirut.le@kmitl.ac.th',
       phone: '',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Mee.png?w=739',
+      image: MrNirut_Lekjisuer,
     },
     {
-      id: 24,
+      id: 23,
       name: 'Mr. Kritsana Ya-ngam',
       position: 'Technician',
       category: 'Scientists and Technicians',
@@ -268,9 +272,22 @@ export default function AcademicStaff() {
       email: 'kritsana.ya@kmitl.ac.th',
       phone: '',
       office: 'CMIT Building',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/08/CMIT-Mee.png?w=739', // Placeholder - update with actual image
+      image: MrKritsana_YaNgam,
+    },
+    //lack of information, need to confirm with admin staff
+    {
+      id: 13,
+      name: 'Mr. Pharunroj Thitipongrat',
+      position: 'Student Affairs, Scholarships',
+      category: 'General Administration',
+      department: 'College of Advanced Manufacturing Innovation',
+      email: 'pharunroj.th@kmitl.ac.th',
+      phone: '02-3298264 ext.1179,3058',
+      office: '55-Year Chalermprakiat Building 4th Floor',
+      image: MrPharunroj_Thitipongrat,
     },
   ];
+
 
   // Filter staff based on search and category
   const filteredStaff = useMemo(() => {

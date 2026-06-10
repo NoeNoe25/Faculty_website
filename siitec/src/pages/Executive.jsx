@@ -3,18 +3,19 @@ import React, { useState } from 'react';
 import '../styles/Executive.css';
 
 // Import executive images from assets
-import wipooSriseubsai from '../assets/executive/Dr. Wipoo Sriseubsai.jpg';
-import winaddaWongwiniyapan from '../assets/executive/Assoc. Prof. Dr. Winadda Wongwiniyapan.jpg';
-import pitipornThanomngam from '../assets/executive/Asst. Prof. Dr. Pitiporn Thanomngam.jpg';
-import jatupornThongsri from '../assets/executive/Assoc. Prof. Dr. Jatuporn Thongsri.jpg';
-import darineePhromyothin from '../assets/executive/Assoc. Prof. Dr. Darinee Phromyothin.jpg';
-import ploypailinYongsiri from '../assets/executive/Asst. Prof. Dr. Ploypailin Yongsiri.jpg';
-import korakotOnlaor from '../assets/executive/Assoc. Prof. Dr. Korakot Onlaor.jpg';
-import kamolWasapinyokul from '../assets/executive/Asst. Prof. Dr. Kamol Wasapinyokul.jpg';
-import anantaSinchai from '../assets/executive/Asst. Prof. Dr. Ananta Sinchai.jpg';
-import santhadChuwongin from '../assets/executive/Asst. Prof. Dr. Santhad Chuwongin.jpg';
-import navaphunKayunkid from '../assets/executive/Assoc. Prof. Dr. Navaphun Kayunkid.jpg';
-import chatrpolPakasiri from '../assets/executive/Assoc. Prof. Dr. Chatrpol Pakasiri.jpg';
+
+import deanWipoo from '../assets/executive/1. Dean_ Assoc. Prof. Dr.Wipoo Sriseubsai.png';
+import associateDeanWinadda from '../assets/executive/2. Associate Dean_ Assoc. Prof. Dr.Winadda Wongwiriyapan.png';
+import associateDeanPitiporn from '../assets/executive/3. Associate Dean_ Asst. Prof. Dr.Pitiporn Thanomngam.png';
+import associateDeanAnanta from '../assets/executive/4. Associate Dean_ Asst.Prof.Dr.Ananta Sinchai.png';
+import associateDeanJatuporn from '../assets/executive/5. Associate Dean_ Assoc.Prof.Dr.Jatuporn Thongsri.png';
+import assistantDeanPloypailin from '../assets/executive/6. Assistant Dean_ Asst.Prof.Dr.Ploypailin Yongsiri.jpg';
+import assistantDeanDarinee from '../assets/executive/7. Associate Dean_ Assoc. Prof. Dr.Darinee Phromyothin.jpg';
+import headOfDepartmentNano from '../assets/executive/8. Head of Department Nano_ Assoc. Prof. Dr.Korakot Onlaor.png';
+import headOfDepartmentManu from '../assets/executive/9. Head of Department Manu_ Asst. Prof. Dr.Komkrit Jaksukam.png';
+import centerHeadATAC from '../assets/executive/10. Center Head ATTAC_ Assoc. Prof. Dr.Navaphun Kayunkid.png';
+import centerHeadCRA from '../assets/executive/11. Center Head CiRA_ Assoc.Prof.Dr.Santhad Chuwongin.png';
+import centerHeadKAISEM from '../assets/executive/12. Center Head KAISEM_ Assoc.Prof.Dr.Chatrpol Pakasiri.jpg';
 
 const Executive = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -25,7 +26,7 @@ const Executive = () => {
       id: 'president',
       name: "Dr. Wipoo Sriseubsai",
       title: "President",
-      image: wipooSriseubsai,
+      image: deanWipoo,
       category: "Executive Leadership",
       department: "Executive Office",
       email: "wipoo.sr@kmitl.ac.th",
@@ -41,9 +42,9 @@ const Executive = () => {
     },
     {
       id: 'vp-academic',
-      name: "Assoc. Prof. Dr. Winadda Wongwiniyapan",
+      name: "Assoc. Prof. Dr. Winadda Wongwiriyapan",
       title: "Vice President for Academic Affairs",
-      image: winaddaWongwiniyapan,
+      image: associateDeanWinadda,
       category: "Executive Leadership",
       department: "Academic Division",
       email: "winadda.wo@kmitl.ac.th",
@@ -61,7 +62,7 @@ const Executive = () => {
       id: 'vp-research',
       name: "Asst. Prof. Dr. Pitiporn Thanomngam",
       title: "Vice President for Research & Innovation",
-      image: pitipornThanomngam,
+      image: associateDeanPitiporn,
       category: "Executive Leadership",
       department: "Research Division",
       email: "pitiporn.th@kmitl.ac.th",
@@ -79,7 +80,7 @@ const Executive = () => {
       id: 'vp-admin',
       name: "Assoc. Prof. Dr. Jatuporn Thongsri",
       title: "Vice President for Administration",
-      image: jatupornThongsri,
+      image: associateDeanJatuporn,
       category: "Executive Leadership",
       department: "Administrative Division",
       email: "jatuporn.th@kmitl.ac.th",
@@ -97,7 +98,7 @@ const Executive = () => {
       id: 'dean-nano',
       name: "Assoc. Prof. Dr. Korakot Onlaor",
       title: "Dean, Department of Nanoscience & Nanotechnology (NANO)",
-      image: korakotOnlaor,
+      image: headOfDepartmentNano,
       category: "Department Leadership",
       department: "Department of Nanoscience & Nanotechnology",
       email: "korakot.on@kmitl.ac.th",
@@ -115,7 +116,7 @@ const Executive = () => {
       id: 'dean-manu',
       name: "Asst. Prof. Dr. Kamol Wasapinyokul",
       title: "Dean, Department of Manufacturing Technology (MANU)",
-      image: kamolWasapinyokul,
+      image: headOfDepartmentManu,
       category: "Department Leadership",
       department: "Department of Manufacturing Technology",
       email: "kamol.wa@kmitl.ac.th",
@@ -133,7 +134,7 @@ const Executive = () => {
       id: 'dean-cira',
       name: "Asst. Prof. Dr. Santhad Chuwongin",
       title: "Director, Center for Integrated Research Advancement (CIRA)",
-      image: santhadChuwongin,
+      image: centerHeadCRA,
       category: "Research Center Leadership",
       department: "Center for Integrated Research Advancement",
       email: "santhad.ch@kmitl.ac.th",
@@ -151,7 +152,7 @@ const Executive = () => {
       id: 'director-attac',
       name: "Assoc. Prof. Dr. Navaphun Kayunkid",
       title: "Director, Advanced Technology & Telecommunications Center (ATTAC)",
-      image: navaphunKayunkid,
+      image: centerHeadATAC,
       category: "Research Center Leadership",
       department: "Advanced Technology & Telecommunications Center",
       email: "navaphun.ka@kmitl.ac.th",
@@ -169,7 +170,7 @@ const Executive = () => {
       id: 'director-kaisem',
       name: "Assoc. Prof. Dr. Chatrpol Pakasiri",
       title: "Director, Knowledge & Innovation for Sustainable Engineering Management (KAISEM)",
-      image: chatrpolPakasiri,
+      image: centerHeadKAISEM,
       category: "Research Center Leadership",
       department: "KAISEM Center",
       email: "chatrpol.pa@kmitl.ac.th",
@@ -187,7 +188,7 @@ const Executive = () => {
       id: 'dean-academic',
       name: "Assoc. Prof. Dr. Darinee Phromyothin",
       title: "Dean, Academic Programs & Quality Assurance",
-      image: darineePhromyothin,
+      image:  assistantDeanDarinee,
       category: "Academic Leadership",
       department: "Academic Affairs Office",
       email: "darinee.ph@kmitl.ac.th",
@@ -205,7 +206,7 @@ const Executive = () => {
       id: 'dean-student',
       name: "Asst. Prof. Dr. Ploypailin Yongsiri",
       title: "Dean, Student Affairs & Development",
-      image: ploypailinYongsiri,
+      image: assistantDeanPloypailin,
       category: "Administrative Leadership",
       department: "Student Affairs Office",
       email: "ploypailin.yo@kmitl.ac.th",
@@ -220,10 +221,10 @@ const Executive = () => {
       directReports: ["Student Services", "Counseling Center", "Activities Office"]
     },
     {
-      id: 'dean-research',
+      id: 'associateDean',
       name: "Asst. Prof. Dr. Ananta Sinchai",
       title: "Dean, Research Operations & Facilities",
-      image: anantaSinchai,
+      image: associateDeanAnanta,
       category: "Research Leadership",
       department: "Research Operations Office",
       email: "ananta.si@kmitl.ac.th",
