@@ -290,9 +290,7 @@ a {
   transition: var(--transition-fast);
 }
 
-a:hover {
-  color: var(--gold-copper-darker);
-}
+
 
 /* Responsive Typography */
 @media (max-width: 1024px) {

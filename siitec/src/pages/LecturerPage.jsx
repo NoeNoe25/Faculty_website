@@ -1,409 +1,368 @@
 import React, { useState, useMemo } from 'react';
 import '../styles/LecturerPage.css';
+// NANO Department Imports
+import AssocProfDrApilkuckEiad from '../assets/nano/Assoc. Prof. Dr.Apiluck Eiad-Ua.jpg';
+import AssocProfDrBenchapolTunhoo from '../assets/nano/Assoc. Prof. Dr.Benchapol Tunhoo.png';
+import AssocProfDrDarineePhromyothin from '../assets/nano/Assoc. Prof. Dr.Darinee Phromyothin.jpg';
+import AssocProfDrKanokithBoonyarattanak from '../assets/nano/Assoc. Prof. Dr.Kanokthip Boonyarattanakalin.jpg';
+import AssocProfDrKorakotOnlaor from '../assets/nano/Assoc. Prof. Dr.Korakot Onlaor.png';
+import AssocProfDrNavaphanKayunkid from '../assets/nano/Assoc. Prof. Dr.Navaphun Kayunkid.png';
+import AssocProfDrSakonRahong from '../assets/nano/Assoc. Prof. Dr.Sakon Rahong.png';
+import AssocProfDrSuteChutipajit from '../assets/nano/Assoc. Prof. Dr.Sutee Chutipaijiti.png';
+import AssocProfDrTosapolMalungnot from '../assets/nano/Assoc. Prof. Dr.Tosapol Malungnont.png';
+import AssocProfDrWanichayaMekprasart from '../assets/nano/Assoc. Prof. Dr.Wanichaya Mekprasart.jpg';
+import AssocProfDrWanwilaiVittayakorn from '../assets/nano/Assoc. Prof. Dr.Wanwilai Vittayakorn.png';
+import AssocProfDrWinaddaWongwiriyapan from '../assets/nano/Assoc. Prof. Dr.Winadda Wongwiriyapan.png';
+import AssocProfDrAdirekRangkasidorn from '../assets/nano/Asst. Prof. Dr.Adirek Rangkasidorn.png';
+import AssocProfDrKanoknanPhacheerak from '../assets/nano/Asst. Prof. Dr.Kanoknan Phacheerak.jpg';
+import AssocProfDrKittiphongAmnuyswat from '../assets/nano/Asst. Prof. Dr.Kittiphong Amnuyswat.png';
+import AssocProfDrMayureePhonyiumReilly from '../assets/nano/Asst. Prof. Dr.Mayuree Phonyium Reilly.png';
+import AssocProfDrPitipornThanomngam from '../assets/nano/Asst. Prof. Dr.Pitiporn Thanomngam.png';
+import AssocProfDrSupamasWirunchit from '../assets/nano/Asst. Prof. Dr.Supamas Wirunchit.png';
+import AssocProfDrThutiyapornThiwawong from '../assets/nano/Asst. Prof. Dr.Thutiyaporn Thiwawong.jpg';
+
+// MANU Department Imports
+import AssocProfDrJatupornThongsri from '../assets/manu/Assoc.Prof.Dr.Jatuporn Thongsri.png';
+import AssocProfDrRachsakSakdanuphab from '../assets/manu/Assoc. Prof. Dr.Rachsak Sakdanuphab.png';
+import AssocProfDrChatpolPakasiri from '../assets/manu/Assoc.Prof.Dr.Chatrpol Pakasiri.jpg';
+import AssocProfDrSanthadChuwongin from '../assets/manu/Assoc.Prof.Dr.Santhad Chuwongin.png';
+import AsstProfDrKomritJaksukam from '../assets/manu/Asst. Prof. Dr.Komkrit Jaksukam.png';
+import AsstProfDrAnantaSinchai from '../assets/manu/Asst.Prof.Dr.Ananta Sinchai.png';
+import AsstProfDrKamolWasapinyokul from '../assets/manu/Asst.Prof.Dr.Kamol Wasapinyokul.png';
+import AsstProfDrKittiponKankhuthod from '../assets/manu/Asst.Prof.Dr.Kittipon Kankhunthod.png';
+import AsstProfDrPiyayapinYongsiri from '../assets/manu/Asst.Prof.Dr.Ploypailin Yongsiri.jpg';
+import DrNatthawirotSomjaiaroen from '../assets/manu/Dr.Natthawirot Somjaijaroen.png';
+import ProfDrChanonWarisarn from '../assets/manu/Prof. Dr.Chanon Warisarn.png';
+
 const LecturerPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDepartment, setSelectedDepartment] = useState('all');
 
   // Sample lecturer data - replace with your actual data
-  const lecturers = [
+ const lecturers = [
+    // NANO Department Lecturers
     {
       id: 1,
-      name: 'Dr. Jiti Nookaew',
-      title: 'Professor',
-      department: 'NANO',
-      email: 'jiti.nu@kmitl.ac.th',
-      phone: '02-3298000 ext. 3079',
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6602130911',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Jiti.png?w=742'
-    },
-    {
-      id: 2,
-      name: 'Dr. Wisanu Petchpa',
-      title: 'Professor',
-      department: 'NANO',
-      email: 'wisanu.pe@kmitl.ac.th',
-      phone: '02-3298000 ext. 3119',
-    
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8558302900',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Wisanu.png?w=685'
-    },
-    {
-      id: 3,
-      name: 'Dr. Benjapon Tanhoo',
-      title: 'Associate Professor',
-      department: 'NANO',
-      email: 'benchapol.tu@kmitl.ac.th',
-      phone: '02-3298000 ext. 3128',
-     
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19640778900',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
-    },
-    {
-      id: 4,
-      name: 'Dr. Wanwilai Witthayakorn',
-      title: 'Associate Professor',
-      department: 'NANO',
-      email: 'wanwilai.vi@kmitl.ac.th',
-      phone: '02-3298000 ext. 2169',
-   
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=26422631000',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Wanwilai.png?resize=768%2C771'
-    },
-    {
-      id: 5,
-      name: 'Dr. Winadda Wongwiriyaphan',
-      title: 'Associate Professor',
-      department: 'NANO',
-      email: 'winadda.wo@kmitl.ac.th',
-      phone: '02-3298000 ext. 3133',
-     
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6507140809',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
-    },
-    {
-      id: 6,
-      name: 'Dr. Suthee Chutipaijit',
-      title: 'Associate Professor',
-      department: 'NANO',
-      email: 'sutee.ch@kmitl.ac.th',
-      phone: '02-3298000 ext. 3140',
-     
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35344429600',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Sutee.png?resize=768%2C771'
-    },
-    {
-      id: 7,
-      name: 'Dr. Darinee Promyothin',
-      title: 'Associate Professor',
-      department: 'NANO',
-      email: 'darinee.ph@kmitl.ac.th',
-      phone: '02-3298000 ext. 3133',
-  
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=55082047500',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
-    },
-    {
-      id: 8,
-      name: 'Dr. Nawaphan Khayankit',
-      thaiName: 'รองศาสตราจารย์.ดร. นวพันธ์ ขยันกิจ',
-      title: 'Associate Professor',
-      department: 'NANO',
-      email: 'navaphun.ka@kmitl.ac.th',
-      phone: '02-3298000 ext. 2176',
-    
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19639732300',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
-    },
-    {
-      id: 9,
-      name: 'Dr. Thotsapol Meluangnon',
-      title: 'Associate Professor',
-      department: 'NANO',
-      email: 'tosapol.ma@kmitl.ac.th',
-      phone: '02-3298000 ext. 2173',
-     
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36622681600',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
-    },
-    {
-      id: 10,
-      name: 'Dr. Apilak Eiaduea',
+      name: 'Assoc. Prof. Dr. Apilkuck Eiad-Ua',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'apiluck.ei@kmitl.ac.th',
       phone: '02-3298000 ext. 3132',
-     
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8539060400',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/11/CMIT-Apilak.png?resize=768%2C766'
+      image: AssocProfDrApilkuckEiad,
     },
     {
-      id: 11,
-      name: 'Dr. Korakot Onlao',
+      id: 2,
+      name: 'Assoc. Prof. Dr. Benchapol Tunhoo',
       title: 'Associate Professor',
       department: 'NANO',
-      email: 'korakot.on@kmitl.ac.th',
+      email: 'benchapol.tu@kmitl.ac.th',
       phone: '02-3298000 ext. 3128',
-  
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35362507400',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19640778900',
+      image: AssocProfDrBenchapolTunhoo,
     },
     {
-      id: 12,
-      name: 'Dr. Sakon Rahong',
+      id: 3,
+      name: 'Assoc. Prof. Dr. Darinee Phromyothin',
       title: 'Associate Professor',
       department: 'NANO',
-      email: 'sakon.ra@kmitl.ac.th',
-      phone: '02-3298000 ext. 3075',
-    
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8558302600',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+      email: 'darinee.ph@kmitl.ac.th',
+      phone: '02-3298000 ext. 3133',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=55082047500',
+      image: AssocProfDrDarineePhromyothin,
     },
     {
-      id: 13,
-      name: 'Dr. Nonglak Huangkamhaeng',
-      title: 'Associate Professor',
-      department: 'NANO',
-      email: 'nongluck.ho@kmitl.ac.th',
-      phone: '02-3298000 ext. 2173',
-
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36760947500',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
-    },
-    {
-      id: 14,
-      name: 'Dr. Kanokthip Bunyaratglin',
+      id: 4,
+      name: 'Assoc. Prof. Dr. Kanokthip Boonyarattanak',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'kanokthip.bo@kmitl.ac.th',
       phone: '02-3298000 ext. 2176',
-
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36833541100',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Kanokthip.png?w=763'
+      image: AssocProfDrKanokithBoonyarattanak,
     },
     {
-      id: 15,
-      name: 'Dr. Wanitchaya Mekprasat',
+      id: 5,
+      name: 'Assoc. Prof. Dr. Korakot Onlaor',
+      title: 'Associate Professor',
+      department: 'NANO',
+      email: 'korakot.on@kmitl.ac.th',
+      phone: '02-3298000 ext. 3128',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35362507400',
+      image: AssocProfDrKorakotOnlaor,
+    },
+    {
+      id: 6,
+      name: 'Assoc. Prof. Dr. Navaphan Kayunkid',
+      title: 'Associate Professor',
+      department: 'NANO',
+      email: 'navaphun.ka@kmitl.ac.th',
+      phone: '02-3298000 ext. 2176',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19639732300',
+      image: AssocProfDrNavaphanKayunkid,
+    },
+    {
+      id: 7,
+      name: 'Assoc. Prof. Dr. Sakon Rahong',
+      title: 'Associate Professor',
+      department: 'NANO',
+      email: 'sakon.ra@kmitl.ac.th',
+      phone: '02-3298000 ext. 3075',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8558302600',
+      image: AssocProfDrSakonRahong,
+    },
+    // {
+    //   id: 8,
+    //   name: 'Assoc. Prof. Dr. Sakorn Rahong',
+    //   title: 'Associate Professor',
+    //   department: 'NANO',
+    //   email: 'sakorn.ra@kmitl.ac.th',
+    //   phone: '02-3298000 ext. 3075',
+    //   researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=8558302600',
+    //   image: AssocProfDrSakornRahong,
+    // },
+    {
+      id: 9,
+      name: 'Assoc. Prof. Dr. Sute Chutipajit',
+      title: 'Associate Professor',
+      department: 'NANO',
+      email: 'sutee.ch@kmitl.ac.th',
+      phone: '02-3298000 ext. 3140',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35344429600',
+      image: AssocProfDrSuteChutipajit,
+    },
+    {
+      id: 10,
+      name: 'Assoc. Prof. Dr. Tosapol Malungnot',
+      title: 'Associate Professor',
+      department: 'NANO',
+      email: 'tosapol.ma@kmitl.ac.th',
+      phone: '02-3298000 ext. 2173',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36622681600',
+      image: AssocProfDrTosapolMalungnot,
+    },
+    {
+      id: 11,
+      name: 'Assoc. Prof. Dr. Wanichaya Mekprasart',
       title: 'Associate Professor',
       department: 'NANO',
       email: 'wanichaya.me@kmitl.ac.th',
       phone: '02-3298000 ext. 2176',
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=36105458200',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Wanichaya.png?w=760'
+      image: AssocProfDrWanichayaMekprasart,
     },
     {
-      id: 16,
-      name: 'Dr. Pitiporn Thanomngam',
-      title: 'Assistant Professor',
+      id: 12,
+      name: 'Assoc. Prof. Dr. Wanwilai Vittayakorn',
+      title: 'Associate Professor',
       department: 'NANO',
-      email: 'pitiporn.th@kmitl.ac.th',
-      phone: '02-3298000 ext. 3081',
-  
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6506862906',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+      email: 'wanwilai.vi@kmitl.ac.th',
+      phone: '02-3298000 ext. 2169',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=26422631000',
+      image: AssocProfDrWanwilaiVittayakorn,
     },
     {
-      id: 17,
-      name: 'Dr. Tutiyaporn Thiwawong',
-      title: 'Assistant Professor',
+      id: 13,
+      name: 'Assoc. Prof. Dr. Winadda Wongwiriyapan',
+      title: 'Associate Professor',
       department: 'NANO',
-      email: 'thutiyaporn.th@kmitl.ac.th',
-      phone: '02-3298000 ext. 3128',
-  
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19640410000',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+      email: 'winadda.wo@kmitl.ac.th',
+      phone: '02-3298000 ext. 3133',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6507140809',
+      image: AssocProfDrWinaddaWongwiriyapan,
     },
     {
-      id: 18,
-      name: 'Dr. Adirek Rangkasikorn',
+      id: 14,
+      name: 'Asst. Prof. Dr. Adirek Rangkasidorn',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'adirek.ra@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
-   
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=55659954200',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+      image: AssocProfDrAdirekRangkasidorn,
     },
     {
-      id: 19,
-      name: 'Dr. Kanoknan Phachirak',
+      id: 15,
+      name: 'Asst. Prof. Dr. Kanoknan Phacheerak',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'kanoknan.ph@kmitl.ac.th',
       phone: '02-3298000 ext. 3132',
-  
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=16317407800',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/CMIT-Kanoknan.png?w=762'
+      image: AssocProfDrKanoknanPhacheerak,
     },
     {
-      id: 20,
-      name: 'Dr. Mayuree Ployiem Riley',
-      title: 'Assistant Professor',
-      department: 'NANO',
-      email: 'mayuree.ph@kmitl.ac.th',
-      phone: '02-3298000 ext. 2173',
-      
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=23991156500',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
-    },
-    {
-      id: 21,
-      name: 'Dr. Kittipong Amnuaysawat',
+      id: 16,
+      name: 'Asst. Prof. Dr. Kittiphong Amnuyswat',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'kittiphong.am@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
-
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=35361698900',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2017/07/aj_kittiphong-e1499763646756.jpg?fit=141%2C180'
+      image: AssocProfDrKittiphongAmnuyswat,
     },
     {
-      id: 22,
-      name: 'Dr. Supamas Wirunchit',
+      id: 17,
+      name: 'Asst. Prof. Dr. Mayuree Phonyium Reilly',
+      title: 'Assistant Professor',
+      department: 'NANO',
+      email: 'mayuree.ph@kmitl.ac.th',
+      phone: '02-3298000 ext. 2173',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=23991156500',
+      image: AssocProfDrMayureePhonyiumReilly,
+    },
+    {
+      id: 18,
+      name: 'Asst. Prof. Dr. Pitiporn Thanomngam',
+      title: 'Assistant Professor',
+      department: 'NANO',
+      email: 'pitiporn.th@kmitl.ac.th',
+      phone: '02-3298000 ext. 3081',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=6506862906',
+      image: AssocProfDrPitipornThanomngam,
+    },
+    {
+      id: 19,
+      name: 'Asst. Prof. Dr. Supamas Wirunchit',
       title: 'Assistant Professor',
       department: 'NANO',
       email: 'supamas.wi@kmitl.ac.th',
       phone: '02-3298000 ext. 3075',
-  
       researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=16320167600',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+      image: AssocProfDrSupamasWirunchit,
     },
     {
-      id: 23,
-      name: 'Dr. Khattiya Chalapat',
-      title: 'Professor',
+      id: 20,
+      name: 'Asst. Prof. Dr. Thutiyaporn Thiwawong',
+      title: 'Assistant Professor',
       department: 'NANO',
-      email: 'khattiya.ch@kmitl.ac.th',
-      phone: '02-3298000 ext. 2175',
-    
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=24537036500',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
+      email: 'thutiyaporn.th@kmitl.ac.th',
+      phone: '02-3298000 ext. 3128',
+      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=19640410000',
+      image: AssocProfDrThutiyapornThiwawong,
     },
+    // MANU Department Lecturers
     {
-      id: 24,
-      name: 'Dr. Thirayut Uwanno',
-      title: 'Professor',
-      department: 'NANO',
-      email: 'teerayut.uw@kmitl.ac.th',
-      phone: '02-3298000 ext. 2177',
-
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=57039260800',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
-    },
-    {
-      id: 25,
-      name: 'Dr. Chanyanan Bunrod',
-      title: 'Professor',
-      department: 'NANO',
-      email: 'chayanan.bo@kmitl.ac.th',
-      phone: '02-3298000 ext. ??',
-      office: 'CMIT Building',
-      researchLink: 'https://www.scopus.com/authid/detail.uri?authorId=57201667754',
-      image: 'https://i0.wp.com/www.cmit.kmitl.ac.th/wp-content/uploads/2023/06/UN-CMIT.png?w=769'
-    },
-    {
-      id: 26,
-      name: 'Dr. Kamol Wasapinyokul',
-      title: 'Assistant Professor (Head of Department)',
-      department: 'MANU',
-      email: 'kamol.wa@kmitl.ac.th',
-      phone: '02-329-8264 ext. 2183',
-      office: '55-Year Chalermprakiat Building, Room 405',
-      research: 'Optoelectronics, inorganic and organic semiconductor-based devices, Photometry',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2017/12/2-286x400.jpg'
-    },
-    {
-      id: 27,
-      name: 'Dr. Jatuporn Thongsri ',
+      id: 21,
+      name: 'Assoc. Prof. Dr. Jatuporn Thongsri',
       title: 'Associate Professor (Associate Dean)',
       department: 'MANU',
-      email: 'Jatuporn.th@kmitl.ac.th',
+      email: 'jatuporn.th@kmitl.ac.th',
       phone: '02-329-8264 ext. 2183',
       office: '55-Year Chalermprakiat Building, Room 406',
       research: 'Finite Element Analysis, Computational Fluid Dynamics and Numerical Method for Applied Mechanics',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0007-286x400.jpg'
+      image: AssocProfDrJatupornThongsri,
     },
     {
-      id: 28,
-      name: 'Dr. Ananta Sinchai ',
-      title: 'Assistant Professor (Associate Dean)',
-      department: 'MANU',
-      email: 'ananta.sin@kmitl.ac.th',
-      phone: '02-329-8271 ext. 2182',
-      office: '55-Year Chalermprakiat Building, Room 404',
-      research: 'Image processing, Machine learning, IoT, Automation',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2023/07/2-286x400.jpg'
-    },
-    {
-      id: 29,
-      name: 'Dr. Ploypailin Yongsiri',
-      title: 'Assistant Professor (Assistant Dean)',
-      department: 'MANU',
-      email: 'ploypailin.yo@kmitl.ac.th',
-      phone: '02-329-8271 ext. 2182',
-      office: '55-Year Chalermprakiat Building',
-      research: 'Glass and Glass-Ceramic Processing and Characterization, Electroceramics, Ferroelectric Materials, Energy Materials, Material Analysis',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0020-286x400.jpg'
-    },
-    {
-      id: 30,
-      name: 'Dr. Santhad Chuwongin',
-      title: 'Assistant Professor (Head of CiRA)',
-      department: 'MANU',
-      email: 'santhad.ch@kmitl.ac.th',
-      phone: '02-329-8264 ext. 2183',
-      office: '55-Year Chalermprakiat Building, Room 405',
-      research: 'Industrial Robot & AI, Deep Learning, Machine Learning, Optoelectronic devices, Nanophotonics',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2017/12/14-286x400.jpg'
-    },
-    {
-      id: 31,
-      name: 'Dr. Chatrpol Pakasiri',
-
-      title: 'Associate Professor (Dean)',
-      department: 'MANU',
-      email: 'chatrpol.pa@kmitl.ac.th',
-      phone: ' 02-329-8264 ext. 2182',
-      office: '55-Year Chalermprakiat Building, Room 404',
-      research: 'Wireless Communication, electromagnetic compatibility research, RF/Microwave active and passive Design, numerical Method for Electromagnetics Research',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0025-286x400.jpg'
-    },
-    {
-      id: 32,
-      name: 'Dr. Rachsak Sakdanuphab',
-
+      id: 22,
+      name: 'Assoc. Prof. Dr. Rachsak Sakdanuphab',
       title: 'Associate Professor',
       department: 'MANU',
       email: 'rachsak.sa@kmitl.ac.th',
       phone: '02-329-8264 ext. 2183',
       office: '55-Year Chalermprakiat Building, Room 405',
       research: 'Thin film semiconductor devices such as solar cells and thermoelectric module',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0028-286x400.jpg'
+      image: AssocProfDrRachsakSakdanuphab,
     },
     {
-      id: 33,
-      name: 'Dr. Chanon Warisarn',
-      title: 'Associate Professor',
+      id: 23,
+      name: 'Assoc. Prof. Dr. Chatrpol Pakasiri',
+      title: 'Associate Professor (Dean)',
       department: 'MANU',
-      email: 'chanon.wa@kmitl.ac.th',
-      phone: '02-329-8264 ext. 2150',
-      office: '55-Year Chalermprakiat Building, Room 406',
-      research: 'Magnetic recording technology, realistic writing/reading channel model, micromagnetic modeling, coding and signal processing',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0026-286x400.jpg'
+      email: 'chatrpol.pa@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2182',
+      office: '55-Year Chalermprakiat Building, Room 404',
+      research: 'Wireless Communication, electromagnetic compatibility research, RF/Microwave active and passive Design',
+      image: AssocProfDrChatpolPakasiri,
     },
     {
-      id: 34,
-      name: 'Dr. Lertsak Lekawat ',
-      title: 'Assistant Professor',
+      id: 24,
+      name: 'Assoc. Prof. Dr. Santhad Chuwongin',
+      title: 'Assistant Professor (Head of CiRA)',
       department: 'MANU',
-      email: 'lertsak@ine.co.th',
-      phone: '02-329-8264 ext. 2152',
-      office: '55-Year Chalermprakiat Building, 4th floor',
-      research: 'Management by fact and systematic thinking using Six-Sigma DMAIC approach, computer software such as MINITAB is required for statistical data analysis',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2021/05/44FB38FF-9492-4D77-B06D-FE729E20684A.jpeg'
+      email: 'santhad.ch@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2183',
+      office: '55-Year Chalermprakiat Building, Room 405',
+      research: 'Industrial Robot & AI, Deep Learning, Machine Learning, Optoelectronic devices',
+      image: AssocProfDrSanthadChuwongin,
     },
     {
-      id: 35,
-      name: 'Dr. Komgrit Jaksukam',
+      id: 25,
+      name: 'Asst. Prof. Dr. Komrit Jaksukam',
       title: 'Assistant Professor',
       department: 'MANU',
       email: 'komgrit.ja@kmitl.ac.th',
       phone: '02-329-8271',
       office: '55-Year Chalermprakiat Building',
-      research: 'Wireless sensor networks, Embedded system, Multi-hop networks, Ultrasound measurement application',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2020/02/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B9%92%E0%B9%90%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95_0002-286x400.jpg'
+      research: 'Wireless sensor networks, Embedded system, Multi-hop networks',
+      image: AsstProfDrKomritJaksukam,
     },
     {
-      id: 36,
-      name: 'Dr. Kittipon Kankhunthod',
+      id: 26,
+      name: 'Asst. Prof. Dr. Ananta Sinchai',
+      title: 'Assistant Professor (Associate Dean)',
+      department: 'MANU',
+      email: 'ananta.sin@kmitl.ac.th',
+      phone: '02-329-8271 ext. 2182',
+      office: '55-Year Chalermprakiat Building, Room 404',
+      research: 'Image processing, Machine learning, IoT, Automation',
+      image: AsstProfDrAnantaSinchai,
+    },
+    {
+      id: 27,
+      name: 'Asst. Prof. Dr. Kamol Wasapinyokul',
+      title: 'Assistant Professor (Head of Department)',
+      department: 'MANU',
+      email: 'kamol.wa@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2183',
+      office: '55-Year Chalermprakiat Building, Room 405',
+      research: 'Optoelectronics, inorganic and organic semiconductor-based devices',
+      image: AsstProfDrKamolWasapinyokul,
+    },
+    {
+      id: 28,
+      name: 'Asst. Prof. Dr. Kittipon Kankhuthod',
       title: 'Professor',
       department: 'MANU',
       email: 'kittipon.ka@kmitl.ac.th',
       phone: '02-329-8264 ext. 2182',
       office: '55-Year Chalermprakiat Building, Room 404',
       research: 'Industrial robot and Automation, AI, Signal processing, and Data analysis',
-      image: 'https://www.ami.kmitl.ac.th/wp-content/uploads/2023/07/1-286x400.jpg'
-    }
-
+      image: AsstProfDrKittiponKankhuthod,
+    },
+    {
+      id: 29,
+      name: 'Asst. Prof. Dr. Ploypailin Yongsiri',
+      title: 'Assistant Professor (Assistant Dean)',
+      department: 'MANU',
+      email: 'ploypailin.yo@kmitl.ac.th',
+      phone: '02-329-8271 ext. 2182',
+      office: '55-Year Chalermprakiat Building',
+      research: 'Glass and Glass-Ceramic Processing, Electroceramics, Ferroelectric Materials',
+      image: AsstProfDrPiyayapinYongsiri,
+    },
+    {
+      id: 30,
+      name: 'Dr. Natthawirot Somjaiaroen',
+      title: 'Professor',
+      department: 'MANU',
+      email: 'natthawirot.so@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2182',
+      office: '55-Year Chalermprakiat Building',
+      research: 'Mechanical Engineering, Manufacturing Systems',
+      image: DrNatthawirotSomjaiaroen,
+    },
+    {
+      id: 31,
+      name: 'Prof. Dr. Chanon Warisarn',
+      title: 'Associate Professor',
+      department: 'MANU',
+      email: 'chanon.wa@kmitl.ac.th',
+      phone: '02-329-8264 ext. 2150',
+      office: '55-Year Chalermprakiat Building, Room 406',
+      research: 'Magnetic recording technology, micromagnetic modeling, coding and signal processing',
+      image: ProfDrChanonWarisarn,
+    },
   ];
 
 

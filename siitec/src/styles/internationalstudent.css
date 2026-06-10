@@ -9,7 +9,8 @@
   font-family: var(--font-body);
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--background-primary);
+  background-image: url('../assets/albums/DSC_3844.jpg');
+
 }
 
 .international-container {
@@ -21,7 +22,7 @@
 
 /* Header styles */
 .international-header {
-  background: var(--tech-gradient);
+
   color: var(--background-primary);
   padding: 40px 0;
   text-align: center;

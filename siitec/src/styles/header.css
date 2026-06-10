@@ -139,11 +139,12 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.header_social-icon:hover {
+/* .header_social-icon:hover {
   color: var(--text-dark);
+  background-color: var(--gold-copper-bright);
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(184, 115, 51, 0.3);
-}
+} */
 
 /* Dropdown Arrow */
 .dropdown-arrow {
@@ -167,6 +168,12 @@
   height: 1em;
 }
 
+.header_social-icons a:hover {
+  color: var(--text-dark);
+  transform: translateY(-5px);
+  background-color: var(--gold-copper-bright);
+  box-shadow: 0 6px 15px rgba(184, 115, 51, 0.3);
+}
 /* =====================
    NAVIGATION
 ===================== */

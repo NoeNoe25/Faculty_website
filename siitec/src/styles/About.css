@@ -193,12 +193,16 @@ p{
 
 .about-card-vision {
   background: linear-gradient(135deg,#d4a76a,#8d6930);
-color: #fff;
+  color: #fff;
   padding: 2.5rem;
   min-height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.about-card-vision p{
+  color: #fff;
 }
 
 .about-card-mission h3,
