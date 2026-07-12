@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/components/Video.css';
-import nano from '../assets/albums/02-CMIT-Nanomaterial-engineering.mp4';
-import dual from '../assets/albums/03-CMIT-Dual-degree.mp4';
+
 const VideoSection = () => {
   const [videos] = useState([
     {
@@ -11,16 +10,16 @@ const VideoSection = () => {
       description: 'Welcome message from our faculty dean discussing our vision and goals for the academic year.'
     },
     {
-      type: 'local',
-      src: dual,
-      title: 'Dual Degree Program Overview',
-      description: 'An in-depth look at our dual degree programs and the benefits they offer to students.'
+      type: 'youtube',
+      id: '-RU83ieg9qc',
+      title: 'Why Study Nano Materials Engineering?',
+      description: 'Have you ever wondered how materials invisible to the naked eye can be transformed into advanced technologies? The Department of Nanoscience and Nanotechnology focuses on the design, synthesis, and development of nanoscale materials, driving innovations in electronics, energy, healthcare, environmental technology, and advanced manufacturing. Students gain both theoretical knowledge and hands-on experience to prepare for careers in cutting-edge industries.'
     },
     {
-      type: 'local',
-      src: nano,
-      title: 'Nanomaterial Engineering Lab Tour',
-      description: 'Take a virtual tour of our state-of-the-art nanomaterial engineering laboratories and facilities.'
+      type: 'youtube',
+      id: 'lv4_6DQaohM',
+      title: 'Manufacturing Systems Engineering: Shaping the Future of Smart Manufacturing',
+      description: 'Are you passionate about becoming an engineer in modern manufacturing? The Manufacturing Systems Engineering Program, offered by the Department of Manufacturing System Technology equips students with the knowledge and practical skills needed for the next generation of industry.'
     }
   ]);
 

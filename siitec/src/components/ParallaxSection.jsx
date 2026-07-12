@@ -7,19 +7,17 @@ import bgimg1 from "../assets/albums/KMITL.11.jpg";
 import bgimg2 from "../assets/albums/KMITL.12.jpg";
 import bgimg3 from "../assets/albums/KMITL.18.jpg";
 import news1 from '../assets/images/news/news1.webp';
-import news2 from '../assets/images/news/news2.webp';
-import news3 from '../assets/images/news/news3.webp';
+import siitecgroups from '../assets/images/news/SIITecgroups.jpg';
+import ureview from '../assets/images/news/ureview.png';
 import { useNavigate } from "react-router-dom";
 const ParallaxSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const sectionRef = useRef(null);
 
-  // Add your background images here
+  //  background images
   const backgroundImages = [
     bgimg,bgimg1,bgimg2,bgimg3,
-    // Add more images: require("../assets/albums/image2.jpg"),
-    // require("../assets/albums/image3.jpg"),
   ];
   const navigate = useNavigate();
   const newsItems = [
@@ -33,19 +31,19 @@ const ParallaxSection = () => {
     },
     {
       id: 2,
-      title: "Direct Admission 1-1 2025",
-      date: "Sep 15, 2025",
+      title: "Discover SIITec and explore departments.",
+      date: "June 25, 2026",
       excerpt: "DIRECT ADMISSION 1-1 Early Round Academic Year 2025 Dual Degree",
-      image: news2,
-      link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-2023/"
+      image: siitecgroups,
+      link: "https://www.facebook.com/SIITec.KMITL/posts/pfbid07bGYUgCvXajBWH484sXyHCiqVYmdVGRBqAbx3inw2rGcaLyy47tLoh33Kh1jQfFjl"
     },
       {
-      id: 2,
-      title: "Direct Admission 1-1 2025",
-      date: "Feb 13, 2025",
-      excerpt: "DIRECT ADMISSION 1-1 Early Round Academic Year 2025 Dual Degree",
-      image: news3 ,
-      link: "http://www.cmit.kmitl.ac.th/news/tcas1-67/"
+      id: 3,
+      title: "SIITec Review by U-Review",
+      date: "May 8, 2025",
+      excerpt: "Learn more about SIITec, its programs, facilities, and student opportunities through this feature by U-Review.",
+      image: ureview ,
+      link: "https://www.u-review.in.th/th/article/655"
 
     },
     
@@ -131,7 +129,7 @@ const ParallaxSection = () => {
 </motion.button>
 
 
-              {/* Horizontal News Cards - Centered under button */}
+              {/* Horizontal News Card*/}
               <motion.div 
                 className="news-cards-container"
                 initial={{ opacity: 0, y: 20 }}

@@ -19,8 +19,8 @@ function Home() {
       {/* STEM Programs Overview */}
       <STEMSection />
       
-      {/* Admission & Event Highlights */}
-      <HighlightsSection />
+      {/* Admission & Event Highlights
+      <HighlightsSection /> */}
       
       
       {/* Latest News & Stories */}
