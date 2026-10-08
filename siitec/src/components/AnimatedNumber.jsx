@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react';
-import { motion } from 'framer-motion';
 
 const AnimatedNumber = ({ value, suffix = '', duration = 2000 }) => {
   const [displayValue, setDisplayValue] = useState(0);

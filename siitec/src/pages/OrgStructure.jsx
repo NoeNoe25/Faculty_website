@@ -3,10 +3,14 @@ import React from "react";
 import "../styles/OrgStructure.css";
 // Import your organizational chart image
 import orgChartImage from "../assets/albums/Organizational structure.png"; // or .png, .svg
+import { useContent, useLanguage } from "../i18n/LanguageContext";
+import orgStructureContent from "../i18n/content/orgStructure";
 
 const OrgStructure = () => {
+  const { t } = useLanguage();
+  const c = useContent(orgStructureContent);
   return (
-    <div className="org-chart-container">
+    <div className="org-chart-container page-org-structure">
       {/* Header */}
       <header className="org-chart-header">
         <div className="header-decoration"></div>
@@ -21,13 +25,9 @@ const OrgStructure = () => {
               />
             </svg>
           </div>
-          <h1 className="header-title">Organizational Structure</h1>
-          <p className="header-subtitle">
-            School of Integrated Innovative Technology
-          </p>
-          <p className="header-institution">
-            King Mongkut's Institute of Technology Ladkrabang
-          </p>
+          <h1 className="header-title">{c.title}</h1>
+          <p className="header-subtitle">{t("site.fullName")}</p>
+          <p className="header-institution">{t("site.institution")}</p>
         </div>
       </header>
 
@@ -36,13 +36,11 @@ const OrgStructure = () => {
         <div className="chart-image-container">
           <img
             src={orgChartImage}
-            alt="Organizational Structure Chart of School of Integrated Innovative Technology"
+            alt={c.chartAlt}
             className="org-chart-image"
           />
           <div className="image-caption">
-            Organizational Structure of School of Integrated Innovative
-            Technology, KMITL
-          </div>
+            {c.caption}</div>
         </div>
       </div>
     </div>

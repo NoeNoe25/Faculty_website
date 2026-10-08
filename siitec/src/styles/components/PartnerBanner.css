@@ -1,21 +1,13 @@
 /* PartnersSection.css */
-:root {
-  --slate-base: #758384;
-  --slate-dark: #5a686e;
-  --slate-light: #8f9fa6;
-  --gold-copper: #c9a66b;
-  --gold-copper-dark: #a88448;
-  --gold-copper-forbutton: #fcbe42;
-}
 
-.partners-banner-container {
+.partners-banner-container:where(.home-partners), :where(.home-partners) .partners-banner-container {
   padding: 80px 20px;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 }
 
-.partners-banner-container::before {
+.partners-banner-container:where(.home-partners)::before, :where(.home-partners) .partners-banner-container::before {
   content: '';
   position: absolute;
   top: 0;
@@ -25,7 +17,7 @@
   background: linear-gradient(90deg, transparent, var(--gold-copper), transparent);
 }
 
-.banner-title {
+:where(.home-partners) .banner-title {
   text-align: center;
   font-size: 42px;
   font-weight: 700;
@@ -37,7 +29,7 @@
   transform: translateX(-50%);
 }
 
-.banner-title::after {
+:where(.home-partners) .banner-title::after {
   content: '';
   position: absolute;
   bottom: -12px;
@@ -49,15 +41,15 @@
   border-radius: 2px;
 }
 
-.partners-banner {
+:where(.home-partners) .partners-banner {
   margin: 0 auto 60px;
   overflow: hidden;
   position: relative;
   max-width: 1400px;
 }
 
-.partners-banner::before,
-.partners-banner::after {
+:where(.home-partners) .partners-banner::before,
+:where(.home-partners) .partners-banner::after {
   content: '';
   position: absolute;
   top: 0;
@@ -67,24 +59,24 @@
   pointer-events: none;
 }
 
-.partners-banner::before {
+:where(.home-partners) .partners-banner::before {
   left: 0;
   background: linear-gradient(to right, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0));
 }
 
-.partners-banner::after {
+:where(.home-partners) .partners-banner::after {
   right: 0;
   background: linear-gradient(to left, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0));
 }
 
-.partners-track {
+:where(.home-partners) .partners-track {
   display: flex;
   gap: 60px;
-  animation: scroll 30s linear infinite;
+  animation: partners-scroll 30s linear infinite;
   width: fit-content;
 }
 
-@keyframes scroll {
+@keyframes partners-scroll {
   0% {
     transform: translateX(0);
   }
@@ -93,11 +85,11 @@
   }
 }
 
-.partners-track:hover {
+:where(.home-partners) .partners-track:hover {
   animation-play-state: paused;
 }
 
-.partner-logo {
+:where(.home-partners) .partner-logo {
   flex-shrink: 0;
   width: 180px;
   height: 100px;
@@ -112,13 +104,13 @@
   transition: all 0.3s ease;
 }
 
-.partner-logo:hover {
+:where(.home-partners) .partner-logo:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border-color: var(--gold-copper);
 }
 
-.partner-logo img {
+:where(.home-partners) .partner-logo img {
   max-width: 100%;
   max-height: 60px;
   object-fit: contain;
@@ -127,157 +119,153 @@
   transition: all 0.3s ease;
 }
 
-.partner-logo:hover img {
+:where(.home-partners) .partner-logo:hover img {
   filter: grayscale(0%);
   opacity: 1;
 }
 
-.partners-cta {
-  text-align: center;
-  padding: 50px 40px;
-  background: linear-gradient(135deg, var(--gold-copper-dark) 0%, var(--slate-dark) 100%);
-  border-radius: 20px;
-  max-width: 800px;
+:where(.home-partners) .partners-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 880px;
   margin: 0 auto;
-  box-shadow: 0 10px 40px rgba(168, 132, 72, 0.2);
-  position: relative;
-  overflow: hidden;
+  padding: 32px 40px;
+  /* Soft tint of the site's gold-copper, so the card stands out from the white page. */
+  background: linear-gradient(135deg, #fbf4e8 0%, #f4ead9 100%);
+  border: 1px solid rgba(201, 166, 107, 0.35);
+  border-left: 4px solid var(--gold-copper);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
 }
 
-.partners-cta::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  animation: shine 3s infinite;
-}
-
-@keyframes shine {
-  0% {
-    left: -100%;
-  }
-  50%, 100% {
-    left: 100%;
-  }
-}
-
-.partners-cta p {
-  font-size: 24px;
+:where(.home-partners) .partners-cta-title {
+  margin: 0;
+  font-size: 22px;
   font-weight: 600;
-  color: white;
-  margin: 0 0 24px 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
 }
 
-.partner-btn {
-  padding: 16px 36px;
-  background: var(--gold-copper-forbutton);
-  color: var(--slate-dark);
-  border: none;
+:where(.home-partners) .partners-cta-pitch {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-tertiary);
+}
+
+:where(.home-partners) .partner-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--gold-copper-dark);
+  color: #fff;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(252, 190, 66, 0.3);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.partner-btn:hover {
-  background: white;
-  color: var(--slate-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(252, 190, 66, 0.4);
+:where(.home-partners) .partner-btn:hover {
+  background: var(--gold-copper-darkest);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
-.partner-btn svg {
-  transition: transform 0.3s ease;
+:where(.home-partners) .partner-btn:focus-visible {
+  outline: 2px solid var(--gold-copper);
+  outline-offset: 3px;
 }
 
-.partner-btn:hover svg {
-  transform: translateX(4px);
+:where(.home-partners) .partner-btn svg {
+  transition: transform 0.2s ease;
+}
+
+:where(.home-partners) .partner-btn:hover svg {
+  transform: translateX(3px);
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .banner-title {
+  :where(.home-partners) .banner-title {
     font-size: 36px;
   }
 
-  .partners-track {
+  :where(.home-partners) .partners-track {
     gap: 50px;
   }
 
-  .partner-logo {
+  :where(.home-partners) .partner-logo {
     width: 160px;
     height: 90px;
   }
 }
 
 @media (max-width: 768px) {
-  .partners-banner-container {
+  .partners-banner-container:where(.home-partners), :where(.home-partners) .partners-banner-container {
     padding: 60px 20px;
   }
 
-  .banner-title {
+  :where(.home-partners) .banner-title {
     font-size: 30px;
     margin-bottom: 40px;
   }
 
-  .partners-track {
+  :where(.home-partners) .partners-track {
     gap: 40px;
   }
 
-  .partner-logo {
+  :where(.home-partners) .partner-logo {
     width: 140px;
     height: 80px;
     padding: 16px;
   }
 
-  .partner-logo img {
+  :where(.home-partners) .partner-logo img {
     max-height: 50px;
   }
 
-  .partners-cta {
-    padding: 40px 24px;
-    border-radius: 16px;
+  :where(.home-partners) .partners-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 24px;
   }
 
-  .partners-cta p {
+  :where(.home-partners) .partners-cta-title {
     font-size: 20px;
-    margin-bottom: 20px;
-  }
-
-  .partner-btn {
-    padding: 14px 28px;
-    font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .banner-title {
+  :where(.home-partners) .banner-title {
     font-size: 26px;
   }
 
-  .partners-track {
+  :where(.home-partners) .partners-track {
     gap: 30px;
   }
 
-  .partner-logo {
+  :where(.home-partners) .partner-logo {
     width: 120px;
     height: 70px;
   }
 
-  .partners-cta {
-    padding: 32px 20px;
+  :where(.home-partners) .partners-cta {
+    padding: 24px 20px;
   }
 
-  .partners-cta p {
+  :where(.home-partners) .partners-cta-title {
     font-size: 18px;
+  }
+
+  :where(.home-partners) .partner-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

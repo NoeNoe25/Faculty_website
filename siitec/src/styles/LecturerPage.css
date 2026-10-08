@@ -2,14 +2,14 @@
 
 
 /* Container */
-.lecturer-container {
+.lecturer-container:where(.page-lecturers), :where(.page-lecturers) .lecturer-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
 /* Header Section */
-.lecturer-header {
+:where(.page-lecturers) .lecturer-header {
   background: var(--background-primary);
   border-radius: var(--border-radius-lg);
   padding: 3rem 2rem;
@@ -19,7 +19,7 @@
   overflow: hidden;
 }
 
-.header-decoration {
+:where(.page-lecturers) .header-decoration {
   position: absolute;
   top: 0;
   left: 0;
@@ -28,12 +28,12 @@
   background: var(--tech-gradient);
 }
 
-.header-content {
+:where(.page-lecturers) .header-content {
   text-align: center;
   position: relative;
 }
 
-.header-title {
+:where(.page-lecturers) .header-title {
   font-family: var(--font-title);
   font-size: 2.5rem;
   margin-bottom: 15px;
@@ -43,7 +43,7 @@
   background-clip: text;
 }
 
-.header-subtitle {
+:where(.page-lecturers) .header-subtitle {
   font-family: var(--font-body);
   font-size: 1.3rem;
   font-weight: 500;
@@ -51,7 +51,7 @@
   margin-bottom: 0.5rem;
 }
 
-.header-institution {
+:where(.page-lecturers) .header-institution {
   font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: 400;
@@ -59,7 +59,7 @@
 }
 
 /* Search Section */
-.search-section {
+:where(.page-lecturers) .search-section {
   background: var(--background-primary);
   border-radius: var(--border-radius-lg);
   padding: 2rem;
@@ -67,17 +67,17 @@
   box-shadow: var(--shadow-md);
 }
 
-.search-container {
+:where(.page-lecturers) .search-container {
   margin-bottom: 1.5rem;
 }
 
-.search-box {
+:where(.page-lecturers) .search-box {
   position: relative;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.search-icon {
+:where(.page-lecturers) .search-icon {
   position: absolute;
   left: 1.2rem;
   top: 50%;
@@ -86,7 +86,7 @@
   pointer-events: none;
 }
 
-.search-input {
+:where(.page-lecturers) .search-input {
   width: 100%;
   padding: 1rem 3rem 1rem 3.5rem;
   font-family: var(--font-body);
@@ -98,18 +98,18 @@
   transition: var(--transition-fast);
 }
 
-.search-input:focus {
+:where(.page-lecturers) .search-input:focus {
   outline: none;
   border-color: var(--gold-copper);
   background: var(--background-primary);
   box-shadow: 0 0 0 3px rgba(201, 166, 107, 0.1);
 }
 
-.search-input::placeholder {
+:where(.page-lecturers) .search-input::placeholder {
   color: var(--text-muted);
 }
 
-.clear-btn {
+:where(.page-lecturers) .clear-btn {
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -129,20 +129,20 @@
   transition: var(--transition-fast);
 }
 
-.clear-btn:hover {
+:where(.page-lecturers) .clear-btn:hover {
   background: var(--slate-dark);
   transform: translateY(-50%) scale(1.1);
 }
 
 /* Filter Section */
-.filter-section {
+:where(.page-lecturers) .filter-section {
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.filter-btn {
+:where(.page-lecturers) .filter-btn {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 500;
@@ -158,19 +158,19 @@
   gap: 0.5rem;
 }
 
-.filter-btn:hover {
+:where(.page-lecturers) .filter-btn:hover {
   border-color: var(--gold-copper-light);
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
 }
 
-.filter-btn.active {
+:where(.page-lecturers) .filter-btn.active {
   background: var(--tech-gradient);
   color: white;
   border-color: var(--gold-copper);
 }
 
-.count-badge {
+:where(.page-lecturers) .count-badge {
   background: rgba(255, 255, 255, 0.3);
   padding: 0.2rem 0.6rem;
   border-radius: 12px;
@@ -178,12 +178,12 @@
   font-weight: 600;
 }
 
-.filter-btn.active .count-badge {
+:where(.page-lecturers) .filter-btn.active .count-badge {
   background: rgba(255, 255, 255, 0.25);
 }
 
 /* Results Info */
-.results-info {
+:where(.page-lecturers) .results-info {
   background: var(--background-primary);
   padding: 1rem 2rem;
   border-radius: var(--border-radius);
@@ -191,20 +191,20 @@
   box-shadow: var(--shadow-sm);
 }
 
-.results-info p {
+:where(.page-lecturers) .results-info p {
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text-light);
   text-align: center;
 }
 
-.search-term {
+:where(.page-lecturers) .search-term {
   color: var(--gold-copper);
   font-weight: 600;
 }
 
 /* Lecturers Content */
-.lecturers-content {
+:where(.page-lecturers) .lecturers-content {
   background: var(--background-primary);
   border-radius: var(--border-radius-lg);
   padding: 2rem;
@@ -213,14 +213,14 @@
 }
 
 /* Lecturers Grid */
-.lecturers-grid {
+:where(.page-lecturers) .lecturers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
 }
 
 /* Lecturer Card */
-.lecturer-card {
+:where(.page-lecturers) .lecturer-card {
   background: var(--background-secondary);
   border: 1px solid var(--background-tertiary);
   border-radius: var(--border-radius);
@@ -232,7 +232,7 @@
   height: 100%;
 }
 
-.lecturer-card::before {
+:where(.page-lecturers) .lecturer-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -244,31 +244,31 @@
   transition: transform 0.3s ease;
 }
 
-.lecturer-card:hover {
+:where(.page-lecturers) .lecturer-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: var(--gold-copper-light);
 }
 
-.lecturer-card:hover::before {
+:where(.page-lecturers) .lecturer-card:hover::before {
   transform: scaleX(1);
 }
 
 /* Card Header */
-.card-header {
+:where(.page-lecturers) .card-header {
   background: var(--background-primary);
   padding: 2rem 2rem 1rem;
   display: flex;
   justify-content: center;
 }
 
-.lecturer-image-wrapper {
+:where(.page-lecturers) .lecturer-image-wrapper {
   position: relative;
   width: 150px;
   height: 150px;
 }
 
-.lecturer-image {
+:where(.page-lecturers) .lecturer-image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -277,12 +277,12 @@
   transition: var(--transition-medium);
 }
 
-.lecturer-card:hover .lecturer-image {
+:where(.page-lecturers) .lecturer-card:hover .lecturer-image {
   border-color: var(--gold-copper);
   transform: scale(1.05);
 }
 
-.dept-badge {
+:where(.page-lecturers) .dept-badge {
   position: absolute;
   bottom: 5px;
   right: 5px;
@@ -297,7 +297,7 @@
 }
 
 /* Card Body */
-.card-body {
+:where(.page-lecturers) .card-body {
   padding: 1.5rem 2rem 2rem;
   background: var(--background-primary);
   flex: 1; 
@@ -305,7 +305,7 @@
   flex-direction: column;
 }
 
-.lecturer-name {
+:where(.page-lecturers) .lecturer-name {
   font-family: var(--font-title);
   font-size: 1.4rem;
   font-weight: 400;
@@ -314,7 +314,7 @@
   text-align: center;
 }
 
-.lecturer-thai-name {
+:where(.page-lecturers) .lecturer-thai-name {
   font-family: var(--font-body);
   font-size: 1rem;
   color: var(--text-greywhite);
@@ -322,7 +322,7 @@
   margin-bottom: 0.5rem;
 }
 
-.lecturer-title {
+:where(.page-lecturers) .lecturer-title {
   font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--gold-copper);
@@ -331,7 +331,7 @@
   margin-bottom: 1rem;
 }
 
-.card-divider {
+:where(.page-lecturers) .card-divider {
   width: 50px;
   height: 2px;
   background: var(--gold-copper);
@@ -339,24 +339,24 @@
 }
 
 /* Contact Info */
-.contact-info {
+:where(.page-lecturers) .contact-info {
   margin-bottom: 1.5rem;
 }
 
-.info-item {
+:where(.page-lecturers) .info-item {
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
   margin-bottom: 0.8rem;
 }
 
-.info-icon {
+:where(.page-lecturers) .info-icon {
   color: var(--slate-base);
   flex-shrink: 0;
   margin-top: 0.2rem;
 }
 
-.info-link {
+:where(.page-lecturers) .info-link {
   font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--text-light);
@@ -365,18 +365,18 @@
   word-break: break-word;
 }
 
-.info-link:hover {
+:where(.page-lecturers) .info-link:hover {
   color: var(--gold-copper);
 }
 
-.info-text {
+:where(.page-lecturers) .info-text {
   font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--text-light);
 }
 
 /* Research Area */
-.research-area {
+:where(.page-lecturers) .research-area {
   background: var(--background-secondary);
   padding: 1rem;
   border-radius: var(--border-radius);
@@ -384,7 +384,7 @@
   width: 100%;
 }
 
-.research-label {
+:where(.page-lecturers) .research-label {
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 600;
@@ -394,7 +394,7 @@
   margin-bottom: 0.5rem;
 }
 
-.research-link {
+:where(.page-lecturers) .research-link {
   font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--gold-copper);
@@ -402,12 +402,12 @@
   transition: var(--transition-fast);
 }
 
-.research-link:hover {
+:where(.page-lecturers) .research-link:hover {
   color: var(--gold-copper-dark);
   font-weight: 600;
 }
 
-.research-text {
+:where(.page-lecturers) .research-text {
   font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--text-dark);
@@ -415,18 +415,18 @@
 }
 
 /* No Results */
-.no-results {
+:where(.page-lecturers) .no-results {
   text-align: center;
   padding: 4rem 2rem;
   color: var(--text-greywhite);
 }
 
-.no-results-icon {
+:where(.page-lecturers) .no-results-icon {
   color: var(--slate-lighter);
   margin-bottom: 1.5rem;
 }
 
-.no-results h3 {
+:where(.page-lecturers) .no-results h3 {
   font-family: var(--font-title);
   font-size: 1.8rem;
   font-weight: 400;
@@ -434,14 +434,14 @@
   margin-bottom: 0.5rem;
 }
 
-.no-results p {
+:where(.page-lecturers) .no-results p {
   font-family: var(--font-body);
   font-size: 1rem;
   color: var(--text-greywhite);
 }
 
 /* Footer */
-.lecturer-footer {
+:where(.page-lecturers) .lecturer-footer {
   text-align: center;
   padding: 2rem;
   margin-top: 2rem;
@@ -450,7 +450,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.lecturer-footer p {
+:where(.page-lecturers) .lecturer-footer p {
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text-greywhite);
@@ -459,104 +459,104 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .header-title {
+  :where(.page-lecturers) .header-title {
     font-size: 2.5rem;
   }
   
-  .lecturers-grid {
+  :where(.page-lecturers) .lecturers-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .lecturer-container {
+  .lecturer-container:where(.page-lecturers), :where(.page-lecturers) .lecturer-container {
     padding: 1rem 0.5rem;
   }
 
-  .lecturer-header {
+  :where(.page-lecturers) .lecturer-header {
     padding: 2rem 1.5rem;
   }
 
-  .header-title {
+  :where(.page-lecturers) .header-title {
     font-size: 2rem;
   }
 
-  .header-subtitle {
+  :where(.page-lecturers) .header-subtitle {
     font-size: 1.1rem;
   }
 
-  .header-institution {
+  :where(.page-lecturers) .header-institution {
     font-size: 1rem;
   }
 
-  .search-section {
+  :where(.page-lecturers) .search-section {
     padding: 1.5rem;
   }
 
-  .search-input {
+  :where(.page-lecturers) .search-input {
     font-size: 0.95rem;
   }
 
-  .filter-section {
+  :where(.page-lecturers) .filter-section {
     gap: 0.5rem;
   }
 
-  .filter-btn {
+  :where(.page-lecturers) .filter-btn {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }
 
-  .lecturers-content {
+  :where(.page-lecturers) .lecturers-content {
     padding: 1.5rem;
   }
 
-  .lecturers-grid {
+  :where(.page-lecturers) .lecturers-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .header-title {
+  :where(.page-lecturers) .header-title {
     font-size: 1.7rem;
   }
 
-  .header-subtitle {
+  :where(.page-lecturers) .header-subtitle {
     font-size: 1rem;
   }
 
-  .search-section {
+  :where(.page-lecturers) .search-section {
     padding: 1rem;
   }
 
-  .filter-btn {
+  :where(.page-lecturers) .filter-btn {
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
   }
 
-  .lecturer-image-wrapper {
+  :where(.page-lecturers) .lecturer-image-wrapper {
     width: 120px;
     height: 120px;
   }
 
-  .card-body {
+  :where(.page-lecturers) .card-body {
     padding: 1rem 1.5rem 1.5rem;
   }
 
-  .lecturer-name {
+  :where(.page-lecturers) .lecturer-name {
     font-size: 1.2rem;
   }
 }
 
 /* Accessibility */
-.search-input:focus,
-.filter-btn:focus {
+:where(.page-lecturers) .search-input:focus,
+:where(.page-lecturers) .filter-btn:focus {
   outline: 2px solid var(--gold-copper);
   outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  :where(.page-lecturers) * {
     animation: none !important;
     transition: none !important;
   }

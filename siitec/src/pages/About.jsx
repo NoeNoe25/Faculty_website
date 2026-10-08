@@ -11,56 +11,26 @@ import {
   LuHeartHandshake,
   LuRocket,
 } from "react-icons/lu";
+import { useContent } from "../i18n/LanguageContext";
+import aboutContent from "../i18n/content/about";
+
+const STAT_NUMBERS = ["2,500+", "150+", "95%", "88%"];
+const FEATURE_ICONS = [
+  <LuHeartHandshake />,
+  <LuHandshake />,
+  <LuGraduationCap />,
+  <LuMicroscope />,
+  <LuGlobe />,
+  <LuRocket />,
+];
 
 export default function SIITECAbout() {
-  const statistics = [
-    { number: "2,500+", label: "Students Enrolled" },
-    { number: "150+", label: "Faculty Members" },
-    { number: "95%", label: "Graduation Rate" },
-    { number: "88%", label: "Employment Rate" },
-  ];
-
-  const features = [
-    {
-      icon: <LuHeartHandshake />,
-      title: "Student Support",
-      description:
-        "Providing comprehensive mentorship, career guidance, and a supportive community to ensure every student reaches their full potential.",
-    },
-    {
-      icon: <LuHandshake />,
-      title: "Industry Partners",
-      description:
-        "Collaborating with leading global tech companies to provide hands-on labs and real-world internship opportunities.",
-    },
-    {
-      icon: <LuGraduationCap />,
-      title: "Academic Excellence",
-      description:
-        "Delivering pioneering programs in Technology and Science that combine theoretical depth with practical application.",
-    },
-    {
-      icon: <LuMicroscope />,
-      title: "Innovative Research",
-      description:
-        "Driving cutting-edge discoveries in Nanotechnology and next-gen manufacturing to solve global challenges.",
-    },
-    {
-      icon: <LuGlobe />,
-      title: "Global Vision",
-      description:
-        "Cultivating a diverse, international learning environment that prepares students for leadership on the world stage.",
-    },
-    {
-      icon: <LuRocket />,
-      title: "Future Impact",
-      description:
-        "Empowering graduates to become the innovators and leaders who will shape the future of technology and society.",
-    },
-  ];
+  const c = useContent(aboutContent);
+  const statistics = STAT_NUMBERS.map((number, index) => ({ number, label: c.statistics[index] }));
+  const features = c.features.map((feature, index) => ({ ...feature, icon: FEATURE_ICONS[index] }));
 
   return (
-    <div className="about-section">
+    <div className="about-section page-about">
       {/* Hero Section with Parallax Banner */}
       <section className="parallax-section">
         <div className="parallax-banner" style={{ height: "90vh" }}>
@@ -77,15 +47,9 @@ export default function SIITECAbout() {
           <div className="content-container">
             <div className="parallax-content">
               <h1 className="parallax-main-title" style={{ color: "#fff" }}>
-                About SIITEC
+                {c.heroTitle}
               </h1>
-              <p className="parallax-subtitle">
-                The Faculty of Integrated Innovative Technology (SIITEC) at
-                KMITL is home to two pioneering programs, MediloT and AMI. With
-                hands-on labs, cutting-edge research, and close industry ties,
-                we equip students to lead in AI, robotics, and next-gen
-                manufacturing.
-              </p>
+              <p className="parallax-subtitle">{c.heroText}</p>
 
               {/* Stats Section */}
               <div className="about-hero-stats" style={{ marginTop: "40px" }}>
@@ -105,18 +69,11 @@ export default function SIITECAbout() {
           <div className="container">
             <div className="innovation-grid">
               <div className="section-title">
-                <h2>Join our SIITech</h2>
-                <button className="about-btn about-btn-primary">
-                  Apply Now
-                </button>
+                <h2>{c.joinTitle}</h2>
+                <button className="about-btn about-btn-primary">{c.applyNow}</button>
               </div>
               <div className="innovation-right">
-                <p>
-                  SIIiTec is more than a faculty — it is an incubator for the
-                  next generation of innovators. We move beyond traditional
-                  education to create a hands-on ecosystem where students don't
-                  just learn about the future; they build it.
-                </p>
+                <p>{c.joinText}</p>
               </div>
             </div>
 
@@ -124,31 +81,21 @@ export default function SIITECAbout() {
               <div className="about-card about-card-story">
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
-                  alt="Team meeting"
+                  alt={c.storyImageAlt}
                 />
                 <div className="about-card-overlay">
-                  <h3>Our Story</h3>
-                  <p>
-                    Pioneering advanced manufacturing at KMITL, we cultivate
-                    world-class talent to drive the future of innovation.
-                  </p>
+                  <h3>{c.storyTitle}</h3>
+                  <p>{c.storyText}</p>
                 </div>
               </div>
               <div className="cards-right">
                 <div className="about-card about-card-mission">
-                  <h3>Our Mission</h3>
-                  <p>
-                    To provide a transformative, interdisciplinary education
-                    that bridges technology, creativity, and real-world impact.
-                  </p>
+                  <h3>{c.missionTitle}</h3>
+                  <p>{c.missionText}</p>
                 </div>
                 <div className="about-card about-card-vision">
-                  <h3>Our Vision</h3>
-                  <p>
-                    To be a leading faculty in integrated innovation, fostering
-                    future engineers and innovators who drive sustainable global
-                    progress.
-                  </p>
+                  <h3>{c.visionTitle}</h3>
+                  <p>{c.visionText}</p>
                 </div>
               </div>
             </div>
@@ -159,11 +106,8 @@ export default function SIITECAbout() {
         <div className="unique-section">
           <div className="container">
             <div className="section-title">
-              <h2>What Makes Us Unique</h2>
-              <p>
-                Equipping students to lead in a rapidly evolving global
-                landscape.
-              </p>
+              <h2>{c.uniqueTitle}</h2>
+              <p>{c.uniqueText}</p>
             </div>
             <div className="features-grid">
               {features.map((feature, index) => (
@@ -181,28 +125,19 @@ export default function SIITECAbout() {
         <div className="dean-section">
           <div className="container">
             <div className="section-title">
-              <h2>Dean's Message</h2>
+              <h2>{c.deanTitle}</h2>
             </div>
             <div className="dean-card">
               <div className="dean-quote">
                 <div className="quote-mark">"</div>
-                <h3>
-                  At SIITec, we believe the future belongs to those who
-                  innovate.
-                </h3>
-                <p>
-                  Welcome to the School of Integrated Innovative Technology,
-                  where we inspire innovation through excellence in education,
-                  research, and collaboration. We are committed to preparing
-                  future leaders with the knowledge and skills to create
-                  impactful solutions for a rapidly evolving world.
-                </p>
+                <h3>{c.deanQuote}</h3>
+                <p>{c.deanText}</p>
               </div>
               <div className="dean-profile">
-                <img src={deanImage} alt="Dean" />
+                <img src={deanImage} alt={c.deanImageAlt} />
                 <div className="dean-info">
-                  <h4>Dr. Wipoo Sriseubsai</h4>
-                  <p>School of Integrated Innovative Technology</p>
+                  <h4>{c.deanName}</h4>
+                  <p>{c.deanOrg}</p>
                 </div>
               </div>
             </div>

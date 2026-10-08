@@ -1,15 +1,19 @@
-// src/components/Layout.js
-import React, { useState } from 'react';
+// src/components/Layout.jsx
+import React from 'react';
 import Header from './header';
 import Footer from './footer';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Layout = ({ children }) => {
-  const [activePage, setActivePage] = useState('home');
+  const { t } = useLanguage();
 
   return (
     <div className="layout">
-      <Header activePage={activePage} setActivePage={setActivePage} />
-      <main className="main-content">
+      <a href="#main-content" className="skip-link">
+        {t('common.skipToContent')}
+      </a>
+      <Header />
+      <main id="main-content" className="main-content" tabIndex={-1}>
         {children}
       </main>
       <Footer />

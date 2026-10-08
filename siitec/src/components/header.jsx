@@ -1,10 +1,10 @@
-// src/components/Header.jsx
-import React, { useState, useRef, useEffect } from 'react';
+// src/components/header.jsx
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  FaFacebookF, 
-  FaTwitter, 
-  FaYoutube, 
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaYoutube,
   FaLinkedinIn,
   FaChevronDown,
   FaBars,
@@ -12,209 +12,59 @@ import {
   FaGraduationCap,
   FaUserTie,
   FaUsers,
-  FaFlask,
   FaBook,
   FaHome,
   FaUniversity,
   FaIdCard
 } from 'react-icons/fa';
-import '../styles/theme.css';
 import '../styles/header.css';
 import logoImage from '../assets/logos/siiteclogo (1).png';
+import { useLanguage } from '../i18n/LanguageContext';
+import { ADMISSION_URL, SOCIAL_LINKS, isExternalLink } from '../config/site';
+
+const SOCIAL_ICONS = {
+  facebook: <FaFacebookF />,
+  twitter: <FaTwitter />,
+  youtube: <FaYoutube />,
+  linkedin: <FaLinkedinIn />,
+};
 
 // Social Icons Component with consistent size
 const SocialIcons = () => (
   <div className="header_social-icons">
-    <a href="#" aria-label="Facebook" className="header_social-icon">
-      <FaFacebookF />
-    </a>
-    <a href="#" aria-label="Twitter" className="header_social-icon">
-      <FaTwitter />
-    </a>
-    <a href="#" aria-label="YouTube" className="header_social-icon">
-      <FaYoutube />
-    </a>
-    <a href="#" aria-label="LinkedIn" className="header_social-icon">
-      <FaLinkedinIn />
-    </a>
+    {SOCIAL_LINKS.map((social) => (
+      <a
+        key={social.id}
+        href={social.url}
+        aria-label={social.label}
+        className="header_social-icon"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {SOCIAL_ICONS[social.id]}
+      </a>
+    ))}
   </div>
 );
 
-const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [activeNestedDropdown, setActiveNestedDropdown] = useState(null); // New state for nested dropdowns
-  const [language, setLanguage] = useState('EN');
-  const navRef = useRef(null);
+/** Renders internal routes with <Link> and anything off-site as a normal anchor in a new tab. */
+const MenuLink = ({ to, className, onClick, children }) =>
+  isExternalLink(to) ? (
+    <a
+      href={to}
+      className={className}
+      onClick={onClick}
+      {...(to.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+    >
+      {children}
+    </a>
+  ) : (
+    <Link to={to} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setActiveDropdown(null);
-        setActiveNestedDropdown(null);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const toggleDropdown = (dropdownName) => {
-    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
-    setActiveNestedDropdown(null); // Close nested dropdowns when main dropdown changes
-  };
-
-  const toggleNestedDropdown = (dropdownName) => {
-    setActiveNestedDropdown(activeNestedDropdown === dropdownName ? null : dropdownName);
-  };
-
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'EN' ? 'TH' : 'EN');
-  };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setActiveDropdown(null);
-  };
-
-  const toggleMobileMenu = () => {
-    setMenuOpen(!menuOpen);
-    setActiveDropdown(null);
-  };
-
-  // Services Mega Menu Data - REVISED STRUCTURE
-  const servicesMegaMenu = {
-    categories: [
-      {
-        title: language === 'EN' ? 'Students' : 'นักศึกษา',
-        icon: <FaGraduationCap />,
-        items: [
-          { name: language === 'EN' ? 'Apply for study' : 'สมัครเรียน', link: 'https://admission.reg.kmitl.ac.th/#/' },
-          { name: language === 'EN' ? 'Rules and Regulations' : 'กฎระเบียบ', link: 'https://www.reg.kmitl.ac.th/rule/index.php?links=1' },
-          { name: language === 'EN' ? 'Scholarships' : 'ทุนการศึกษา', link: 'https://osda.kmitl.ac.th/scholarship/' },
-          { name: language === 'EN' ? 'Academic Calendar' : 'null', link: 'https://www.reg.kmitl.ac.th/educalendar/' },
-          { name: language === 'EN' ? 'Download Documents' : 'ดาวน์โหลดเอกสาร', link: 'https://drive.google.com/drive/folders/1J8w6NbAtBitgrqsvetnkWFQHWtTpPVQo' },
-          { name: language === 'EN' ? 'Nano Classroom' : 'คลาสรูมนาโน', link: 'http://www.cmit.kmitl.ac.th/classroom/login/index.php' },
-          { name: language === 'EN' ? 'Manu Skill Certificate' : 'ใบรับรองทักษะ MANU', link: 'https://skill.ami.kmitl.ac.th/ '},
-          { name: language === 'EN' ? 'Academic Services' : 'บริการวิชาการ', link: 'https://www.kllc.kmitl.ac.th/' }
-        ]
-      },
-      {
-        title: language === 'EN' ? 'For Faculty & Staff' : 'สำหรับคณาจารย์และบุคลากร',
-        icon: <FaUserTie />,
-        items: [
-          // Faculty & Staff items
-          { name: language === 'EN' ? 'Report Repair' : 'แจ้งซ่อม', link: 'https://lin.ee/UOFslzH' },
-          { name: language === 'EN' ? 'Position form/ Request' : 'แบบฟอร์มตำแหน่ง/คำขอ', link: 'https://www.ami.kmitl.ac.th/research/ami-research-center/' },
-          { name: language === 'EN' ? 'Instrument booking service for Faculty' : 'บริการจองเครื่องมือ KMITL', link: '/InstrumentBooking' },
-          
-          // External Partners header and items - now under Faculty & Staff section
-          { name: language === 'EN' ? 'For External Partners' : 'สำหรับพันธมิตรภายนอก', link: '#', isHeader: true,  icon: <FaUsers /> },
-          { name: language === 'EN' ? 'Faculty Visit Request' : 'คำขอเยี่ยมชมคณะ', link: '/industry-collab' },
-          { name: language === 'EN' ? 'Instrument Booking Service' : 'บริการจองเครื่องมือ', link: 'http://www.cmit.kmitl.ac.th/testing-process/' },
-          { 
-  name: language === 'EN' ? 'Partnership Inquiry' : 'สอบถามความร่วมมือ', 
-  link: 'mailto:ssitec@kmitl.ac.th',
-  isMailto: true // Add a flag to identify mailto links
-}
-        ]
-      }
-    ],
-    featured: {
-      title: language === 'EN' ? 'Quick Services' : 'บริการด่วน',
-      items: [
-        { name: language === 'EN' ? 'Online Application' : 'สมัครออนไลน์', link: '/online-apply', icon: <FaIdCard /> },
-        { name: language === 'EN' ? 'Document Request' : 'ขอเอกสาร', link: '/document-request', icon: <FaBook /> },
-        { name: language === 'EN' ? 'Schedule Appointment' : 'นัดหมาย', link: '/appointment', icon: <FaUniversity /> }
-      ]
-    }
-  };
-
-  //megamenu of research and center
-  //megamenu of research and center
-const randcMegaMenu = {
-  categories: [
-    {
-      title: language === 'EN' ? 'Research' : 'หอพัก',
-      icon: <FaGraduationCap />,
-      items: [
-        { name: language === 'EN' ? 'Manu Research Group' : 'null', link: '/ManuResearcherProfile' },
-        { name: language === 'EN' ? 'Nano Research Group' : 'null', link: '/NanoResearcherProfile' },
-      ]
-    },
-    {
-      title: language === 'EN' ? 'Center' : 'ชมรมและกิจกรรม',
-      icon: <FaUserTie />,
-      items: [
-        { name: language === 'EN' ? 'Center of industrial Robots and Automation (CiRA)' : 'null', link: '/CiRAPage' },
-        { name: language === 'EN' ? 'Advanced Technology Testing and Analysis Center (ATTAC)' : 'null', link: '/ATTACPage' },
-        { name: language === 'EN' ? 'Academy of Innovative Semiconductor (KAISEM)': 'null', link: '/KAISEMPage' },
-      ]
-    }
-  ]
-};
-  // Menu Items with EN + TH versions
-  const menuItems = [
-    { name: language === 'EN' ? 'Home' : 'หน้าหลัก', link: '/', icon: <FaHome /> },
-    { 
-      name: language === 'EN' ? 'Apply' : 'การศึกษา', 
-      link: '/programs',
-      submenu: [
-        { name: language === 'EN' ? 'Undergraduate' : 'ปริญญาตรี', link: '/programs' },
-        { name: language === 'EN' ? 'Graduate' : 'บัณฑิตศึกษา', link: '/programs' },
-        { name: language === 'EN' ? 'Doctoral' : 'หลักสูตรออนไลน์', link: '/programs' }
-      ]
-    },
-    { 
-      name: language === 'EN' ? 'Services' : 'บริการ',
-      isMegaMenu: true,
-      megaMenuData: servicesMegaMenu
-    },
-    { 
-      name: language === 'EN' ? 'Research and Center' : 'ชีวิตนักศึกษา',
-      isMegaMenu: true,
-      megaMenuData: randcMegaMenu
-    },
-    // In your menuItems array, update the "Departments/Organization" item:
-{ 
-  name: language === 'EN' ? 'Departments/Organization' : 'ชีวิตนักศึกษา',
-  submenu: [
-    { 
-      name: language === 'EN' ? 'Department of Nanoscience and Nanotechnology (NANO)' : 'ชมรมและกิจกรรม', 
-      link: '/NANODepartmentPage' 
-    },
-    { 
-      name: language === 'EN' ? 'Department of Manufacturing System Technology (MANU)' : 'หอพัก', 
-      link: '/MANUDepartmentPage' 
-    },
-    { 
-      name: language === 'EN' ? 'Organization' : 'องค์กร',
-      hasNested: true, // Flag to indicate nested dropdown
-      nestedItems: [
-        { name: language === 'EN' ? 'Alumni Association' : 'ศิษย์เก่า', link: 'https://www.kmitlalumni.org/' },
-        { name: language === 'EN' ? 'Student Union SiiTec' : 'สหภาพนักศึกษา', link: 'https://www.facebook.com/share/17aVVVWXqf/' },
-      ]
-    }
-  ]
-},
-    { 
-      name: language === 'EN' ? 'About Us' : 'เกี่ยวกับเรา',
-      submenu: [
-        { name: language === 'EN' ? 'Vision/Mission' : 'ชมรมและกิจกรรม', link: '/About2' },
-        { name: language === 'EN' ? 'Organizational structure' : 'หอพัก', link: '/OrgStructure' },
-        { name: language === 'EN' ? 'Executive' : 'หอพัก', link: '/Executive' },
-        { name: language === 'EN' ? 'Lecturer' : 'หอพัก', link: '/LecturerPage' },
-        { name: language === 'EN' ? 'Staff' : 'หอพัก', link: '/AcademicStaff' }
-      ]
-    },
-    { name: language === 'EN' ? 'Contact' : 'ติดต่อเรา', link: '/Contact' }
-  ];
-
-
-// Mega Menu Component
-// Mega Menu Component
-const MegaMenu = ({ data, isOpen }) => {
+const MegaMenu = ({ data, isOpen, onNavigate }) => {
   if (!isOpen) return null;
 
   return (
@@ -222,28 +72,24 @@ const MegaMenu = ({ data, isOpen }) => {
       <div className="mega-menu-container">
         <div className="mega-menu-content">
           <div className="mega-menu-grid">
-            {data.categories.map((category, index) => (
-              <div key={index} className="mega-menu-category">
+            {data.categories.map((category) => (
+              <div key={category.id} className="mega-menu-category">
                 <div className="mega-menu-category-header">
-                  <span className="mega-menu-category-icon">{category.icon}</span>
+                  <span className="mega-menu-category-icon" aria-hidden="true">{category.icon}</span>
                   <h4 className="mega-menu-category-title">{category.title}</h4>
                 </div>
                 <ul className="mega-menu-category-list">
-                  {category.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className={`mega-menu-item ${item.isHeader ? 'mega-menu-header' : ''}`}>
+                  {category.items.map((item) => (
+                    <li key={item.id} className={`mega-menu-item ${item.isHeader ? 'mega-menu-header' : ''}`}>
                       {item.isHeader ? (
                         <div className="mega-menu-header-title">
-                          <span className="mega-menu-header-icon">{item.icon}</span>
+                          <span className="mega-menu-header-icon" aria-hidden="true">{item.icon}</span>
                           {item.name}
                         </div>
                       ) : (
-                        <Link 
-                          to={item.link} 
-                          className="mega-menu-link"
-                          onClick={closeMenu}
-                        >
+                        <MenuLink to={item.link} className="mega-menu-link" onClick={onNavigate}>
                           {item.name}
-                        </Link>
+                        </MenuLink>
                       )}
                     </li>
                   ))}
@@ -251,22 +97,16 @@ const MegaMenu = ({ data, isOpen }) => {
               </div>
             ))}
           </div>
-          
-          {/* Only render featured section if it exists */}
+
           {data.featured && (
             <div className="mega-menu-featured">
               <h4 className="mega-menu-featured-title">{data.featured.title}</h4>
               <div className="mega-menu-featured-grid">
-                {data.featured.items.map((item, index) => (
-                  <Link 
-                    key={index}
-                    to={item.link}
-                    className="mega-menu-featured-item"
-                    onClick={closeMenu}
-                  >
-                    <span className="mega-menu-featured-icon">{item.icon}</span>
+                {data.featured.items.map((item) => (
+                  <MenuLink key={item.id} to={item.link} className="mega-menu-featured-item" onClick={onNavigate}>
+                    <span className="mega-menu-featured-icon" aria-hidden="true">{item.icon}</span>
                     <span className="mega-menu-featured-text">{item.name}</span>
-                  </Link>
+                  </MenuLink>
                 ))}
               </div>
             </div>
@@ -277,27 +117,196 @@ const MegaMenu = ({ data, isOpen }) => {
   );
 };
 
+const buildMenu = (t) => {
+  const servicesMegaMenu = {
+    categories: [
+      {
+        id: 'students',
+        title: t('services.students'),
+        icon: <FaGraduationCap />,
+        items: [
+          { id: 'apply', name: t('services.applyForStudy'), link: ADMISSION_URL },
+          { id: 'rules', name: t('services.rules'), link: 'https://www.reg.kmitl.ac.th/rule/index.php?links=1' },
+          { id: 'scholarships', name: t('services.scholarships'), link: 'https://osda.kmitl.ac.th/scholarship/' },
+          { id: 'calendar', name: t('services.academicCalendar'), link: 'https://www.reg.kmitl.ac.th/educalendar/' },
+          { id: 'documents', name: t('services.downloadDocuments'), link: 'https://drive.google.com/drive/folders/1J8w6NbAtBitgrqsvetnkWFQHWtTpPVQo' },
+          { id: 'nano-classroom', name: t('services.nanoClassroom'), link: 'http://www.cmit.kmitl.ac.th/classroom/login/index.php' },
+          { id: 'manu-skill', name: t('services.manuSkillCertificate'), link: 'https://skill.ami.kmitl.ac.th/' },
+          { id: 'academic-services', name: t('services.academicServices'), link: 'https://www.kllc.kmitl.ac.th/' }
+        ]
+      },
+      {
+        id: 'faculty-staff',
+        title: t('services.facultyStaff'),
+        icon: <FaUserTie />,
+        items: [
+          { id: 'repair', name: t('services.reportRepair'), link: 'https://lin.ee/UOFslzH' },
+          { id: 'position-form', name: t('services.positionForm'), link: 'https://www.ami.kmitl.ac.th/research/ami-research-center/' },
+          { id: 'booking-faculty', name: t('services.instrumentBookingFaculty'), link: '/InstrumentBooking' },
+          // External Partners sub-heading, listed under Faculty & Staff
+          { id: 'partners-header', name: t('services.externalPartners'), isHeader: true, icon: <FaUsers /> },
+          { id: 'visit', name: t('services.facultyVisit'), link: '/Contact' },
+          { id: 'booking-service', name: t('services.instrumentBookingService'), link: 'http://www.cmit.kmitl.ac.th/testing-process/' },
+          { id: 'partnership', name: t('services.partnershipInquiry'), link: 'mailto:ssitec@kmitl.ac.th' }
+        ]
+      }
+    ],
+    featured: {
+      title: t('services.quickServices'),
+      items: [
+        { id: 'online-apply', name: t('services.onlineApplication'), link: ADMISSION_URL, icon: <FaIdCard /> },
+        { id: 'document-request', name: t('services.documentRequest'), link: '/Contact', icon: <FaBook /> },
+        { id: 'appointment', name: t('services.scheduleAppointment'), link: '/Contact', icon: <FaUniversity /> }
+      ]
+    }
+  };
+
+  const researchMegaMenu = {
+    categories: [
+      {
+        id: 'research',
+        title: t('research.research'),
+        icon: <FaGraduationCap />,
+        items: [
+          { id: 'manu', name: t('research.manuGroup'), link: '/ManuResearcherProfile' },
+          { id: 'nano', name: t('research.nanoGroup'), link: '/NanoResearcherProfile' }
+        ]
+      },
+      {
+        id: 'center',
+        title: t('research.center'),
+        icon: <FaUserTie />,
+        items: [
+          { id: 'cira', name: t('research.cira'), link: '/CiRAPage' },
+          { id: 'attac', name: t('research.attac'), link: '/ATTACPage' },
+          { id: 'kaisem', name: t('research.kaisem'), link: '/KAISEMPage' }
+        ]
+      }
+    ]
+  };
+
+  return [
+    { id: 'home', name: t('nav.home'), link: '/', icon: <FaHome /> },
+    {
+      id: 'apply',
+      name: t('nav.apply'),
+      link: '/programs',
+      submenu: [
+        { id: 'undergraduate', name: t('nav.undergraduate'), link: '/programs' },
+        { id: 'graduate', name: t('nav.graduate'), link: '/programs' },
+        { id: 'doctoral', name: t('nav.doctoral'), link: '/programs' }
+      ]
+    },
+    { id: 'services', name: t('nav.services'), isMegaMenu: true, megaMenuData: servicesMegaMenu },
+    { id: 'research', name: t('nav.researchAndCenter'), isMegaMenu: true, megaMenuData: researchMegaMenu },
+    {
+      id: 'departments',
+      name: t('nav.departmentsOrganization'),
+      submenu: [
+        { id: 'nano', name: t('nav.deptNano'), link: '/NANODepartmentPage' },
+        { id: 'manu', name: t('nav.deptManu'), link: '/MANUDepartmentPage' },
+        {
+          id: 'organization',
+          name: t('nav.organization'),
+          hasNested: true,
+          nestedItems: [
+            { id: 'alumni', name: t('nav.alumni'), link: 'https://www.kmitlalumni.org/' },
+            { id: 'student-union', name: t('nav.studentUnion'), link: 'https://www.facebook.com/share/17aVVVWXqf/' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'about',
+      name: t('nav.aboutUs'),
+      submenu: [
+        { id: 'vision', name: t('nav.visionMission'), link: '/About2' },
+        { id: 'structure', name: t('nav.orgStructure'), link: '/OrgStructure' },
+        { id: 'executive', name: t('nav.executive'), link: '/Executive' },
+        { id: 'lecturer', name: t('nav.lecturer'), link: '/LecturerPage' },
+        { id: 'staff', name: t('nav.staff'), link: '/AcademicStaff' }
+      ]
+    },
+    { id: 'contact', name: t('nav.contact'), link: '/Contact' }
+  ];
+};
+
+const Header = () => {
+  const { t, toggleLanguage } = useLanguage();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeNestedDropdown, setActiveNestedDropdown] = useState(null);
+  const navRef = useRef(null);
+
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false);
+    setActiveDropdown(null);
+    setActiveNestedDropdown(null);
+  }, []);
+
+  // Close dropdowns when clicking outside the navigation, and everything on Escape.
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setActiveDropdown(null);
+        setActiveNestedDropdown(null);
+      }
+    };
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') closeMenu();
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [closeMenu]);
+
+  const toggleDropdown = (dropdownId) => {
+    setActiveDropdown((current) => (current === dropdownId ? null : dropdownId));
+    setActiveNestedDropdown(null);
+  };
+
+  const toggleNestedDropdown = (dropdownId) => {
+    setActiveNestedDropdown((current) => (current === dropdownId ? null : dropdownId));
+  };
+
+  const toggleMobileMenu = () => {
+    setMenuOpen((open) => !open);
+    setActiveDropdown(null);
+  };
+
+  const menuItems = buildMenu(t);
+
+  const languageButton = (
+    <button
+      type="button"
+      className="language-switcher"
+      onClick={toggleLanguage}
+      aria-label={t('header.languageToggleAria')}
+    >
+      {t('header.languageToggleLabel')}
+    </button>
+  );
+
   return (
-    <header className="header">
+    <header className="header site-header">
       {/* First Line: Logo + Social Icons */}
       <div className="header-top">
         <div className="header-container">
           <div className="logo-section">
             <div className="logo-container">
               <Link to="/" className="logo-link">
-                <img src={logoImage} alt="SIITec Logo" className="logo-img" />
+                <img src={logoImage} alt={t('header.logoAlt')} className="logo-img" />
                 <div className="logo-text">
-                  <span className="logo-line-1">
-                    {language === 'EN' ? 'School of Integrated' : 'คณะเทคโนโลยี'}
-                  </span>
-                  <span className="logo-line-2">
-                    {language === 'EN' ? 'Innovative Technology' : 'บูรณาการนวัตกรรม'}
-                  </span>
+                  <span className="logo-line-1">{t('site.logoLine1')}</span>
+                  <span className="logo-line-2">{t('site.logoLine2')}</span>
                 </div>
               </Link>
             </div>
           </div>
-          
+
           <div className="social-section">
             <SocialIcons />
           </div>
@@ -307,87 +316,84 @@ const MegaMenu = ({ data, isOpen }) => {
       {/* Second Line: Navigation Menu */}
       <div className="header-bottom">
         <div className="header-container">
-          <nav className={`nav ${menuOpen ? 'active' : ''}`} ref={navRef}>
+          <nav
+            id="main-navigation"
+            className={`nav ${menuOpen ? 'active' : ''}`}
+            ref={navRef}
+            aria-label={t('header.mainNavigation')}
+          >
             <ul className="nav-list">
-      {menuItems.map((item, index) => (
-        <li 
-          key={index} 
-          className={`nav-item ${item.submenu || item.isMegaMenu ? 'has-dropdown' : ''} ${item.isMegaMenu ? 'has-mega-menu' : ''}`}
-        >
-          {item.submenu ? (
-            <>
-              <button 
-                className="nav-link dropdown-toggle"
-                onClick={() => toggleDropdown(item.name)}
-                aria-expanded={activeDropdown === item.name}
-              >
-                <span className="nav-text">{item.name}</span>
-                <FaChevronDown className="dropdown-arrow" />
-              </button>
-              <ul className={`dropdown-menu ${activeDropdown === item.name ? 'show' : ''}`}>
-                {item.submenu.map((subItem, subIndex) => (
-                  <li 
-                    key={subIndex} 
-                    className={`dropdown-item ${subItem.hasNested ? 'has-nested-dropdown' : ''}`}
-                  >
-                    {subItem.hasNested ? (
-                      <>
-                        <button 
-                          className="dropdown-link nested-dropdown-toggle"
-                          onClick={() => toggleNestedDropdown(subItem.name)}
-                          aria-expanded={activeNestedDropdown === subItem.name}
-                        >
-                          <span>{subItem.name}</span>
-                          <FaChevronDown className="nested-dropdown-arrow" />
-                        </button>
-                        <ul className={`nested-dropdown-menu ${activeNestedDropdown === subItem.name ? 'show' : ''}`}>
-                          {subItem.nestedItems.map((nestedItem, nestedIndex) => (
-                            <li key={nestedIndex} className="nested-dropdown-item">
-                              <Link 
-                                to={nestedItem.link}
-                                onClick={closeMenu}
-                                className="nested-dropdown-link"
-                              >
-                                {nestedItem.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    ) : (
-                      <Link 
-                        to={subItem.link}
-                        onClick={closeMenu}
-                        className="dropdown-link"
-                      >
-                        {subItem.name}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </>
-                  ) : item.isMegaMenu ? (
+              {menuItems.map((item) => (
+                <li
+                  key={item.id}
+                  className={`nav-item ${item.submenu || item.isMegaMenu ? 'has-dropdown' : ''} ${item.isMegaMenu ? 'has-mega-menu' : ''}`}
+                >
+                  {item.submenu ? (
                     <>
-                      <button 
-                        className="nav-link dropdown-toggle mega-menu-toggle"
-                        onClick={() => toggleDropdown(item.name)}
-                        aria-expanded={activeDropdown === item.name}
+                      <button
+                        type="button"
+                        className="nav-link dropdown-toggle"
+                        onClick={() => toggleDropdown(item.id)}
+                        aria-expanded={activeDropdown === item.id}
                       >
                         <span className="nav-text">{item.name}</span>
-                        <FaChevronDown className="dropdown-arrow" />
+                        <FaChevronDown className="dropdown-arrow" aria-hidden="true" />
                       </button>
-                      <MegaMenu 
-                        data={item.megaMenuData} 
-                        isOpen={activeDropdown === item.name}
+                      <ul className={`dropdown-menu ${activeDropdown === item.id ? 'show' : ''}`}>
+                        {item.submenu.map((subItem) => (
+                          <li
+                            key={subItem.id}
+                            className={`dropdown-item ${subItem.hasNested ? 'has-nested-dropdown' : ''}`}
+                          >
+                            {subItem.hasNested ? (
+                              <>
+                                <button
+                                  type="button"
+                                  className="dropdown-link nested-dropdown-toggle"
+                                  onClick={() => toggleNestedDropdown(subItem.id)}
+                                  aria-expanded={activeNestedDropdown === subItem.id}
+                                >
+                                  <span>{subItem.name}</span>
+                                  <FaChevronDown className="nested-dropdown-arrow" aria-hidden="true" />
+                                </button>
+                                <ul className={`nested-dropdown-menu ${activeNestedDropdown === subItem.id ? 'show' : ''}`}>
+                                  {subItem.nestedItems.map((nestedItem) => (
+                                    <li key={nestedItem.id} className="nested-dropdown-item">
+                                      <MenuLink to={nestedItem.link} onClick={closeMenu} className="nested-dropdown-link">
+                                        {nestedItem.name}
+                                      </MenuLink>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </>
+                            ) : (
+                              <MenuLink to={subItem.link} onClick={closeMenu} className="dropdown-link">
+                                {subItem.name}
+                              </MenuLink>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : item.isMegaMenu ? (
+                    <>
+                      <button
+                        type="button"
+                        className="nav-link dropdown-toggle mega-menu-toggle"
+                        onClick={() => toggleDropdown(item.id)}
+                        aria-expanded={activeDropdown === item.id}
+                      >
+                        <span className="nav-text">{item.name}</span>
+                        <FaChevronDown className="dropdown-arrow" aria-hidden="true" />
+                      </button>
+                      <MegaMenu
+                        data={item.megaMenuData}
+                        isOpen={activeDropdown === item.id}
+                        onNavigate={closeMenu}
                       />
                     </>
                   ) : (
-                    <Link 
-                      className="nav-link"
-                      to={item.link}
-                      onClick={closeMenu}
-                    >
+                    <Link className="nav-link" to={item.link} onClick={closeMenu}>
                       <span className="nav-text">{item.name}</span>
                     </Link>
                   )}
@@ -397,27 +403,35 @@ const MegaMenu = ({ data, isOpen }) => {
 
             {/* Mobile Actions Inside Navigation */}
             <div className="mobile-actions">
-              <button className="apply-button mobile-apply">
-                {language === 'EN' ? 'Apply Now' : 'สมัครเรียน'}
-              </button>
-              <button className="language-switcher" onClick={toggleLanguage}>
-                {language === 'EN' ? 'TH' : 'EN'}
-              </button>
+              <a
+                href={ADMISSION_URL}
+                className="apply-button mobile-apply"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('header.applyNow')}
+              </a>
+              {languageButton}
             </div>
           </nav>
-          
+
           <div className="nav-actions">
-            <button className="apply-button desktop-apply">
-              {language === 'EN' ? 'Apply Now' : 'สมัครเรียน'}
-            </button>
-            <button className="language-switcher" onClick={toggleLanguage}>
-              {language === 'EN' ? 'TH' : 'EN'}
-            </button>
-            <button 
+            <a
+              href={ADMISSION_URL}
+              className="apply-button desktop-apply"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('header.applyNow')}
+            </a>
+            {languageButton}
+            <button
+              type="button"
               className="menu-toggle"
               onClick={toggleMobileMenu}
-              aria-label="Toggle menu"
+              aria-label={t('header.toggleMenu')}
               aria-expanded={menuOpen}
+              aria-controls="main-navigation"
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
@@ -426,7 +440,7 @@ const MegaMenu = ({ data, isOpen }) => {
       </div>
 
       {/* Mobile Overlay */}
-      {menuOpen && <div className="mobile-overlay" onClick={closeMenu}></div>}
+      {menuOpen && <div className="mobile-overlay" onClick={closeMenu} aria-hidden="true"></div>}
     </header>
   );
 };

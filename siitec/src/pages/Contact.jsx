@@ -6,15 +6,18 @@ import {
   FaLinkedinIn,
   FaPhone,
   FaEnvelope,
-  FaMapMarkerAlt,
   FaGlobe,
   FaArrowRight,
   FaClock,
   FaBuilding,
 } from "react-icons/fa";
 import "../styles/Contact.css";
+import { interpolate, useContent, useLanguage } from "../i18n/LanguageContext";
+import contactContent from "../i18n/content/contact";
 
 const ContactPage = () => {
+  const { t } = useLanguage();
+  const c = useContent(contactContent);
   const mapUrl =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1293.3992732724985!2d100.77468807278278!3d13.729434959616041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d66498620e959%3A0x3658c54a381a2f24!2sCollege%20Of%20Advanced%20Manufacturing%20Innovation%2C%20KMITL!5e0!3m2!1sen!2sth!4v1763062463457!5m2!1sen!2sth";
 
@@ -38,68 +41,43 @@ const ContactPage = () => {
   ];
 
   const contactInfo = [
-    {
-      icon: <FaMapMarkerAlt />,
-      title: "Campus Address",
-      content: "1 Chalongkrung Rd, Ladkrabang, Bangkok 10520, Thailand",
-      link: "https://goo.gl/maps/your-map-link",
-    },
-    {
-      icon: <FaBuilding />,
-      title: "School Building",
-      content:
-        "College of Advanced Manufacturing Innovation (CAM-I), 4th Floor",
-      details: "School of Integrated Innovative Technology",
-    },
+    // { icon: <FaMapMarkerAlt />, link: "https://goo.gl/maps/your-map-link" },
+    { icon: <FaBuilding /> },
     {
       icon: <FaPhone />,
-      title: "Phone Number",
       content: "02-329-8000",
-      extension: "Ext. 1175",
-      hours: "Monday - Friday: 8:30 AM - 4:30 PM",
+      extension: interpolate(c.extension, { number: 1175 }),
     },
     {
       icon: <FaEnvelope />,
-      title: "Email Address",
       content: "siitec@kmitl.ac.th",
       secondary: "SIITEC@kmitl.ac.th",
       type: "email",
     },
-    {
-      icon: <FaGlobe />,
-      title: "Website",
-      content: "www.kmitl.ac.th",
-      link: "https://www.kmitl.ac.th",
-      type: "website",
-    },
-    {
-      icon: <FaClock />,
-      title: "Office Hours",
-      content: "8:30 AM - 4:30 PM",
-      details: "Monday to Friday (Excluding Public Holidays)",
-    },
-  ];
+    // {
+    //   icon: <FaGlobe />,
+    //   content: "www.kmitl.ac.th",
+    //   link: "https://www.kmitl.ac.th",
+    //   type: "website",
+    // },
+    { icon: <FaClock /> },
+  ].map((info, index) => ({ ...info, ...c.contactInfo[index] }));
 
-  const departments = [
-    { name: "Administration Office", phone: "02-329-8000 Ext. 1175" },
-    { name: "Academic Affairs", phone: "02-329-8000 Ext. 1176" },
-    { name: "Student Affairs", phone: "02-329-8000 Ext. 1177" },
-    { name: "International Affairs", phone: "02-329-8000 Ext. 1178" },
+  const quickLinks = [
+    "https://www.kmitl.ac.th",
+    "https://admission.reg.kmitl.ac.th/",
+    "https://reg.kmitl.ac.th",
   ];
 
   return (
-    <div className="contact-container">
+    <div className="contact-container page-contact">
       {/* Header Section */}
       <header className="contact-header">
         <div className="header-decoration"></div>
         <div className="header-content">
-          <h1 className="header-title">Contact Us</h1>
-          <p className="header-subtitle">
-            School of Integrated Innovative Technology
-          </p>
-          <p className="header-institution">
-            King Mongkut's Institute of Technology Ladkrabang
-          </p>
+          <h1 className="header-title">{c.title}</h1>
+          <p className="header-subtitle">{t("site.fullName")}</p>
+          <p className="header-institution">{t("site.institution")}</p>
         </div>
       </header>
 
@@ -109,11 +87,8 @@ const ContactPage = () => {
         <div className="contact-grid">
           {/* Left Column - Contact Information */}
           <div className="contact-info-section">
-            <h2 className="section-title">Contact Information</h2>
-            <p className="section-description">
-              Get in touch with us through any of these channels. Our team is
-              here to assist you.
-            </p>
+            <h2 className="section-title">{c.infoTitle}</h2>
+            <p className="section-description">{c.infoDescription}</p>
 
             <div className="contact-info-grid">
               {contactInfo.map((info, index) => (
@@ -181,8 +156,8 @@ const ContactPage = () => {
             </div>
 
             {/* Departments Section */}
-            <div className="departments-section">
-              <h3 className="departments-title">Department Contacts</h3>
+            {/* <div className="departments-section">
+              <h3 className="departments-title">{c.departmentsTitle}</h3>
               <div className="departments-grid">
                 {departments.map((dept, index) => (
                   <div key={index} className="department-card">
@@ -191,18 +166,15 @@ const ContactPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column - Quick Links & Social Media */}
           <div className="sidebar-section">
             {/* Social Media */}
             <div className="contact_social-section">
-              <h3 className="sidebar-title">Connect With Us</h3>
-              <p className="sidebar-description">
-                Follow us on social media for the latest updates, news, and
-                events.
-              </p>
+              <h3 className="sidebar-title">{c.socialTitle}</h3>
+              <p className="sidebar-description">{c.socialDescription}</p>
               <div className="social-links-container">
                 {socialLinks.map((social, index) => (
                   <a
@@ -222,44 +194,20 @@ const ContactPage = () => {
 
             {/* Quick Links */}
             <div className="quick-links-section">
-              <h3 className="sidebar-title">Quick Links</h3>
+              <h3 className="sidebar-title">{c.quickLinksTitle}</h3>
               <div className="quick-links">
-                <a
-                  href="https://www.kmitl.ac.th"
-                  className="quick-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGlobe />
-                  <span>KMITL Main Website</span>
-                </a>
-                <a
-                  href="https://admission.kmitl.ac.th"
-                  className="quick-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGlobe />
-                  <span>Admissions Portal</span>
-                </a>
-                <a
-                  href="https://reg.kmitl.ac.th"
-                  className="quick-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGlobe />
-                  <span>Registration System</span>
-                </a>
-                <a
-                  href="https://library.kmitl.ac.th"
-                  className="quick-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGlobe />
-                  <span>University Library</span>
-                </a>
+                {quickLinks.map((url, index) => (
+                  <a
+                    key={url}
+                    href={url}
+                    className="quick-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGlobe />
+                    <span>{c.quickLinks[index]}</span>
+                  </a>
+                ))}
               </div>
             </div>
 
@@ -288,10 +236,8 @@ const ContactPage = () => {
 
         {/* Map Section */}
         <div className="map-section">
-          <h2 className="contact-section-title">Our Location</h2>
-          <p className="contact-section-description">
-            Visit us at our beautiful campus in Ladkrabang, Bangkok
-          </p>
+          <h2 className="contact-section-title">{c.locationTitle}</h2>
+          <p className="contact-section-description">{c.locationDescription}</p>
 
           <div className="map-container">
             <iframe
@@ -302,8 +248,8 @@ const ContactPage = () => {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="KMITL Campus Location"
-              aria-label="Interactive map showing KMITL campus location"
+              title={c.mapTitle}
+              aria-label={c.mapLabel}
             ></iframe>
           </div>
 
@@ -314,12 +260,12 @@ const ContactPage = () => {
               rel="noopener noreferrer"
               className="directions-btn"
             >
-              Get Directions
+              {c.getDirections}
               <FaArrowRight className="btn-icon" />
             </a>
             <a href="tel:+6623298000" className="call-btn">
               <FaPhone />
-              Call Main Office
+              {c.callMainOffice}
             </a>
           </div>
         </div>

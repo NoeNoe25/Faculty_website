@@ -1,35 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/components/Testimonials.css';
+import { interpolate, useContent } from '../i18n/LanguageContext';
+import homeContent from '../i18n/content/home';
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const testimonials = [
+  const { testimonials: text } = useContent(homeContent);
+  const people = [
     {
       id: 1,
       name: "Sarah Johnson",
-      role: "Computer Science Graduate '23",
       company: "Tech Innovations Inc.",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
-      quote: "The hands-on research experience and mentorship I received prepared me perfectly for my career in AI development. The interdisciplinary approach opened doors I never imagined."
     },
     {
       id: 2,
       name: "Michael Chen",
-      role: "Robotics Engineering Graduate '22",
       company: "Future Robotics Lab",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
-      quote: "Working on cutting-edge projects with industry partners gave me real-world experience that set me apart. I landed my dream job before graduation."
     },
     {
       id: 3,
       name: "Emily Rodriguez",
-      role: "Data Science Graduate '24",
       company: "Global Analytics Corp",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
-      quote: "The collaborative environment and access to state-of-the-art facilities made learning exciting. Every professor was invested in our success."
     }
   ];
+  const testimonials = people.map((person, index) => ({ ...person, ...text.items[index] }));
 
   const nextTestimonial = () => {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
@@ -39,24 +37,24 @@ export default function Testimonials() {
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  // 🔁 AUTO SLIDE
+  // Auto-advance every 3 seconds; the timer restarts after manual navigation.
   useEffect(() => {
     const interval = setInterval(() => {
-      nextTestimonial();
-    }, 3000); // 5 seconds
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [activeIndex]);
+  }, [activeIndex, testimonials.length]);
 
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section home-testimonials">
       <div className="testimonials-container">
 
         <div className="testimonials-header">
-          <span className="testimonials-subtitle">SIITec Success Stories</span>
-          <h2 className="testimonials-title">What Our Alumni Say</h2>
+          <span className="testimonials-subtitle">{text.subtitle}</span>
+          <h2 className="testimonials-title">{text.title}</h2>
           <p className="testimonials-description">
-            Hear from graduates who are making an impact in technology and innovation
+            {text.description}
           </p>
         </div>
 
@@ -82,7 +80,7 @@ export default function Testimonials() {
           </div>
 
           <div className="carousel-controls">
-            <button onClick={prevTestimonial} className="carousel-btn prev">
+            <button onClick={prevTestimonial} className="carousel-btn prev" aria-label={text.previous}>
               ‹
             </button>
 
@@ -92,11 +90,12 @@ export default function Testimonials() {
                   key={index}
                   onClick={() => setActiveIndex(index)}
                   className={`dot ${index === activeIndex ? 'active' : ''}`}
+                  aria-label={interpolate(text.goTo, { number: index + 1 })}
                 />
               ))}
             </div>
 
-            <button onClick={nextTestimonial} className="carousel-btn next">
+            <button onClick={nextTestimonial} className="carousel-btn next" aria-label={text.next}>
               ›
             </button>
           </div>

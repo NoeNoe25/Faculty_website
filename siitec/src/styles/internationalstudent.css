@@ -1,11 +1,11 @@
 /* Reset and base styles */
-.international-student-page * {
+.international-student-page:where(.page-international) *, :where(.page-international) .international-student-page * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.international-student-page {
+.international-student-page:where(.page-international), :where(.page-international) .international-student-page {
   font-family: var(--font-body);
   line-height: 1.6;
   color: var(--text-primary);
@@ -13,7 +13,7 @@
 
 }
 
-.international-container {
+:where(.page-international) .international-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -21,7 +21,7 @@
 }
 
 /* Header styles */
-.international-header {
+:where(.page-international) .international-header {
 
   color: var(--background-primary);
   padding: 40px 0;
@@ -29,7 +29,7 @@
   box-shadow: var(--shadow-lg);
 }
 
-.international-logo {
+:where(.page-international) .international-logo {
   font-family: var(--font-title);
   font-size: 3rem;
   margin-bottom: 10px;
@@ -37,7 +37,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.international-tagline {
+:where(.page-international) .international-tagline {
   font-size: 1.2rem;
   opacity: 0.95;
   font-weight: 300;
@@ -46,7 +46,7 @@
 }
 
 /* Navigation styles */
-.international-navbar {
+:where(.page-international) .international-navbar {
   background-color: var(--background-primary);
   border-bottom: 2px solid var(--slate-pale);
   position: sticky;
@@ -55,18 +55,18 @@
   box-shadow: var(--shadow-sm);
 }
 
-.international-nav-list {
+:where(.page-international) .international-nav-list {
   display: flex;
   list-style: none;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.international-nav-list li {
+:where(.page-international) .international-nav-list li {
   margin: 0 5px;
 }
 
-.international-nav-button {
+:where(.page-international) .international-nav-button {
   background: none;
   border: none;
   padding: 18px 24px;
@@ -83,18 +83,18 @@
   justify-content: center;
 }
 
-.international-nav-button:hover {
+:where(.page-international) .international-nav-button:hover {
   color: var(--gold-copper-dark);
   background-color: var(--background-secondary);
 }
 
-.international-nav-button.active {
+:where(.page-international) .international-nav-button.active {
   color: var(--gold-copper-dark);
   background-color: var(--background-secondary);
   box-shadow: var(--shadow-sm);
 }
 
-.international-nav-button.active::after {
+:where(.page-international) .international-nav-button.active::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -106,30 +106,30 @@
 }
 
 /* Icon styles */
-.international-nav-icon {
+:where(.page-international) .international-nav-icon {
   margin-right: 10px;
   font-size: 1.2rem;
 }
 
-.international-section-header-icon {
+:where(.page-international) .international-section-header-icon {
   margin-right: 15px;
 }
 
-.international-quick-link-icon {
+:where(.page-international) .international-quick-link-icon {
   font-size: 2.5rem;
   margin-bottom: 15px;
   color: var(--gold-copper);
 }
 
 /* Sub-section navigation */
-.international-subsection-nav {
+:where(.page-international) .international-subsection-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 30px;
 }
 
-.international-subsection-nav-button {
+:where(.page-international) .international-subsection-nav-button {
   background: var(--background-primary);
   border: 2px solid var(--slate-pale);
   border-radius: 12px;
@@ -146,13 +146,13 @@
   min-height: 80px;
 }
 
-.international-subsection-nav-button:hover {
+:where(.page-international) .international-subsection-nav-button:hover {
   border-color: var(--gold-copper-light);
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
 }
 
-.international-subsection-nav-button.active {
+:where(.page-international) .international-subsection-nav-button.active {
   background: var(--gold-copper-bright);
   border-color: var(--gold-copper);
   color: var(--slate-darkest);
@@ -160,41 +160,41 @@
   box-shadow: var(--shadow-md);
 }
 
-.international-subsection-nav-icon {
+:where(.page-international) .international-subsection-nav-icon {
   font-size: 1.8rem;
   margin-right: 15px;
   color: var(--gold-copper);
 }
 
-.international-subsection-nav-label {
+:where(.page-international) .international-subsection-nav-label {
   flex-grow: 1;
   text-align: left;
   font-size: 1.1rem;
 }
 
-.international-subsection-nav-arrow {
+:where(.page-international) .international-subsection-nav-arrow {
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
-.international-subsection-nav-button.active .international-subsection-nav-arrow {
+:where(.page-international) .international-subsection-nav-button.active .international-subsection-nav-arrow {
   color: var(--gold-copper-dark);
 }
 
 /* Sub-section content */
-.international-subsection-content {
+:where(.page-international) .international-subsection-content {
   animation: international-fadeIn 0.3s ease;
   margin-top: 30px;
 }
 
-.subsection-icon {
+:where(.page-international) .subsection-icon {
   margin-right: 15px;
   font-size: 1.8rem;
   color: var(--gold-copper);
   vertical-align: middle;
 }
 
-.international-subsection-intro {
+:where(.page-international) .international-subsection-intro {
   font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: 40px;
@@ -203,7 +203,7 @@
 }
 
 /* Card header with badges */
-.international-card-header {
+:where(.page-international) .international-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -211,13 +211,13 @@
 }
 
 /* Detail item with icons */
-.detail-icon {
+:where(.page-international) .detail-icon {
   margin-right: 8px;
   color: var(--gold-copper);
   min-width: 20px;
 }
 
-.international-detail-item {
+:where(.page-international) .international-detail-item {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -225,7 +225,7 @@
   border-bottom: 1px dashed var(--slate-pale);
 }
 
-.international-detail-label {
+:where(.page-international) .international-detail-label {
   font-weight: 600;
   color: var(--text-secondary);
   margin-right: 10px;
@@ -233,44 +233,44 @@
 }
 
 /* Transport card icon */
-.international-transport-icon {
+:where(.page-international) .international-transport-icon {
   font-size: 2.5rem;
   color: var(--gold-copper);
   margin-bottom: 15px;
 }
 
 /* Activity card icon */
-.international-activity-icon {
+:where(.page-international) .international-activity-icon {
   font-size: 2rem;
   color: var(--gold-copper);
   margin-bottom: 10px;
 }
 
 /* Service icon */
-.international-service-icon {
+:where(.page-international) .international-service-icon {
   font-size: 2.5rem;
   color: var(--gold-copper);
   margin-bottom: 15px;
 }
 
 /* Emergency notice */
-.international-important-notice.emergency {
+:where(.page-international) .international-important-notice.emergency {
   background-color: #fee2e2;
   border-left: 6px solid #dc2626;
 }
 
-.international-important-notice.emergency h3 {
+:where(.page-international) .international-important-notice.emergency h3 {
   color: #dc2626;
 }
 
 /* Main content styles */
-.international-main-content {
+:where(.page-international) .international-main-content {
   padding: 50px 0;
   min-height: 70vh;
   background-color: var(--background-secondary);
 }
 
-.international-section {
+:where(.page-international) .international-section {
   animation: international-fadeIn 0.5s ease;
 }
 
@@ -279,7 +279,7 @@
   to { opacity: 1; }
 }
 
-.international-section h2 {
+:where(.page-international) .international-section h2 {
   color: var(--slate-dark);
   font-family: var(--font-title);
   font-size: 2.5rem;
@@ -288,16 +288,17 @@
   padding-bottom: 15px;
 }
 
-.international-section-intro {
+:where(.page-international) .international-section-intro {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
   max-width: 800px;
   line-height: 1.8;
+  text-align: center;
 }
 
 /* Card styles */
-.international-card {
+:where(.page-international) .international-card {
   background: var(--background-primary);
   border-radius: 12px;
   padding: 30px;
@@ -308,20 +309,20 @@
   border: 1px solid var(--slate-pale);
 }
 
-.international-card:hover {
+:where(.page-international) .international-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: var(--gold-copper-light);
 }
 
 /* Grid layouts */
-.international-programs-grid,
-.international-dining-grid,
-.international-transport-grid,
-.international-activities-grid,
-.international-finance-grid,
-.international-accommodation-grid,
-.international-quick-links-grid {
+:where(.page-international) .international-programs-grid,
+:where(.page-international) .international-dining-grid,
+:where(.page-international) .international-transport-grid,
+:where(.page-international) .international-activities-grid,
+:where(.page-international) .international-finance-grid,
+:where(.page-international) .international-accommodation-grid,
+:where(.page-international) .international-quick-links-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
@@ -329,20 +330,20 @@
 }
 
 /* Program card specific */
-.international-card h3 {
+:where(.page-international) .international-card h3 {
   color: var(--slate-dark);
   margin-bottom: 15px;
   font-size: 1.5rem;
   font-family: var(--font-title);
 }
 
-.international-program-details {
+:where(.page-international) .international-program-details {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--background-tertiary);
 }
 
-.international-free-badge {
+:where(.page-international) .international-free-badge {
   position: absolute;
   top: 20px;
   right: -30px;
@@ -357,7 +358,7 @@
 }
 
 /* Dining card specific */
-.international-thai-food-badge {
+:where(.page-international) .international-thai-food-badge {
   display: inline-block;
   background-color: var(--gold-copper-dark);
   color: var(--background-primary);
@@ -370,7 +371,7 @@
 }
 
 /* Transport card specific */
-.international-ola-badge {
+:where(.page-international) .international-ola-badge {
   display: inline-block;
   background-color: var(--slate-dark);
   color: var(--background-primary);
@@ -383,7 +384,7 @@
 }
 
 /* Finance card specific */
-.international-visa-badge {
+:where(.page-international) .international-visa-badge {
   display: inline-block;
   background-color: var(--gold-copper-forbutton);
   color: var(--text-primary);
@@ -396,7 +397,7 @@
 }
 
 /* Action button */
-.international-action-button {
+:where(.page-international) .international-action-button {
   background-color: var(--gold-copper-forbutton);
   color: var(--text-primary);
   border: none;
@@ -411,7 +412,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.international-action-button:hover {
+:where(.page-international) .international-action-button:hover {
   background-color: var(--gold-copper-dark);
   color: var(--background-primary);
   box-shadow: var(--glow-gold);
@@ -419,7 +420,7 @@
 }
 
 /* Quick links */
-.international-quick-links {
+:where(.page-international) .international-quick-links {
   margin-top: 50px;
   background: var(--background-primary);
   padding: 30px;
@@ -427,14 +428,14 @@
   box-shadow: var(--shadow-md);
 }
 
-.international-quick-links h3 {
+:where(.page-international) .international-quick-links h3 {
   color: var(--gold-copper-dark);
   margin-bottom: 25px;
   font-size: 1.8rem;
   font-family: var(--font-title);
 }
 
-.international-quick-link-card {
+:where(.page-international) .international-quick-link-card {
   background: var(--background-secondary);
   border-radius: 12px;
   padding: 25px;
@@ -450,25 +451,21 @@
   justify-content: center;
 }
 
-.international-quick-link-card:hover {
+:where(.page-international) .international-quick-link-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: var(--gold-copper);
   background: var(--background-primary);
 }
 
-.international-quick-link-card h4 {
+:where(.page-international) .international-quick-link-card h4 {
   color: var(--gold-copper-dark);
   margin-bottom: 10px;
   font-size: 1.3rem;
 }
 
-p {
-  color: var(--slate-base);
-}
-
 /* Important notice */
-.international-important-notice {
+:where(.page-international) .international-important-notice {
   background-color: var(--gold-copper-bright);
   color: var(--text-primary);
   padding: 30px;
@@ -478,23 +475,23 @@ p {
   border-left: 6px solid var(--gold-copper-dark);
 }
 
-.international-important-notice h3 {
+:where(.page-international) .international-important-notice h3 {
   color: var(--slate-darkest);
   margin-bottom: 20px;
   font-family: var(--font-title);
 }
 
-.international-important-notice ul {
+:where(.page-international) .international-important-notice ul {
   padding-left: 20px;
 }
 
-.international-important-notice li {
+:where(.page-international) .international-important-notice li {
   margin-bottom: 10px;
   padding-left: 10px;
 }
 
 /* Welcome section */
-.international-welcome-section h2 {
+:where(.page-international) .international-welcome-section h2 {
   color: var(--slate-darkest);
   font-family: var(--font-title);
   font-size: 2.8rem;
@@ -504,7 +501,7 @@ p {
   border-bottom: none;
 }
 
-.international-intro-text {
+:where(.page-international) .international-intro-text {
   font-size: 1.3rem;
   line-height: 1.8;
   text-align: center;
@@ -515,14 +512,14 @@ p {
 }
 
 /* Cost styling */
-.international-cost {
+:where(.page-international) .international-cost {
   color: var(--gold-copper-dark);
   font-weight: 700;
   font-size: 1rem;
 }
 
 /* Image styling */
-.international-image {
+:where(.page-international) .international-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -532,7 +529,7 @@ p {
 }
 
 /* Card image container */
-.international-card-image-container {
+:where(.page-international) .international-card-image-container {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
@@ -540,7 +537,7 @@ p {
 }
 
 /* Google Maps container */
-.international-map-container {
+:where(.page-international) .international-map-container {
   width: 100%;
   height: 300px;
   border-radius: 12px;
@@ -550,14 +547,14 @@ p {
   border: 2px solid var(--gold-copper-light);
 }
 
-.international-map-iframe {
+:where(.page-international) .international-map-iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
 /* Dining map section */
-.international-dining-map {
+:where(.page-international) .international-dining-map {
   background: var(--background-primary);
   border-radius: 12px;
   padding: 30px;
@@ -565,21 +562,21 @@ p {
   box-shadow: var(--shadow-md);
 }
 
-.international-dining-map h3 {
+:where(.page-international) .international-dining-map h3 {
   color: var(--slate-dark);
   margin-bottom: 20px;
   font-family: var(--font-title);
   font-size: 1.8rem;
 }
 
-.international-map-description {
+:where(.page-international) .international-map-description {
   color: var(--text-secondary);
   margin-bottom: 20px;
   line-height: 1.6;
 }
 
 /* Dining hours badge */
-.international-hours-badge {
+:where(.page-international) .international-hours-badge {
   display: inline-block;
   background-color: var(--gold-copper-light);
   color: var(--text-primary);
@@ -594,7 +591,7 @@ p {
 }
 
 /* Price tag styling */
-.international-price-tag {
+:where(.page-international) .international-price-tag {
   background-color: var(--gold-copper-bright);
   color: var(--slate-darkest);
   padding: 8px 16px;
@@ -609,17 +606,17 @@ p {
 }
 
 /* Highlight card */
-.international-card.highlight {
+:where(.page-international) .international-card.highlight {
   border: 2px solid var(--gold-copper);
   background: linear-gradient(135deg, var(--background-primary), var(--background-secondary));
 }
 
-.international-card.highlight h3 {
+:where(.page-international) .international-card.highlight h3 {
   color: var(--gold-copper-dark);
 }
 
 /* Food type badges */
-.international-food-badge {
+:where(.page-international) .international-food-badge {
   display: inline-block;
   padding: 4px 12px;
   border-radius: 12px;
@@ -629,36 +626,36 @@ p {
   margin-top: 10px;
 }
 
-.international-thai-badge {
+:where(.page-international) .international-thai-badge {
   background-color: #dc2626;
   color: white;
 }
 
-.international-halal-badge {
+:where(.page-international) .international-halal-badge {
   background-color: #059669;
   color: white;
 }
 
-.international-international-badge {
+:where(.page-international) .international-international-badge {
   background-color: #2563eb;
   color: white;
 }
 
-.international-vegetarian-badge {
+:where(.page-international) .international-vegetarian-badge {
   background-color: #7c3aed;
   color: white;
 }
 
 /* Image gallery for accommodation */
 
-.international-image-gallery {
+:where(.page-international) .international-image-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin: 20px 0;
 }
 
-.international-image-gallery img {
+:where(.page-international) .international-image-gallery img {
   width: 100%;
   height: 150px;
   object-fit: cover;
@@ -666,13 +663,13 @@ p {
 }
 
 /* Cost breakdown */
-.international-cost-breakdown {
+:where(.page-international) .international-cost-breakdown {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--background-tertiary);
 }
 
-.international-cost-item {
+:where(.page-international) .international-cost-item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
@@ -681,7 +678,7 @@ p {
 }
 
 /* Additional CSS for new badges */
-.international-now-badge {
+:where(.page-international) .international-now-badge {
   background-color: #28a745;
   color: white;
   padding: 4px 8px;
@@ -693,14 +690,14 @@ p {
 }
 
 /* Activities Section Styles */
-.international-activities-grid {
+:where(.page-international) .international-activities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 25px;
   margin-top: 30px;
 }
 
-.international-activity-card {
+:where(.page-international) .international-activity-card {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
@@ -709,30 +706,30 @@ p {
   flex-direction: column;
 }
 
-.international-activity-card:hover {
+:where(.page-international) .international-activity-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
-.international-activity-image-container {
+:where(.page-international) .international-activity-image-container {
   position: relative;
   width: 100%;
   height: 200px;
   overflow: hidden;
 }
 
-.international-activity-image {
+:where(.page-international) .international-activity-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.international-activity-card:hover .international-activity-image {
+:where(.page-international) .international-activity-card:hover .international-activity-image {
   transform: scale(1.05);
 }
 
-.international-activity-overlay {
+:where(.page-international) .international-activity-overlay {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -744,20 +741,20 @@ p {
   font-weight: 600;
 }
 
-.international-activity-content {
+:where(.page-international) .international-activity-content {
   padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-.international-activity-content h3 {
+:where(.page-international) .international-activity-content h3 {
   margin: 0 0 10px 0;
   font-size: 1.2rem;
   color: var(--slate-dark);
 }
 
-.international-activity-description {
+:where(.page-international) .international-activity-description {
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.5;
@@ -765,41 +762,41 @@ p {
   flex-grow: 1;
 }
 
-.international-activity-details {
+:where(.page-international) .international-activity-details {
   background: var(--background-tertiary);
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 15px;
 }
 
-.international-activity-details .international-detail-item {
+:where(.page-international) .international-activity-details .international-detail-item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
   font-size: 0.9rem;
 }
 
-.international-activity-details .international-detail-item:last-child {
+:where(.page-international) .international-activity-details .international-detail-item:last-child {
   margin-bottom: 0;
 }
 
-.international-activity-details .international-detail-label {
+:where(.page-international) .international-activity-details .international-detail-label {
   color: var(--text-secondary);
   font-weight: 600;
 }
 
-.international-activity-details span:last-child {
+:where(.page-international) .international-activity-details span:last-child {
   color: var(--text-primary);
   text-align: right;
 }
 
 /* Section Header */
-.international-section-header {
+:where(.page-international) .international-section-header {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.international-section-header h2 {
+:where(.page-international) .international-section-header h2 {
   color: var(--slate-dark);
   font-family: var(--font-title);
   font-size: 2.5rem;
@@ -809,170 +806,170 @@ p {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .international-subsection-nav-button {
+  :where(.page-international) .international-subsection-nav-button {
     width: calc(50% - 8px);
   }
 }
 
 @media (max-width: 768px) {
-  .international-nav-list {
+  :where(.page-international) .international-nav-list {
     justify-content: flex-start;
     overflow-x: auto;
     padding-bottom: 10px;
     flex-wrap: nowrap;
   }
   
-  .international-nav-button {
+  :where(.page-international) .international-nav-button {
     padding: 15px 18px;
     font-size: 0.95rem;
     white-space: nowrap;
   }
   
-  .international-logo {
+  :where(.page-international) .international-logo {
     font-size: 2.2rem;
   }
   
-  .international-tagline {
+  :where(.page-international) .international-tagline {
     font-size: 1rem;
     padding: 0 15px;
   }
   
-  .international-section h2 {
+  :where(.page-international) .international-section h2 {
     font-size: 2rem;
   }
   
-  .international-programs-grid,
-  .international-dining-grid,
-  .international-transport-grid,
-  .international-activities-grid,
-  .international-finance-grid,
-  .international-accommodation-grid,
-  .international-quick-links-grid {
+  :where(.page-international) .international-programs-grid,
+  :where(.page-international) .international-dining-grid,
+  :where(.page-international) .international-transport-grid,
+  :where(.page-international) .international-activities-grid,
+  :where(.page-international) .international-finance-grid,
+  :where(.page-international) .international-accommodation-grid,
+  :where(.page-international) .international-quick-links-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
   
-  .international-subsection-nav-button {
+  :where(.page-international) .international-subsection-nav-button {
     width: 100%;
     min-height: 70px;
     padding: 15px;
   }
   
-  .international-subsection-nav-icon {
+  :where(.page-international) .international-subsection-nav-icon {
     font-size: 1.5rem;
     margin-right: 12px;
   }
   
-  .international-subsection-nav-label {
+  :where(.page-international) .international-subsection-nav-label {
     font-size: 1rem;
   }
   
-  .international-nav-icon {
+  :where(.page-international) .international-nav-icon {
     margin-right: 8px;
     font-size: 1.1rem;
   }
   
-  .international-intro-text {
+  :where(.page-international) .international-intro-text {
     font-size: 1.1rem;
     padding: 0 10px;
   }
   
-  .international-welcome-section h2 {
+  :where(.page-international) .international-welcome-section h2 {
     font-size: 2.2rem;
   }
   
-  .international-activities-grid {
+  :where(.page-international) .international-activities-grid {
     grid-template-columns: 1fr;
   }
   
-  .international-activity-image-container {
+  :where(.page-international) .international-activity-image-container {
     height: 180px;
   }
   
-  .international-image-gallery {
+  :where(.page-international) .international-image-gallery {
     grid-template-columns: 1fr;
   }
   
-  .international-image {
+  :where(.page-international) .international-image {
     height: 180px;
   }
   
-  .international-map-container {
+  :where(.page-international) .international-map-container {
     height: 250px;
   }
   
-  .international-dining-map {
+  :where(.page-international) .international-dining-map {
     padding: 20px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .international-activities-grid {
+  :where(.page-international) .international-activities-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .international-logo {
+  :where(.page-international) .international-logo {
     font-size: 1.8rem;
   }
   
-  .international-welcome-section h2 {
+  :where(.page-international) .international-welcome-section h2 {
     font-size: 1.8rem;
   }
   
-  .international-section h2 {
+  :where(.page-international) .international-section h2 {
     font-size: 1.7rem;
   }
   
-  .international-section-intro {
+  :where(.page-international) .international-section-intro {
     font-size: 1rem;
   }
   
-  .international-card {
+  :where(.page-international) .international-card {
     padding: 20px;
   }
   
-  .international-nav-button {
+  :where(.page-international) .international-nav-button {
     padding: 12px 15px;
     font-size: 0.9rem;
   }
   
-  .international-subsection-nav-button {
+  :where(.page-international) .international-subsection-nav-button {
     padding: 12px;
     min-height: 60px;
   }
   
-  .international-subsection-nav-icon {
+  :where(.page-international) .international-subsection-nav-icon {
     font-size: 1.3rem;
     margin-right: 10px;
   }
   
-  .subsection-icon {
+  :where(.page-international) .subsection-icon {
     font-size: 1.5rem;
     margin-right: 10px;
   }
   
-  .international-quick-link-icon {
+  :where(.page-international) .international-quick-link-icon {
     font-size: 2rem;
   }
   
-  .international-image {
+  :where(.page-international) .international-image {
     height: 150px;
   }
   
-  .international-map-container {
+  :where(.page-international) .international-map-container {
     height: 200px;
   }
   
-  .international-food-badge {
+  :where(.page-international) .international-food-badge {
     font-size: 0.7rem;
     padding: 3px 8px;
   }
 }
 
 @media (min-width: 1025px) {
-  .international-activities-grid {
+  :where(.page-international) .international-activities-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
