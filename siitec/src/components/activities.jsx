@@ -5,16 +5,17 @@ import news2 from '../assets/images/news/news2.webp';
 import news3 from '../assets/images/news/news3.webp';
 import news4 from '../assets/images/news/news4.webp';
 import news5 from '../assets/images/news/news5.webp';
+import { useContent } from '../i18n/LanguageContext';
+import homeContent from '../i18n/content/home';
 
 export default function Activities() {
-  const newsItems = [
+  const { news } = useContent(homeContent);
+  const newsLinks = [
     {
       id: 1,
       image: news1,
       date: "23.03.2025",
-      title: "Faculty of Integrated Innovative Technology",
-      description: "The Faculty of Integrated Innovative Technology",
-      tag: "Highlights",
+      tag: "highlights",
       featured: true,
       link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-2025-copy/"
     },
@@ -22,18 +23,14 @@ export default function Activities() {
       id: 2,
       image: news3,
       date: "15.09.2025",
-      title: "Direct Admission 1-1 2025",
-      description: "DIRECT ADMISSION 1-1 Early Round Academic Year 2025 Dual Degree",
-      tag: "News",
+      tag: "news",
       link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-2023/"
     },
     {
       id: 3,
       image: news2,
       date: "13.02.2025",
-      title: "Direct Admission 1-1 2025",
-      description: "DIRECT ADMISSION 1-1 Early Round Academic Year 2025 Dual Degree",
-      tag: "News",
+      tag: "news",
       imageAfter: true,
       link: "http://www.cmit.kmitl.ac.th/news/tcas1-67/"
     },
@@ -41,9 +38,7 @@ export default function Activities() {
       id: 4,
       image: news4,
       date: "28.11.2022",
-      title: "TCAS1-66",
-      description: "TCAS1-66 ประกาศการรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อ วิทยาลัยเทคโนโลยีและนวัตกรรมวัสดุ เปิดรับสมัครบุคคลเข้าศึกษาต่อระดับปริญญาตรี แบบ Portfolio รอบที่ 1 ประจำปีการศึกษา 2566...",
-      tag: "News",
+      tag: "news",
       imageAfter: true,
       link: "http://www.cmit.kmitl.ac.th/news/tcas1-66/"
     },
@@ -51,9 +46,7 @@ export default function Activities() {
       id: 5,
       image: news5,
       date: "28.11.2022",
-      title: "DIRECT ADMISSION 1-1 (Early Round)",
-      description: "DIRECT ADMISSION 1-1 (Early Round) Academic Year 2023 Dual Degree...",
-      tag: "News",
+      tag: "news",
       link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-early-round/"
     },
     // Add this new card below Faculty of Integrated Innovative Technology
@@ -61,20 +54,19 @@ export default function Activities() {
       id: 6,
       image: news3, // Using the same image as the second card
       date: "15.09.2025",
-      title: "Direct Admission 1-1 2025",
-      description: "DIRECT ADMISSION 1-1 Early Round Academic Year 2025 Dual Degree",
-      tag: "News",
+      tag: "news",
       link: "http://www.cmit.kmitl.ac.th/news/direct-admission-1-1-2023/"
     }
   ];
+  const newsItems = newsLinks.map((item, index) => ({ ...item, ...news.items[index] }));
 
   return (
-    <div className="news-section">
+    <div className="news-section home-activities">
       <div className="news-container">
         <div className="news-header">
-          <h2 className="news-title">News and Highlights</h2>
+          <h2 className="news-title">{news.title}</h2>
           <a href="http://www.cmit.kmitl.ac.th/%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%99%E0%B8%B2%E0%B9%82%E0%B8%99/" className="news-view-all">
-            See All News
+            {news.seeAll}
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M7 4L13 10L7 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
             </svg>
@@ -94,7 +86,7 @@ export default function Activities() {
               {!item.imageAfter && (
                 <div className="news-card-image">
                   <img src={item.image} alt={item.title} />
-                  <span className="news-tag">{item.tag}</span>
+                  <span className="news-tag">{news.tags[item.tag]}</span>
                 </div>
               )}
 
@@ -110,7 +102,7 @@ export default function Activities() {
                 {item.imageAfter && (
                   <div className="news-card-image-after">
                     <img src={item.image} alt={item.title} />
-                    <span className="news-tag">{item.tag}</span>
+                    <span className="news-tag">{news.tags[item.tag]}</span>
                   </div>
                 )}
                 
@@ -120,7 +112,7 @@ export default function Activities() {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Read More
+                  {news.readMore}
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M6 4L10 8L6 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>

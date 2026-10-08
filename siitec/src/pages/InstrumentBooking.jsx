@@ -21,15 +21,18 @@ import {
 } from 'react-icons/fa';
 import bgimg from "../assets/albums/instruments.webp";
 
+import { usePhrases } from "../i18n/LanguageContext";
+import phrases from "../i18n/content/instrumentBooking";
 const InstrumentBooking = () => {
+  const tx = usePhrases(phrases);
   const [activeTab, setActiveTab] = useState('general');
 
   // Mock data for available instruments
   const instruments = [
     {
       id: 1,
-      name: "Scanning Electron Microscope",
-      category: "Imaging",
+      name: tx("Scanning Electron Microscope"),
+      category: tx("Imaging"),
       availability: "Available",
       location: "Lab A-101",
       hourlyRate: 1500,
@@ -37,8 +40,8 @@ const InstrumentBooking = () => {
     },
     {
       id: 2,
-      name: "FTIR Spectrometer",
-      category: "Spectroscopy",
+      name: tx("FTIR Spectrometer"),
+      category: tx("Spectroscopy"),
       availability: "Available",
       location: "Lab B-205",
       hourlyRate: 800,
@@ -46,8 +49,8 @@ const InstrumentBooking = () => {
     },
     {
       id: 3,
-      name: "X-ray Diffractometer",
-      category: "Structural Analysis",
+      name: tx("X-ray Diffractometer"),
+      category: tx("Structural Analysis"),
       availability: "Under Maintenance",
       location: "Lab C-310",
       hourlyRate: 2000,
@@ -55,8 +58,8 @@ const InstrumentBooking = () => {
     },
     {
       id: 4,
-      name: "Atomic Force Microscope",
-      category: "Imaging",
+      name: tx("Atomic Force Microscope"),
+      category: tx("Imaging"),
       availability: "Available",
       location: "Lab A-102",
       hourlyRate: 1200,
@@ -64,8 +67,8 @@ const InstrumentBooking = () => {
     },
     {
       id: 5,
-      name: "TGA/DSC",
-      category: "Thermal Analysis",
+      name: tx("TGA/DSC"),
+      category: tx("Thermal Analysis"),
       availability: "Available",
       location: "Lab B-210",
       hourlyRate: 900,
@@ -73,8 +76,8 @@ const InstrumentBooking = () => {
     },
     {
       id: 6,
-      name: "HPLC System",
-      category: "Chromatography",
+      name: tx("HPLC System"),
+      category: tx("Chromatography"),
       availability: "Available",
       location: "Lab D-401",
       hourlyRate: 700,
@@ -86,38 +89,38 @@ const InstrumentBooking = () => {
   const bookingSteps = [
     {
       step: 1,
-      title: "Account Registration",
-      description: "Create your user account in the booking system",
+      title: tx("Account Registration"),
+      description: tx("Create your user account in the booking system"),
       icon: <FaUserFriends />
     },
     {
       step: 2,
-      title: "Training Certification",
-      description: "Complete required instrument training sessions",
+      title: tx("Training Certification"),
+      description: tx("Complete required instrument training sessions"),
       icon: <FaCheckCircle />
     },
     {
       step: 3,
-      title: "Reservation Request",
-      description: "Submit booking request with preferred time slots",
+      title: tx("Reservation Request"),
+      description: tx("Submit booking request with preferred time slots"),
       icon: <FaCalendarAlt />
     },
     {
       step: 4,
-      title: "Approval & Confirmation",
-      description: "Wait for approval from facility manager",
+      title: tx("Approval & Confirmation"),
+      description: tx("Wait for approval from facility manager"),
       icon: <FaCheckCircle />
     },
     {
       step: 5,
-      title: "Payment Processing",
-      description: "Complete payment for external users",
+      title: tx("Payment Processing"),
+      description: tx("Complete payment for external users"),
       icon: <FaCalculator />
     },
     {
       step: 6,
-      title: "Instrument Usage",
-      description: "Access the instrument during scheduled time",
+      title: tx("Instrument Usage"),
+      description: tx("Access the instrument during scheduled time"),
       icon: <FaMicroscope />
     }
   ];
@@ -125,83 +128,83 @@ const InstrumentBooking = () => {
   // User types information
   const userTypes = {
     general: {
-      title: "General Users (Students & Researchers)",
-      description: "Internal users including undergraduate/graduate students and researchers",
+      title: tx("General Users (Students & Researchers)"),
+      description: tx("Internal users including undergraduate/graduate students and researchers"),
       requirements: [
-        "Active KMITL student/staff ID",
-        "Completed instrument-specific training",
-        "Faculty advisor approval for students",
-        "Project description and objectives"
+        tx("Active KMITL student/staff ID"),
+        tx("Completed instrument-specific training"),
+        tx("Faculty advisor approval for students"),
+        tx("Project description and objectives")
       ],
       bookingProcess: [
-        "Login with KMITL credentials",
-        "Check instrument availability calendar",
-        "Submit booking request",
-        "Receive approval from lab manager",
-        "Use instrument during scheduled time"
+        tx("Login with KMITL credentials"),
+        tx("Check instrument availability calendar"),
+        tx("Submit booking request"),
+        tx("Receive approval from lab manager"),
+        tx("Use instrument during scheduled time")
       ],
       benefits: [
-        "Subsidized rates for academic research",
-        "Priority booking during academic terms",
-        "Technical support available",
-        "Training sessions provided"
+        tx("Subsidized rates for academic research"),
+        tx("Priority booking during academic terms"),
+        tx("Technical support available"),
+        tx("Training sessions provided")
       ],
       contact: "instrument-lab@kmitl.ac.th"
     },
     staff: {
-      title: "Faculty & Staff Members",
-      description: "KMITL faculty, researchers, and administrative staff",
+      title: tx("Faculty & Staff Members"),
+      description: tx("KMITL faculty, researchers, and administrative staff"),
       requirements: [
-        "Active faculty/staff ID",
-        "Research project registration",
-        "Safety certification",
-        "Department approval"
+        tx("Active faculty/staff ID"),
+        tx("Research project registration"),
+        tx("Safety certification"),
+        tx("Department approval")
       ],
       bookingProcess: [
-        "Access through ATTAC system",
-        "Priority booking privileges",
-        "Direct calendar access",
-        "Multiple instrument bookings allowed",
-        "Research group management"
+        tx("Access through ATTAC system"),
+        tx("Priority booking privileges"),
+        tx("Direct calendar access"),
+        tx("Multiple instrument bookings allowed"),
+        tx("Research group management")
       ],
       benefits: [
-        "Priority access to instruments",
-        "Extended booking durations",
-        "Research group management",
-        "Budget account linking",
-        "Technical consultation"
+        tx("Priority access to instruments"),
+        tx("Extended booking durations"),
+        tx("Research group management"),
+        tx("Budget account linking"),
+        tx("Technical consultation")
       ],
       contact: "facility-manager@kmitl.ac.th"
     },
     external: {
-      title: "External Users (Industry & Collaborators)",
-      description: "Industry partners, external researchers, and academic collaborators",
+      title: tx("External Users (Industry & Collaborators)"),
+      description: tx("Industry partners, external researchers, and academic collaborators"),
       requirements: [
-        "Company/organization credentials",
-        "NDA agreement for proprietary work",
-        "Project proposal submission",
-        "Payment method setup"
+        tx("Company/organization credentials"),
+        tx("NDA agreement for proprietary work"),
+        tx("Project proposal submission"),
+        tx("Payment method setup")
       ],
       bookingProcess: [
-        "Register as external user",
-        "Submit project proposal",
-        "Receive quotation and approval",
-        "Complete payment",
-        "Schedule instrument time"
+        tx("Register as external user"),
+        tx("Submit project proposal"),
+        tx("Receive quotation and approval"),
+        tx("Complete payment"),
+        tx("Schedule instrument time")
       ],
       benefits: [
-        "Access to advanced instrumentation",
-        "Technical consultation services",
-        "Confidentiality agreements",
-        "Flexible scheduling options",
-        "Detailed analysis reports"
+        tx("Access to advanced instrumentation"),
+        tx("Technical consultation services"),
+        tx("Confidentiality agreements"),
+        tx("Flexible scheduling options"),
+        tx("Detailed analysis reports")
       ],
       contact: "external-services@kmitl.ac.th"
     }
   };
 
   return (
-    <div className="instrument-booking-page">
+    <div className="instrument-booking-page page-instrument-booking">
       {/* Hero Section with Parallax Background */}
       <section className="parallax-section">
         <div className="parallax-banner" style={{ height: '90vh' }}>
@@ -218,10 +221,10 @@ const InstrumentBooking = () => {
           <div className="content-container">
             <div className="parallax-content">
               <h1 className="parallax-main-title" style={{ color: '#fff' }}>
-                Instrument Booking Service
+                {tx("Instrument Booking Service")}
               </h1>
               <p className="parallax-subtitle">
-                Access state-of-the-art research instrumentation at Faculty of Integrated Innovative Technology
+                {tx("Access state-of-the-art research instrumentation at Faculty of Integrated Innovative Technology")}
               </p>
               
               {/* Stats Section */}
@@ -229,22 +232,22 @@ const InstrumentBooking = () => {
                 <div className="booking-stat-item">
                   <FaFlask className="booking-stat-icon" />
                   <span className="booking-stat-number">25+</span>
-                  <span className="booking-stat-label">Instruments</span>
+                  <span className="booking-stat-label">{tx("Instruments")}</span>
                 </div>
                 <div className="booking-stat-item">
                   <FaUserFriends className="booking-stat-icon" />
                   <span className="booking-stat-number">500+</span>
-                  <span className="booking-stat-label">Active Users</span>
+                  <span className="booking-stat-label">{tx("Active Users")}</span>
                 </div>
                 <div className="booking-stat-item">
                   <FaCalendarAlt className="booking-stat-icon" />
                   <span className="booking-stat-number">98%</span>
-                  <span className="booking-stat-label">Uptime</span>
+                  <span className="booking-stat-label">{tx("Uptime")}</span>
                 </div>
                 <div className="booking-stat-item">
                   <FaUniversity className="booking-stat-icon" />
                   <span className="booking-stat-number">24/7</span>
-                  <span className="booking-stat-label">Access*</span>
+                  <span className="booking-stat-label">{tx("Access*")}</span>
                 </div>
               </div>
             </div>
@@ -256,8 +259,8 @@ const InstrumentBooking = () => {
       <section className="user-type-section">
         <div className="container">
           <div className="section-header">
-            <h2>Select Your User Type</h2>
-            <p>Choose your category to view specific instructions and requirements</p>
+            <h2>{tx("Select Your User Type")}</h2>
+            <p>{tx("Choose your category to view specific instructions and requirements")}</p>
           </div>
           
           <div className="user-type-tabs">
@@ -266,8 +269,8 @@ const InstrumentBooking = () => {
               onClick={() => setActiveTab('general')}
             >
               <FaUserFriends className="tab-icon" />
-              <span>General Users</span>
-              <p>Students & Researchers</p>
+              <span>{tx("General Users")}</span>
+              <p>{tx("Students & Researchers")}</p>
             </button>
             
             <button 
@@ -275,8 +278,8 @@ const InstrumentBooking = () => {
               onClick={() => setActiveTab('staff')}
             >
               <FaUserTie className="tab-icon" />
-              <span>Faculty & Staff</span>
-              <p>ATTAC System Access</p>
+              <span>{tx("Faculty & Staff")}</span>
+              <p>{tx("ATTAC System Access")}</p>
             </button>
             
             <button 
@@ -284,8 +287,8 @@ const InstrumentBooking = () => {
               onClick={() => setActiveTab('external')}
             >
               <FaUniversity className="tab-icon" />
-              <span>External Users</span>
-              <p>Industry & Collaborators</p>
+              <span>{tx("External Users")}</span>
+              <p>{tx("Industry & Collaborators")}</p>
             </button>
           </div>
         </div>
@@ -303,7 +306,7 @@ const InstrumentBooking = () => {
 
             <div className="instruments-info-grid">
               <div className="instruments-info-card">
-                <h4><FaFileAlt className="card-icon" /> Requirements</h4>
+                <h4><FaFileAlt className="card-icon" /> {tx("Requirements")}</h4>
                 <ul className="requirement-list">
                   {userTypes[activeTab].requirements.map((req, index) => (
                     <li key={index}>
@@ -315,7 +318,7 @@ const InstrumentBooking = () => {
               </div>
 
               <div className="instruments-info-card">
-                <h4><FaCalendarAlt className="card-icon" /> Booking Process</h4>
+                <h4><FaCalendarAlt className="card-icon" /> {tx("Booking Process")}</h4>
                 <ol className="process-list">
                   {userTypes[activeTab].bookingProcess.map((step, index) => (
                     <li key={index}>
@@ -327,7 +330,7 @@ const InstrumentBooking = () => {
               </div>
 
               <div className="instruments-info-card">
-                <h4><FaCheckCircle className="card-icon" /> Benefits</h4>
+                <h4><FaCheckCircle className="card-icon" /> {tx("Benefits")}</h4>
                 <ul className="benefits-list">
                   {userTypes[activeTab].benefits.map((benefit, index) => (
                     <li key={index}>
@@ -339,10 +342,10 @@ const InstrumentBooking = () => {
               </div>
 
               <div className="instruments-info-card contact-card">
-                <h4><FaExternalLinkAlt className="card-icon" /> Quick Access</h4>
+                <h4><FaExternalLinkAlt className="card-icon" /> {tx("Quick Access")}</h4>
                 <div className="contact-info">
                   <p className="contact-email">
-                    <strong>Email:</strong> {userTypes[activeTab].contact}
+                    <strong>{tx("Email:")}</strong> {userTypes[activeTab].contact}
                   </p>
                   <div className="quick-links">
                     {activeTab === 'staff' && (
@@ -352,7 +355,7 @@ const InstrumentBooking = () => {
                         rel="noopener noreferrer"
                         className="btn btn-primary"
                       >
-                        <FaExternalLinkAlt /> Access ATTAC System
+                        <FaExternalLinkAlt /> {tx("Access ATTAC System")}
                       </a>
                     )}
                     {activeTab === 'general' && (
@@ -362,7 +365,7 @@ const InstrumentBooking = () => {
                         rel="noopener noreferrer"
                         className="btn btn-primary"
                       >
-                        <FaCalendarCheck /> Book Instrument
+                        <FaCalendarCheck /> {tx("Book Instrument")}
                       </a>
                     )}
                     {activeTab === 'external' && (
@@ -372,7 +375,7 @@ const InstrumentBooking = () => {
                         rel="noopener noreferrer"
                         className="btn btn-primary"
                       >
-                        <FaExternalLinkAlt /> External Services Portal
+                        <FaExternalLinkAlt /> {tx("External Services Portal")}
                       </a>
                     )}
                   </div>
@@ -385,7 +388,7 @@ const InstrumentBooking = () => {
           <div className="sidebar-section">
             {/* Available Instruments */}
             <div className="sidebar-card">
-              <h4><FaSearch className="sidebar-icon" /> Available Instruments</h4>
+              <h4><FaSearch className="sidebar-icon" /> {tx("Available Instruments")}</h4>
               <div className="instrument-list">
                 {instruments.map(instrument => (
                   <div 
@@ -397,28 +400,28 @@ const InstrumentBooking = () => {
                       <div className="instrument-details">
                         <span className="category">{instrument.category}</span>
                         <span className={`availability ${instrument.availability.replace(' ', '-')}`}>
-                          {instrument.availability}
+                          {tx(instrument.availability)}
                         </span>
                       </div>
                       <div className="instrument-meta">
                         <span className="location">{instrument.location}</span>
-                        <span className="rate">฿{instrument.hourlyRate}/hr</span>
+                        <span className="rate">฿{instrument.hourlyRate}{tx("/hr")}</span>
                       </div>
                     </div>
                     {instrument.requiresTraining && (
-                      <span className="training-badge">Training Required</span>
+                      <span className="training-badge">{tx("Training Required")}</span>
                     )}
                   </div>
                 ))}
               </div>
               <a href="/instruments" className="view-all-link">
-                View All Instruments <FaArrowRight />
+                {tx("View All Instruments")} <FaArrowRight />
               </a>
             </div>
 
             {/* Booking Steps */}
             <div className="sidebar-card">
-              <h4><FaCalendarAlt className="sidebar-icon" /> Booking Steps</h4>
+              <h4><FaCalendarAlt className="sidebar-icon" /> {tx("Booking Steps")}</h4>
               <div className="booking-steps">
                 {bookingSteps.map(step => (
                   <div key={step.step} className="step-item">
@@ -426,7 +429,7 @@ const InstrumentBooking = () => {
                       {step.icon}
                     </div>
                     <div className="step-content">
-                      <h6>Step {step.step}: {step.title}</h6>
+                      <h6>{tx("Step")} {step.step}: {step.title}</h6>
                       <p>{step.description}</p>
                     </div>
                   </div>
@@ -436,23 +439,23 @@ const InstrumentBooking = () => {
 
             {/* Quick Resources */}
             <div className="sidebar-card">
-              <h4><FaDownload className="sidebar-icon" /> Quick Resources</h4>
+              <h4><FaDownload className="sidebar-icon" /> {tx("Quick Resources")}</h4>
               <div className="resources-list">
                 <a href="/forms/user-agreement.pdf" className="resource-link">
-                  <FaFileAlt /> User Agreement Form
+                  <FaFileAlt /> {tx("User Agreement Form")}
                 </a>
                 <a href="/forms/safety-guidelines.pdf" className="resource-link">
-                  <FaFileAlt /> Safety Guidelines
+                  <FaFileAlt /> {tx("Safety Guidelines")}
                 </a>
                 <a href="/forms/training-schedule.pdf" className="resource-link">
-                  <FaFileAlt /> Training Schedule
+                  <FaFileAlt /> {tx("Training Schedule")}
                 </a>
                 <a href="/forms/price-list.pdf" className="resource-link">
-                  <FaFileAlt /> Price List 2025
+                  <FaFileAlt /> {tx("Price List 2025")}
                 </a>
                 {activeTab === 'external' && (
                   <a href="/forms/nda-template.pdf" className="resource-link">
-                    <FaFileAlt /> NDA Template
+                    <FaFileAlt /> {tx("NDA Template")}
                   </a>
                 )}
               </div>
@@ -460,23 +463,23 @@ const InstrumentBooking = () => {
 
             {/* System Status */}
             <div className="sidebar-card status-card">
-              <h4><FaClock className="sidebar-icon" /> System Status</h4>
+              <h4><FaClock className="sidebar-icon" /> {tx("System Status")}</h4>
               <div className="status-indicator">
                 <div className="status online">
                   <div className="status-dot"></div>
-                  <span>Booking System: Online</span>
+                  <span>{tx("Booking System: Online")}</span>
                 </div>
                 <div className="status online">
                   <div className="status-dot"></div>
-                  <span>Payment Gateway: Online</span>
+                  <span>{tx("Payment Gateway: Online")}</span>
                 </div>
                 <div className="status maintenance">
                   <div className="status-dot"></div>
-                  <span>Support System: Maintenance</span>
+                  <span>{tx("Support System: Maintenance")}</span>
                 </div>
               </div>
               <p className="status-note">
-                Last updated: Today, 10:30 AM
+                {tx("Last updated: Today, 10:30 AM")}
               </p>
             </div>
           </div>
@@ -487,8 +490,8 @@ const InstrumentBooking = () => {
       <section className="cta-section">
         <div className="container">
           <div className="cta-content">
-            <h2>Ready to Book Your Instrument?</h2>
-            <p>Start your research journey with our advanced instrumentation facilities</p>
+            <h2>{tx("Ready to Book Your Instrument?")}</h2>
+            <p>{tx("Start your research journey with our advanced instrumentation facilities")}</p>
             <div className="cta-buttons">
               {activeTab === 'staff' ? (
                 <a 
@@ -497,7 +500,7 @@ const InstrumentBooking = () => {
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-large"
                 >
-                  <FaExternalLinkAlt /> Access ATTAC Portal
+                  <FaExternalLinkAlt /> {tx("Access ATTAC Portal")}
                 </a>
               ) : (
                 <a 
@@ -506,11 +509,11 @@ const InstrumentBooking = () => {
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-large"
                 >
-                  <FaCalendarCheck /> Start Booking Now
+                  <FaCalendarCheck /> {tx("Start Booking Now")}
                 </a>
               )}
               <a href="/contact" className="btn btn-secondary btn-large">
-                Contact Facility Manager
+                {tx("Contact Facility Manager")}
               </a>
             </div>
           </div>

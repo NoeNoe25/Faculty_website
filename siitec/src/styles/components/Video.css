@@ -1,40 +1,35 @@
 
     
-        body {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background: #f5f5f5;
-        }
-
-        .video-section {
+        .video-section:where(.home-videos), :where(.home-videos) .video-section {
           max-width: 1200px;
           margin: 0 auto;
           padding: 40px 20px;
         }
 
-        .section-header {
+        :where(.home-videos) .section-header {
           text-align: center;
           margin-bottom: 50px;
         }
 
-        .section-header h1 {
+        :where(.home-videos) .section-header h1 {
           font-size: 2.5rem;
           color: #2c3e50;
           margin-bottom: 10px;
         }
 
-        .section-header p {
+        :where(.home-videos) .section-header p {
           color: #7f8c8d;
           font-size: 1.1rem;
         }
 
-        .video-grid {
+        :where(.home-videos) .video-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
           gap: 30px;
           margin-bottom: 40px;
         }
 
-        .video-card {
+        :where(.home-videos) .video-card {
           background: white;
           border-radius: 12px;
           overflow: hidden;
@@ -42,12 +37,12 @@
           transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .video-card:hover {
+        :where(.home-videos) .video-card:hover {
           transform: translateY(-5px);
           box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
 
-        .video-wrapper {
+        :where(.home-videos) .video-wrapper {
           position: relative;
           padding-bottom: 56.25%;
           height: 0;
@@ -55,8 +50,8 @@
           background: #000;
         }
 
-        .video-wrapper iframe,
-        .video-wrapper video {
+        :where(.home-videos) .video-wrapper iframe,
+        :where(.home-videos) .video-wrapper video {
           position: absolute;
           top: 0;
           left: 0;
@@ -64,23 +59,23 @@
           height: 100%;
         }
 
-        .video-info {
+        :where(.home-videos) .video-info {
           padding: 20px;
         }
 
-        .video-info h3 {
+        :where(.home-videos) .video-info h3 {
           color: #2c3e50;
           margin-bottom: 10px;
           font-size: 1.2rem;
         }
 
-        .video-info p {
+        :where(.home-videos) .video-info p {
           color: #7f8c8d;
           line-height: 1.6;
           font-size: 0.95rem;
         }
 
-        .video-badge {
+        :where(.home-videos) .video-badge {
           display: inline-block;
           padding: 4px 12px;
           border-radius: 20px;
@@ -89,22 +84,22 @@
           margin-top: 10px;
         }
 
-        .badge-local {
+        :where(.home-videos) .badge-local {
           background: #3498db;
           color: white;
         }
 
-        .badge-youtube {
+        :where(.home-videos) .badge-youtube {
           background: #e74c3c;
           color: white;
         }
 
         @media (max-width: 768px) {
-          .video-grid {
+          :where(.home-videos) .video-grid {
             grid-template-columns: 1fr;
           }
 
-          .section-header h1 {
+          :where(.home-videos) .section-header h1 {
             font-size: 2rem;
           }
         }
