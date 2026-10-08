@@ -1,10 +1,10 @@
 /* src/styles/Programs.css */
-.programs-section {
+.programs-section:where(.page-programs), :where(.page-programs) .programs-section {
   background: var(--background-primary);
 }
 
 /* Degree Selector Tabs */
-.degree-selector {
+:where(.page-programs) .degree-selector {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
@@ -15,7 +15,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.degree-image-wrapper {
+:where(.page-programs) .degree-image-wrapper {
   width: 100%;
   height: 220px;
   overflow: hidden;
@@ -25,7 +25,7 @@
   
 }
 
-.degree-image {
+:where(.page-programs) .degree-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -33,7 +33,7 @@
   margin-top: 0px;
 }
 
-.degree-tab {
+:where(.page-programs) .degree-tab {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,29 +47,29 @@
   min-width: 120px;
 }
 
-.degree-tab:hover {
+:where(.page-programs) .degree-tab:hover {
   background: rgba(201, 166, 107, 0.1);
   transform: translateY(-2px);
 }
 
-.degree-tab.active {
+:where(.page-programs) .degree-tab.active {
   background: var(--tech-gradient);
   color: white;
   box-shadow: var(--shadow-md);
 }
 
-.degree-icon {
+:where(.page-programs) .degree-icon {
   font-size: 2rem;
   margin-bottom: 8px;
 }
 
-.degree-text {
+:where(.page-programs) .degree-text {
   font-weight: 600;
   font-size: 1.1rem;
 }
 
 /* Program Header */
-.program-header {
+:where(.page-programs) .program-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,13 +78,13 @@
   border-bottom: var(--border-slate);
 }
 
-.program-header h3 {
+:where(.page-programs) .program-header h3 {
   color: var(--text-dark);
   font-size: 2rem;
   margin: 0;
 }
 
-.programs_duration-badge {
+:where(.page-programs) .programs_duration-badge {
   background: var(--gold-copper-light);
   color: var(--text-dark);
   padding: 8px 16px;
@@ -94,14 +94,14 @@
 }
 
 /* Degrees Grid */
-.degrees-grid {
+:where(.page-programs) .degrees-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 30px;
   margin-bottom: 60px;
 }
 
-.degree-card {
+:where(.page-programs) .degree-card {
   padding: 30px;
   transition: var(--transition-medium);
   border: var(--border-slate);
@@ -109,7 +109,7 @@
   overflow: hidden;
 }
 
-.degree-card::before {
+:where(.page-programs) .degree-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -121,24 +121,24 @@
   transition: var(--transition-medium);
 }
 
-.degree-card:hover::before {
+:where(.page-programs) .degree-card:hover::before {
   transform: scaleX(1);
 }
 
-.degree-card:hover {
+:where(.page-programs) .degree-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
   border-color: var(--gold-copper-light);
 }
 
-.degree-card-header {
+:where(.page-programs) .degree-card-header {
   display: flex;
   justify-content: between;
   align-items: flex-start;
   margin-bottom: 15px;
 }
 
-.degree-card-header h4 {
+:where(.page-programs) .degree-card-header h4 {
   color: var(--text-dark);
   font-size: 1.4rem;
   margin: 0;
@@ -146,7 +146,7 @@
   margin-right: 15px;
 }
 
-.degree-code {
+:where(.page-programs) .degree-code {
   background: var(--slate-lighter);
   color: var(--text-dark);
   padding: 4px 8px;
@@ -156,7 +156,7 @@
   white-space: nowrap;
 }
 
-.degree-description {
+:where(.page-programs) .degree-description {
   color: var(--text-light);
   line-height: 1.6;
   margin-bottom: 25px;
@@ -164,28 +164,28 @@
 }
 
 /* Degree Details */
-.degree-details {
+:where(.page-programs) .degree-details {
   margin-bottom: 25px;
 }
 
-.detail-section {
+:where(.page-programs) .detail-section {
   margin-bottom: 20px;
 }
 
-.detail-section h5 {
+:where(.page-programs) .detail-section h5 {
   color: var(--text-dark);
   font-size: 1rem;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
-.detail-section ul {
+:where(.page-programs) .detail-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.detail-section li {
+:where(.page-programs) .detail-section li {
   color: var(--text-light);
   padding: 4px 0;
   padding-left: 20px;
@@ -193,7 +193,7 @@
   font-size: 0.9rem;
 }
 
-.detail-section li::before {
+:where(.page-programs) .detail-section li::before {
   content: '▸';
   position: absolute;
   left: 0;
@@ -201,13 +201,13 @@
   font-weight: bold;
 }
 
-.career-tags {
+:where(.page-programs) .career-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.career-tag {
+:where(.page-programs) .career-tag {
   background: rgba(117, 131, 132, 0.1);
   color: var(--text-light);
   padding: 4px 12px;
@@ -217,50 +217,51 @@
 }
 
 /* Degree Actions */
-.degree-actions {
+:where(.page-programs) .degree-actions {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
 }
 
-.degree-actions .btn {
+:where(.page-programs) .degree-actions .btn {
   flex: 1;
   min-width: 120px;
+  justify-content: center;
   text-align: center;
 }
 
-.btn .btn-secondary:hover {
+:where(.page-programs) .btn .btn-secondary:hover {
   background: var(--gold-copper-light);
   color: var(--text-dark);
   border-color: var(--gold-copper-light);
 }
 
 /* Additional Info Cards */
-.programs-info {
+:where(.page-programs) .programs-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 50px;
 }
 
-.info-card {
+:where(.page-programs) .info-card {
   text-align: center;
   padding: 30px;
   transition: var(--transition-medium);
 }
 
-.info-card:hover {
+:where(.page-programs) .info-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
 }
 
-.info-card h4 {
+:where(.page-programs) .info-card h4 {
   color: var(--text-dark);
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
 
-.info-card p {
+:where(.page-programs) .info-card p {
   color: var(--text-light);
   margin-bottom: 20px;
   line-height: 1.5;
@@ -268,62 +269,62 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .degree-selector {
+  :where(.page-programs) .degree-selector {
     flex-direction: column;
     gap: 10px;
   }
   
-  .degree-tab {
+  :where(.page-programs) .degree-tab {
     flex-direction: row;
     gap: 15px;
     padding: 15px 20px;
   }
   
-  .degree-icon {
+  :where(.page-programs) .degree-icon {
     font-size: 1.5rem;
     margin-bottom: 0;
   }
   
-  .program-header {
+  :where(.page-programs) .program-header {
     flex-direction: column;
     gap: 15px;
     text-align: center;
   }
   
-  .degrees-grid {
+  :where(.page-programs) .degrees-grid {
     grid-template-columns: 1fr;
   }
   
-  .degree-card-header {
+  :where(.page-programs) .degree-card-header {
     flex-direction: column;
     gap: 10px;
   }
   
-  .degree-code {
+  :where(.page-programs) .degree-code {
     align-self: flex-start;
   }
   
-  .degree-actions {
+  :where(.page-programs) .degree-actions {
     flex-direction: column;
   }
 }
 
 @media (max-width: 480px) {
-  .degrees-grid {
+  :where(.page-programs) .degrees-grid {
     grid-template-columns: 1fr;
   }
   
-  .degree-card {
+  :where(.page-programs) .degree-card {
     padding: 20px;
   }
   
-  .programs-info {
+  :where(.page-programs) .programs-info {
     grid-template-columns: 1fr;
   }
 }
 
 /* Animation for degree cards */
-@keyframes fadeInUp {
+@keyframes programs-fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -334,11 +335,11 @@
   }
 }
 
-.degree-card {
-  animation: fadeInUp 0.6s ease-out;
+:where(.page-programs) .degree-card {
+  animation: programs-fadeInUp 0.6s ease-out;
 }
 
-.degree-card:nth-child(1) { animation-delay: 0.1s; }
-.degree-card:nth-child(2) { animation-delay: 0.2s; }
-.degree-card:nth-child(3) { animation-delay: 0.3s; }
+:where(.page-programs) .degree-card:nth-child(1) { animation-delay: 0.1s; }
+:where(.page-programs) .degree-card:nth-child(2) { animation-delay: 0.2s; }
+:where(.page-programs) .degree-card:nth-child(3) { animation-delay: 0.3s; }
 

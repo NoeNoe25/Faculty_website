@@ -4,12 +4,12 @@
   color: #333333;
 }
 
-.parallax-banner {
+:where(.parallax-section) .parallax-banner {
   position: relative;
   overflow: hidden;
 }
 
-.parallax-background {
+:where(.parallax-section) .parallax-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -23,33 +23,38 @@
   transition: opacity 1.5s ease-in-out;
 }
 
-.parallax-background.active {
+:where(.parallax-section) .parallax-background.active {
   opacity: 1;
 }
 
-.overlay {
+:where(.parallax-section) .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.7)
+  );
   z-index: 1;
 }
 
-.tech-grid-overlay {
+:where(.parallax-section) .tech-grid-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(184, 115, 51, 0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(184, 115, 51, 0.05) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(184, 115, 51, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 115, 51, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
   z-index: 2;
 }
 
-.content-container {
+:where(.parallax-section) .content-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -61,15 +66,14 @@
   z-index: 3;
 }
 
-.parallax-content {
+:where(.parallax-section) .parallax-content {
   text-align: center;
   width: 1200px;
   padding: 0 2rem;
   width: 100%;
 }
 
-.parallax-main-title {
-
+:where(.parallax-section) .parallax-main-title {
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.1;
@@ -79,36 +83,36 @@
   letter-spacing: 1px;
 }
 
-.parallax-logo {
+:where(.parallax-section) .parallax-logo {
   margin-top: 0rem;
   width: 80px;
   height: auto;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
-.parallax-title {
+:where(.parallax-section) .parallax-title {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 1rem;
-  color: #D4A76A;
+  color: #d4a76a;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-.parallax-subtitle {
+:where(.parallax-section) .parallax-subtitle {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.tech-button {
+:where(.parallax-section) .tech-button {
   background: var(--gold-copper-dark);
-  color: #FFFFFF;
+  color: #ffffff;
   border: none;
   padding: 1rem 2.5rem;
   font-size: 0.95rem;
@@ -126,38 +130,42 @@
   margin-bottom: 2.5rem;
 }
 
-.tech-button:hover {
+:where(.parallax-section) .tech-button:hover {
   background: var(--gold-copper-dark);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px var(--slate-lighter) opacity(0.6);
 }
 
-.button-arrow {
+:where(.parallax-section) .button-arrow {
   font-size: 0.7rem;
   transition: transform 0.3s ease;
 }
 
-.tech-button:hover .button-arrow {
+:where(.parallax-section) .tech-button:hover .button-arrow {
   transform: translateX(5px);
 }
 
-.button-glow {
+:where(.parallax-section) .button-glow {
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(212, 167, 106, 0.3) 0%, rgba(212, 167, 106, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(212, 167, 106, 0.3) 0%,
+    rgba(212, 167, 106, 0) 70%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.tech-button:hover .button-glow {
+:where(.parallax-section) .tech-button:hover .button-glow {
   opacity: 1;
-  animation: pulse 2s infinite;
+  animation: parallax-pulse 2s infinite;
 }
 
-@keyframes pulse {
+@keyframes parallax-pulse {
   0% {
     transform: scale(0.8);
     opacity: 0.5;
@@ -173,7 +181,7 @@
 }
 
 /* Slideshow Indicators */
-.slideshow-indicators {
+:where(.parallax-section) .slideshow-indicators {
   position: absolute;
   bottom: 30px;
   left: 50%;
@@ -183,7 +191,7 @@
   z-index: 10;
 }
 
-.slideshow-indicators .indicator {
+:where(.parallax-section) .slideshow-indicators .indicator {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -194,19 +202,19 @@
   padding: 0;
 }
 
-.slideshow-indicators .indicator:hover {
+:where(.parallax-section) .slideshow-indicators .indicator:hover {
   background: rgba(255, 255, 255, 0.6);
   transform: scale(1.2);
 }
 
-.slideshow-indicators .indicator.active {
+:where(.parallax-section) .slideshow-indicators .indicator.active {
   background: var(--gold-copper-light);
-  border-color:var(--gold-copper-dark);
+  border-color: var(--gold-copper-dark);
   transform: scale(1.3);
 }
 
 /* News Cards Container - Centered under button */
-.news-cards-container {
+:where(.parallax-section) .news-cards-container {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
@@ -218,43 +226,43 @@
 }
 
 /* Horizontal Card Styles */
-.horizontal-card {
+:where(.parallax-section) .horizontal-card {
   display: flex;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
   overflow: hidden;
-  width:300px;
+  width: 300px;
   min-width: 250px;
   max-height: 100px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  border-left: 4px solid #cA8c50;
+  border-left: 4px solid #ca8c50;
 }
 
-.horizontal-card:hover {
+:where(.parallax-section) .horizontal-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(202, 140, 80, 0.4);
 }
 
-.card-image {
+:where(.parallax-section) .card-image {
   flex: 0 0 100px;
   overflow: hidden;
   position: relative;
 }
 
-.card-image img {
+:where(.parallax-section) .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.horizontal-card:hover .card-image img {
+:where(.parallax-section) .horizontal-card:hover .card-image img {
   transform: scale(1.1);
 }
 
-.card-body {
+:where(.parallax-section) .card-body {
   flex: 1;
   padding: 1rem;
   display: flex;
@@ -262,10 +270,9 @@
   justify-content: center;
 }
 
-.card-title {
+:where(.parallax-section) .card-title {
   padding: 1.5rem 0 0.5rem 0;
-  color: #cA8c50;
-  font-size: 1rem;
+  color: #ca8c50;
   font-weight: 600;
   text-align: left;
   margin-bottom: 0.5rem;
@@ -281,27 +288,26 @@
   margin-bottom: 0.4rem;
 } */
 
-.card-date {
+:where(.parallax-section) .card-date {
   color: #4c5354;
   font-size: 0.75rem;
   opacity: 0.8;
   text-align: left;
-  
 }
 
 /* Tech Stats Section */
-.tech-stats-container {
+:where(.parallax-section) .tech-stats-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 4rem 4rem 2rem;
-  background: linear-gradient(to bottom, #F5F5F5, #FFFFFF);
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
   position: relative;
   z-index: 4;
   margin-top: 0;
 }
 
-.tech-stat {
+:where(.parallax-section) .tech-stat {
   text-align: center;
   padding: 2rem;
   position: relative;
@@ -310,23 +316,23 @@
   margin: 1rem;
 }
 
-.stat-value {
+:where(.parallax-section) .stat-value {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  background: linear-gradient(90deg, #D4A76A, #B87333);
+  background: linear-gradient(90deg, #d4a76a, #b87333);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   display: inline-block;
 }
 
-.tech-stats-container .tech-stat .stat-label {
+:where(.parallax-section) .tech-stats-container .tech-stat .stat-label {
   font-size: 1rem;
-  color: #4A5455;
+  color: #4a5455;
 }
 
-.stat-circle {
+:where(.parallax-section) .stat-circle {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -338,8 +344,8 @@
   z-index: -1;
 }
 
-.stat-circle::before {
-  content: '';
+:where(.parallax-section) .stat-circle::before {
+  content: "";
   position: absolute;
   top: -10px;
   left: -10px;
@@ -347,10 +353,10 @@
   bottom: -10px;
   border-radius: 50%;
   border: 1px dashed rgba(184, 115, 51, 0.1);
-  animation: rotate 20s linear infinite;
+  animation: parallax-rotate 20s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes parallax-rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -361,115 +367,115 @@
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .news-cards-container {
+  :where(.parallax-section) .news-cards-container {
     flex-direction: column;
     gap: 1rem;
   }
 
-  .horizontal-card {
+  :where(.parallax-section) .horizontal-card {
     width: 100%;
     max-width: 450px;
   }
 }
 
 @media (max-width: 768px) {
-  .parallax-main-title {
+  :where(.parallax-section) .parallax-main-title {
     font-size: 2rem;
   }
-  
-  .parallax-logo {
+
+  :where(.parallax-section) .parallax-logo {
     width: 80px;
   }
-  
-  .parallax-subtitle {
+
+  :where(.parallax-section) .parallax-subtitle {
     font-size: 0.95rem;
   }
 
-  .tech-button {
+  :where(.parallax-section) .tech-button {
     padding: 0.9rem 2rem;
     font-size: 0.9rem;
     margin-bottom: 2rem;
   }
 
-  .news-cards-container {
+  :where(.parallax-section) .news-cards-container {
     gap: 1rem;
     padding: 0 0.5rem;
   }
 
-  .horizontal-card {
+  :where(.parallax-section) .horizontal-card {
     width: 100%;
     max-width: 100%;
     min-width: unset;
     max-height: 110px;
   }
 
-  .card-image {
+  :where(.parallax-section) .card-image {
     flex: 0 0 100px;
   }
 
-  .card-body {
+  :where(.parallax-section) .card-body {
     padding: 0.8rem 1rem;
   }
 
-  .card-title {
+  :where(.parallax-section) .card-title {
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
   }
 
-  .card-text {
+  :where(.parallax-section) .card-text {
     font-size: 0.75rem;
     margin-bottom: 0.3rem;
   }
 
-  .card-date {
+  :where(.parallax-section) .card-date {
     font-size: 0.7rem;
   }
-  
-  .tech-stats-container {
+
+  :where(.parallax-section) .tech-stats-container {
     padding: 3rem 1rem 2rem;
   }
-  
-  .tech-stat {
+
+  :where(.parallax-section) .tech-stat {
     width: 150px;
     padding: 1.5rem;
   }
-  
-  .stat-circle {
+
+  :where(.parallax-section) .stat-circle {
     width: 120px;
     height: 120px;
   }
 
-  .slideshow-indicators {
+  :where(.parallax-section) .slideshow-indicators {
     bottom: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .parallax-main-title {
+  :where(.parallax-section) .parallax-main-title {
     font-size: 1.5rem;
   }
 
-  .parallax-content {
+  :where(.parallax-section) .parallax-content {
     padding: 0 1rem;
   }
 
-  .horizontal-card {
+  :where(.parallax-section) .horizontal-card {
     max-height: 100px;
   }
 
-  .card-image {
+  :where(.parallax-section) .card-image {
     flex: 0 0 80px;
   }
 
-  .card-body {
+  :where(.parallax-section) .card-body {
     padding: 0.6rem 0.8rem;
   }
 
-  .card-title {
+  :where(.parallax-section) .card-title {
     font-size: 0.85rem;
   }
 
-  .card-text {
+  :where(.parallax-section) .card-text {
     font-size: 0.7rem;
   }
 }

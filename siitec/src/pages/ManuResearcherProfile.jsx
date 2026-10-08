@@ -1,6 +1,8 @@
 
 import React, { useState, useMemo } from 'react';
 import '../styles/ResearcherProfile.css';
+import { interpolate, useContent, useLanguage } from '../i18n/LanguageContext';
+import researchersContent from '../i18n/content/researchers';
 import profploypailin from '../assets/images/research/researchers/ProfPloypailin.png';
 import profchatrpol from '../assets/images/research/researchers/ProfChatrpol.png';
 import profjatuporn from '../assets/images/research/researchers/ProfJatuporn.jpg';
@@ -21,6 +23,7 @@ import project19 from '../assets/images/research/projects/Project19.png';
 import project20 from '../assets/images/research/projects/Project20.png';
 const ResearcherCard = ({ researcher }) => {
   const [expanded, setExpanded] = useState(false);
+  const c = useContent(researchersContent);
 
   return (
     <div className="researcher-card">
@@ -49,12 +52,12 @@ const ResearcherCard = ({ researcher }) => {
 
         {researcher.overview.length > 180 && (
           <button className="expand-btn" onClick={() => setExpanded(!expanded)}>
-            {expanded ? '− Show Less' : '+ Read More'}
+            {expanded ? c.showLess : c.readMore}
           </button>
         )}
 
         <div className="keywords-section">
-          <div className="keywords-label">Research Focus</div>
+          <div className="keywords-label">{c.researchFocus}</div>
           <div className="keywords">
             {researcher.keywords.map((keyword, idx) => (
               <span key={idx} className="keyword-chip">{keyword}</span>
@@ -64,7 +67,7 @@ const ResearcherCard = ({ researcher }) => {
 
         {researcher.specialties && researcher.specialties.length > 0 && (
           <div className="specialties-section">
-            <div className="keywords-label">Specialties</div>
+            <div className="keywords-label">{c.specialties}</div>
             <div className="keywords">
               {researcher.specialties.map((specialty, idx) => (
                 <span key={idx} className="specialty-chip">{specialty}</span>
@@ -80,7 +83,7 @@ const ResearcherCard = ({ researcher }) => {
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
-          Contact
+          {c.contact}
         </a>
         <div className="external-links">
           {researcher.googleScholar && (
@@ -105,7 +108,7 @@ const ResearcherCard = ({ researcher }) => {
             </a>
           )}
           {researcher.website && (
-            <a href={researcher.website} target="_blank" rel="noopener noreferrer" className="icon-link" title="Website">
+            <a href={researcher.website} target="_blank" rel="noopener noreferrer" className="icon-link" title={c.website}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                 <polyline points="15 3 21 3 21 9"/>
@@ -119,146 +122,162 @@ const ResearcherCard = ({ researcher }) => {
   );
 };
 
+// Researcher data. Kept outside the component so it is not rebuilt on every render.
+const researcherData = [
+  {
+    id: 1,
+    name: "Asst. Prof. Dr. Ploypailin Yongsiri",
+    position: "Assistant Professor",
+    researchGroup: "Advanced Materials Manufacturing",
+    category: "Materials Science",
+    overview: "Researcher expertise focuses on the valorization of industrial waste and residual materials, transforming them into high-value products through rigorous scientific methodologies. Specialization lies in the fabrication of electroceramic materials, with particular expertise in glass and glass-ceramic systems. The work encompasses comprehensive characterization and development of these advanced materials, with special interest in ferroelectric properties.",
+    keywords: ["Advanced Ceramics", "Ferroelectric", "Industrial Waste Valorization", "Glass-Ceramics"],
+    email: "ploypailin.yo@kmitl.ac.th",
+    googleScholar: "https://scholar.google.com",
+    researchGate: "https://researchgate.net",
+    profileImage: profploypailin,
+    projectImage: project1
+  },
+
+  {
+    id: 3,
+    name: "Assoc. Prof. Dr. Chatrpol Pakasiri",
+    position: "Associate Professor",
+    researchGroup: "Microelectronics and Sensors for Manufacturing",
+    category: "Electronics",
+    overview: "Radio frequency integrated circuit (RFIC). RF power combiner/divider, RF power amplifier, RF low noise amplifier, mixers, oscillator, phase locked loops/frequency synthesisers, phase shifter, RF switches, transceivers, passive microwave circuits, antenna design, digital circuit design using hardware description language (verilog).",
+    keywords: ["RFIC", "Transceivers", "Digital Circuit Design", "FPGA", "Antenna Design"],
+    email: "chatrpol.pa@kmitl.ac.th",
+    googleScholar: "https://scholar.google.com",
+    researchGate: "https://researchgate.net",
+    profileImage: profchatrpol,
+    projectImage: project3
+  },
+ 
+ 
+  {
+    id: 6,
+    name: "Assoc. Prof. Dr. Jatuporn Thongsri",
+    position: "Associate Professor",
+    researchGroup: "Computational Manufacturing Systems",
+    category: "Computational",
+    overview: "Research expertise spans Computational Fluid Dynamics (CFD), Finite Element Method (FEM), manufacturing systems, computer simulation, and digital twin technologies. His work focuses on integrating advanced computational modeling with intelligent manufacturing to enhance system performance, optimize processes, and support data-driven decision making.",
+    keywords: ["Computational Fluid Dynamics", "Finite Element Method", "Manufacturing Process", "Digital Twin"],
+    email: "jatuporn.th@kmitl.ac.th",
+    googleScholar: "https://scholar.google.com",
+    researchGate: "https://researchgate.net",
+    profileImage: profjatuporn,
+    projectImage: project6
+  },
+  {
+    id: 7,
+    name: "Assoc. Prof. Dr. Rachsak Sakdanuphab",
+    position: "Associate Professor",
+    researchGroup: "PVD Coating Technology for Industry",
+    category: "Materials Science",
+    overview: "ADOPT PVD COATINGS TECHNOLOGY IN THAILAND PVD CLUSTER. Research focuses on thin film semiconductor devices such as solar cells and thermoelectric modules, with expertise in PVD coating technology applications for industrial use.",
+    keywords: ["PVD Coating", "Thin Films", "Semiconductor Physics", "Thermoelectric Materials"],
+    email: "rachsak.sa@kmitl.ac.th",
+    googleScholar: "https://scholar.google.com",
+    profileImage: profrachsak,
+    projectImage: project7
+  },
+  {
+    id: 8,
+    name: "Asst. Prof. Komgrit Jaksukam",
+    position: "Assistant Professor",
+    researchGroup: "IoT and Industrial Automation",
+    category: "Automation",
+    overview: "Research expertise focuses on the convergence of IoT Edge-Cloud Computing and Industrial Automation Systems, embedded systems, multi-hop network, industrial robotics integration, and ultrasound measurement system.",
+    keywords: ["IoT Edge-Cloud Computing", "Industrial Robotics", "Wireless Sensor Networks", "Embedded Systems", "Industry 4.0"],
+    specialties: ["Multi-hop Networks", "Predictive Maintenance", "Automation Systems"],
+    email: "komgrit.ja@kmitl.ac.th",
+    googleScholar: "https://scholar.google.com",
+    researchGate: "https://researchgate.net",
+    profileImage: profkomgrit,
+    projectImage: project8
+  },
+  {
+    id: 9,
+    name: "Asst. Prof. Dr. Santhad Chuwongin",
+    position: "Assistant Professor",
+    researchGroup: "Center of Industrial Robots & Automation (CiRA Lab)",
+    category: "AI & Automation",
+    overview: "Practical AI in Advanced Manufacturing: AI-driven solutions for Industry 4.0, emphasizing automation, quality assurance, and process optimization. AI in Healthcare Applications: Deep learning approaches for healthcare including Medical image analysis using deep learning architectures, Vision Transformers for diagnostic systems.",
+    keywords: ["Industrial Robot & AI", "Machine Learning", "Deep Learning", "Self-Supervised Learning"],
+    specialties: ["Computer Vision", "Medical Image Analysis", "Tropical Disease Diagnostics"],
+    email: "santhad.ch@kmitl.ac.th",
+    googleScholar: "https://scholar.google.com",
+    researchGate: "https://researchgate.net",
+    profileImage: profsanthad,
+    projectImage: project9
+  },
+  
+  {
+    id: 16,
+    name: "Dr. Kittipon Kankhunthod",
+    position: "Researcher",
+    researchGroup: "Intelligent Automation and Data Analytics (IADA)",
+    category: "AI & Data Science",
+    overview: "Our research interests include Digital Signal Processing, Machine Learning, Data Analytics, and Magnetic Recording. We focus on developing advanced signal processing algorithms and data-driven models for intelligent analysis for the next-generation data storage technologies.",
+    keywords: ["Digital Signal Processing", "Machine Learning", "Data Analytics", "Magnetic Recording"],
+    email: "kittipon.ka@kmitl.ac.th",
+    googleScholar: "https://scholar.google.com",
+    researchGate: "https://researchgate.net",
+    profileImage: profkittipong,
+    projectImage: project16
+  },
+
+  
+  {
+    id: 19,
+    name: "Dr. Nathawirot Somjajaroen",
+    position: "Researcher",
+    researchGroup: "Thin Films and Semiconductor Applications",
+    category: "Electronics",
+    overview: "My research primarily focuses on semiconductor-based thin-film preparation, analysis, and fabrication, especially using PVD technology. The resulting films are applied to various applications such as protective coatings, transparent functional layers, sensors, and semiconductor-related devices.",
+    keywords: ["Thin Films", "Semiconductor Application", "Magnetic Behavior", "Deep Learning", "Superconductor"],
+    email: "nathawirot.so@kmitl.ac.th",
+    researchGate: "https://researchgate.net",
+    profileImage: profnattawirot,
+    projectImage: project19
+  },
+  {
+    id: 20,
+    name: "Assoc. Prof. Dr. Chanon Warisarn",
+    position: "Associate Professor",
+    researchGroup: "Advanced Signal Processing for Data Storage",
+    category: "Data Science",
+    overview: "Our research focuses on advanced signal processing techniques for magnetic recording and data storage systems, with an emphasis on emerging recording technologies and intelligent detection schemes. We investigate the read/write processes in ultra-high-density storage.",
+    keywords: ["Magnetic Recording", "Signal Processing", "Encoding/Decoding Design"],
+    website: "https://www.adsignlab.org",
+    email: "chanon.wa@kmitl.ac.th",
+    googleScholar: "https://scholar.google.com",
+    profileImage: profchanon,
+    projectImage: project20
+  },
+  
+
+];
+
 const ManuResearcherProfile = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const { t } = useLanguage();
+  const c = useContent(researchersContent);
+  const term = (value) => c.terms[value] ?? value;
 
-  const researchers = [
-    {
-      id: 1,
-      name: "Asst. Prof. Dr. Ploypailin Yongsiri",
-      position: "Assistant Professor",
-      researchGroup: "Advanced Materials Manufacturing",
-      category: "Materials Science",
-      overview: "Researcher expertise focuses on the valorization of industrial waste and residual materials, transforming them into high-value products through rigorous scientific methodologies. Specialization lies in the fabrication of electroceramic materials, with particular expertise in glass and glass-ceramic systems. The work encompasses comprehensive characterization and development of these advanced materials, with special interest in ferroelectric properties.",
-      keywords: ["Advanced Ceramics", "Ferroelectric", "Industrial Waste Valorization", "Glass-Ceramics"],
-      email: "ploypailin.yo@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: profploypailin,
-      projectImage: project1
-    },
-  
-    {
-      id: 3,
-      name: "Assoc. Prof. Dr. Chatrpol Pakasiri",
-      position: "Associate Professor",
-      researchGroup: "Microelectronics and Sensors for Manufacturing",
-      category: "Electronics",
-      overview: "Radio frequency integrated circuit (RFIC). RF power combiner/divider, RF power amplifier, RF low noise amplifier, mixers, oscillator, phase locked loops/frequency synthesisers, phase shifter, RF switches, transceivers, passive microwave circuits, antenna design, digital circuit design using hardware description language (verilog).",
-      keywords: ["RFIC", "Transceivers", "Digital Circuit Design", "FPGA", "Antenna Design"],
-      email: "chatrpol.pa@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: profchatrpol,
-      projectImage: project3
-    },
- 
- 
-    {
-      id: 6,
-      name: "Assoc. Prof. Dr. Jatuporn Thongsri",
-      position: "Associate Professor",
-      researchGroup: "Computational Manufacturing Systems",
-      category: "Computational",
-      overview: "Research expertise spans Computational Fluid Dynamics (CFD), Finite Element Method (FEM), manufacturing systems, computer simulation, and digital twin technologies. His work focuses on integrating advanced computational modeling with intelligent manufacturing to enhance system performance, optimize processes, and support data-driven decision making.",
-      keywords: ["Computational Fluid Dynamics", "Finite Element Method", "Manufacturing Process", "Digital Twin"],
-      email: "jatuporn.th@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: profjatuporn,
-      projectImage: project6
-    },
-    {
-      id: 7,
-      name: "Assoc. Prof. Dr. Rachsak Sakdanuphab",
-      position: "Associate Professor",
-      researchGroup: "PVD Coating Technology for Industry",
-      category: "Materials Science",
-      overview: "ADOPT PVD COATINGS TECHNOLOGY IN THAILAND PVD CLUSTER. Research focuses on thin film semiconductor devices such as solar cells and thermoelectric modules, with expertise in PVD coating technology applications for industrial use.",
-      keywords: ["PVD Coating", "Thin Films", "Semiconductor Physics", "Thermoelectric Materials"],
-      email: "rachsak.sa@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      profileImage: profrachsak,
-      projectImage: project7
-    },
-    {
-      id: 8,
-      name: "Asst. Prof. Komgrit Jaksukam",
-      position: "Assistant Professor",
-      researchGroup: "IoT and Industrial Automation",
-      category: "Automation",
-      overview: "Research expertise focuses on the convergence of IoT Edge-Cloud Computing and Industrial Automation Systems, embedded systems, multi-hop network, industrial robotics integration, and ultrasound measurement system.",
-      keywords: ["IoT Edge-Cloud Computing", "Industrial Robotics", "Wireless Sensor Networks", "Embedded Systems", "Industry 4.0"],
-      specialties: ["Multi-hop Networks", "Predictive Maintenance", "Automation Systems"],
-      email: "komgrit.ja@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: profkomgrit,
-      projectImage: project8
-    },
-    {
-      id: 9,
-      name: "Asst. Prof. Dr. Santhad Chuwongin",
-      position: "Assistant Professor",
-      researchGroup: "Center of Industrial Robots & Automation (CiRA Lab)",
-      category: "AI & Automation",
-      overview: "Practical AI in Advanced Manufacturing: AI-driven solutions for Industry 4.0, emphasizing automation, quality assurance, and process optimization. AI in Healthcare Applications: Deep learning approaches for healthcare including Medical image analysis using deep learning architectures, Vision Transformers for diagnostic systems.",
-      keywords: ["Industrial Robot & AI", "Machine Learning", "Deep Learning", "Self-Supervised Learning"],
-      specialties: ["Computer Vision", "Medical Image Analysis", "Tropical Disease Diagnostics"],
-      email: "santhad.ch@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: profsanthad,
-      projectImage: project9
-    },
-    
-    {
-      id: 16,
-      name: "Dr. Kittipon Kankhunthod",
-      position: "Researcher",
-      researchGroup: "Intelligent Automation and Data Analytics (IADA)",
-      category: "AI & Data Science",
-      overview: "Our research interests include Digital Signal Processing, Machine Learning, Data Analytics, and Magnetic Recording. We focus on developing advanced signal processing algorithms and data-driven models for intelligent analysis for the next-generation data storage technologies.",
-      keywords: ["Digital Signal Processing", "Machine Learning", "Data Analytics", "Magnetic Recording"],
-      email: "kittipon.ka@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      researchGate: "https://researchgate.net",
-      profileImage: profkittipong,
-      projectImage: project16
-    },
-  
-    
-    {
-      id: 19,
-      name: "Dr. Nathawirot Somjajaroen",
-      position: "Researcher",
-      researchGroup: "Thin Films and Semiconductor Applications",
-      category: "Electronics",
-      overview: "My research primarily focuses on semiconductor-based thin-film preparation, analysis, and fabrication, especially using PVD technology. The resulting films are applied to various applications such as protective coatings, transparent functional layers, sensors, and semiconductor-related devices.",
-      keywords: ["Thin Films", "Semiconductor Application", "Magnetic Behavior", "Deep Learning", "Superconductor"],
-      email: "nathawirot.so@kmitl.ac.th",
-      researchGate: "https://researchgate.net",
-      profileImage: profnattawirot,
-      projectImage: project19
-    },
-    {
-      id: 20,
-      name: "Assoc. Prof. Dr. Chanon Warisarn",
-      position: "Associate Professor",
-      researchGroup: "Advanced Signal Processing for Data Storage",
-      category: "Data Science",
-      overview: "Our research focuses on advanced signal processing techniques for magnetic recording and data storage systems, with an emphasis on emerging recording technologies and intelligent detection schemes. We investigate the read/write processes in ultra-high-density storage.",
-      keywords: ["Magnetic Recording", "Signal Processing", "Encoding/Decoding Design"],
-      website: "https://www.adsignlab.org",
-      email: "chanon.wa@kmitl.ac.th",
-      googleScholar: "https://scholar.google.com",
-      profileImage: profchanon,
-      projectImage: project20
-    },
-    
 
-  ];
+  // Position and overview follow the current language; category stays English for filtering.
+  const researchers = useMemo(
+    () =>
+      researcherData.map((researcher) => ({
+        ...researcher,
+        position: c.terms[researcher.position] ?? researcher.position,
+        overview: c.overviews[researcher.id] ?? researcher.overview,
+      })),
+    [c]
+  );
 
   // Filter researchers based on search and category
   const filteredResearchers = useMemo(() => {
@@ -283,7 +302,7 @@ const ManuResearcherProfile = () => {
       
       return matchesSearch && matchesCategory;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategory, researchers]);
 
   // Get unique categories for filter buttons
   const categories = ['all', 'Materials Science', 'Electronics', 
@@ -302,14 +321,14 @@ const ManuResearcherProfile = () => {
   }, {});
 
   return (
-    <div className="researcher-container">
+    <div className="researcher-container page-researchers">
       {/* Header */}
       <header className="researcher-header">
         <div className="header-decoration"></div>
         <div className="header-content">
-          <h1 className="header-title">Advanced Manufacturing & Technology Research Groups</h1>
-          <p className="header-subtitle">School of Integrated Innovative Technology</p>
-          <p className="header-institution">King Mongkut's Institute of Technology Ladkrabang</p>
+          <h1 className="header-title">{c.titles.manu}</h1>
+          <p className="header-subtitle">{t('site.fullName')}</p>
+          <p className="header-institution">{t('site.institution')}</p>
         </div>
       </header>
 
@@ -323,7 +342,7 @@ const ManuResearcherProfile = () => {
             <input
               type="text"
               className="search-input"
-              placeholder="Search by name, research group, or keywords..."
+              placeholder={c.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -331,7 +350,7 @@ const ManuResearcherProfile = () => {
               <button 
                 className="clear-btn"
                 onClick={() => setSearchQuery('')}
-                aria-label="Clear search"
+                aria-label={c.clearSearch}
               >
                 ×
               </button>
@@ -347,7 +366,7 @@ const ManuResearcherProfile = () => {
               className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
               onClick={() => setSelectedCategory(category)}
             >
-              {category === 'all' ? 'All Research Areas' : category}
+              {category === 'all' ? c.allAreas : term(category)}
               <span className="count-badge">{categoryCounts[category]}</span>
             </button>
           ))}
@@ -357,9 +376,11 @@ const ManuResearcherProfile = () => {
       {/* Results Info */}
       <div className="results-info">
         <p>
-          {filteredResearchers.length} {filteredResearchers.length === 1 ? 'research group' : 'research groups'} found
-          {searchQuery && <span className="search-term"> for "{searchQuery}"</span>}
-          {selectedCategory !== 'all' && <span className="search-term"> in {selectedCategory}</span>}
+          {interpolate(filteredResearchers.length === 1 ? c.resultsOne : c.resultsMany, { count: filteredResearchers.length })}
+          {searchQuery && <span className="search-term">{interpolate(c.resultsFor, { query: searchQuery })}</span>}
+          {selectedCategory !== 'all' && (
+            <span className="search-term">{interpolate(c.resultsIn, { category: term(selectedCategory) })}</span>
+          )}
         </p>
       </div>
 
@@ -377,15 +398,15 @@ const ManuResearcherProfile = () => {
               <circle cx="26" cy="26" r="18" stroke="currentColor" strokeWidth="3"/>
               <path d="M39 39l16 16" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
             </svg>
-            <h3>No research groups found</h3>
-            <p>Try adjusting your search or filter criteria</p>
+            <h3>{c.noResults}</h3>
+            <p>{c.tryAdjusting}</p>
           </div>
         )}
       </div>
 
       {/* Footer */}
       <footer className="researcher-footer">
-        <p>© 2024 School of Integrated Innovative Technology — KMITL</p>
+        <p>{c.footer}</p>
       </footer>
     </div>
   );

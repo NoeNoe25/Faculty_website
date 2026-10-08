@@ -1,20 +1,20 @@
 
 
 /* Base styles */
-.about-section {
+.about-section:where(.page-about), :where(.page-about) .about-section {
   background: var(--background-primary);
   font-family: var(--font-body);
   color: var(--text-primary);
 }
 
-.container {
+:where(.page-about) .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
 /* Hero Stats Section (within parallax banner) */
-.about-hero-stats {
+:where(.page-about) .about-hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -23,10 +23,7 @@
   position: relative;
   z-index: 3;
 }
-p{
-  color: #fff;
-}
-.about-stat-item {
+:where(.page-about) .about-stat-item {
   background: rgba(255, 255, 255, 0.1);
   padding: 2rem 1rem;
   border-radius: var(--border-radius-lg);
@@ -36,13 +33,13 @@ p{
   text-align: center;
 }
 
-.about-stat-item:hover {
+:where(.page-about) .about-stat-item:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: translateY(-5px);
   border-color: var(--gold-copper);
 }
 
-.about-stat-number {
+:where(.page-about) .about-stat-number {
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
@@ -51,7 +48,7 @@ p{
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.about-stat-label {
+:where(.page-about) .about-stat-label {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
@@ -59,12 +56,12 @@ p{
 }
 
 /* Innovation Section */
-.innovation-section {
+:where(.page-about) .innovation-section {
   background: var(--background-primary);
   padding: 80px 0;
 }
 
-.innovation-grid {
+:where(.page-about) .innovation-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -72,7 +69,7 @@ p{
   align-items: center;
 }
 
-.innovation-grid .section-title h2 {
+:where(.page-about) .innovation-grid .section-title h2 {
   font-family: var(--font-title);
   font-size: 2.8rem;
   color: var(--slate-darkest);
@@ -81,7 +78,7 @@ p{
   line-height: 1.2;
 }
 
-.about-btn {
+:where(.page-about) .about-btn {
   padding: 12px 32px;
   font-size: 1rem;
   font-weight: 600;
@@ -92,34 +89,34 @@ p{
   font-family: var(--font-body);
 }
 
-.about-btn-primary {
+:where(.page-about) .about-btn-primary {
   background: var(--gold-copper-forbutton);
   color: var(--text-primary);
   box-shadow: var(--shadow-sm);
 }
 
-.about-btn-primary:hover {
+:where(.page-about) .about-btn-primary:hover {
   background: var(--gold-copper-dark);
   color: var(--background-primary);
   transform: translateY(-3px);
   box-shadow: var(--glow-gold);
 }
 
-.innovation-right p {
+:where(.page-about) .innovation-right p {
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1.1rem;
   margin: 0;
 }
 
-.cards-grid {
+:where(.page-about) .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-top: 3rem;
 }
 
-.about-card {
+:where(.page-about) .about-card {
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   position: relative;
@@ -127,16 +124,16 @@ p{
   box-shadow: var(--shadow-md);
 }
 
-.about-card:hover {
+:where(.page-about) .about-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
 }
 
-.about-card-story {
+:where(.page-about) .about-card-story {
   height: 420px;
 }
 
-.about-card-story img {
+:where(.page-about) .about-card-story img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -144,12 +141,12 @@ p{
   filter: brightness(0.9);
 }
 
-.about-card:hover .about-card-story img {
+:where(.page-about) .about-card:hover .about-card-story img {
   transform: scale(1.05);
   filter: brightness(1);
 }
 
-.about-card-overlay {
+:where(.page-about) .about-card-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -159,7 +156,7 @@ p{
   padding: 2.5rem;
 }
 
-.about-card-overlay h3 {
+:where(.page-about) .about-card-overlay h3 {
   font-family: var(--font-title);
   font-size: 1.8rem;
   margin-bottom: 0.7rem;
@@ -167,7 +164,7 @@ p{
   font-weight: 300;
 }
 
-.about-card-overlay p {
+:where(.page-about) .about-card-overlay p {
   font-size: 0.95rem;
   margin-bottom: 1.2rem;
   color: #fff;
@@ -175,13 +172,13 @@ p{
   opacity: 0.9;
 }
 
-.cards-right {
+:where(.page-about) .cards-right {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.about-card-mission {
+:where(.page-about) .about-card-mission {
   background: linear-gradient(135deg,#1c2e4a,#131e38);
   color: #fff;
   padding: 2.5rem;
@@ -191,7 +188,7 @@ p{
   justify-content: center;
 }
 
-.about-card-vision {
+:where(.page-about) .about-card-vision {
   background: linear-gradient(135deg,#d4a76a,#8d6930);
   color: #fff;
   padding: 2.5rem;
@@ -201,12 +198,12 @@ p{
   justify-content: center;
 }
 
-.about-card-vision p{
+:where(.page-about) .about-card-vision p{
   color: #fff;
 }
 
-.about-card-mission h3,
-.about-card-vision h3 {
+:where(.page-about) .about-card-mission h3,
+:where(.page-about) .about-card-vision h3 {
   font-family: var(--font-title);
   font-size: 1.8rem;
   margin-bottom: 1rem;
@@ -214,24 +211,24 @@ p{
   font-weight: 300;
 }
 
-.about-card-mission p,
-.about-card-vision p {
+:where(.page-about) .about-card-mission p,
+:where(.page-about) .about-card-vision p {
   font-size: 0.95rem;
   line-height: 1.6;
   opacity: 0.9;
 }
 
 /* Unique Section */
-.unique-section {
+:where(.page-about) .unique-section {
   background: var(--background-secondary);
   padding: 80px 0;
 }
 
-.section-title {
+:where(.page-about) .section-title {
   margin-bottom: 3rem;
 }
 
-.section-title h2 {
+:where(.page-about) .section-title h2 {
   font-family: var(--font-title);
   font-size: 2.8rem;
   color: var(--slate-darkest);
@@ -239,20 +236,20 @@ p{
   font-weight: 300;
 }
 
-.section-title p {
+:where(.page-about) .section-title p {
   font-size: 1.2rem;
   color: var(--text-secondary);
   font-weight: 400;
 }
 
-.features-grid {
+:where(.page-about) .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
   margin-top: 3rem;
 }
 
-.about-feature-card {
+:where(.page-about) .about-feature-card {
   text-align: center;
   background: var(--background-primary);
   padding: 2.5rem 2rem;
@@ -262,13 +259,13 @@ p{
   border: 1px solid var(--slate-pale);
 }
 
-.about-feature-card:hover {
+:where(.page-about) .about-feature-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: var(--gold-copper);
 }
 
-.about-feature-icon {
+:where(.page-about) .about-feature-icon {
   font-size: 2.5rem;
   margin: 0 auto 1.5rem;
   color: var(--gold-copper);
@@ -281,7 +278,7 @@ p{
   border-radius: 50%;
 }
 
-.about-feature-card h4 {
+:where(.page-about) .about-feature-card h4 {
   font-family: var(--font-title);
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -289,7 +286,7 @@ p{
   font-weight: 400;
 }
 
-.about-feature-card p {
+:where(.page-about) .about-feature-card p {
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
@@ -297,12 +294,12 @@ p{
 }
 
 /* Dean Section */
-.dean-section {
+:where(.page-about) .dean-section {
   background: var(--background-primary);
   padding: 80px 0;
 }
 
-.dean-card {
+:where(.page-about) .dean-card {
 background: linear-gradient(135deg,#1c2e4a,#131e38);;
   border-radius: var(--border-radius-lg);
   padding: 4rem;
@@ -314,7 +311,7 @@ background: linear-gradient(135deg,#1c2e4a,#131e38);;
   box-shadow: var(--shadow-xl);
 }
 
-.quote-mark {
+:where(.page-about) .quote-mark {
   font-size: 4rem;
   line-height: 1;
   margin-bottom: 1rem;
@@ -323,7 +320,7 @@ background: linear-gradient(135deg,#1c2e4a,#131e38);;
   color: var(--gold-copper-light);
 }
 
-.dean-quote h3 {
+:where(.page-about) .dean-quote h3 {
   font-family: var(--font-title);
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
@@ -332,21 +329,21 @@ background: linear-gradient(135deg,#1c2e4a,#131e38);;
   font-weight: 300;
 }
 
-.dean-quote p {
+:where(.page-about) .dean-quote p {
   font-size: 1rem;
   line-height: 1.7;
   opacity: 0.9;
   color: var(--slate-lighter);
 }
 
-.dean-profile {
+:where(.page-about) .dean-profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
 }
 
-.dean-profile img {
+:where(.page-about) .dean-profile img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -356,16 +353,16 @@ background: linear-gradient(135deg,#1c2e4a,#131e38);;
   box-shadow: var(--shadow-lg);
 }
 
-.dean-profile img:hover {
+:where(.page-about) .dean-profile img:hover {
   transform: scale(1.05);
   border-color: var(--gold-copper);
 }
 
-.dean-info {
+:where(.page-about) .dean-info {
   text-align: center;
 }
 
-.dean-info h4 {
+:where(.page-about) .dean-info h4 {
   font-family: var(--font-title);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
@@ -373,7 +370,7 @@ background: linear-gradient(135deg,#1c2e4a,#131e38);;
   font-weight: 400;
 }
 
-.dean-info p {
+:where(.page-about) .dean-info p {
   font-size: 0.9rem;
   opacity: 0.8;
   color: var(--gold-copper-light);
@@ -381,112 +378,112 @@ background: linear-gradient(135deg,#1c2e4a,#131e38);;
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .innovation-grid,
-  .cards-grid,
-  .dean-card {
+  :where(.page-about) .innovation-grid,
+  :where(.page-about) .cards-grid,
+  :where(.page-about) .dean-card {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .about-hero-stats {
+  :where(.page-about) .about-hero-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
   
-  .features-grid {
+  :where(.page-about) .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .dean-profile {
+  :where(.page-about) .dean-profile {
     margin-top: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .about-hero-stats {
+  :where(.page-about) .about-hero-stats {
     grid-template-columns: 1fr;
     max-width: 300px;
   }
   
-  .about-stat-number {
+  :where(.page-about) .about-stat-number {
     font-size: 2rem;
   }
   
-  .about-stat-label {
+  :where(.page-about) .about-stat-label {
     font-size: 0.9rem;
   }
   
-  .innovation-grid .section-title h2,
-  .section-title h2 {
+  :where(.page-about) .innovation-grid .section-title h2,
+  :where(.page-about) .section-title h2 {
     font-size: 2.2rem;
   }
   
-  .features-grid {
+  :where(.page-about) .features-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .about-card-story {
+  :where(.page-about) .about-card-story {
     height: 300px;
   }
   
-  .container {
+  :where(.page-about) .container {
     padding: 0 1.5rem;
   }
   
-  .innovation-section,
-  .unique-section,
-  .dean-section {
+  :where(.page-about) .innovation-section,
+  :where(.page-about) .unique-section,
+  :where(.page-about) .dean-section {
     padding: 60px 0;
   }
   
-  .dean-card {
+  :where(.page-about) .dean-card {
     padding: 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .about-hero-stats {
+  :where(.page-about) .about-hero-stats {
     gap: 1rem;
   }
   
-  .about-stat-item {
+  :where(.page-about) .about-stat-item {
     padding: 1.5rem 1rem;
   }
   
-  .about-stat-number {
+  :where(.page-about) .about-stat-number {
     font-size: 1.8rem;
   }
   
-  .innovation-grid .section-title h2,
-  .section-title h2 {
+  :where(.page-about) .innovation-grid .section-title h2,
+  :where(.page-about) .section-title h2 {
     font-size: 1.8rem;
   }
   
-  .about-card-overlay {
+  :where(.page-about) .about-card-overlay {
     padding: 1.5rem;
   }
   
-  .about-card-overlay h3 {
+  :where(.page-about) .about-card-overlay h3 {
     font-size: 1.5rem;
   }
   
-  .about-card-mission,
-  .about-card-vision {
+  :where(.page-about) .about-card-mission,
+  :where(.page-about) .about-card-vision {
     padding: 2rem;
     min-height: auto;
   }
   
-  .dean-card {
+  :where(.page-about) .dean-card {
     padding: 2rem;
   }
   
-  .dean-profile img {
+  :where(.page-about) .dean-profile img {
     width: 150px;
     height: 150px;
   }
   
-  .about-btn {
+  :where(.page-about) .about-btn {
     padding: 10px 24px;
     font-size: 0.9rem;
   }

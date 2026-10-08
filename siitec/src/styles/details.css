@@ -1,11 +1,11 @@
 /* ProgramDetailsWithNav.css - SCOPED VERSION */
-.program-page {
+.program-page:where(.page-program-details), :where(.page-program-details) .program-page {
   font-family: var(--font-body);
   color: var(--text-dark);
 }
 
 /* Hero Section */
-.program-page__hero {
+:where(.page-program-details) .program-page__hero {
   height: 80vh;
   background-size: cover;
   background-position: center;
@@ -15,7 +15,7 @@
   position: relative;
 }
 
-.program-page__back-btn {
+:where(.page-program-details) .program-page__back-btn {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -34,11 +34,11 @@
   transition: background 0.3s ease;
 }
 
-.program-page__back-btn:hover {
+:where(.page-program-details) .program-page__back-btn:hover {
   background: rgba(255, 255, 255, 0.35);
 }
 
-.program-page__hero .program-page__container {
+:where(.page-program-details) .program-page__hero .program-page__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,13 +47,13 @@
   padding: 0 2rem;
 }
 
-.program-page__hero-content {
+:where(.page-program-details) .program-page__hero-content {
   flex: 1;
   max-width: 600px;
   z-index: 3;
 }
 
-.program-page__hero-title {
+:where(.page-program-details) .program-page__hero-title {
   font-size: 3.2rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
@@ -63,7 +63,7 @@
   color: transparent;
 }
 
-.program-page__hero-subtitle {
+:where(.page-program-details) .program-page__hero-subtitle {
   font-size: 1rem;
   margin-bottom: 2.5rem;
   font-weight: 300;
@@ -71,14 +71,14 @@
   color: white;
 }
 
-.program-page__hero-actions {
+:where(.page-program-details) .program-page__hero-actions {
   display: flex;
   gap: 1rem;
 }
 
 
 /* Main Content Layout */
-.program-page__main-wrapper {
+:where(.page-program-details) .program-page__main-wrapper {
   display: flex;
   min-height: calc(100vh - 200px);
   max-width: 1400px;
@@ -86,7 +86,7 @@
 }
 
 /* Side Navigation */
-.program-page__side-nav {
+:where(.page-program-details) .program-page__side-nav {
   width: 280px;
   background: var(--background-primary);
   border-right: 1px solid var(--background-tertiary);
@@ -97,29 +97,29 @@
   overflow-y: auto;
 }
 
-.program-page__nav-header {
+:where(.page-program-details) .program-page__nav-header {
   padding: 0 1.5rem 1.5rem;
   border-bottom: 1px solid var(--background-tertiary);
   margin-bottom: 1rem;
 }
 
-.program-page__nav-header h3 {
+:where(.page-program-details) .program-page__nav-header h3 {
   color: var(--slate-dark);
   font-weight: 400;
   font-size: 1.1rem;
 }
 
-.program-page__nav-links {
+:where(.page-program-details) .program-page__nav-links {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.program-page__nav-links li {
+:where(.page-program-details) .program-page__nav-links li {
   margin: 0;
 }
 
-.program-page__nav-link {
+:where(.page-program-details) .program-page__nav-link {
   width: 100%;
   padding: 1rem 1.5rem;
   background: none;
@@ -136,43 +136,43 @@
   border-left: 3px solid transparent;
 }
 
-.program-page__nav-link:hover {
+:where(.page-program-details) .program-page__nav-link:hover {
   background: var(--background-secondary);
   color: var(--slate-dark);
 }
 
-.program-page__nav-link--active {
+:where(.page-program-details) .program-page__nav-link--active {
   background: var(--background-secondary);
   color: var(--gold-copper);
   border-left-color: var(--gold-copper);
   font-weight: 600;
 }
 
-.program-page__nav-icon {
+:where(.page-program-details) .program-page__nav-icon {
   font-size: 1.1rem;
   width: 20px;
   text-align: center;
 }
 
-.program-page__nav-footer {
+:where(.page-program-details) .program-page__nav-footer {
   padding: 1.5rem;
   border-top: 1px solid var(--background-tertiary);
   margin-top: 1rem;
 }
 
-.program-page__nav-cta {
+:where(.page-program-details) .program-page__nav-cta {
   width: 100%;
   justify-content: center;
 }
 
 /* Main Content */
-.program-page__main-content {
+:where(.page-program-details) .program-page__main-content {
   flex: 1;
   padding: 2rem 3rem;
   background: var(--background-secondary);
 }
 
-.program-page__content-section {
+:where(.page-program-details) .program-page__content-section {
   background: var(--background-primary);
   margin-bottom: 3rem;
   border-radius: var(--border-radius-lg);
@@ -181,12 +181,12 @@
   scroll-margin-top: 2rem;
 }
 
-.program-page__section-header {
+:where(.page-program-details) .program-page__section-header {
   margin-bottom: 2.5rem;
   text-align: center;
 }
 
-.program-page__section-header h2 {
+:where(.page-program-details) .program-page__section-header h2 {
   font-size: 2.4rem;
   font-weight: 300;
   margin-bottom: 1rem;
@@ -196,14 +196,14 @@
   background-clip: text;
 }
 
-.program-page__section-header p {
+:where(.page-program-details) .program-page__section-header p {
   font-size: 1.1rem;
   color: var(--text-light);
   font-weight: 400;
 }
 
 /* Intro highlight */
-.program-page__intro-highlight {
+:where(.page-program-details) .program-page__intro-highlight {
   background: var(--background-secondary);
   border-left: 4px solid var(--gold-copper);
   padding: 1.5rem;
@@ -211,7 +211,7 @@
   border-radius: var(--border-radius);
 }
 
-.program-page__intro-highlight p {
+:where(.page-program-details) .program-page__intro-highlight p {
   color: var(--text-dark);
   font-style: italic;
   margin: 0;
@@ -220,14 +220,14 @@
 }
 
 /* Updated Stats Grid - 6 items */
-.program-page__stats-grid {
+:where(.page-program-details) .program-page__stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin: 2.5rem 0;
 }
 
-.program-page__stat-card {
+:where(.page-program-details) .program-page__stat-card {
   text-align: center;
   padding: 1.5rem;
   background: var(--background-secondary);
@@ -236,19 +236,19 @@
   transition: var(--transition-fast);
 }
 
-.program-page__stat-card:hover {
+:where(.page-program-details) .program-page__stat-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-sm);
 }
 
-.program-page__stat-card h3 {
+:where(.page-program-details) .program-page__stat-card h3 {
   font-size: 1.8rem;
   color: var(--gold-copper);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
-.program-page__stat-card p {
+:where(.page-program-details) .program-page__stat-card p {
   color: var(--text-light);
   font-weight: 500;
   font-size: 0.9rem;
@@ -256,26 +256,26 @@
 }
 
 /* Main Subjects */
-.program-page__main-subjects {
+:where(.page-program-details) .program-page__main-subjects {
   margin: 2.5rem 0;
   text-align: center;
 }
 
-.program-page__main-subjects h3 {
+:where(.page-program-details) .program-page__main-subjects h3 {
   color: var(--slate-dark);
   margin-bottom: 1.5rem;
   font-weight: 400;
   font-size: 1.5rem;
 }
 
-.program-page__subjects-list {
+:where(.page-program-details) .program-page__subjects-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
   justify-content: center;
 }
 
-.program-page__subject-tag {
+:where(.page-program-details) .program-page__subject-tag {
   background: var(--gold-copper);
   color: white;
   padding: 0.6rem 1.2rem;
@@ -285,20 +285,20 @@
   transition: var(--transition-fast);
 }
 
-.program-page__subject-tag:hover {
+:where(.page-program-details) .program-page__subject-tag:hover {
   background: var(--gold-copper-dark);
   transform: translateY(-2px);
 }
 
 /* Features Grid */
-.program-page__features-grid {
+:where(.page-program-details) .program-page__features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.program-page__feature-card {
+:where(.page-program-details) .program-page__feature-card {
   text-align: center;
   padding: 2rem 1.5rem;
   background: var(--background-secondary);
@@ -307,24 +307,24 @@
   font-family: var(--font-body);
 }
 
-.program-page__feature-card:hover {
+:where(.page-program-details) .program-page__feature-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
 
-.program-page__feature-icon {
+:where(.page-program-details) .program-page__feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: var(--gold-copper);
 }
 
-.program-page__feature-card h4 {
+:where(.page-program-details) .program-page__feature-card h4 {
   color: var(--slate-dark);
   margin-bottom: 1rem;
   font-weight: 400;
 }
 
-.program-page__feature-card p {
+:where(.page-program-details) .program-page__feature-card p {
   color: var(--text-light);
   line-height: 1.6;
   font-size: 0.9rem;
@@ -332,11 +332,11 @@
 
 /* Curriculum */
 /* Study Plans Section */
-.program-page__plans-section {
+:where(.page-program-details) .program-page__plans-section {
   margin: 3rem 0;
 }
 
-.program-page__plans-section h4 {
+:where(.page-program-details) .program-page__plans-section h4 {
   color: var(--slate-dark);
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
@@ -346,14 +346,14 @@
   padding-bottom: 0.5rem;
 }
 
-.program-page__plans-grid {
+:where(.page-program-details) .program-page__plans-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 1.5rem;
 }
 
-.program-page__plan-card {
+:where(.page-program-details) .program-page__plan-card {
   background: var(--background-secondary);
   border-radius: var(--border-radius-lg);
   padding: 2rem;
@@ -364,13 +364,13 @@
   flex-direction: column;
 }
 
-.program-page__plan-card:hover {
+:where(.page-program-details) .program-page__plan-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
   border-color: var(--gold-copper-light);
 }
 
-.program-page__plan-header {
+:where(.page-program-details) .program-page__plan-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -379,14 +379,14 @@
   padding-bottom: 1rem;
 }
 
-.program-page__plan-header h5 {
+:where(.page-program-details) .program-page__plan-header h5 {
   color: var(--slate-dark);
   font-size: 1.3rem;
   font-weight: 500;
   margin: 0;
 }
 
-.program-page__plan-type {
+:where(.page-program-details) .program-page__plan-type {
   background: var(--gold-copper-light);
   color: var(--slate-dark);
   font-size: 0.8rem;
@@ -397,22 +397,22 @@
 }
 
 /* Different colors for plan types */
-.program-page__plan-card:nth-child(1) .program-page__plan-type {
+:where(.page-program-details) .program-page__plan-card:nth-child(1) .program-page__plan-type {
   background: linear-gradient(135deg, #f8d7a4, #f5b041);
   color: #7d6608;
 }
 
-.program-page__plan-card:nth-child(2) .program-page__plan-type {
+:where(.page-program-details) .program-page__plan-card:nth-child(2) .program-page__plan-type {
   background: linear-gradient(135deg, #aed6f1, #5dade2);
   color: #154360;
 }
 
-.program-page__plan-card:nth-child(3) .program-page__plan-type {
+:where(.page-program-details) .program-page__plan-card:nth-child(3) .program-page__plan-type {
   background: linear-gradient(135deg, #d5dbdb, #a6acaf);
   color: #424949;
 }
 
-.program-page__plan-description {
+:where(.page-program-details) .program-page__plan-description {
   color: var(--text-light);
   font-size: 0.95rem;
   line-height: 1.6;
@@ -420,14 +420,14 @@
   flex-grow: 1;
 }
 
-.program-page__plan-requirements {
+:where(.page-program-details) .program-page__plan-requirements {
   background: var(--background-primary);
   border-radius: var(--border-radius);
   padding: 1.5rem;
   margin-top: auto;
 }
 
-.program-page__plan-requirements h6 {
+:where(.page-program-details) .program-page__plan-requirements h6 {
   color: var(--slate-dark);
   font-size: 1.1rem;
   margin-bottom: 1rem;
@@ -437,18 +437,18 @@
   gap: 0.5rem;
 }
 
-.program-page__plan-requirements h6:before {
+:where(.page-program-details) .program-page__plan-requirements h6:before {
   content: "📋";
   font-size: 1rem;
 }
 
-.program-page__plan-requirements ul {
+:where(.page-program-details) .program-page__plan-requirements ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.program-page__plan-requirements li {
+:where(.page-program-details) .program-page__plan-requirements li {
   color: var(--text-light);
   padding: 0.5rem 0;
   padding-left: 1.5rem;
@@ -458,11 +458,11 @@
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.program-page__plan-requirements li:last-child {
+:where(.page-program-details) .program-page__plan-requirements li:last-child {
   border-bottom: none;
 }
 
-.program-page__plan-requirements li:before {
+:where(.page-program-details) .program-page__plan-requirements li:before {
   content: "✓";
   color: var(--gold-copper);
   position: absolute;
@@ -471,7 +471,7 @@
 }
 
 /* Plan Stats Summary */
-.program-page__plan-stats {
+:where(.page-program-details) .program-page__plan-stats {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
@@ -479,19 +479,19 @@
   border-top: 1px solid var(--background-tertiary);
 }
 
-.program-page__plan-stat {
+:where(.page-program-details) .program-page__plan-stat {
   text-align: center;
   flex: 1;
 }
 
-.program-page__plan-stat-value {
+:where(.page-program-details) .program-page__plan-stat-value {
   color: var(--gold-copper);
   font-size: 1.2rem;
   font-weight: 600;
   display: block;
 }
 
-.program-page__plan-stat-label {
+:where(.page-program-details) .program-page__plan-stat-label {
   color: var(--text-light);
   font-size: 0.8rem;
   margin-top: 0.3rem;
@@ -499,12 +499,12 @@
 }
 
 /* Program Plan Comparison Table */
-.program-page__plan-comparison {
+:where(.page-program-details) .program-page__plan-comparison {
   margin: 3rem 0;
   overflow-x: auto;
 }
 
-.program-page__plan-comparison h4 {
+:where(.page-program-details) .program-page__plan-comparison h4 {
   color: var(--slate-dark);
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
@@ -512,7 +512,7 @@
   text-align: center;
 }
 
-.program-page__comparison-table {
+:where(.page-program-details) .program-page__comparison-table {
   width: 100%;
   border-collapse: collapse;
   background: var(--background-primary);
@@ -521,7 +521,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.program-page__comparison-table th {
+:where(.page-program-details) .program-page__comparison-table th {
   background: var(--slate-dark);
   color: white;
   padding: 1.2rem;
@@ -530,11 +530,11 @@
   font-size: 1rem;
 }
 
-.program-page__comparison-table th:first-child {
+:where(.page-program-details) .program-page__comparison-table th:first-child {
   background: var(--gold-copper);
 }
 
-.program-page__comparison-table td {
+:where(.page-program-details) .program-page__comparison-table td {
   padding: 1rem;
   border-bottom: 1px solid var(--background-tertiary);
   color: var(--text-light);
@@ -542,11 +542,11 @@
   font-size: 0.9rem;
 }
 
-.program-page__comparison-table tr:hover {
+:where(.page-program-details) .program-page__comparison-table tr:hover {
   background: var(--background-secondary);
 }
 
-.program-page__comparison-table td:first-child {
+:where(.page-program-details) .program-page__comparison-table td:first-child {
   font-weight: 500;
   color: var(--slate-dark);
   text-align: left;
@@ -554,7 +554,7 @@
 }
 
 /* Plan Selection Helper */
-.program-page__plan-selection {
+:where(.page-program-details) .program-page__plan-selection {
   background: linear-gradient(135deg, #fef9e7, #fcf3cf);
   border-radius: var(--border-radius);
   padding: 2rem;
@@ -562,7 +562,7 @@
   border-left: 4px solid var(--gold-copper);
 }
 
-.program-page__plan-selection h5 {
+:where(.page-program-details) .program-page__plan-selection h5 {
   color: var(--slate-dark);
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -571,12 +571,12 @@
   gap: 0.5rem;
 }
 
-.program-page__plan-selection h5:before {
+:where(.page-program-details) .program-page__plan-selection h5:before {
   content: "💡";
   font-size: 1.2rem;
 }
 
-.program-page__plan-selection p {
+:where(.page-program-details) .program-page__plan-selection p {
   color: #7d6608;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -585,77 +585,77 @@
 
 /* Responsive for Plans */
 @media (max-width: 768px) {
-  .program-page__plans-grid {
+  :where(.page-program-details) .program-page__plans-grid {
     grid-template-columns: 1fr;
   }
   
-  .program-page__plan-header {
+  :where(.page-program-details) .program-page__plan-header {
     flex-direction: column;
     gap: 0.5rem;
   }
   
-  .program-page__plan-type {
+  :where(.page-program-details) .program-page__plan-type {
     align-self: flex-start;
   }
   
-  .program-page__comparison-table {
+  :where(.page-program-details) .program-page__comparison-table {
     font-size: 0.85rem;
   }
   
-  .program-page__comparison-table th,
-  .program-page__comparison-table td {
+  :where(.page-program-details) .program-page__comparison-table th,
+  :where(.page-program-details) .program-page__comparison-table td {
     padding: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
-  .program-page__plan-card {
+  :where(.page-program-details) .program-page__plan-card {
     padding: 1.5rem;
   }
   
-  .program-page__plan-requirements {
+  :where(.page-program-details) .program-page__plan-requirements {
     padding: 1rem;
   }
   
-  .program-page__plan-stat-value {
+  :where(.page-program-details) .program-page__plan-stat-value {
     font-size: 1rem;
   }
   
-  .program-page__plan-selection {
+  :where(.page-program-details) .program-page__plan-selection {
     padding: 1.5rem;
   }
 }
-.program-page__curriculum-simple {
+:where(.page-program-details) .program-page__curriculum-simple {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.program-page__curriculum-intro {
+:where(.page-program-details) .program-page__curriculum-intro {
   margin-bottom: 2.5rem;
 }
 
-.program-page__curriculum-intro h4 {
+:where(.page-program-details) .program-page__curriculum-intro h4 {
   color: var(--slate-dark);
   font-size: 1.4rem;
   margin-bottom: 1rem;
   font-weight: 400;
 }
 
-.program-page__curriculum-intro p {
+:where(.page-program-details) .program-page__curriculum-intro p {
   color: var(--text-light);
   font-size: 1rem;
   line-height: 1.6;
 }
 
-.program-page__download-links {
+:where(.page-program-details) .program-page__download-links {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 2rem;
 }
 
-.program-page__download-link {
+:where(.page-program-details) .program-page__download-link {
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -669,53 +669,53 @@
   text-align: left;
 }
 
-.program-page__download-link:hover {
+:where(.page-program-details) .program-page__download-link:hover {
   background: var(--background-secondary);
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-color: var(--gold-copper);
 }
 
-.program-page__download-icon {
+:where(.page-program-details) .program-page__download-icon {
   font-size: 1.5rem;
   color: var(--gold-copper);
   min-width: 40px;
   text-align: center;
 }
 
-.program-page__download-info {
+:where(.page-program-details) .program-page__download-info {
   flex: 1;
 }
 
-.program-page__download-info h5 {
+:where(.page-program-details) .program-page__download-info h5 {
   color: var(--slate-dark);
   margin: 0 0 0.5rem 0;
   font-weight: 500;
   font-size: 1rem;
 }
 
-.program-page__download-info p {
+:where(.page-program-details) .program-page__download-info p {
   color: var(--text-light);
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.4;
 }
 
-.program-page__download-size {
+:where(.page-program-details) .program-page__download-size {
   color: var(--text-light);
   font-size: 0.85rem;
   white-space: nowrap;
   opacity: 0.8;
 }
 
-.program-page__curriculum-note {
+:where(.page-program-details) .program-page__curriculum-note {
   padding: 1rem 1.5rem;
   background: var(--background-secondary);
   border-radius: var(--border-radius);
   border-left: 4px solid var(--slate-base);
 }
 
-.program-page__curriculum-note p {
+:where(.page-program-details) .program-page__curriculum-note p {
   color: var(--text-light);
   margin: 0;
   font-size: 0.9rem;
@@ -723,38 +723,38 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .program-page__download-link {
+  :where(.page-program-details) .program-page__download-link {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
   
-  .program-page__download-icon {
+  :where(.page-program-details) .program-page__download-icon {
     margin-bottom: 0.5rem;
   }
   
-  .program-page__download-size {
+  :where(.page-program-details) .program-page__download-size {
     margin-top: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .program-page__download-info h5 {
+  :where(.page-program-details) .program-page__download-info h5 {
     font-size: 0.95rem;
   }
   
-  .program-page__download-info p {
+  :where(.page-program-details) .program-page__download-info p {
     font-size: 0.85rem;
   }
 }
 /* Careers - Minimal Layout */
-.program-page__careers-minimal {
+:where(.page-program-details) .program-page__careers-minimal {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
 }
 
-.program-page__career-category h4 {
+:where(.page-program-details) .program-page__career-category h4 {
   color: var(--slate-dark);
   margin-bottom: 1.5rem;
   font-weight: 400;
@@ -763,13 +763,13 @@
   padding-bottom: 0.5rem;
 }
 
-.program-page__career-list {
+:where(.page-program-details) .program-page__career-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.program-page__career-list li {
+:where(.page-program-details) .program-page__career-list li {
   padding: 0.8rem 0;
   border-bottom: 1px solid var(--background-tertiary);
   color: var(--text-light);
@@ -778,7 +778,7 @@
   font-size: 0.95rem;
 }
 
-.program-page__career-list li:before {
+:where(.page-program-details) .program-page__career-list li:before {
   content: "•";
   color: var(--gold-copper);
   position: absolute;
@@ -787,24 +787,24 @@
 }
 
 /* Admissions */
-.program-page__admissions-grid {
+:where(.page-program-details) .program-page__admissions-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
 }
 
-.program-page__requirements h4,
-.program-page__deadlines h4 {
+:where(.page-program-details) .program-page__requirements h4,
+:where(.page-program-details) .program-page__deadlines h4 {
   color: var(--slate-dark);
   margin-bottom: 1.5rem;
   font-weight: 400;
 }
 
-.program-page__requirements ul {
+:where(.page-program-details) .program-page__requirements ul {
   list-style: none;
 }
 
-.program-page__requirements li {
+:where(.page-program-details) .program-page__requirements li {
   padding: 0.8rem 0;
   border-bottom: 1px solid var(--background-tertiary);
   color: var(--text-light);
@@ -812,14 +812,14 @@
   padding-left: 1.5rem;
 }
 
-.program-page__requirements li:before {
+:where(.page-program-details) .program-page__requirements li:before {
   content: "•";
   color: var(--gold-copper);
   position: absolute;
   left: 0;
 }
 
-.program-page__deadline-card {
+:where(.page-program-details) .program-page__deadline-card {
   background: var(--background-secondary);
   padding: 1.5rem;
   border-radius: var(--border-radius);
@@ -827,26 +827,26 @@
   border-left: 4px solid var(--slate-base);
 }
 
-.program-page__deadline-card h5 {
+:where(.page-program-details) .program-page__deadline-card h5 {
   color: var(--slate-dark);
   margin-bottom: 1rem;
   font-weight: 500;
 }
 
-.program-page__deadline-card p {
+:where(.page-program-details) .program-page__deadline-card p {
   color: var(--text-light);
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
 
 /* Scholarships */
-.program-page__scholarships-grid {
+:where(.page-program-details) .program-page__scholarships-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
-.program-page__scholarship-card {
+:where(.page-program-details) .program-page__scholarship-card {
   padding: 2rem;
   background: var(--background-secondary);
   border-radius: var(--border-radius);
@@ -854,47 +854,47 @@
   transition: var(--transition-medium);
 }
 
-.program-page__scholarship-card:hover {
+:where(.page-program-details) .program-page__scholarship-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
   border-color: var(--gold-copper);
 }
 
-.program-page__scholarship-header {
+:where(.page-program-details) .program-page__scholarship-header {
   display: flex;
   justify-content: space-between;
   align-items: start;
   margin-bottom: 1rem;
 }
 
-.program-page__scholarship-header h4 {
+:where(.page-program-details) .program-page__scholarship-header h4 {
   color: var(--slate-dark);
   font-weight: 400;
   flex: 1;
   margin-right: 1rem;
 }
 
-.program-page__amount {
+:where(.page-program-details) .program-page__amount {
   color: var(--gold-copper);
   font-weight: 700;
   font-size: 1.1rem;
   white-space: nowrap;
 }
 
-.program-page__scholarship-card p {
+:where(.page-program-details) .program-page__scholarship-card p {
   color: var(--text-light);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
 /* Facilities with Images */
-.program-page__facilities-grid {
+:where(.page-program-details) .program-page__facilities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-.program-page__facility-card {
+:where(.page-program-details) .program-page__facility-card {
   text-align: center;
   padding: 2rem 1.5rem;
   background: var(--background-secondary);
@@ -907,7 +907,7 @@
   align-items: center;
 }
 
-.program-page__facility-card--image {
+:where(.page-program-details) .program-page__facility-card--image {
   position: relative;
   color: white !important;
   background-size: cover !important;
@@ -918,7 +918,7 @@
   padding-bottom: 3rem;
 }
 
-.program-page__facility-card--image:before {
+:where(.page-program-details) .program-page__facility-card--image:before {
   content: '';
   position: absolute;
   top: 0;
@@ -930,52 +930,52 @@
   z-index: 1;
 }
 
-.program-page__facility-card--image .program-page__facility-icon,
-.program-page__facility-card--image h4,
-.program-page__facility-card--image p {
+:where(.page-program-details) .program-page__facility-card--image .program-page__facility-icon,
+:where(.page-program-details) .program-page__facility-card--image h4,
+:where(.page-program-details) .program-page__facility-card--image p {
   position: relative;
   z-index: 2;
 }
 
-.program-page__facility-card:hover {
+:where(.page-program-details) .program-page__facility-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
 
-.program-page__facility-icon {
+:where(.page-program-details) .program-page__facility-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: var(--gold-copper);
 }
 
-.program-page__facility-card--image .program-page__facility-icon {
+:where(.page-program-details) .program-page__facility-card--image .program-page__facility-icon {
   color: white;
 }
 
-.program-page__facility-card h4 {
+:where(.page-program-details) .program-page__facility-card h4 {
   color: var(--slate-dark);
   margin-bottom: 1rem;
   font-weight: 400;
 }
 
-.program-page__facility-card--image h4 {
+:where(.page-program-details) .program-page__facility-card--image h4 {
   color: white;
   font-size: 1.3rem;
 }
 
-.program-page__facility-card p {
+:where(.page-program-details) .program-page__facility-card p {
   color: var(--text-light);
   line-height: 1.6;
   font-size: 0.9rem;
 }
 
-.program-page__facility-card--image p {
+:where(.page-program-details) .program-page__facility-card--image p {
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.95rem;
 }
 
 /* CTA Section */
-.program-page__cta-section {
+:where(.page-program-details) .program-page__cta-section {
  background-image: linear-gradient(rgba(10, 25, 47, 0.97), rgba(10, 25, 47, 0.97)), 
     url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zm20.97 0l9.315 9.314-1.414 1.414L34.828 0h2.83zM22.344 0L13.03 9.314l1.414 1.414L25.172 0h-2.83zM32 0l12.142 12.142-1.414 1.414L30 .828 17.272 13.556l-1.414-1.414L28 0h4zM.284 0l28 28-1.414 1.414L0 2.544v-2.26zM0 5.373l25.456 25.455-1.414 1.415L0 8.2V5.374zm0 5.656l22.627 22.627-1.414 1.414L0 13.86v-2.83zm0 5.656l19.8 19.8-1.415 1.413L0 19.514v-2.83zm0 5.657l16.97 16.97-1.414 1.415L0 25.172v-2.83zM0 28l14.142 14.142-1.414 1.414L0 30.828V28zm0 5.657L11.314 44.97 9.9 46.386l-9.9-9.9v-2.828zm0 5.657L8.485 47.8 7.07 49.212 0 42.143v-2.83zm0 5.657l5.657 5.657-1.414 1.415L0 47.8v-2.83zm0 5.657l2.828 2.83-1.414 1.413L0 53.456v-2.83zM54.627 60L30 35.373 5.373 60H8.2L30 38.2 51.8 60h2.827zm-5.656 0L30 41.03 11.03 60h2.828L30 43.858 46.142 60h2.83zm-5.656 0L30 46.686 16.686 60h2.83L30 49.515 40.485 60h2.83zm-5.657 0L30 52.343 22.344 60h2.83L30 55.172 34.828 60h2.83zM32 60l-2-2-2 2h4zM59.716 0l-28 28 1.414 1.414L60 2.544V0h-.284zM60 5.373L34.544 30.828l1.414 1.415L60 8.2V5.374zm0 5.656L37.373 33.656l1.414 1.414L60 13.86v-2.83zm0 5.656l-19.8 19.8 1.415 1.413L60 19.514v-2.83zm0 5.657l-16.97 16.97 1.414 1.415L60 25.172v-2.83zM60 28L45.858 42.142l1.414 1.414L60 30.828V28zm0 5.657L48.686 44.97l1.415 1.415 9.9-9.9v-2.828zm0 5.657L51.515 47.8l1.414 1.413 7.07-7.07v-2.83zm0 5.657l-5.657 5.657 1.414 1.415L60 47.8v-2.83zm0 5.657l-2.828 2.83 1.414 1.413L60 53.456v-2.83zM39.9 16.385l1.414-1.414L30 3.658 18.686 14.97l1.415 1.415 9.9-9.9 9.9 9.9zm-2.83 2.828l1.415-1.414L30 9.313 21.515 17.8l1.414 1.413L30 11.8l7.07 7.414v-.002zm-2.827 2.83l1.414-1.416L30 14.97l-5.657 5.657 1.414 1.415L30 17.8l4.243 4.242zm-2.83 2.827l1.415-1.414L30 20.626l-2.828 2.83 1.414 1.414L30 23.456l1.414 1.414zM56.87 59.414L58.284 58 30 29.716 1.716 58l1.414 1.414L30 32.544l26.87 26.87z' fill='%23c9a66b' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
   border-radius: var(--border-radius-lg);
@@ -985,27 +985,27 @@
   margin-top: 3rem;
 }
 
-.program-page__cta-content h2 {
+:where(.page-program-details) .program-page__cta-content h2 {
   color: white;
   margin-bottom: 1rem;
   font-weight: 300;
   font-size: 2.2rem;
 }
 
-.program-page__cta-content p {
+:where(.page-program-details) .program-page__cta-content p {
   margin-bottom: 2.5rem;
   font-size: 1.1rem;
   opacity: 0.9;
 }
 
-.program-page__cta-buttons {
+:where(.page-program-details) .program-page__cta-buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
 }
 
 /* Buttons - Scoped to program page */
-.program-page .program-page__btn {
+.program-page:where(.page-program-details) .program-page__btn, :where(.page-program-details) .program-page .program-page__btn {
   padding: 0.8rem 1.8rem;
   border: none;
   border-radius: var(--border-radius);
@@ -1019,53 +1019,53 @@
   text-align: center;
 }
 
-.program-page .program-page__btn--primary {
+.program-page:where(.page-program-details) .program-page__btn--primary, :where(.page-program-details) .program-page .program-page__btn--primary {
   background: var(--gold-copper-forbutton);
   color: white;
 }
 
-.program-page .program-page__btn--primary:hover {
+.program-page:where(.page-program-details) .program-page__btn--primary:hover, :where(.page-program-details) .program-page .program-page__btn--primary:hover {
   background: var(--gold-copper-dark);
   transform: translateY(-2px);
   box-shadow: var(--glow-gold);
 }
 
-.program-page .program-page__btn--secondary {
+.program-page:where(.page-program-details) .program-page__btn--secondary, :where(.page-program-details) .program-page .program-page__btn--secondary {
   background: transparent;
   color: var(--slate-dark);
   border: var(--slate-dark) 1px solid;
 }
 
-.program-page .program-page__btn--secondary:hover {
+.program-page:where(.page-program-details) .program-page__btn--secondary:hover, :where(.page-program-details) .program-page .program-page__btn--secondary:hover {
   background: white;
   transform: translateY(-2px);
   box-shadow: var(--glow-blue);
 }
 
-.program-page .program-page__btn--outline {
+.program-page:where(.page-program-details) .program-page__btn--outline, :where(.page-program-details) .program-page .program-page__btn--outline {
   background: transparent;
   color: var(--slate-dark);
   border: 2px solid var(--slate-base);
 }
 
-.program-page .program-page__btn--outline:hover {
+.program-page:where(.page-program-details) .program-page__btn--outline:hover, :where(.page-program-details) .program-page .program-page__btn--outline:hover {
   background: var(--slate-base);
   color: white;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .program-page__stats-grid {
+  :where(.page-program-details) .program-page__stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 1024px) {
-  .program-page__main-wrapper {
+  :where(.page-program-details) .program-page__main-wrapper {
     flex-direction: column;
   }
   
-  .program-page__side-nav {
+  :where(.page-program-details) .program-page__side-nav {
     width: 100%;
     height: auto;
     position: static;
@@ -1073,120 +1073,120 @@
     border-bottom: 1px solid var(--background-tertiary);
   }
   
-  .program-page__nav-links {
+  :where(.page-program-details) .program-page__nav-links {
     display: flex;
     overflow-x: auto;
     padding: 0 1rem;
   }
   
-  .program-page__nav-link {
+  :where(.page-program-details) .program-page__nav-link {
     white-space: nowrap;
     border-left: none;
     border-bottom: 3px solid transparent;
   }
   
-  .program-page__nav-link--active {
+  :where(.page-program-details) .program-page__nav-link--active {
     border-left: none;
     border-bottom-color: var(--gold-copper);
   }
   
-  .program-page__main-content {
+  :where(.page-program-details) .program-page__main-content {
     padding: 2rem;
   }
   
-  .program-page__features-grid,
-  .program-page__admissions-grid,
-  .program-page__careers-minimal {
+  :where(.page-program-details) .program-page__features-grid,
+  :where(.page-program-details) .program-page__admissions-grid,
+  :where(.page-program-details) .program-page__careers-minimal {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .program-page__facilities-grid {
+  :where(.page-program-details) .program-page__facilities-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .program-page__hero .program-page__container {
+  :where(.page-program-details) .program-page__hero .program-page__container {
     flex-direction: column;
     text-align: center;
   }
   
-  .program-page__hero-content {
+  :where(.page-program-details) .program-page__hero-content {
     margin-bottom: 3rem;
   }
   
-  .program-page__hero-title {
+  :where(.page-program-details) .program-page__hero-title {
     font-size: 2.5rem;
   }
   
-  .program-page__section-header h2 {
+  :where(.page-program-details) .program-page__section-header h2 {
     font-size: 2rem;
   }
   
-  .program-page__content-section {
+  :where(.page-program-details) .program-page__content-section {
     padding: 2rem;
   }
   
-  .program-page__stats-grid {
+  :where(.page-program-details) .program-page__stats-grid {
     grid-template-columns: 1fr;
   }
   
-  .program-page__features-grid {
+  :where(.page-program-details) .program-page__features-grid {
     grid-template-columns: 1fr;
   }
   
-  .program-page__tab-buttons {
+  :where(.page-program-details) .program-page__tab-buttons {
     flex-direction: column;
   }
   
-  .program-page__cta-buttons,
-  .program-page__hero-actions {
+  :where(.page-program-details) .program-page__cta-buttons,
+  :where(.page-program-details) .program-page__hero-actions {
     flex-direction: column;
     align-items: center;
   }
   
-  .program-page .program-page__btn {
+  .program-page:where(.page-program-details) .program-page__btn, :where(.page-program-details) .program-page .program-page__btn {
     width: 100%;
     max-width: 250px;
   }
   
-  .program-page__facilities-grid {
+  :where(.page-program-details) .program-page__facilities-grid {
     grid-template-columns: 1fr;
   }
   
-  .program-page__admissions-grid {
+  :where(.page-program-details) .program-page__admissions-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .program-page__main-content {
+  :where(.page-program-details) .program-page__main-content {
     padding: 1rem;
   }
   
-  .program-page__content-section {
+  :where(.page-program-details) .program-page__content-section {
     padding: 1.5rem;
   }
   
-  .program-page__hero-title {
+  :where(.page-program-details) .program-page__hero-title {
     font-size: 2rem;
   }
   
-  .program-page__section-header h2 {
+  :where(.page-program-details) .program-page__section-header h2 {
     font-size: 1.7rem;
   }
   
-  .program-page__cta-section {
+  :where(.page-program-details) .program-page__cta-section {
     padding: 2rem 1.5rem;
   }
   
-  .program-page__subjects-list {
+  :where(.page-program-details) .program-page__subjects-list {
     justify-content: flex-start;
   }
   
-  .program-page__subject-tag {
+  :where(.page-program-details) .program-page__subject-tag {
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
   }
