@@ -440,25 +440,21 @@ const ProgramDetailsWithNav = () => {
               <p>{tx("Investing in your future")}</p>
             </div>
             <div className="program-page__section-content">
-              <div className="program-page__scholarships-grid">
-                <div className="program-page__scholarship-card">
-                  <div className="program-page__scholarship-header">
-                    <h4>{tx("Merit Excellence Scholarship")}</h4>
-                    <div className="program-page__amount">{tx("$10,000/year")}</div>
-                  </div>
-                  <p>
-                    {tx("For top-performing students entering the program with outstanding academic records.")}
-                  </p>
+              <div className="program-page__scholarship-card">
+                <div className="program-page__scholarship-header">
+                  <h4>{tx("KMITL Scholarships")}</h4>
                 </div>
-                <div className="program-page__scholarship-card">
-                  <div className="program-page__scholarship-header">
-                    <h4>{tx("Future Innovators Award")}</h4>
-                    <div className="program-page__amount">$7,500</div>
-                  </div>
-                  <p>
-                    {tx("For students demonstrating exceptional innovation in science and technology.")}
-                  </p>
-                </div>
+                <p>
+                  {tx("Scholarships and financial aid for KMITL students are managed by the Office of Student Development Affairs. See the current scholarships, eligibility and how to apply.")}
+                </p>
+                <a
+                  href="https://osda.kmitl.ac.th/scholarship/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="program-page__btn program-page__btn--primary"
+                >
+                  {tx("View Scholarships")}
+                </a>
               </div>
             </div>
           </section>
