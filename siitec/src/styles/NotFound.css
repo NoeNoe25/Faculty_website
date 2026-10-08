@@ -1,0 +1,23 @@
+/* NotFound.css — scoped to .page-not-found */
+.page-not-found {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-2xl) var(--space-sm);
+}
+
+.page-not-found .not-found-code {
+  font-family: var(--font-title);
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+  color: var(--gold-copper-dark);
+}
+
+.page-not-found .not-found-message {
+  max-width: 480px;
+  margin-bottom: var(--space-lg);
+}

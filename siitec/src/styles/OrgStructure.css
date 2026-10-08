@@ -1,10 +1,10 @@
 /* src/styles/OrgStructure.css */
-.org-chart-container {
+.org-chart-container:where(.page-org-structure), :where(.page-org-structure) .org-chart-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
-.org-chart-header {
+:where(.page-org-structure) .org-chart-header {
   background: var(--background-primary);
   color: white;
   padding: 2rem 1rem;
@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 
-.header-decoration {
+:where(.page-org-structure) .header-decoration {
   position: absolute;
   top: 0;
   left: 0;
@@ -22,14 +22,14 @@
   background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
 }
 
-.header-content {
+:where(.page-org-structure) .header-content {
   position: relative;
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.header-icon {
+:where(.page-org-structure) .header-icon {
   width: 48px;
   height: 48px;
   margin: 0 auto 1rem;
@@ -41,35 +41,35 @@
   backdrop-filter: blur(10px);
 }
 
-.header-icon svg {
+:where(.page-org-structure) .header-icon svg {
   width: 24px;
   height: 24px;
 }
 
-.header-title {
+:where(.page-org-structure) .header-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-.header-subtitle {
+:where(.page-org-structure) .header-subtitle {
   font-size: 1.25rem;
   opacity: 0.9;
   margin-bottom: 0.25rem;
 }
 
-.header-institution {
+:where(.page-org-structure) .header-institution {
   font-size: 1rem;
   opacity: 0.8;
 }
 
-.org-chart-content {
+:where(.page-org-structure) .org-chart-content {
   max-width: 1400px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-.chart-image-container {
+:where(.page-org-structure) .chart-image-container {
   background: white;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -78,7 +78,7 @@
   border: 1px solid #e2e8f0;
 }
 
-.org-chart-image {
+:where(.page-org-structure) .org-chart-image {
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -86,7 +86,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.image-caption {
+:where(.page-org-structure) .image-caption {
   text-align: center;
   margin-top: 1rem;
   color: #64748b;
@@ -96,7 +96,7 @@
   border-top: 1px solid #e2e8f0;
 }
 
-.chart-legend {
+:where(.page-org-structure) .chart-legend {
   background: white;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -104,54 +104,54 @@
   border: 1px solid #e2e8f0;
 }
 
-.chart-legend h3 {
+:where(.page-org-structure) .chart-legend h3 {
   margin-top: 0;
   margin-bottom: 1rem;
   color: #1e293b;
   font-size: 1.25rem;
 }
 
-.legend-items {
+:where(.page-org-structure) .legend-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 
-.legend-item {
+:where(.page-org-structure) .legend-item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.legend-color {
+:where(.page-org-structure) .legend-color {
   width: 16px;
   height: 16px;
   border-radius: 4px;
   flex-shrink: 0;
 }
 
-.legend-color.executive {
+:where(.page-org-structure) .legend-color.executive {
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
 }
 
-.legend-color.academic {
+:where(.page-org-structure) .legend-color.academic {
   background: linear-gradient(135deg, #059669 0%, #10b981 100%);
 }
 
-.legend-color.research {
+:where(.page-org-structure) .legend-color.research {
   background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
 }
 
-.legend-color.support {
+:where(.page-org-structure) .legend-color.support {
   background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
 }
 
-.legend-item span:last-child {
+:where(.page-org-structure) .legend-item span:last-child {
   color: #334155;
   font-size: 0.95rem;
 }
 
-.org-chart-footer {
+:where(.page-org-structure) .org-chart-footer {
   text-align: center;
   padding: 2rem 1rem;
   color: #64748b;
@@ -162,26 +162,26 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header-title {
+  :where(.page-org-structure) .header-title {
     font-size: 2rem;
   }
   
-  .header-subtitle {
+  :where(.page-org-structure) .header-subtitle {
     font-size: 1rem;
   }
   
-  .legend-items {
+  :where(.page-org-structure) .legend-items {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .chart-image-container,
-  .chart-legend {
+  :where(.page-org-structure) .chart-image-container,
+  :where(.page-org-structure) .chart-legend {
     padding: 1rem;
   }
   
-  .header-title {
+  :where(.page-org-structure) .header-title {
     font-size: 1.75rem;
   }
 }

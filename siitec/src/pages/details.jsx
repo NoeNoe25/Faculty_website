@@ -1,6 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { createRef, useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/details.css";
+import { interpolate, translateStrings, usePhrases } from "../i18n/LanguageContext";
+import phrases, { PROGRAM_SKIP_KEYS } from "../i18n/content/programs";
 import {
   FaChartBar,
   FaBook,
@@ -9,32 +11,29 @@ import {
   FaAward,
   FaUniversity,
   FaDownload,
-  FaHandshake,
-  FaGlobeAmericas,
   FaFlask,
   FaArrowLeft,
   FaLaptopCode,
   FaMicroscope,
   FaAtom,
-  FaThermometerHalf,
-  FaDna,
 } from "react-icons/fa";
 
 const ProgramDetailsWithNav = () => {
+  const tx = usePhrases(phrases);
   const [activeSection, setActiveSection] = useState("overview");
-  const [activeYear, setActiveYear] = useState(1);
 
   const location = useLocation();
   const navigate = useNavigate();
 
-  const sectionRefs = {
-    overview: useRef(null),
-    curriculum: useRef(null),
-    careers: useRef(null),
-    admissions: useRef(null),
-    scholarships: useRef(null),
-    facilities: useRef(null),
-  };
+  // Created once, so the scroll listener below can depend on it safely.
+  const sectionRefs = useRef({
+    overview: createRef(),
+    curriculum: createRef(),
+    careers: createRef(),
+    admissions: createRef(),
+    scholarships: createRef(),
+    facilities: createRef(),
+  }).current;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -58,9 +57,11 @@ const ProgramDetailsWithNav = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [sectionRefs]);
 
-  const program = location.state?.program;
+  // The program arrives in English from the Programs page and is translated here, so
+  // switching language on this page updates it too.
+  const program = translateStrings(location.state?.program, tx, PROGRAM_SKIP_KEYS);
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
@@ -72,20 +73,20 @@ const ProgramDetailsWithNav = () => {
 
   if (!program) {
     return (
-      <div style={{ padding: "100px", textAlign: "center" }}>
-        <h2>No Program Selected</h2>
+      <div className="page-program-details" style={{ padding: "100px", textAlign: "center" }}>
+        <h2>{tx("No Program Selected")}</h2>
         <button
           className="program-page__btn program-page__btn--primary"
           onClick={() => navigate("/")}
         >
-          Back to Programs
+          {tx("Back to Programs")}
         </button>
       </div>
     );
   }
 
   return (
-    <div className="program-page">
+    <div className="program-page page-program-details">
       {/* --- HERO SECTION --- */}
       <section
         className="program-page__hero"
@@ -101,7 +102,7 @@ const ProgramDetailsWithNav = () => {
             onClick={() => navigate(-1)}
             className="program-page__back-btn"
           >
-            <FaArrowLeft /> Back
+            <FaArrowLeft /> {tx("Back")}
           </button>
 
           <div className="program-page__hero-content">
@@ -109,10 +110,10 @@ const ProgramDetailsWithNav = () => {
             <p className="program-page__hero-subtitle">{program.department}</p>
             <div className="program-page__hero-actions">
               <button className="program-page__btn program-page__btn--primary">
-                Apply Now
+                {tx("Apply Now")}
               </button>
               <button className="program-page__btn program-page__btn--secondary">
-                Request Information
+                {tx("Request Information")}
               </button>
             </div>
           </div>
@@ -123,24 +124,24 @@ const ProgramDetailsWithNav = () => {
         {/* --- SIDE NAVIGATION --- */}
         <nav className="program-page__side-nav">
           <div className="program-page__nav-header">
-            <h3>Program Details</h3>
+            <h3>{tx("Program Details")}</h3>
           </div>
           <ul className="program-page__nav-links">
             {[
               {
                 id: "overview",
                 icon: <FaChartBar />,
-                label: "Program Overview",
+                label: tx("Program Overview"),
               },
-              { id: "curriculum", icon: <FaBook />, label: "Curriculum" },
-              { id: "careers", icon: <FaBriefcase />, label: "Career Paths" },
+              { id: "curriculum", icon: <FaBook />, label: tx("Curriculum") },
+              { id: "careers", icon: <FaBriefcase />, label: tx("Career Paths") },
               {
                 id: "admissions",
                 icon: <FaGraduationCap />,
-                label: "Admissions",
+                label: tx("Admissions"),
               },
-              { id: "scholarships", icon: <FaAward />, label: "Scholarships" },
-              { id: "facilities", icon: <FaUniversity />, label: "Facilities" },
+              { id: "scholarships", icon: <FaAward />, label: tx("Scholarships") },
+              { id: "facilities", icon: <FaUniversity />, label: tx("Facilities") },
             ].map((item) => (
               <li key={item.id}>
                 <button
@@ -158,9 +159,9 @@ const ProgramDetailsWithNav = () => {
              <a className="program-page__btn program-page__btn--outline program-page__nav-cta" 
     href="https://drive.google.com/file/d/1D3iQ2yQY29jMm5eadVS2-M2LuY34G0Rd/view"
         target="_blank"
-        rel="noopener noreferrer" aria-label="Download Brochure (opens in new tab)">
+        rel="noopener noreferrer" aria-label={tx("Download Brochure (opens in new tab)")}>
       <FaDownload className="program-page__btn-icon" /> &nbsp;
-      Download Brochure
+      {tx("Download Brochure")}
     </a>
           </div>
            */}
@@ -173,10 +174,9 @@ const ProgramDetailsWithNav = () => {
               href="https://www.kmitl.ac.th/academic-calendar"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Download Academic Calendar (opens in new tab)"
+              aria-label={tx("Download Academic Calendar (opens in new tab)")}
             >
-              <FaDownload className="program-page__btn-icon" /> &nbsp; Download
-              Academic Calendar
+              <FaDownload className="program-page__btn-icon" /> &nbsp; {tx("Download Academic Calendar")}
             </a>
           </div>
         </nav>
@@ -190,7 +190,7 @@ const ProgramDetailsWithNav = () => {
             className="program-page__content-section"
           >
             <div className="program-page__section-header">
-              <h2>Program Overview</h2>
+              <h2>{tx("Program Overview")}</h2>
             </div>
             <div className="program-page__section-content">
               <p className="program-page__intro-text">
@@ -200,29 +200,29 @@ const ProgramDetailsWithNav = () => {
               <div className="program-page__stats-grid">
                 <div className="program-page__stat-card">
                   <h3>{program.overview?.stats?.credits || "140 credits"}</h3>
-                  <p>Scope of Studies</p>
+                  <p>{tx("Scope of Studies")}</p>
                 </div>
                 <div className="program-page__stat-card">
                   <h3>{program.overview?.stats?.duration || "4 years"}</h3>
-                  <p>Length</p>
+                  <p>{tx("Length")}</p>
                 </div>
                 <div className="program-page__stat-card">
                   <h3>
-                    {program.overview?.stats?.applicationPeriod || "November"}
+                    {program.overview?.stats?.applicationPeriod || tx("November")}
                   </h3>
-                  <p>Application Period</p>
+                  <p>{tx("Application Period")}</p>
                 </div>
                 <div className="program-page__stat-card">
                   <h3>{program.overview?.stats?.tuition || "25,000 THB"}</h3>
-                  <p>Tuition/Semester</p>
+                  <p>{tx("Tuition/Semester")}</p>
                 </div>
                 <div className="program-page__stat-card">
                   <h3>{program.overview?.stats?.degreeLevel || "Bachelor"}</h3>
-                  <p>Degree Level</p>
+                  <p>{tx("Degree Level")}</p>
                 </div>
                 <div className="program-page__stat-card">
                   <h3>{program.overview?.stats?.language || "Thai"}</h3>
-                  <p>Language</p>
+                  <p>{tx("Language")}</p>
                 </div>
               </div>
             </div>
@@ -235,10 +235,10 @@ const ProgramDetailsWithNav = () => {
             className="program-page__content-section"
           >
             <div className="program-page__section-header">
-              <h2>Curriculum</h2>
+              <h2>{tx("Curriculum")}</h2>
               <p>
                 {program.curriculum?.description ||
-                  "Download comprehensive curriculum documents"}
+                  tx("Download comprehensive curriculum documents")}
               </p>
             </div>
             <div className="program-page__section-content">
@@ -260,21 +260,21 @@ const ProgramDetailsWithNav = () => {
                         <p>{doc.description}</p>
                       </div>
                       <div className="program-page__download-size">
-                        {doc.size || "PDF"}
+                        {doc.size || tx("PDF")}
                       </div>
                     </a>
                   )) || (
                     // Fallback for programs without curriculum data
-                    <a href="#" className="program-page__download-link">
+                    <div className="program-page__download-link">
                       <div className="program-page__download-icon">
                         <FaDownload />
                       </div>
                       <div className="program-page__download-info">
-                        <h5>Curriculum Document</h5>
-                        <p>Program curriculum details</p>
+                        <h5>{tx("Curriculum Document")}</h5>
+                        <p>{tx("Program curriculum details")}</p>
                       </div>
-                      <div className="program-page__download-size">PDF</div>
-                    </a>
+                      <div className="program-page__download-size">{tx("PDF")}</div>
+                    </div>
                   )}
                 </div>
               </div>
@@ -283,7 +283,7 @@ const ProgramDetailsWithNav = () => {
             {/* Program Plans Section for Graduate Programs */}
             {program.curriculum?.plans && (
               <div className="program-page__plans-section">
-                <h4>Program Study Plans</h4>
+                <h4>{tx("Program Study Plans")}</h4>
                 <div className="program-page__plans-grid">
                   {program.curriculum.plans.map((plan, index) => (
                     <div key={index} className="program-page__plan-card">
@@ -297,7 +297,7 @@ const ProgramDetailsWithNav = () => {
                         {plan.description || plan.target}
                       </p>
                       <div className="program-page__plan-requirements">
-                        <h6>Requirements:</h6>
+                        <h6>{tx("Requirements:")}</h6>
                         <ul>
                           {plan.requirements.map((req, reqIndex) => (
                             <li key={reqIndex}>{req}</li>
@@ -318,11 +318,11 @@ const ProgramDetailsWithNav = () => {
             className="program-page__content-section"
           >
             <div className="program-page__section-header">
-              <h2>Career Opportunities</h2>
-              <p>Where our graduates make an impact</p>
+              <h2>{tx("Career Opportunities")}</h2>
+              <p>{tx("Where our graduates make an impact")}</p>
               {program.careers?.startingSalary && (
                 <p className="salary-info">
-                  Starting salary:{" "}
+                  {tx("Starting salary:")}{" "}
                   <strong>{program.careers.startingSalary}</strong>
                 </p>
               )}
@@ -342,27 +342,26 @@ const ProgramDetailsWithNav = () => {
                   // Fallback career paths
                   <>
                     <div className="program-page__career-category">
-                      <h4>Industry & Research</h4>
+                      <h4>{tx("Industry & Research")}</h4>
                       <ul className="program-page__career-list">
-                        <li>Production Engineer</li>
-                        <li>Process Control Engineer</li>
-                        <li>R&D Engineer</li>
-                        <li>Failure Analysis Engineer</li>
-                        <li>Material Engineering</li>
-                        <li>Researcher</li>
+                        <li>{tx("Production Engineer")}</li>
+                        <li>{tx("Process Control Engineer")}</li>
+                        <li>{tx("R&D Engineer")}</li>
+                        <li>{tx("Failure Analysis Engineer")}</li>
+                        <li>{tx("Material Engineering")}</li>
+                        <li>{tx("Researcher")}</li>
                       </ul>
                     </div>
                     <div className="program-page__career-category">
-                      <h4>Emerging Fields</h4>
+                      <h4>{tx("Emerging Fields")}</h4>
                       <ul className="program-page__career-list">
-                        <li>Government Jobs / Leading State Enterprise Jobs</li>
-                        <li>Robotics and Artificial Intelligence Engineer</li>
-                        <li>Systems Integration Engineer</li>
-                        <li>Programming Engineer</li>
-                        <li>Professor at Science and Technology Institute</li>
+                        <li>{tx("Government Jobs / Leading State Enterprise Jobs")}</li>
+                        <li>{tx("Robotics and Artificial Intelligence Engineer")}</li>
+                        <li>{tx("Systems Integration Engineer")}</li>
+                        <li>{tx("Programming Engineer")}</li>
+                        <li>{tx("Professor at Science and Technology Institute")}</li>
                         <li>
-                          Freelancer, Entrepreneur, and Self-Employed in Related
-                          Fields
+                          {tx("Freelancer, Entrepreneur, and Self-Employed in Related Fields")}
                         </li>
                       </ul>
                     </div>
@@ -379,13 +378,13 @@ const ProgramDetailsWithNav = () => {
             className="program-page__content-section"
           >
             <div className="program-page__section-header">
-              <h2>Admissions</h2>
-              <p>Entry Requirements and Deadline</p>
+              <h2>{tx("Admissions")}</h2>
+              <p>{tx("Entry Requirements and Deadline")}</p>
             </div>
             <div className="program-page__section-content">
               <div className="program-page__admissions-grid">
                 <div className="program-page__requirements">
-                  <h4>Admission Requirements</h4>
+                  <h4>{tx("Admission Requirements")}</h4>
                   <ul>
                     {program.admissions?.requirements?.map((req, index) => (
                       <li key={index}>{req}</li>
@@ -394,34 +393,33 @@ const ProgramDetailsWithNav = () => {
                         <li key={index}>{req}</li>
                       )) || (
                         <li>
-                          Currently studying or have completed grade 12 (or
-                          equivalent)
+                          {tx("Currently studying or have completed grade 12 (or equivalent)")}
                         </li>
                       )}
                   </ul>
                 </div>
                 <div className="program-page__deadlines">
-                  <h4>Application Deadlines</h4>
+                  <h4>{tx("Application Deadlines")}</h4>
                   <div className="program-page__deadline-card">
-                    <h5>Upcoming Intake</h5>
+                    <h5>{tx("Upcoming Intake")}</h5>
                     {program.admissions?.deadlines ? (
                       <>
                         <p>
-                          <strong>Early Application:</strong>{" "}
+                          <strong>{tx("Early Application:")}</strong>{" "}
                           {program.admissions.deadlines.earlyApplication}
                         </p>
                         <p>
-                          <strong>Regular Deadline:</strong>{" "}
+                          <strong>{tx("Regular Deadline:")}</strong>{" "}
                           {program.admissions.deadlines.regularDeadline}
                         </p>
                       </>
                     ) : (
                       <>
                         <p>
-                          <strong>Early Application:</strong> January 15
+                          <strong>{tx("Early Application:")}</strong> {tx("January 15")}
                         </p>
                         <p>
-                          <strong>Regular Deadline:</strong> March 1
+                          <strong>{tx("Regular Deadline:")}</strong> {tx("March 1")}
                         </p>
                       </>
                     )}
@@ -438,29 +436,27 @@ const ProgramDetailsWithNav = () => {
             className="program-page__content-section"
           >
             <div className="program-page__section-header">
-              <h2>Scholarships & Financial Aid</h2>
-              <p>Investing in your future</p>
+              <h2>{tx("Scholarships & Financial Aid")}</h2>
+              <p>{tx("Investing in your future")}</p>
             </div>
             <div className="program-page__section-content">
               <div className="program-page__scholarships-grid">
                 <div className="program-page__scholarship-card">
                   <div className="program-page__scholarship-header">
-                    <h4>Merit Excellence Scholarship</h4>
-                    <div className="program-page__amount">$10,000/year</div>
+                    <h4>{tx("Merit Excellence Scholarship")}</h4>
+                    <div className="program-page__amount">{tx("$10,000/year")}</div>
                   </div>
                   <p>
-                    For top-performing students entering the program with
-                    outstanding academic records.
+                    {tx("For top-performing students entering the program with outstanding academic records.")}
                   </p>
                 </div>
                 <div className="program-page__scholarship-card">
                   <div className="program-page__scholarship-header">
-                    <h4>Future Innovators Award</h4>
+                    <h4>{tx("Future Innovators Award")}</h4>
                     <div className="program-page__amount">$7,500</div>
                   </div>
                   <p>
-                    For students demonstrating exceptional innovation in science
-                    and technology.
+                    {tx("For students demonstrating exceptional innovation in science and technology.")}
                   </p>
                 </div>
               </div>
@@ -474,10 +470,9 @@ const ProgramDetailsWithNav = () => {
             className="program-page__content-section"
           >
             <div className="program-page__section-header">
-              <h2>Facilities & Resources</h2>
+              <h2>{tx("Facilities & Resources")}</h2>
               <p>
-                State-of-the-art infrastructure for nanotechnology research and
-                education
+                {tx("State-of-the-art infrastructure for nanotechnology research and education")}
               </p>
             </div>
             <div className="program-page__section-content">
@@ -492,10 +487,9 @@ const ProgramDetailsWithNav = () => {
                   <div className="program-page__facility-icon">
                     <FaAtom />
                   </div>
-                  <h4>Cleanroom Facility</h4>
+                  <h4>{tx("Cleanroom Facility")}</h4>
                   <p>
-                    Class 100/1000 cleanroom with electron beam lithography and
-                    thin film deposition systems.
+                    {tx("Class 100/1000 cleanroom with electron beam lithography and thin film deposition systems.")}
                   </p>
                 </div>
                 <div
@@ -508,10 +502,9 @@ const ProgramDetailsWithNav = () => {
                   <div className="program-page__facility-icon">
                     <FaMicroscope />
                   </div>
-                  <h4>Characterization Lab</h4>
+                  <h4>{tx("Characterization Lab")}</h4>
                   <p>
-                    Advanced microscopy suite including SEM, TEM, AFM, X-ray
-                    diffraction, and spectroscopy equipment.
+                    {tx("Advanced microscopy suite including SEM, TEM, AFM, X-ray diffraction, and spectroscopy equipment.")}
                   </p>
                 </div>
                 <div
@@ -524,10 +517,9 @@ const ProgramDetailsWithNav = () => {
                   <div className="program-page__facility-icon">
                     <FaLaptopCode />
                   </div>
-                  <h4>Computational Center</h4>
+                  <h4>{tx("Computational Center")}</h4>
                   <p>
-                    High-performance computing cluster for molecular dynamics
-                    simulations and quantum mechanical calculations.
+                    {tx("High-performance computing cluster for molecular dynamics simulations and quantum mechanical calculations.")}
                   </p>
                 </div>
                 <div
@@ -540,10 +532,9 @@ const ProgramDetailsWithNav = () => {
                   <div className="program-page__facility-icon">
                     <FaFlask />
                   </div>
-                  <h4>Wet Chemistry Labs</h4>
+                  <h4>{tx("Wet Chemistry Labs")}</h4>
                   <p>
-                    Specialized laboratories for nanoparticle synthesis, surface
-                    functionalization, and biological applications.
+                    {tx("Specialized laboratories for nanoparticle synthesis, surface functionalization, and biological applications.")}
                   </p>
                 </div>
               </div>
@@ -553,17 +544,17 @@ const ProgramDetailsWithNav = () => {
           {/* FINAL CTA */}
           <section className="program-page__cta-section">
             <div className="program-page__cta-content">
-              <h2>Ready to Join Us?</h2>
-              <p>Start your journey in {program.name} today.</p>
+              <h2>{tx("Ready to Join Us?")}</h2>
+              <p>{interpolate(tx("Start your journey in {name} today."), { name: program.name })}</p>
               <div className="program-page__cta-buttons">
                 <button className="program-page__btn program-page__btn--primary">
-                  Start Your Application
+                  {tx("Start Your Application")}
                 </button>
                 <button className="program-page__btn program-page__btn--outline">
-                  Contact Admissions
+                  {tx("Contact Admissions")}
                 </button>
                 <button className="program-page__btn program-page__btn--secondary">
-                  Schedule a Visit
+                  {tx("Schedule a Visit")}
                 </button>
               </div>
             </div>

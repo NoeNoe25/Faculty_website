@@ -1,64 +1,84 @@
-/* src/styles/theme.css */
-@import url('https://fonts.cdnfonts.com/css/canela');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&display=swap');
+/* src/styles/theme.css
+ * Global design tokens and base element styles.
+ * Web fonts (Canela, Inter, Playfair Display, Noto Sans/Serif Thai) are loaded in public/index.html.
+ */
 
 :root {
   /* Background Hierarchy */
   --background-primary: #ffffff;
   --background-secondary: #f8f9fa;
   --background-tertiary: #e9ecef;
-  
+
+  /*
+   * This is the single source of truth for design tokens.
+   * Component stylesheets must not redefine :root variables — doing so
+   * changes the token for the entire site.
+   */
+
   /* Core Brand Colors - Slate Grey Family */
   --slate-darkest: #3d4647;
-  --slate-dark: #4c5354;
+  --slate-dark: #5a686e;
   --slate-base: #758384;
   --slate-light: #8f9fa6;
   --slate-lighter: #b0bec5;
   --slate-pale: #d4dde0;
-  
+
   /* Core Brand Colors - Gold-Copper Family */
   --gold-copper-darkest: #8a6a36;
-  --gold-copper-darker: #a88448;
-  --gold-copper-dark: #ca8c50;
+  --gold-copper-darker: #8a6a36;
+  --gold-copper-dark: #a88448;
   --gold-copper: #c9a66b;
   --gold-copper-light: #e0c28a;
   --gold-copper-bright: #f0d5a0;
   --gold-copper-forbutton: #fcbe42;
-  
+
   /* Text Colors - Hierarchical */
   --text-primary: #2d3748;
   --text-secondary: #4c5354;
   --text-tertiary: #758384;
   --text-muted: #8f9fa6;
   --text-disabled: #b0bec5;
-  
+
   /* Legacy Text Variables (mapped to new system) */
-  --text-dark: var(--text-primary);
+  --text-dark: #1a1a1a;
   --text-light: var(--text-secondary);
   --text-greywhite: var(--text-tertiary);
 
-  /* Typography System */
-  /* --font-title: 'Canela Trial', 'Canela', 'Times New Roman','Georgia', 'Platino', serif;
-  --font-body: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-accent: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-  --font-title: 'Canela Trial', 'Playfair Display',
-  Georgia, 'Palatino', 'Times New Roman', serif;
+  /* Typography System
+   * Latin fonts come first; the Noto Thai families only supply Thai glyphs,
+   * so English text renders exactly as before. */
+  --font-title:
+    "Canela Trial", "Playfair Display", "Noto Serif Thai", Georgia, "Palatino",
+    "Times New Roman", serif;
+  --font-body:
+    "Inter", "Noto Sans Thai", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-accent:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    "Noto Sans Thai", sans-serif;
 
---font-body: 'Inter',
-  -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
---font-accent: -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
-  
   /* Brand Gradients */
-  --tech-gradient: linear-gradient(135deg, var(--gold-copper-dark) 0%, var(--slate-dark) 100%);
-  --tech-gradient-reverse: linear-gradient(135deg, var(--slate-dark) 0%, var(--gold-copper-dark) 100%);
-  --tech-gradient-soft: linear-gradient(135deg, var(--gold-copper) 0%, var(--slate-base) 100%);
-  --tech-gradient-light: linear-gradient(135deg, var(--gold-copper-bright) 0%, var(--slate-lighter) 100%);
-  
+  --tech-gradient: linear-gradient(
+    135deg,
+    var(--gold-copper-dark) 0%,
+    var(--slate-dark) 100%
+  );
+  --tech-gradient-reverse: linear-gradient(
+    135deg,
+    var(--slate-dark) 0%,
+    var(--gold-copper-dark) 100%
+  );
+  --tech-gradient-soft: linear-gradient(
+    135deg,
+    var(--gold-copper) 0%,
+    var(--slate-base) 100%
+  );
+  --tech-gradient-light: linear-gradient(
+    135deg,
+    var(--gold-copper-bright) 0%,
+    var(--slate-lighter) 100%
+  );
+
   /* Elevation System - Shadows */
   --shadow-xs: 0 1px 3px rgba(76, 83, 84, 0.06);
   --shadow-sm: 0 2px 8px rgba(76, 83, 84, 0.08);
@@ -67,7 +87,7 @@
   --shadow-xl: 0 12px 36px rgba(76, 83, 84, 0.18);
   --glow-gold: 0 0 20px rgba(202, 140, 80, 0.3);
   --glow-slate: 0 0 20px rgba(76, 83, 84, 0.2);
-  
+
   /* Border System */
   --border-radius-sm: 6px;
   --border-radius: 8px;
@@ -77,13 +97,13 @@
   --border-gold: 1px solid var(--gold-copper);
   --border-slate: 1px solid var(--slate-light);
   --border-light: 1px solid var(--slate-pale);
-  
+
   /* Transition Timing */
   --transition-fast: all 0.15s ease;
   --transition-medium: all 0.3s ease;
   --transition-slow: all 0.5s ease;
   --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  
+
   /* Spacing Scale */
   --space-xs: 8px;
   --space-sm: 16px;
@@ -111,7 +131,12 @@ body {
 }
 
 /* Typography Hierarchy with Canela */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 300;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -169,7 +194,7 @@ p {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
   margin-bottom: 1rem;
 }
 
@@ -218,7 +243,7 @@ p {
 
 .card-title {
   font-family: var(--font-title);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
   color: var(--text-primary);
 }
@@ -290,55 +315,133 @@ a {
   transition: var(--transition-fast);
 }
 
-
-
 /* Responsive Typography */
 @media (max-width: 1024px) {
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2.4rem; }
-  h3 { font-size: 2rem; }
-  h4 { font-size: 1.6rem; }
-  .hero-title { font-size: 3.2rem; }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.6rem;
+  }
+  .hero-title {
+    font-size: 3.2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.7rem; }
-  h4 { font-size: 1.4rem; }
-  h5 { font-size: 1.2rem; }
-  .hero-title { font-size: 2.8rem; }
-  .hero-subtitle { font-size: 1.1rem; }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.7rem;
+  }
+  h4 {
+    font-size: 1.4rem;
+  }
+  h5 {
+    font-size: 1.2rem;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.8rem; }
-  h3 { font-size: 1.5rem; }
-  .hero-title { font-size: 2.2rem; }
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Thai typography: Thai stacks vowels and tone marks above/below the line,
+   so headings need more line-height and no negative letter-spacing. */
+:lang(th) h1,
+:lang(th) h2,
+:lang(th) h3,
+:lang(th) h4,
+:lang(th) h5,
+:lang(th) h6,
+:lang(th) .hero-title {
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+:lang(th) body,
+:lang(th) p {
+  line-height: 1.8;
 }
 
 /* Utility Classes */
-.text-primary { color: var(--text-primary); }
-.text-secondary { color: var(--text-secondary); }
-.text-tertiary { color: var(--text-tertiary); }
-.text-muted { color: var(--text-muted); }
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+.text-muted {
+  color: var(--text-muted);
+}
 
-.bg-gold { background-color: var(--gold-copper-dark); }
-.bg-slate { background-color: var(--slate-dark); }
-.bg-light { background-color: var(--background-secondary); }
+.bg-gold {
+  background-color: var(--gold-copper-dark);
+}
+.bg-slate {
+  background-color: var(--slate-dark);
+}
+.bg-light {
+  background-color: var(--background-secondary);
+}
 
 /* Font Weight Utilities */
-.font-light { font-weight: 100; }
-.font-regular { font-weight: 300; }
-.font-medium { font-weight: 400; }
-.font-semibold { font-weight: 500; }
-.font-bold { font-weight: 600; }
+.font-light {
+  font-weight: 100;
+}
+.font-regular {
+  font-weight: 300;
+}
+.font-medium {
+  font-weight: 400;
+}
+.font-semibold {
+  font-weight: 500;
+}
+.font-bold {
+  font-weight: 600;
+}
 
 /* Letter Spacing */
-.tight-spacing { letter-spacing: -0.03em; }
-.normal-spacing { letter-spacing: -0.01em; }
-.wide-spacing { letter-spacing: 0.02em; }
+.tight-spacing {
+  letter-spacing: -0.03em;
+}
+.normal-spacing {
+  letter-spacing: -0.01em;
+}
+.wide-spacing {
+  letter-spacing: 0.02em;
+}
 
 /* Selection */
 ::selection {
@@ -370,19 +473,29 @@ a {
 }
 
 /* Fallback for Canela */
-@supports not (font-family: 'Canela Trial') {
-  h1, h2, h4, .hero-title, .nav-brand, .card-title {
-    font-family: 'Times New Roman', serif;
+@supports not (font-family: "Canela Trial") {
+  h1,
+  h2,
+  h4,
+  .hero-title,
+  .nav-brand,
+  .card-title {
+    font-family: "Times New Roman", serif;
   }
 }
 
 /* Print Styles */
 @media print {
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Times New Roman', serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Times New Roman", serif;
     color: #000000;
   }
-  
+
   .gradient-title {
     color: #000000;
     -webkit-text-fill-color: #000000;

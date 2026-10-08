@@ -20,7 +20,10 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
+import { translateStrings, usePhrases } from "../i18n/LanguageContext";
+import phrases, { PROGRAM_SKIP_KEYS } from "../i18n/content/programs";
 const Programs = () => {
+  const tx = usePhrases(phrases);
   const [activeDegree, setActiveDegree] = useState("bachelor");
   const navigate = useNavigate();
 
@@ -1120,6 +1123,9 @@ const Programs = () => {
     },
   };
 
+  // Shown in the current language; the English programsData is what gets passed on.
+  const current = translateStrings(programsData[activeDegree], tx, PROGRAM_SKIP_KEYS);
+
   // Function to handle program details navigation
   const handleProgramDetails = (program) => {
     navigate("/ProgramDetailsWithNav", {
@@ -1141,11 +1147,11 @@ const Programs = () => {
   };
 
   return (
-    <section id="programs" className="section programs-section">
+    <section id="programs" className="section programs-section page-programs">
       <div className="container">
         <div className="section-title">
-          <h2>Academic Programs</h2>
-          <p>Choose your path in integrated innovative technology education</p>
+          <h2>{tx("Academic Programs")}</h2>
+          <p>{tx("Choose your path in integrated innovative technology education")}</p>
         </div>
 
         {/* Degree Level Selector */}
@@ -1167,10 +1173,10 @@ const Programs = () => {
               </span>
               <span className="degree-text">
                 {degree === "bachelor"
-                  ? "Bachelor"
+                  ? tx("Bachelor")
                   : degree === "master"
-                    ? "Master"
-                    : "Doctoral"}
+                    ? tx("Master")
+                    : tx("Doctoral")}
               </span>
             </button>
           ))}
@@ -1179,21 +1185,21 @@ const Programs = () => {
         {/* Program Content */}
         <div className="programs-content">
           <div className="program-header">
-            <h3>{programsData[activeDegree].title}</h3>
+            <h3>{current.title}</h3>
             <div className="programs_program-duration">
               <span className="programs_duration-badge">
-                Duration:{" "}
+                {tx("Duration:")}{" "}
                 {activeDegree === "bachelor"
-                  ? "4 years"
+                  ? tx("4 years")
                   : activeDegree === "master"
-                    ? "2 years"
-                    : "4-5 years"}
+                    ? tx("2 years")
+                    : tx("4-5 years")}
               </span>
             </div>
           </div>
 
           <div className="degrees-grid">
-            {programsData[activeDegree].degrees.map((degree, index) => (
+            {current.degrees.map((degree, index) => (
               <div key={index} className="degree-card card">
                 <div className="degree-image-wrapper">
                   <img
@@ -1221,13 +1227,13 @@ const Programs = () => {
                         )
                       }
                     >
-                      Apply Now
+                      {tx("Apply Now")}
                     </button>
                     <button
                       className="btn btn-secondary"
-                      onClick={() => handleProgramDetails(degree)}
+                      onClick={() => handleProgramDetails(programsData[activeDegree].degrees[index])}
                     >
-                      Program Details
+                      {tx("Program Details")}
                     </button>
                   </div>
                 </div>
@@ -1242,13 +1248,12 @@ const Programs = () => {
             <div className="info-card-icon">
               <FaGraduationCap />
             </div>
-            <h4>Financial Aid & Scholarships</h4>
+            <h4>{tx("Financial Aid & Scholarships")}</h4>
             <p>
-              We offer various scholarship opportunities for outstanding
-              students at all degree levels.
+              {tx("We offer various scholarship opportunities for outstanding students at all degree levels.")}
             </p>
             <button className="btn btn-secondary" onClick={handleFinancialAid}>
-              Learn More
+              {tx("Learn More")}
             </button>
           </div>
 
@@ -1258,18 +1263,18 @@ const Programs = () => {
             </div>
             <h4>
               {activeDegree === "bachelor"
-                ? "Internships Opportunity"
-                : "Research Opportunities"}
+                ? tx("Internships Opportunity")
+                : tx("Research Opportunities")}
             </h4>
             <p>
               {activeDegree === "bachelor"
-                ? "Gain real-world experience through industry partnerships and internship programs."
-                : "Work with leading researchers and access state-of-the-art facilities."}
+                ? tx("Gain real-world experience through industry partnerships and internship programs.")
+                : tx("Work with leading researchers and access state-of-the-art facilities.")}
             </p>
             <button className="btn btn-secondary" onClick={handleInternships}>
               {activeDegree === "bachelor"
-                ? "Explore Internships"
-                : "Explore Research"}
+                ? tx("Explore Internships")
+                : tx("Explore Research")}
             </button>
           </div>
 
@@ -1277,16 +1282,15 @@ const Programs = () => {
             <div className="info-card-icon">
               <FaGlobeAmericas />
             </div>
-            <h4>International Students</h4>
+            <h4>{tx("International Students")}</h4>
             <p>
-              Join our diverse community with dedicated support for
-              international applicants.
+              {tx("Join our diverse community with dedicated support for international applicants.")}
             </p>
             <button
               className="btn btn-secondary"
               onClick={handleInternationalStudents}
             >
-              International Info
+              {tx("International Info")}
             </button>
           </div>
         </div>

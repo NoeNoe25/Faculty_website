@@ -1,25 +1,25 @@
 
 /* src/styles/AboutUs.css */
-.about-section {
+.about-section:where(.page-aboutus), :where(.page-aboutus) .about-section {
   background: var(--background-primary);
 }
 
 /* Hero Section */
-.about-hero {
+:where(.page-aboutus) .about-hero {
   background: var(--tech-gradient);
   padding: 100px 0;
   color: white;
   text-align: center;
 }
 
-.hero-content h1 {
+:where(.page-aboutus) .hero-content h1 {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
   text-shadow: var(--shadow-md);
 }
 
-.hero-subtitle {
+:where(.page-aboutus) .hero-subtitle {
   font-size: 1.3rem;
   line-height: 1.8;
   max-width: 800px;
@@ -27,7 +27,7 @@
   opacity: 0.9;
 }
 
-.hero-stats {
+:where(.page-aboutus) .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -35,7 +35,7 @@
   margin: 0 auto;
 }
 
-.stat-item {
+:where(.page-aboutus) .stat-item {
   background: rgba(255, 255, 255, 0.1);
   padding: 2rem 1rem;
   border-radius: var(--border-radius-lg);
@@ -43,7 +43,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.stat-number {
+:where(.page-aboutus) .stat-number {
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
@@ -51,26 +51,26 @@
   color: var(--gold-copper-bright);
 }
 
-.stat-label {
+:where(.page-aboutus) .stat-label {
   font-size: 1rem;
   opacity: 0.9;
 }
 
 /* Mission & Vision Section */
-.mission-vision-section {
+:where(.page-aboutus) .mission-vision-section {
   padding: 80px 0;
   background: var(--background-secondary);
 }
 
-.mission-vision-grid {
+:where(.page-aboutus) .mission-vision-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.mission-card,
-.vision-card,
-.values-card {
+:where(.page-aboutus) .mission-card,
+:where(.page-aboutus) .vision-card,
+:where(.page-aboutus) .values-card {
   background: var(--background-primary);
   padding: 3rem 2rem;
   border-radius: var(--border-radius-lg);
@@ -80,44 +80,44 @@
   border: var(--border-slate);
 }
 
-.mission-card:hover,
-.vision-card:hover,
-.values-card:hover {
+:where(.page-aboutus) .mission-card:hover,
+:where(.page-aboutus) .vision-card:hover,
+:where(.page-aboutus) .values-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-lg);
   border-color: var(--gold-copper);
 }
 
-.card-icon {
+:where(.page-aboutus) .card-icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
 }
 
-.mission-vision-grid h3 {
+:where(.page-aboutus) .mission-vision-grid h3 {
   color: var(--slate-dark);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
-.mission-vision-grid p {
+:where(.page-aboutus) .mission-vision-grid p {
   color: var(--text-light);
   line-height: 1.7;
 }
 
-.values-card ul {
+:where(.page-aboutus) .values-card ul {
   list-style: none;
   padding: 0;
   text-align: left;
 }
 
-.values-card li {
+:where(.page-aboutus) .values-card li {
   padding: 0.5rem 0;
   color: var(--text-light);
   position: relative;
   padding-left: 1.5rem;
 }
 
-.values-card li:before {
+:where(.page-aboutus) .values-card li:before {
   content: "✓";
   color: var(--gold-copper);
   position: absolute;
@@ -126,34 +126,34 @@
 }
 
 /* Timeline Section */
-.timeline-section {
+:where(.page-aboutus) .timeline-section {
   padding: 80px 0;
   background: var(--background-primary);
 }
 
-.section-header {
+:where(.page-aboutus) .section-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.section-header h2 {
+:where(.page-aboutus) .section-header h2 {
   font-size: 2.5rem;
   color: var(--text-dark);
   margin-bottom: 1rem;
 }
 
-.section-header p {
+:where(.page-aboutus) .section-header p {
   font-size: 1.2rem;
   color: var(--text-light);
 }
 
-.timeline {
+:where(.page-aboutus) .timeline {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.timeline:before {
+:where(.page-aboutus) .timeline:before {
   content: '';
   position: absolute;
   left: 50%;
@@ -164,22 +164,22 @@
   transform: translateX(-50%);
 }
 
-.timeline-item {
+:where(.page-aboutus) .timeline-item {
   position: relative;
   margin-bottom: 3rem;
   display: flex;
   align-items: center;
 }
 
-.timeline-item:nth-child(odd) {
+:where(.page-aboutus) .timeline-item:nth-child(odd) {
   flex-direction: row;
 }
 
-.timeline-item:nth-child(even) {
+:where(.page-aboutus) .timeline-item:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-.timeline-year {
+:where(.page-aboutus) .timeline-year {
   background: var(--gold-copper);
   color: var(--text-dark);
   padding: 1rem 1.5rem;
@@ -190,7 +190,7 @@
   flex: 0 0 auto;
 }
 
-.timeline-content {
+:where(.page-aboutus) .timeline-content {
   background: var(--background-secondary);
   padding: 2rem;
   border-radius: var(--border-radius-lg);
@@ -200,30 +200,30 @@
   border-left: 4px solid var(--slate-base);
 }
 
-.timeline-content h4 {
+:where(.page-aboutus) .timeline-content h4 {
   color: var(--slate-dark);
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
 
-.timeline-content p {
+:where(.page-aboutus) .timeline-content p {
   color: var(--text-light);
   line-height: 1.6;
 }
 
 /* Leadership Section */
-.leadership-section {
+:where(.page-aboutus) .leadership-section {
   padding: 80px 0;
   background: var(--background-secondary);
 }
 
-.leadership-grid {
+:where(.page-aboutus) .leadership-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
 
-.leader-card {
+:where(.page-aboutus) .leader-card {
   background: var(--background-primary);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
@@ -231,25 +231,25 @@
   transition: var(--transition-medium);
 }
 
-.leader-card:hover {
+:where(.page-aboutus) .leader-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
-.leader-image {
+:where(.page-aboutus) .leader-image {
   position: relative;
   height: 300px;
   overflow: hidden;
 }
 
-.leader-image img {
+:where(.page-aboutus) .leader-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: var(--transition-medium);
 }
 
-.leader-overlay {
+:where(.page-aboutus) .leader-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -265,49 +265,49 @@
   transition: var(--transition-medium);
 }
 
-.leader-card:hover .leader-overlay {
+:where(.page-aboutus) .leader-card:hover .leader-overlay {
   opacity: 1;
 }
 
-.leader-card:hover .leader-image img {
+:where(.page-aboutus) .leader-card:hover .leader-image img {
   transform: scale(1.1);
 }
 
-.leader-info {
+:where(.page-aboutus) .leader-info {
   padding: 2rem;
 }
 
-.leader-info h3 {
+:where(.page-aboutus) .leader-info h3 {
   color: var(--text-dark);
   margin-bottom: 0.5rem;
   font-size: 1.4rem;
 }
 
-.leader-position {
+:where(.page-aboutus) .leader-position {
   color: var(--gold-copper);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.leader-department {
+:where(.page-aboutus) .leader-department {
   color: var(--slate-base);
   margin-bottom: 0.5rem;
 }
 
-.leader-education {
+:where(.page-aboutus) .leader-education {
   color: var(--text-light);
   font-size: 0.9rem;
   margin-bottom: 1rem;
   font-style: italic;
 }
 
-.expertise-tags {
+:where(.page-aboutus) .expertise-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.expertise-tag {
+:where(.page-aboutus) .expertise-tag {
   background: var(--background-secondary);
   color: var(--slate-dark);
   padding: 0.3rem 0.8rem;
@@ -317,18 +317,18 @@
 }
 
 /* Values Section */
-.values-section {
+:where(.page-aboutus) .values-section {
   padding: 80px 0;
   background: var(--background-primary);
 }
 
-.values-grid {
+:where(.page-aboutus) .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-.value-card {
+:where(.page-aboutus) .value-card {
   background: var(--background-secondary);
   padding: 2.5rem 2rem;
   border-radius: var(--border-radius-lg);
@@ -337,63 +337,63 @@
   border: 1px solid transparent;
 }
 
-.value-card:hover {
+:where(.page-aboutus) .value-card:hover {
   background: var(--background-primary);
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
   border-color: var(--gold-copper);
 }
 
-.value-icon {
+:where(.page-aboutus) .value-icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
 }
 
-.value-card h4 {
+:where(.page-aboutus) .value-card h4 {
   color: var(--slate-dark);
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
 
-.value-card p {
+:where(.page-aboutus) .value-card p {
   color: var(--text-light);
   line-height: 1.6;
 }
 
 /* Campus Section */
-.campus-section {
+:where(.page-aboutus) .campus-section {
   padding: 80px 0;
   background: var(--tech-gradient-reverse);
   color: white;
 }
 
-.campus-content {
+:where(.page-aboutus) .campus-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
 
-.campus-info h2 {
+:where(.page-aboutus) .campus-info h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: white;
 }
 
-.campus-info p {
+:where(.page-aboutus) .campus-info p {
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 2rem;
   opacity: 0.9;
 }
 
-.facilities-list {
+:where(.page-aboutus) .facilities-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.facility-item {
+:where(.page-aboutus) .facility-item {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -403,36 +403,36 @@
   backdrop-filter: blur(10px);
 }
 
-.facility-icon {
+:where(.page-aboutus) .facility-icon {
   font-size: 1.5rem;
 }
 
-.campus-image {
+:where(.page-aboutus) .campus-image {
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
 }
 
-.campus-image img {
+:where(.page-aboutus) .campus-image img {
   width: 100%;
   height: 400px;
   object-fit: cover;
 }
 
 /* CTA Section */
-.cta-section {
+:where(.page-aboutus) .cta-section {
   padding: 80px 0;
   background: var(--background-secondary);
   text-align: center;
 }
 
-.cta-content h2 {
+:where(.page-aboutus) .cta-content h2 {
   font-size: 2.5rem;
   color: var(--text-dark);
   margin-bottom: 1rem;
 }
 
-.cta-content p {
+:where(.page-aboutus) .cta-content p {
   font-size: 1.2rem;
   color: var(--text-light);
   max-width: 600px;
@@ -440,7 +440,7 @@
   line-height: 1.6;
 }
 
-.cta-buttons {
+:where(.page-aboutus) .cta-buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -449,66 +449,66 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .mission-vision-grid {
+  :where(.page-aboutus) .mission-vision-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .campus-content {
+  :where(.page-aboutus) .campus-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .hero-stats {
+  :where(.page-aboutus) .hero-stats {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .about-hero {
+  :where(.page-aboutus) .about-hero {
     padding: 60px 0;
   }
   
-  .hero-content h1 {
+  :where(.page-aboutus) .hero-content h1 {
     font-size: 2.5rem;
   }
   
-  .hero-subtitle {
+  :where(.page-aboutus) .hero-subtitle {
     font-size: 1.1rem;
   }
   
-  .timeline:before {
+  :where(.page-aboutus) .timeline:before {
     left: 30px;
   }
   
-  .timeline-item {
+  :where(.page-aboutus) .timeline-item {
     flex-direction: row !important;
     padding-left: 60px;
   }
   
-  .timeline-year {
+  :where(.page-aboutus) .timeline-year {
     position: absolute;
     left: 0;
   }
   
-  .timeline-content {
+  :where(.page-aboutus) .timeline-content {
     margin: 0;
   }
   
-  .leadership-grid {
+  :where(.page-aboutus) .leadership-grid {
     grid-template-columns: 1fr;
   }
   
-  .values-grid {
+  :where(.page-aboutus) .values-grid {
     grid-template-columns: 1fr;
   }
   
-  .cta-buttons {
+  :where(.page-aboutus) .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
   
-  .btn {
+  :where(.page-aboutus) .btn {
     width: 100%;
     max-width: 300px;
   }

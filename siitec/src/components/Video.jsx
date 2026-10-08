@@ -1,27 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/components/Video.css';
+import { useContent } from '../i18n/LanguageContext';
+import homeContent from '../i18n/content/home';
+
+const VIDEO_SOURCES = [
+  { type: 'youtube', id: 'L00fk0a4ddI' },
+  { type: 'youtube', id: '-RU83ieg9qc' },
+  { type: 'youtube', id: 'lv4_6DQaohM' },
+];
 
 const VideoSection = () => {
-  const [videos] = useState([
-    {
-      type: 'youtube',
-      id: 'L00fk0a4ddI',
-      title: 'Faculty Introduction 2024',
-      description: 'Welcome message from our faculty dean discussing our vision and goals for the academic year.'
-    },
-    {
-      type: 'youtube',
-      id: '-RU83ieg9qc',
-      title: 'Why Study Nano Materials Engineering?',
-      description: 'Have you ever wondered how materials invisible to the naked eye can be transformed into advanced technologies? The Department of Nanoscience and Nanotechnology focuses on the design, synthesis, and development of nanoscale materials, driving innovations in electronics, energy, healthcare, environmental technology, and advanced manufacturing. Students gain both theoretical knowledge and hands-on experience to prepare for careers in cutting-edge industries.'
-    },
-    {
-      type: 'youtube',
-      id: 'lv4_6DQaohM',
-      title: 'Manufacturing Systems Engineering: Shaping the Future of Smart Manufacturing',
-      description: 'Are you passionate about becoming an engineer in modern manufacturing? The Manufacturing Systems Engineering Program, offered by the Department of Manufacturing System Technology equips students with the knowledge and practical skills needed for the next generation of industry.'
-    }
-  ]);
+  const { videos: text } = useContent(homeContent);
+  const videos = VIDEO_SOURCES.map((video, index) => ({ ...video, ...text.items[index] }));
 
   const getYouTubeEmbedUrl = (videoId) => {
     return `https://www.youtube.com/embed/${videoId}`;
@@ -42,7 +32,7 @@ const VideoSection = () => {
           ) : (
             <video controls>
               <source src={video.src} type="video/mp4" />
-              Your browser does not support the video tag.
+              {text.unsupported}
             </video>
           )}
         </div>
@@ -50,7 +40,7 @@ const VideoSection = () => {
           <h3>{video.title}</h3>
           <p>{video.description}</p>
           <span className={`video-badge ${video.type === 'youtube' ? 'badge-youtube' : 'badge-local'}`}>
-            {video.type === 'youtube' ? 'YouTube' : 'Local Video'}
+            {video.type === 'youtube' ? 'YouTube' : text.localVideo}
           </span>
         </div>
       </div>
@@ -58,10 +48,10 @@ const VideoSection = () => {
   };
 
   return (
-      <div className="video-section">
+      <div className="video-section home-videos">
         <div className="section-header">
-          <h1>Faculty Videos</h1>
-          <p>Explore our collection of educational and informational videos</p>
+          <h1>{text.title}</h1>
+          <p>{text.description}</p>
         </div>
 
         <div className="video-grid">
