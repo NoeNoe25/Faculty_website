@@ -82,10 +82,10 @@ _To add:_ the home page (desktop and mobile), a department page, and the languag
 - Add the missing booking forms
 - Move content to a headless CMS so faculty staff can edit it
 
-## Team
+## Author
 
-**Hsu Myat Noe** · [GitHub](https://github.com/NoeNoe25) · [LinkedIn](https://www.linkedin.com/in/hsu-myat-noe569aa729a/)
-With contributions from [MoeChanMyaeMaung](https://github.com/MoeChanMyaeMaung).
-<!-- TODO: describe each person's role (design, development, content) -->
+Designed and developed by **Hsu Myat Noe**: UI/UX design in Figma, frontend architecture, all pages and components, the English/Thai language system, animations, and deployment on Vercel.
+
+[GitHub](https://github.com/NoeNoe25) · [LinkedIn](https://www.linkedin.com/in/hsu-myat-noe569aa729a/)
 
 Content, logos and photos belong to KMITL / SIITEC.
