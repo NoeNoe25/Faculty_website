@@ -126,6 +126,7 @@ const buildMenu = (t) => {
         icon: <FaGraduationCap />,
         items: [
           { id: 'apply', name: t('services.applyForStudy'), link: ADMISSION_URL },
+          { id: 'international', name: t('services.internationalStudents'), link: '/InternationalStudentPage' },
           { id: 'rules', name: t('services.rules'), link: 'https://www.reg.kmitl.ac.th/rule/index.php?links=1' },
           { id: 'scholarships', name: t('services.scholarships'), link: 'https://osda.kmitl.ac.th/scholarship/' },
           { id: 'calendar', name: t('services.academicCalendar'), link: 'https://www.reg.kmitl.ac.th/educalendar/' },
@@ -145,7 +146,7 @@ const buildMenu = (t) => {
           { id: 'booking-faculty', name: t('services.instrumentBookingFaculty'), link: '/InstrumentBooking' },
           // External Partners sub-heading, listed under Faculty & Staff
           { id: 'partners-header', name: t('services.externalPartners'), isHeader: true, icon: <FaUsers /> },
-          { id: 'visit', name: t('services.facultyVisit'), link: '/Contact' },
+          { id: 'visit', name: t('services.facultyVisit'), link: '/VisitRequest' },
           { id: 'booking-service', name: t('services.instrumentBookingService'), link: 'http://www.cmit.kmitl.ac.th/testing-process/' },
           { id: 'partnership', name: t('services.partnershipInquiry'), link: 'mailto:ssitec@kmitl.ac.th' }
         ]
@@ -156,7 +157,7 @@ const buildMenu = (t) => {
       items: [
         { id: 'online-apply', name: t('services.onlineApplication'), link: ADMISSION_URL, icon: <FaIdCard /> },
         { id: 'document-request', name: t('services.documentRequest'), link: '/Contact', icon: <FaBook /> },
-        { id: 'appointment', name: t('services.scheduleAppointment'), link: '/Contact', icon: <FaUniversity /> }
+        { id: 'appointment', name: t('services.scheduleAppointment'), link: '/Appointment', icon: <FaUniversity /> }
       ]
     }
   };

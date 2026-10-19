@@ -25,6 +25,8 @@ const CiRAPage = lazy(() => import('../pages/Cira'));
 const KAISEMPage = lazy(() => import('../pages/kaisem'));
 const ATTACPage = lazy(() => import('../pages/attac'));
 const InstrumentBooking = lazy(() => import('../pages/InstrumentBooking'));
+const VisitRequest = lazy(() => import('../pages/VisitRequest'));
+const Appointment = lazy(() => import('../pages/Appointment'));
 const InternationalStudentPage = lazy(() => import('../pages/internationalstudent'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 
@@ -49,6 +51,8 @@ const ROUTES = [
   { path: '/KAISEMPage', element: <KAISEMPage />, titleKey: 'kaisem' },
   { path: '/ATTACPage', element: <ATTACPage />, titleKey: 'attac' },
   { path: '/InstrumentBooking', element: <InstrumentBooking />, titleKey: 'instrumentBooking' },
+  { path: '/VisitRequest', element: <VisitRequest />, titleKey: 'visitRequest' },
+  { path: '/Appointment', element: <Appointment />, titleKey: 'appointment' },
   { path: '/InternationalStudentPage', element: <InternationalStudentPage />, titleKey: 'international' },
   { path: '*', element: <NotFound />, titleKey: 'notFound' },
 ];
