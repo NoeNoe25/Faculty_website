@@ -125,6 +125,7 @@
 :where(.page-international) .international-subsection-nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 15px;
   margin-bottom: 30px;
 }
@@ -417,6 +418,30 @@
   color: var(--background-primary);
   box-shadow: var(--glow-gold);
   transform: translateY(-2px);
+}
+
+/* Action button rendered as a link */
+:where(.page-international) .international-link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Row of link buttons spanning the full grid width */
+:where(.page-international) .international-link-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+:where(.page-international) .international-link-row .international-action-button {
+  width: auto;
+  margin-top: 0;
 }
 
 /* Quick links */

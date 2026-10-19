@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { 
   FaHome, FaGraduationCap, FaBed, FaUtensils, FaBus, 
   FaRunning, FaGlobeAmericas, FaHandshake, FaPassport, 
-  FaFileAlt, FaUsers, FaBook, FaUserTie, FaUniversity, FaMapMarkerAlt,
+  FaFileAlt, FaUsers, FaBook, FaUniversity, FaMapMarkerAlt,
   FaCalendar, FaClock, FaPhone, FaWifi, FaSnowflake,
-  FaShower, FaHotTub, FaBicycle, FaSubway, FaMusic, FaPaintBrush, FaHandsHelping, FaHeart,
+  FaShower, FaHotTub, FaBicycle, FaSubway, FaMusic, FaPaintBrush, FaHandsHelping, FaHeart, FaExternalLinkAlt, FaFacebook, FaEnvelope,
 } from 'react-icons/fa';
 import { 
   GiMoneyStack, GiMeal, GiPayMoney, GiBank
 } from 'react-icons/gi';
 import { 
   MdLocalLibrary, MdGroups, MdSportsBasketball,
-  MdOutlineEmergency, MdOutlineSupportAgent
+  MdOutlineEmergency
 } from 'react-icons/md';
 import { 
-  HiAcademicCap, HiUserGroup
+  HiAcademicCap
 } from 'react-icons/hi';
 import '../styles/internationalstudent.css';
 
@@ -46,6 +46,10 @@ import stadium from '../assets/International students/stadium.jpg';
 import kmch from '../assets/International students/kmch.jpg';
 import { usePhrases } from '../i18n/LanguageContext';
 import phrases from '../i18n/content/international';
+// Google Maps search link for a place on or near the KMITL campus.
+const mapsSearchUrl = (place) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${place}, Lat Krabang, Bangkok`)}`;
+
 const InternationalStudentPage = () => {
   const tx = usePhrases(phrases);
   const [activeSection, setActiveSection] = useState('home');
@@ -67,28 +71,21 @@ const InternationalStudentPage = () => {
       icon: <HiAcademicCap />,
       label: tx('KMITL LIFE Long Learning Center'),
       title: tx('KMITL LIFE Long Learning Center (KLLC)'),
-      description: tx('Language and cultural programs designed to help international students succeed')
+      description: tx("Short courses, training and library services at KMITL's lifelong learning center")
     },
     { 
       id: 'academicsupport', 
       icon: <FaBook />,
       label: tx('Academic Support'),
       title: tx('Academic Support Services'),
-      description: tx('Get the academic help you need to succeed in your studies')
+      description: tx('Library services that support your study and research')
     },
     { 
       id: 'library', 
       icon: <MdLocalLibrary />,
-      label: tx('Library & Co-working'),
-      title: tx('Library & Co-working Spaces'),
+      label: tx('Library & Study Spaces'),
+      title: tx('Library & Study Spaces'),
       description: tx('Study spaces and resources available for students')
-    },
-    { 
-      id: 'mentors', 
-      icon: <HiUserGroup />,
-      label: tx('Nym / Pod Mentors'),
-      title: tx('Peer Mentorship Program'),
-      description: tx('Connect with experienced student mentors')
     },
   ];
 
@@ -183,25 +180,97 @@ const InternationalStudentPage = () => {
   ];
 
   // KLLC Programs data
+  // KLLC programs, from https://www.kllc.kmitl.ac.th/
   const kllcPrograms = [
-    { id: 1, name: tx('Free Program: KLLd'), description: tx('Language and cultural immersion program for new international students'), duration: tx('6 months'), eligibility: tx('All international students') },
-    { id: 2, name: tx('Griswor - Now'), description: tx('Graduate research and internship program with immediate opportunities'), duration: tx('1-2 years'), eligibility: tx('Graduate students') },
+    {
+      id: 1,
+      name: tx('Upskill / Reskill Short Courses'),
+      description: tx('Short, modular courses in deep technology and future skills for lifelong learners.'),
+      details: [
+        { icon: <FaCalendar />, label: tx('Format:'), value: tx('Short-term modular courses') },
+        { icon: <FaUsers />, label: tx('Open to:'), value: tx('See each course on the KLLC website') },
+      ],
+    },
+    {
+      id: 2,
+      name: tx('Training & Workshops'),
+      description: tx('Regular workshops such as EndNote reference management and research database training.'),
+      details: [
+        { icon: <FaCalendar />, label: tx('Schedule:'), value: tx('See the KLLC event calendar') },
+        { icon: <FaUsers />, label: tx('Format:'), value: tx('Onsite and online sessions') },
+      ],
+    },
+    {
+      id: 3,
+      name: tx('Contact KLLC'),
+      description: tx('Questions about courses, training or library services can be sent to KLLC directly.'),
+      details: [
+        { icon: <FaEnvelope />, label: tx('Email:'), value: 'lifelong@kmitl.ac.th' },
+        { icon: <FaFacebook />, label: tx('Facebook:'), value: 'KMITL Lifelong Learning Center' },
+      ],
+    },
   ];
 
-  // Academic support data
+  // Library services for study and research, from KLLC and the KMITL International Affairs office
   const academicSupport = [
-    { id: 1, title: tx('Writing Center'), description: tx('Get help with academic writing, essays, and research papers'), hours: tx('Mon-Fri: 9AM-5PM'), location: tx('Library Building') },
-    { id: 2, title: tx('Math Tutoring'), description: tx('One-on-one tutoring for mathematics and statistics'), hours: tx('Mon-Thu: 10AM-4PM'), location: tx('Science Building') },
-    { id: 3, title: tx('Language Assistance'), description: tx('Help with Thai language learning and academic English'), hours: tx('Tue-Fri: 1PM-6PM'), location: tx('Language Center') },
-    { id: 4, title: tx('Research Support'), description: tx('Guidance on research methodologies and thesis writing'), hours: tx('By appointment'), location: tx('Graduate School') },
+    {
+      id: 1,
+      title: tx('Library Orientation'),
+      description: tx('Learn how to find books, journals and online resources in the KMITL library.'),
+      details: [{ icon: <FaMapMarkerAlt />, label: tx('Where:'), value: tx('Central Library (KLLC)') }],
+    },
+    {
+      id: 2,
+      title: tx('Off-campus Access (VPN)'),
+      description: tx('Search library e-resources from outside the campus through the KMITL SSL VPN.'),
+      details: [{ icon: <FaUsers />, label: tx('Access:'), value: tx('KMITL student account') }],
+    },
+    {
+      id: 3,
+      title: tx('Inter-library Loan'),
+      description: tx('Borrow and return materials from other Thai universities through the library.'),
+      details: [{ icon: <FaMapMarkerAlt />, label: tx('Where:'), value: tx('Central Library (KLLC)') }],
+    },
+    {
+      id: 4,
+      title: tx('Campus Delivery'),
+      description: tx('Books and journals can be delivered to you inside the campus.'),
+      details: [{ icon: <FaMapMarkerAlt />, label: tx('Where:'), value: tx('Within KMITL Ladkrabang campus') }],
+    },
   ];
 
-  // Library data
+  // Central library spaces and hours, from https://www.kllc.kmitl.ac.th/contact/
   const librarySpaces = [
-    { id: 1, name: tx('Main Library'), description: tx('24/7 access to books, journals, and study spaces'), hours: tx('24/7 during exam periods'), floors: tx('8 floors, 500+ seats') },
-    { id: 2, name: tx('Silent Study Zone'), description: tx('Quiet study area with individual carrels'), hours: tx('7AM-11PM daily'), floors: tx('Floor 3-4') },
-    { id: 3, name: tx('Group Study Rooms'), description: tx('Bookable rooms for group projects and discussions'), hours: tx('8AM-10PM'), booking: tx('Online booking available') },
-    { id: 4, name: tx('Co-working Space'), description: tx('Modern workspace with computers and printers'), hours: tx('24/7 access'), amenities: tx('WiFi, printers, scanners') },
+    {
+      id: 1,
+      name: tx('Opening Hours'),
+      description: tx('Hours of the Central Library (KLLC). Times may change, so check the KLLC website before you go.'),
+      details: [
+        { icon: <FaClock />, label: tx('Semester:'), value: tx('Mon–Fri 08:30–19:30, Sat–Sun 10:00–18:00') },
+        { icon: <FaClock />, label: tx('Semester break:'), value: tx('Mon–Fri 08:30–16:30, closed weekends') },
+      ],
+    },
+    {
+      id: 2,
+      name: tx('Study Rooms & Learning Spaces'),
+      description: tx('Book rooms and learning spaces for group work through the KLLC booking system.'),
+      details: [
+        { icon: <FaUsers />, label: tx('Who can book:'), value: tx('KMITL students and staff only') },
+        { icon: <FaFileAlt />, label: tx('Fees:'), value: tx('See the room rate schedule on the KLLC website') },
+      ],
+    },
+    {
+      id: 3,
+      name: tx('Borrowing & Search'),
+      description: tx('Search the catalogue online (Web OPAC) and borrow or return books and media.'),
+      details: [{ icon: <FaWifi />, label: tx('Internet:'), value: tx('Internet access in the Central Library') }],
+    },
+    {
+      id: 4,
+      name: tx('Media & Exhibitions'),
+      description: tx('Watch films and visual media, and visit exhibitions in the library and the King Rama IV Honorable Hall.'),
+      details: [{ icon: <FaMapMarkerAlt />, label: tx('Where:'), value: tx('Central Library (KLLC)') }],
+    },
   ];
 
   // Faculties data
@@ -345,13 +414,14 @@ const InternationalStudentPage = () => {
 
   // Support services data
   const supportServices = [
-    { id: 1, service: tx('International Office'), location: tx('Administration Building'), hours: tx('Mon-Fri 8:30AM-4:30PM'), contact: '+66-2-123-4567', icon: <FaUniversity /> },
-    { id: 3, service: tx('Counseling Services'), location: tx('Student Wellness Center'), hours: tx('By appointment'), contact: 'counseling@university.ac.th', icon: <MdOutlineSupportAgent /> },
-    { id: 4, service: tx('Career Services'), location: tx('Career Center Building'), hours: tx('Mon-Fri 9AM-5PM'), contact: 'career@university.ac.th', icon: <FaUserTie /> },
+    { id: 1, service: tx('International Office'), location: tx('Administration Building'), hours: tx('Mon-Fri 8:30AM-4:30PM'), contact: '+66-2-123-4567', website: 'https://oia.kmitl.ac.th/', icon: <FaUniversity /> },
   ];
 
   // Google Maps embed URL
-  const campusMapUrl = "https://www.google.com/maps/d/embed?mid=1UEUU0ZbmX0mktzMBgfRVX1l7BCwbqq8&ehbc=2E312F";
+  // Canteen map (Google My Maps): embedded on the Food tab, and opened full-size from its button.
+  const campusMapId = "1F4NIQ2vLOaaDWM1wfcLdVd-ltfTQkrY";
+  const campusMapUrl = `https://www.google.com/maps/d/embed?mid=${campusMapId}`;
+  const campusMapViewUrl = `https://www.google.com/maps/d/viewer?mid=${campusMapId}`;
 
   // Handle section change
   const handleSectionChange = (sectionId) => {
@@ -513,30 +583,30 @@ const InternationalStudentPage = () => {
                     <div className="international-programs-grid">
                       {kllcPrograms.map(program => (
                         <div key={program.id} className="international-card international-program-card">
-                          <div className="international-card-header">
-                            <h3>{program.name}</h3>
-                            {program.name.includes('Free') && (
-                              <div className="international-free-badge">{tx("Free Program")}</div>
-                            )}
-                            {program.name.includes('Griswor') && (
-                              <div className="international-now-badge">{tx("Available Now")}</div>
-                            )}
-                          </div>
+                          <h3>{program.name}</h3>
                           <p>{program.description}</p>
                           <div className="international-program-details">
-                            <div className="international-detail-item">
-                              <FaCalendar className="detail-icon" />
-                              <span className="international-detail-label">{tx("Duration:")}</span>
-                              <span>{program.duration}</span>
-                            </div>
-                            <div className="international-detail-item">
-                              <FaUsers className="detail-icon" />
-                              <span className="international-detail-label">{tx("Eligibility:")}</span>
-                              <span>{program.eligibility}</span>
-                            </div>
+                            {program.details.map((detail) => (
+                              <div key={detail.label} className="international-detail-item">
+                                {React.cloneElement(detail.icon, { className: 'detail-icon' })}
+                                <span className="international-detail-label">{detail.label}</span>
+                                <span>{detail.value}</span>
+                              </div>
+                            ))}
                           </div>
                         </div>
                       ))}
+
+                      <div className="international-link-row">
+                        <a
+                          href="https://www.kllc.kmitl.ac.th/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaExternalLinkAlt /> {tx("Visit KLLC Website")}
+                        </a>
+                      </div>
                     </div>
                   )}
 
@@ -547,16 +617,13 @@ const InternationalStudentPage = () => {
                           <h3>{item.title}</h3>
                           <p>{item.description}</p>
                           <div className="international-program-details">
-                            <div className="international-detail-item">
-                              <FaClock className="detail-icon" />
-                              <span className="international-detail-label">{tx("Hours:")}</span>
-                              <span>{item.hours}</span>
-                            </div>
-                            <div className="international-detail-item">
-                              <FaMapMarkerAlt className="detail-icon" />
-                              <span className="international-detail-label">{tx("Location:")}</span>
-                              <span>{item.location}</span>
-                            </div>
+                            {item.details.map((detail) => (
+                              <div key={detail.label} className="international-detail-item">
+                                {React.cloneElement(detail.icon, { className: 'detail-icon' })}
+                                <span className="international-detail-label">{detail.label}</span>
+                                <span>{detail.value}</span>
+                              </div>
+                            ))}
                           </div>
                         </div>
                       ))}
@@ -570,58 +637,16 @@ const InternationalStudentPage = () => {
                           <h3>{space.name}</h3>
                           <p>{space.description}</p>
                           <div className="international-program-details">
-                            <div className="international-detail-item">
-                              <FaClock className="detail-icon" />
-                              <span className="international-detail-label">{tx("Hours:")}</span>
-                              <span>{space.hours}</span>
-                            </div>
-                            <div className="international-detail-item">
-                              <span className="international-detail-label">{tx("Details:")}</span>
-                              <span>{space.floors || space.booking || space.amenities}</span>
-                            </div>
+                            {space.details.map((detail) => (
+                              <div key={detail.label} className="international-detail-item">
+                                {React.cloneElement(detail.icon, { className: 'detail-icon' })}
+                                <span className="international-detail-label">{detail.label}</span>
+                                <span>{detail.value}</span>
+                              </div>
+                            ))}
                           </div>
                         </div>
                       ))}
-                    </div>
-                  )}
-
-                  {activeSection === 'progr' && activeSubSection === 'mentors' && (
-                    <div className="international-programs-grid">
-                      <div className="international-card international-program-card">
-                        <h3><HiUserGroup /> {tx("Peer Mentorship Program")}</h3>
-                        <p>{tx("Connect with experienced student mentors who can guide you through your university journey.")}</p>
-                        <div className="international-program-details">
-                          <div className="international-detail-item">
-                            <FaUsers className="detail-icon" />
-                            <span className="international-detail-label">{tx("Mentor Matching:")}</span>
-                            <span>{tx("Based on your major and interests")}</span>
-                          </div>
-                          <div className="international-detail-item">
-                            <FaClock className="detail-icon" />
-                            <span className="international-detail-label">{tx("Meetings:")}</span>
-                            <span>{tx("Weekly or bi-weekly sessions")}</span>
-                          </div>
-                        </div>
-                        <button className="international-action-button">{tx("Apply for Mentor")}</button>
-                      </div>
-
-                      <div className="international-card international-program-card">
-                        <h3><FaHandshake /> {tx("Nym Program")}</h3>
-                        <p>{tx("New student orientation and mentoring program specifically designed for international students.")}</p>
-                        <div className="international-program-details">
-                          <div className="international-detail-item">
-                            <FaCalendar className="detail-icon" />
-                            <span className="international-detail-label">{tx("Duration:")}</span>
-                            <span>{tx("Full academic year")}</span>
-                          </div>
-                          <div className="international-detail-item">
-                            <FaUsers className="detail-icon" />
-                            <span className="international-detail-label">{tx("Eligibility:")}</span>
-                            <span>{tx("First-year international students")}</span>
-                          </div>
-                        </div>
-                        <button className="international-action-button">{tx("Join Nym Program")}</button>
-                      </div>
                     </div>
                   )}
 
@@ -669,6 +694,25 @@ const InternationalStudentPage = () => {
                           <li><FaSnowflake /> {tx("Air-conditioning included")}</li>
                         </ul>
                       </div>
+
+                      <div className="international-link-row">
+                        <a
+                          href="https://dorm.kmitl.ac.th/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaExternalLinkAlt /> {tx("Dormitory Website")}
+                        </a>
+                        <a
+                          href="https://www.facebook.com/Dormitory.Of.KMITL"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaFacebook /> {tx("Dormitory Facebook")}
+                        </a>
+                      </div>
                     </div>
                   )}
 
@@ -705,6 +749,14 @@ const InternationalStudentPage = () => {
                             referrerPolicy="no-referrer-when-downgrade"
                           ></iframe>
                         </div>
+                        <a
+                          href={campusMapViewUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaMapMarkerAlt /> {tx("Open Full Map")}
+                        </a>
                       </div>
                     </>
                   )}
@@ -881,6 +933,14 @@ const InternationalStudentPage = () => {
                             <span>{tx("University Sports Complex")}</span>
                           </div>
                         </div>
+                        <a
+                          href={mapsSearchUrl("KMITL Stadium")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaMapMarkerAlt /> {tx("Open in Google Maps")}
+                        </a>
                       </div>
 
                       <div className="international-card international-program-card">
@@ -904,6 +964,14 @@ const InternationalStudentPage = () => {
                             <span>{tx("Certified fitness trainers")}</span>
                           </div>
                         </div>
+                        <a
+                          href={mapsSearchUrl("KMITL Fitness Center")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaMapMarkerAlt /> {tx("Open in Google Maps")}
+                        </a>
                       </div>
 
                       <div className="international-card international-program-card">
@@ -929,6 +997,14 @@ const InternationalStudentPage = () => {
                             <span>{tx("Student Wellness Center")}</span>
                           </div>
                         </div>
+                        <a
+                          href={mapsSearchUrl("KMITL Basketball Court")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaMapMarkerAlt /> {tx("Open in Google Maps")}
+                        </a>
                       </div>
 
                         <div className="international-card international-program-card">
@@ -954,6 +1030,14 @@ const InternationalStudentPage = () => {
                             <span>{tx("Student Wellness Center")}</span>
                           </div>
                         </div>
+                        <a
+                          href={mapsSearchUrl("KMITL Swimming Pool")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaMapMarkerAlt /> {tx("Open in Google Maps")}
+                        </a>
                       </div>
 
                     </div>
@@ -985,6 +1069,16 @@ const InternationalStudentPage = () => {
                               <span>{service.contact}</span>
                             </div>
                           </div>
+                          {service.website && (
+                            <a
+                              href={service.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="international-action-button international-link-button"
+                            >
+                              <FaExternalLinkAlt /> {tx("Visit Website")}
+                            </a>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -1001,13 +1095,21 @@ const InternationalStudentPage = () => {
                           </div>
                           <div className="international-cost-item">
                             <span>{tx("Submit to:")}</span>
-                            <span className="international-cost"> {tx("OIA ( 30 days before expiry)")}</span>
+                            <span className="international-cost"> {tx("International Affairs Office (HM 506), 45 days before")}</span>
                           </div>
                           <div className="international-cost-item">
                             <span>{tx("Collect when")}</span>
                             <span className="international-cost">{tx("Gets e-mail notification")}</span>
                           </div>
                         </div>
+                        <a
+                          href="https://docs.google.com/forms/d/e/1FAIpQLSduqyc0p4nShZxNIEqtspO8H784LiHmJlLjL4N_k43R3-xhqQ/viewform"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaExternalLinkAlt /> {tx("Visa Extension Request Form")}
+                        </a>
                       </div>
 
                       <div className="international-card international-finance-card">
@@ -1030,6 +1132,14 @@ const InternationalStudentPage = () => {
                             <span className="international-cost">{tx("1,000 THB")} </span>
                           </div>
                         </div>
+                        <a
+                          href="https://www.immigration.go.th/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="international-action-button international-link-button"
+                        >
+                          <FaExternalLinkAlt /> {tx("Thai Immigration Bureau")}
+                        </a>
                       </div>
                     </div>
                   )}
@@ -1043,7 +1153,8 @@ const InternationalStudentPage = () => {
         service: tx("King Mongkut Chaokhunthahan Hospital (KMCH)"),
         location: tx("PQJR+M8C, Lam Pla Thio, Lat Krabang, Bangkok 10520"),
         hours: tx("8AM - 5PM (Mon-Fri)"),
-        contact: "+66-2-123-4567"
+        contact: "+66-2-123-4567",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=King+Mongkut+Chaokhunthahan+Hospital+Lat+Krabang"
       }
       
       
@@ -1076,22 +1187,19 @@ const InternationalStudentPage = () => {
             <span>{service.contact}</span>
           </div>
         </div>
+        <a
+          href={service.mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="international-action-button international-link-button"
+        >
+          <FaMapMarkerAlt /> {tx("Open in Google Maps")}
+        </a>
       </div>
     ))}
   </div>
 )}
 
-<div className="international-important-notice emergency">
-  <h3><MdOutlineEmergency /> {tx("Emergency Contacts")}</h3>
-  <ul>
-    <li><strong>{tx("Medical Emergency:")}</strong> {tx("1669 (Thai Emergency Number)")}</li>
-    <li><strong>{tx("Campus Security:")}</strong> +66-2-123-4000</li>
-    <li><strong>{tx("Police:")}</strong> 191</li>
-    <li><strong>{tx("Fire Department:")}</strong> 199</li>
-    <li><strong>{tx("University Health Center:")}</strong> +66-2-123-4568 (24/7)</li>
-    <li><strong>{tx("International Office Emergency:")}</strong> +66-81-234-5678</li>
-  </ul>
-</div>
 
                   
                 </div>
