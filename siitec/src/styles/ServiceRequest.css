@@ -1,0 +1,208 @@
+/* Visit Request and Schedule Appointment pages */
+
+:where(.page-service) .service-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-sm);
+}
+
+:where(.page-service) .service-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+:where(.page-service) .service-header-icon {
+  font-size: 2.5rem;
+  color: var(--gold-copper-dark);
+  margin-bottom: var(--space-sm);
+}
+
+:where(.page-service) .service-header h1 {
+  margin-bottom: var(--space-sm);
+}
+
+:where(.page-service) .service-header p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+:where(.page-service) .service-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+:where(.page-service) .service-card {
+  background: var(--background-primary);
+  border: var(--border-light);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+}
+
+/* Form */
+:where(.page-service) .service-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+:where(.page-service) .service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+:where(.page-service) .service-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+:where(.page-service) .service-form input,
+:where(.page-service) .service-form select,
+:where(.page-service) .service-form textarea {
+  font: inherit;
+  font-weight: 400;
+  padding: 10px 12px;
+  border: var(--border-slate);
+  border-radius: var(--border-radius);
+  background: var(--background-primary);
+  color: var(--text-primary);
+}
+
+:where(.page-service) .service-form input:focus,
+:where(.page-service) .service-form select:focus,
+:where(.page-service) .service-form textarea:focus {
+  outline: 2px solid var(--gold-copper);
+  outline-offset: 1px;
+  border-color: var(--gold-copper);
+}
+
+:where(.page-service) .service-form textarea {
+  resize: vertical;
+}
+
+/* Off-screen spam trap */
+:where(.page-service) .service-honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
+:where(.page-service) .service-button {
+  align-self: flex-start;
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--slate-darkest);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+:where(.page-service) .service-button:hover:not(:disabled) {
+  background: var(--gold-copper-dark);
+}
+
+:where(.page-service) .service-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+:where(.page-service) .service-button.secondary {
+  margin-top: var(--space-sm);
+  background: var(--background-tertiary);
+  color: var(--text-primary);
+}
+
+:where(.page-service) .service-error {
+  color: #b42318;
+  margin: 0;
+}
+
+/* Status messages */
+:where(.page-service) .service-message {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+:where(.page-service) .service-message > svg {
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  color: var(--gold-copper-dark);
+}
+
+:where(.page-service) .service-message.success > svg {
+  color: #2f855a;
+}
+
+:where(.page-service) .service-message h2 {
+  margin: 0 0 var(--space-xs);
+  font-size: 1.4rem;
+}
+
+:where(.page-service) .service-message p {
+  margin: 0;
+}
+
+/* Sidebar */
+:where(.page-service) .service-aside h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+:where(.page-service) .service-aside ul {
+  padding-left: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+:where(.page-service) .service-aside-contact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  overflow-wrap: anywhere;
+}
+
+/* Booking embed */
+:where(.page-service) .service-booking {
+  padding: var(--space-sm);
+}
+
+:where(.page-service) .service-booking iframe {
+  display: block;
+  width: 100%;
+  height: 720px;
+  border: 0;
+  border-radius: var(--border-radius);
+}
+
+:where(.page-service) .service-booking-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 800px) {
+  :where(.page-service) .service-layout,
+  :where(.page-service) .service-row {
+    grid-template-columns: 1fr;
+  }
+
+  :where(.page-service) .service-card {
+    padding: var(--space-md) var(--space-sm);
+  }
+}

@@ -13,3 +13,12 @@ export const SOCIAL_LINKS = [
 
 /** True for links that leave the single-page app (http(s), mailto, tel). */
 export const isExternalLink = (href) => /^(https?:|mailto:|tel:)/i.test(href);
+
+// Visit Request and Appointment pages. The key and booking URL come from the build environment
+// (Vercel → Settings → Environment Variables) so they can change without a code edit.
+export const OFFICE_EMAIL = 'siitec.office.th@gmail.com';
+// Web3Forms access key for OFFICE_EMAIL (https://web3forms.com). It is meant to be public.
+export const WEB3FORMS_ACCESS_KEY = process.env.REACT_APP_WEB3FORMS_KEY || '';
+// Embeddable booking page: a Google Calendar appointment schedule (…/schedules/<id>?gv=true)
+// or a Cal.com link (https://cal.com/<user>/<event>?embed=true).
+export const APPOINTMENT_BOOKING_URL = process.env.REACT_APP_APPOINTMENT_URL || '';
